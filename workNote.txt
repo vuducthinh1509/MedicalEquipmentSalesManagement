@@ -12,17 +12,16 @@ nguoinhap
 thoigianbaohanh: 5 năm
 trang thai - da ban, trong kho
 
-id
-nhan vien nvarchar
-ma nhanvien nvarchar
-ho va ten nvarchar
-ngay sinh date
-dia chi thuong tru nvarchar
-cccd nvarchar
-sdt varchar(255)
-email varchar(255)
-ngay vao lam date
-chuc vu - unique nvarchar
+
+nhan vien
+ho va ten
+ngay sinh
+dia chi thuong tru
+cccd
+sdt
+email
+ngay vao lam
+chuc vu - unique
 
 
 khach hang
@@ -32,12 +31,6 @@ ten
 type: tu nhan, congty, ban buon, ban le
 mst
 dia chi
-
-taikhoandangnhap
-id
-user
-pass
-role
 
 
 
@@ -75,7 +68,6 @@ makhanghang
 manv
 ngay gio ban
 
-
 create table NguoiDung(
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(255) UNIQUE NOT NULL ,
@@ -89,7 +81,6 @@ ALTER TABLE NguoiDung
 INSERT INTO NguoiDung(username,password,role) VALUES
 ("admin","1",0),
 ("thinh","1",1);
-("quang","1",2);
 
 create table NhanVien(
  id INT NOT NULL,
@@ -110,4 +101,3 @@ create table NhanVien(
 
 INSERT INTO NhanVien(id,maNV,hoTen,ngaySinh,diaChiThuongTru,CCCD,soDienThoai,email,ngayVaoLam,chucVu,gioiTinh) VALUES
 (2,"NV01","Vũ Đức Thịnh","2002-09-15","Hà Nội","035202001419","0968968032","vuducthinh1509@gmail.com","2020-01-01","Nhân viên bán hàng","Nam");
-(3,"NV02","Lại Đăng Quang","2002-01-18","Hà Nam","03520200364","0123456789","quangvippro@gmail.com","2021-01-15","Nhân viên bảo trì","Nam");
