@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 import view.main;
@@ -52,14 +53,12 @@ public class primaryPane implements Initializable {
 
     NhanVienRepository nhanVienRepository = new NhanVienRepository_impl();
 
-    public NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load_data();
     }
-
     public void load_data(){
+        NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
         labelMaNV.setText(nhanVien.getMaNV());
         labelGioiTinh.setText(nhanVien.getGioiTinh());
         labelHoTen.setText(nhanVien.getHoTen());

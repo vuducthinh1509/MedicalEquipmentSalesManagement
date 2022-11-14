@@ -56,8 +56,8 @@ public class NhanVienRepository_impl implements NhanVienRepository {
             pstmt.setString(2, nhanVien.getDiaChiThuongTru());
             pstmt.setString(3, nhanVien.getSoDienThoai());
             pstmt.setString(4, nhanVien.getEmail());
-            pstmt.setString(5, nhanVien.getGioiTinh());
-            pstmt.setDate(6, nhanVien.getNgayVaoLam());
+            pstmt.setDate(5, nhanVien.getNgayVaoLam());
+            pstmt.setString(6, nhanVien.getGioiTinh());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
