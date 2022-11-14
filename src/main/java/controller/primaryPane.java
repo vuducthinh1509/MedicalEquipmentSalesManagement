@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
+import view.main;
 
 
 import java.io.IOException;
@@ -51,11 +52,14 @@ public class primaryPane implements Initializable {
 
     NhanVienRepository nhanVienRepository = new NhanVienRepository_impl();
 
-
     public NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        load_data();
+    }
+
+    public void load_data(){
         labelMaNV.setText(nhanVien.getMaNV());
         labelGioiTinh.setText(nhanVien.getGioiTinh());
         labelHoTen.setText(nhanVien.getHoTen());
@@ -67,12 +71,11 @@ public class primaryPane implements Initializable {
         labelNgayVaoLam.setText(String.valueOf(nhanVien.getNgayVaoLam()));
         labelChucVu.setText(nhanVien.getChucVu());
     }
-
     public void editPersonalInformationOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/NhanVien/editPersonalInformation.fxml"));
         Parent chinhSuaThongTinCaNhan = loader.load();
-        EditPersonalInformation controller= loader.getController();
+        EditPersonalInformation controller = loader.getController();
         Stage stage = new Stage();
         controller.edit();
         stage.setTitle("CHỈNH SỬA THÔNG TIN CÁ NHÂN");

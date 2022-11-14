@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Setter
 @Getter
@@ -16,9 +16,9 @@ public class NhanVien {
 
     private Integer id;
 
-    private String hoTen;
-
     private String maNV;
+
+    private String hoTen;
 
     private Date ngaySinh;
 

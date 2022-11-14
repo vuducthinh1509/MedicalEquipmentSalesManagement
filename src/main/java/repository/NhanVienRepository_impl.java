@@ -46,4 +46,29 @@ public class NhanVienRepository_impl implements NhanVienRepository {
             }
         } return nhanVien;
     }
+
+    @Override
+    public void updateInformation(NhanVien nhanVien){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_UPDATE + nhanVien.getId());
+            pstmt.setDate(1, nhanVien.getNgaySinh());
+            pstmt.setString(2, nhanVien.getDiaChiThuongTru());
+            pstmt.setString(3, nhanVien.getSoDienThoai());
+            pstmt.setString(4, nhanVien.getEmail());
+            pstmt.setString(5, nhanVien.getGioiTinh());
+            pstmt.setDate(6, nhanVien.getNgayVaoLam());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 }
