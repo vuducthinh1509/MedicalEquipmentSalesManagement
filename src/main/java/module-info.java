@@ -13,4 +13,7 @@ module com.example.medicaldevicessalesmanagementsystem {
 
     opens entity to javafx.fxml;
     exports entity;
+
+    opens controller.NhanVien to javafx.fxml;
+    exports controller.NhanVien;
 }

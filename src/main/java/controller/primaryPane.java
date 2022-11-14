@@ -1,13 +1,20 @@
 package controller;
 
+import controller.NhanVien.EditPersonalInformation;
 import entity.NhanVien;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,13 +52,13 @@ public class primaryPane implements Initializable {
     NhanVienRepository nhanVienRepository = new NhanVienRepository_impl();
 
 
-    public NhanVien nhanVien =nhanVienRepository.getInformationUser(login.idNhanVien);
+    public NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         labelMaNV.setText(nhanVien.getMaNV());
-        labelHoTen.setText(nhanVien.getHoTen());
         labelGioiTinh.setText(nhanVien.getGioiTinh());
+        labelHoTen.setText(nhanVien.getHoTen());
         labelNgaySinh.setText(String.valueOf(nhanVien.getNgaySinh()));
         labelDiaChiThuongTru.setText(nhanVien.getDiaChiThuongTru());
         labelCCCD.setText(nhanVien.getCCCD());
@@ -60,6 +67,20 @@ public class primaryPane implements Initializable {
         labelNgayVaoLam.setText(String.valueOf(nhanVien.getNgayVaoLam()));
         labelChucVu.setText(nhanVien.getChucVu());
     }
+
+    public void editPersonalInformationOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/NhanVien/editPersonalInformation.fxml"));
+        Parent chinhSuaThongTinCaNhan = loader.load();
+        EditPersonalInformation controller= loader.getController();
+        Stage stage = new Stage();
+        controller.edit();
+        stage.setTitle("CHỈNH SỬA THÔNG TIN CÁ NHÂN");
+        Scene scene = new Scene(chinhSuaThongTinCaNhan);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
 }

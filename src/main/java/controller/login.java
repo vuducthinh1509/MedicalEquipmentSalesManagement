@@ -48,8 +48,7 @@ public class login {
                 stage.setScene(scene);
                 stage.setWidth(1400);
                 stage.setHeight(780);
-                stage.setX(10);
-                stage.setY(10);
+                stage.centerOnScreen();
                 stage.show();
             } else {
                 loginLabel.setText("Sai tài khoản hoặc mật khẩu");
