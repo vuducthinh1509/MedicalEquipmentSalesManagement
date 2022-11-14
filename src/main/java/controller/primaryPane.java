@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
@@ -51,11 +52,26 @@ public class primaryPane implements Initializable {
     @FXML
     private Label labelChucVu;
 
+    @FXML
+    private Button editButton;
+
+    @FXML
+    private Button reloadButton;
+
+
     NhanVienRepository nhanVienRepository = new NhanVienRepository_impl();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load_data();
+        if(login.role ==0){
+            editButton.setDisable(true);
+            editButton.setVisible(false);
+            reloadButton.setDisable(true);
+            reloadButton.setVisible(false);
+            labelMaNV.setText("admin");
+            labelHoTen.setText("admin");
+        }
     }
     public void load_data(){
         NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
@@ -82,7 +98,4 @@ public class primaryPane implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
-
 }
