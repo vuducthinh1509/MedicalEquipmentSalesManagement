@@ -8,6 +8,7 @@ model
 serial -- key
 xuat xu
 ngay nhap
+maNVnguoinhap
 nguoinhap
 thoigianbaohanh: 5 năm
 trang thai - da ban, trong kho

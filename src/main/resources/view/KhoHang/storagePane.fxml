@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1060.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.KhoHangController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản lý kho hàng" textAlignment="CENTER">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+       <Pane layoutX="57.0" layoutY="79.0" prefHeight="50.0" prefWidth="716.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+           <children>
+               <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="430.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                   <font>
+                       <Font size="15.0" />
+                   </font>
+               </TextField>
+               <ComboBox fx:id="truongTraCuuF" layoutX="485.0" layoutY="1.0" prefHeight="49.0" prefWidth="231.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
+           </children>
+       </Pane>
+      <TableView fx:id="table" layoutX="23.0" layoutY="154.0" prefHeight="572.0" prefWidth="836.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
+          <TableColumn fx:id="tenColumn" prefWidth="174.0" text="Tên" />
+            <TableColumn fx:id="modelColumn" prefWidth="83.0" text="Model" />
+            <TableColumn fx:id="serialColumn" prefWidth="86.0" text="Serial" />
+            <TableColumn fx:id="mauColumn" prefWidth="98.0" text="Màu" />
+            <TableColumn fx:id="kichThuocColumn" prefWidth="119.0" text="Kích Thước" />
+            <TableColumn fx:id="giaColumn" minWidth="0.0" prefWidth="102.0" text="Giá" />
+            <TableColumn fx:id="trangThaiColumn" prefWidth="131.0" text="Trạng Thái" />
+        </columns>
+          <contextMenu>
+              <ContextMenu>
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#chiTietThietBi" text="Xem thông tin thiết bị" />
+                      <MenuItem mnemonicParsing="false" text="Chỉnh sửa thông tin nhân khẩu" />
+                  </items>
+              </ContextMenu>
+          </contextMenu>
+      </TableView>
+      <Button layoutX="879.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="39.0" prefWidth="151.0" text="Tải lại bảng" />
+      <Button fx:id="addProductButton" layoutX="879.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="39.0" prefWidth="151.0" text="Thêm thiết bị" />
+         <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="779.0" layoutY="79.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
+             <image>
+                 <Image url="@../../image/icons8-search.gif" />
+             </image>
+         </ImageView>
+   </children>
+</Pane>

@@ -77,18 +77,15 @@ public class homepage implements Initializable {
     public void storageButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
         storageButton.setStyle("-fx-background-color: #757C95;");
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("storage button");
-        alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
-//        mainPane.getChildren().add(trangChuPane);
+        mainPane.getChildren().clear();
+        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/KhoHang/storagePane.fxml"));
+        mainPane.getChildren().add(storagePane);
     }
 
     public void homePageButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
         homePageButton.setStyle("-fx-background-color: #757C95;");
-
+        mainPane.getChildren().clear();
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }

@@ -17,4 +17,7 @@ module com.example.medicaldevicessalesmanagementsystem {
     opens controller.NhanVien to javafx.fxml;
     exports controller.NhanVien;
 
+    opens controller.KhoHang to javafx.fxml;
+    exports controller.KhoHang;
+
 }

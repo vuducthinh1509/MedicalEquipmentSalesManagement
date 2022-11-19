@@ -46,8 +46,9 @@ public class login {
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("Quản lý bán hàng thiết bị y tế");
                 stage.setScene(scene);
-                stage.setWidth(1400);
-                stage.setHeight(780);
+                stage.setWidth(1280);
+                stage.setHeight(760);
+                stage.setResizable(true);
                 stage.centerOnScreen();
                 stage.show();
             } else {

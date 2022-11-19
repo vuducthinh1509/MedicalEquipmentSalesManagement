@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ThemThietBiController">
+    <children>
+        <Label layoutX="524.0" layoutY="362.0" text="Mã NV nhập:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="76.0" layoutY="257.0" text="Màu:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="73.0" layoutY="106.0" text="Tên:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="74.0" layoutY="172.0" text="Model:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="522.0" layoutY="158.0" text="Serial:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="76.0" layoutY="216.0" text="Xuất xứ:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="522.0" layoutY="207.0" text="Thời gian bảo hành:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="73.0" layoutY="308.0" text="Kích thước:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="522.0" layoutY="257.0" text="Giá:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="303.0" layoutY="21.0" prefHeight="45.0" prefWidth="425.0" text="Thêm thiết bị" textFill="#f8f3f3">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+      <Label layoutX="73.0" layoutY="362.0" text="Ngày nhập:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tenLabel" layoutX="220.0" layoutY="101.0" prefHeight="39.0" prefWidth="730.0" />
+      <TextField fx:id="modelLabel" layoutX="220.0" layoutY="153.0" />
+      <TextField fx:id="serialLabel" layoutX="724.0" layoutY="153.0" />
+      <TextField layoutX="219.0" layoutY="202.0" fx:id="xuatXuLabel" />
+      <TextField fx:id="mauLabel" layoutX="219.0" layoutY="253.0" />
+      <TextField fx:id="kichThuocLabel" layoutX="219.0" layoutY="303.0" />
+      <TextField fx:id="maNVNhapLabel" layoutX="725.0" layoutY="358.0" />
+      <TextField fx:id="thoiGianBaoHanhLabel" layoutX="724.0" layoutY="202.0" />
+      <TextField fx:id="giaLabel" layoutX="724.0" layoutY="252.0" />
+      <DatePicker fx:id="ngayNhapLabel" layoutX="219.0" layoutY="358.0" />
+      <Button fx:id="saveButton" layoutX="710.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#saveAction" prefHeight="51.0" prefWidth="118.0" text="Lưu">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="865.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#cancelAction" prefHeight="51.0" prefWidth="90.0" text="Hủy">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
