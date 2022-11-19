@@ -33,3 +33,27 @@ create table NhanVien(
 INSERT INTO NhanVien(id,maNV,hoTen,ngaySinh,diaChiThuongTru,CCCD,soDienThoai,email,ngayVaoLam,chucVu,gioiTinh) VALUES
 (2,"NV01","Vũ Đức Thịnh","2002-09-15","Hà Nội","035202001419","0968968032","vuducthinh1509@gmail.com","2020-01-01","Nhân viên bán hàng","Nam");
 (3,"NV02","Lại Đăng Quang","2002-01-18","Hà Nam","03520200364","0123456789","quangvippro@gmail.com","2021-01-15","Nhân viên bảo trì","Nam");
+
+
+create table ThietBi(
+idThietBi INT NOT NULL AUTO_INCREMENT,
+tenThietBi NVARCHAR(255) NOT NULL,
+modelThietBi varchar(255) NOT NULL,
+serialThietBi varchar(255) NOT NULL UNIQUE,
+xuatXuThietBi NVARCHAR(255),
+mauThietBi NVARCHAR(255),
+kichThuocThietBi varchar(255),
+giaThietBi varchar(255) NOT NULL,
+maNVNguoiNhap varchar(255) NOT NULL,
+ngayNhapThietBi DATE NOT NULL,
+maNVNguoiXuat varchar(255),
+ngayXuatThietBi DATE,
+thoiGianBaoHanh NVARCHAR(255) NOT NULL,
+trangThaiThietBi NVARCHAR(255) NOT NULL,
+CONSTRAINT PK_thiet_bi PRIMARY KEY(serialThietBi)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+INSERT INTO ThietBi(tenThietBi,modelThietBi,serialThietBi,xuatXuThietBi,mauThietBi,kichThuocThietBi, maNVNguoiNhap,thoiGianBaoHanh,trangThaiThietBi,giaThietBi) VALUES
+("Máy đo SP02 Jumper 5000D","Jumper500D","DT000000","Việt Nam","Trắng Đen","62.2x37x33.1mm","NV02","2 năm","Trong kho","650.000VND"),
+("Máy đo huyết áp bắp tay tự động Omron Hem-7121","Hem7121","DT000001","Canada","Trắng","103x80x129mm","NV01","3 năm","Trong kho","1.190.000VND");
