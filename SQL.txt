@@ -10,7 +10,7 @@ ALTER TABLE NguoiDung
     ADD UNIQUE(username);
 INSERT INTO NguoiDung(username,password,role) VALUES
 ("admin","1",0),
-("thinh","1",1);
+("thinh","1",1),
 ("quang","1",2);
 
 create table NhanVien(
@@ -31,7 +31,7 @@ create table NhanVien(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO NhanVien(id,maNV,hoTen,ngaySinh,diaChiThuongTru,CCCD,soDienThoai,email,ngayVaoLam,chucVu,gioiTinh) VALUES
-(2,"NV01","Vũ Đức Thịnh","2002-09-15","Hà Nội","035202001419","0968968032","vuducthinh1509@gmail.com","2020-01-01","Nhân viên bán hàng","Nam");
+(2,"NV01","Vũ Đức Thịnh","2002-09-15","Hà Nội","035202001419","0968968032","vuducthinh1509@gmail.com","2020-01-01","Nhân viên bán hàng","Nam"),
 (3,"NV02","Lại Đăng Quang","2002-01-18","Hà Nam","03520200364","0123456789","quangvippro@gmail.com","2021-01-15","Nhân viên bảo trì","Nam");
 
 
