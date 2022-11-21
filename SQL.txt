@@ -50,7 +50,7 @@ maNVNguoiXuat varchar(255),
 ngayXuatThietBi DATE,
 thoiGianBaoHanh NVARCHAR(255) NOT NULL,
 trangThaiThietBi NVARCHAR(255) NOT NULL,
-CONSTRAINT PK_thiet_bi PRIMARY KEY(serialThietBi)
+CONSTRAINT PK_thiet_bi PRIMARY KEY(idThietBi)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
