@@ -43,7 +43,8 @@
               <ContextMenu>
                   <items>
                       <MenuItem mnemonicParsing="false" onAction="#chiTietThietBi" text="Xem thông tin thiết bị" />
-                      <MenuItem mnemonicParsing="false" text="Chỉnh sửa thông tin nhân khẩu" />
+                      <MenuItem mnemonicParsing="false" onAction="#chinhSuaThietBi" text="Chỉnh sửa thông tin thiết bị" />
+                      <MenuItem mnemonicParsing="false" onAction="#xoaThietBi" text="Xóa thiết bị" />
                   </items>
               </ContextMenu>
           </contextMenu>

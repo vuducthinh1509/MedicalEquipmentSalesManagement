@@ -61,18 +61,26 @@ public class KhoHangController implements Initializable {
     @SneakyThrows
     @FXML
     private void findF(MouseEvent event) {
-        thietBiList.clear();
+        ObservableList<ThietBi> thietBiList_temp = FXCollections.observableArrayList();
         duLieuTraCuu=duLieuF.getText();
         String truongTraCuu = truongTraCuuF.getValue();
         try{
             if(truongTraCuu.equals("Tên")){
-                thietBiList.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_tenThietBi, duLieuTraCuu));
+                thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_tenThietBi, duLieuTraCuu));
             } else if(truongTraCuu.equals("Model")){
-                thietBiList.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_modelThietBi,duLieuTraCuu));
+                thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_modelThietBi,duLieuTraCuu));
             }else if(truongTraCuu.equals("Trạng thái")){
-                thietBiList.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi,duLieuTraCuu));
+                thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi,duLieuTraCuu));
             }
-            table.setItems(thietBiList);
+            if(thietBiList_temp.size()==0){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Không tìm thấy kết quả khả dụng");
+                alert.show();
+            }
+            else {
+                table.setItems(thietBiList_temp);
+            }
         }
         catch (NullPointerException ex){
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -88,8 +96,6 @@ public class KhoHangController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDataThietBi();
     }
-
-
     ObservableList<String> listTruongTraCuu = FXCollections.observableArrayList("Tên","Model","Trạng thái");
     @FXML
     private void loadDataThietBi() {
@@ -110,18 +116,17 @@ public class KhoHangController implements Initializable {
     }
 
     public void chiTietThietBi(ActionEvent e) throws IOException {
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/KhoHang/chiTietThietBi.fxml"));
         Parent chiTietTB  = loader.load();
         ChiTietThietBiController chiTietTBController = loader.getController();
         ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
         if (selectedThietBi == null) {
-            Alert m = new Alert(Alert.AlertType.INFORMATION);
-            m.setTitle("Thông báo!");
-            m.setHeaderText("Không thiết bị nào được chọn.");
-            m.setContentText("Vui lòng chọn lại.");
-            m.show();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không thiết bị nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
             return;
         }
         chiTietTBController.setThietBi(selectedThietBi);
@@ -141,5 +146,50 @@ public class KhoHangController implements Initializable {
         Scene scene = new Scene(themThietBi);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void chinhSuaThietBi (ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/KhoHang/chinhSuaThietBi.fxml"));
+        Parent chinhSuaThietBiView = loader.load();
+        ChinhSuaThietBiController controller = loader.getController();
+        ThietBi selected = table.getSelectionModel().getSelectedItem();
+        if(selected == null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không thiết bị nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
+            return;
+        }
+        controller.setChinhSuaThietBi(selected);
+        Stage stage = new Stage();
+        stage.setTitle("CHỈNH SỬA NHÂN KHẨU");
+        Scene scene = new Scene(chinhSuaThietBiView);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void xoaThietBi(ActionEvent e) throws IOException {
+        ThietBi thietBi = table.getSelectionModel().getSelectedItem();
+        if (thietBi == null) {
+            Alert m = new Alert(Alert.AlertType.INFORMATION);
+            m.setTitle("Thông báo!");
+            m.setHeaderText("Không nhân khẩu nào được chọn.");
+            m.setContentText("Vui lòng chọn lại.");
+            m.show();
+            return;
+        }
+        int _idThietBi= thietBi.getIdThietBi();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa thiết bị");
+        alert.setHeaderText("Bạn có thực sự muốn xóa thiết bị này ?");
+        alert.setContentText("Nếu bạn đồng ý xóa dữ liệu sẽ bị xóa và không thể khôi phục!");
+        Optional<ButtonType> option = alert.showAndWait();
+        if (option.get() == null) {}
+        else if (option.get() == ButtonType.OK) {
+            thietBiRepo.xoaThietBi(_idThietBi);
+            loadDataThietBi();
+        } else if (option.get() == ButtonType.CANCEL) {}
+
     }
 }

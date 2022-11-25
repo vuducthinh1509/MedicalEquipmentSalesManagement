@@ -143,4 +143,50 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    @Override
+    public void updateThietBi(int idThietBi, ThietBi thietBi){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE + idThietBi);
+            pstmt.setString(1, thietBi.getTenThietBi());
+            pstmt.setString(2, thietBi.getModelThietBi());
+            pstmt.setString(3, thietBi.getSerialThietBi());
+            pstmt.setString(4, thietBi.getXuatXuThietBi());
+            pstmt.setString(5, thietBi.getMauThietBi());
+            pstmt.setString(6, thietBi.getKichThuocThietBi());
+            pstmt.setString(7, thietBi.getGiaThietBi());
+            pstmt.setString(8, thietBi.getMaNVNguoiNhap());
+            pstmt.setDate(9, thietBi.getNgayNhapThietBi());
+            pstmt.setString(10, thietBi.getMaNVNguoiXuat());
+            pstmt.setString(11, thietBi.getThoiGianBaoHanh());
+            pstmt.setString(12, thietBi.getTrangThaiThietBi());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @Override
+    public void xoaThietBi(int idThietBi){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_DELETE_ThietBi);
+            pstmt.setInt(1, idThietBi );
+            pstmt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -12,4 +12,8 @@ public interface ThietBiRepository {
 
     public ThietBi chiTietThietBi(int _idThietBi);
     public ObservableList<ThietBi> timThietBiTheoTruong(String queryTheoTruong,String duLieuTraCuu);
+
+    public void updateThietBi(int idThietBi, ThietBi thietBi);
+
+    public void xoaThietBi(int idThietBi);
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -58,5 +59,20 @@ public class ThietBi {
         this.trangThaiThietBi = trangThai;
         this.maNVNguoiNhap = maNVNhap;
         this.ngayNhapThietBi = Date.valueOf(ngayNhap);
+    }
+
+    public ThietBi(String tenThietBi, String modelThietBi, String serialThietBi, String xuatXuThietBi, String mauThietBi,String kichThuocThietBi, String giaThietBi, String maNVNguoiNhap, Date ngayNhapThietBi, String maNVNguoiXuat, String thoiGianBaoHanh, String trangThaiThietBi){
+        this.tenThietBi = tenThietBi;
+        this.modelThietBi = modelThietBi;
+        this.serialThietBi = serialThietBi;
+        this.xuatXuThietBi = xuatXuThietBi;
+        this.mauThietBi = mauThietBi;
+        this.kichThuocThietBi = kichThuocThietBi;
+        this.giaThietBi = giaThietBi;
+        this.maNVNguoiNhap = maNVNguoiNhap;
+        this.ngayNhapThietBi = ngayNhapThietBi;
+        this.maNVNguoiXuat = maNVNguoiXuat;
+        this.thoiGianBaoHanh = thoiGianBaoHanh;
+        this.trangThaiThietBi = trangThaiThietBi;
     }
 }

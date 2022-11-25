@@ -74,7 +74,9 @@ public class ChiTietThietBiController {
         nhanVien = nhanVienRepo.getInformationUserByMaNV(thietBi.getMaNVNguoiXuat());
         tenNVXuatLabel.setText(nhanVien.getHoTen());
         maNVXuatLabel.setText(thietBi.getMaNVNguoiXuat());
-        ngayXuatLabel.setText(String.valueOf(thietBi.getNgayXuatThietBi()));
+        if(thietBi.getNgayXuatThietBi()!=null){
+            ngayXuatLabel.setText(String.valueOf(thietBi.getNgayXuatThietBi()));
+        }
         trangThaiLabel.setText(thietBi.getTrangThaiThietBi());
     }
     @FXML
