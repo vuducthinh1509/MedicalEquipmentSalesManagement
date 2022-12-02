@@ -1,11 +1,16 @@
 package utility;
 
 public class SQLCommand {
+
+    // Người Dùng
     public static String Nguoi_Dung_Query_Dang_Nhap = "SELECT * FROM nguoidung where username = ? AND password = ?";
 
+    // Nhân viên
     public static String Nhan_Vien_QUERY_LAY_THONG_TIN = "SELECT * FROM nhanvien WHERE id = ? ";
 
     public static String Nhan_Vien_QUERY_LAY_THONG_TIN_BY_MaNV = "SELECT * FROM nhanvien WHERE maNV = ? ";
+
+    //Thiết bị
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_id = "SELECT * FROM thietbi WHERE idThietBi = ? ";
 
@@ -39,5 +44,20 @@ public class SQLCommand {
             "`maNVNguoiXuat`=?," +
             "`thoiGianBaoHanh`=?," +
             "`trangThaiThietBi`=? WHERE idThietBi = ";
+    public static String Thiet_Bi_QUERY_getCountModel = "select modelThietBi,xuatXuThietBi,tenThietBi,giaThietBi , count(*) from thietbi\n" +
+            "where trangThaiThietBi = 'Trong kho'\n" +
+            "group by modelThietBi;";
 
+    // Khách hàng
+    public static String KhachHang_QUERY_INSERT =  "INSERT INTO `khachhang` (`tenKhachHang`,`sdtKhachHang`,`diaChiKhachHang`) VALUES (?,?,?)";
+
+    public static String KhachHang_QUERY_GETALLDATA = "select * from khachhang";
+
+    public static String KhachHang_QUERY_UPDATE =  "UPDATE `khachhang` SET " +
+            "`tenKhachHang`=?," +
+            "`sdtKhachHang`=?," +
+            "`diaChiKhachHang`=?  WHERE idKhachHang  = ";
+
+    public static String KhachHang_DELETE_KhachHang = "DELETE FROM `khachhang` WHERE idKhachHang = ?";
 }
+

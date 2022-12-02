@@ -57,3 +57,17 @@ CONSTRAINT PK_thiet_bi PRIMARY KEY(idThietBi)
 INSERT INTO ThietBi(tenThietBi,modelThietBi,serialThietBi,xuatXuThietBi,mauThietBi,kichThuocThietBi, maNVNguoiNhap,thoiGianBaoHanh,trangThaiThietBi,giaThietBi) VALUES
 ("Máy đo SP02 Jumper 5000D","Jumper500D","DT000000","Việt Nam","Trắng Đen","62.2x37x33.1mm","NV02","2 năm","Trong kho","650.000VND"),
 ("Máy đo huyết áp bắp tay tự động Omron Hem-7121","Hem7121","DT000001","Canada","Trắng","103x80x129mm","NV01","3 năm","Trong kho","1.190.000VND");
+
+
+
+create table KhachHang(
+    idKhachHang INT NOT NULL AUTO_INCREMENT,
+    tenKhachHang nvarchar(255) NOT NULL,
+    sdtKhachHang varchar(255) NOT NULL,
+    diaChiKhachHang nvarchar(255) NOT NULL,
+    CONSTRAINT PK_khach_hang PRIMARY KEY(idKhachHang)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO KhachHang(tenKhachHang,sdtKhachHang,diaChiKhachHang) VALUES
+("Nguyễn Long Vũ","0123456789","Hà Nội, Việt Nam"),
+("Nguyễn Anh Đức","0357896541","Thủ Thiêm, Hồ Chí Minh, Việt Nam");

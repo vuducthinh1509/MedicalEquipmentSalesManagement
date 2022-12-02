@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1060.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhachHang.KhachHangController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản lý khách hàng" textAlignment="CENTER">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <Pane layoutX="263.0" layoutY="78.0" prefHeight="50.0" prefWidth="457.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+            <children>
+                <TextField fx:id="duLieuSearch" layoutX="7.0" prefHeight="50.0" prefWidth="194.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <ComboBox fx:id="truongSearch" layoutX="246.0" layoutY="1.0" prefHeight="49.0" prefWidth="213.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
+            </children>
+        </Pane>
+        <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="736.0" layoutY="78.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../image/icons8-search.gif" />
+            </image>
+        </ImageView>
+      <TableView fx:id="table" layoutX="172.0" layoutY="145.0" onMouseClicked="#setOnMouseClicked" prefHeight="281.0" prefWidth="693.0">
+        <columns>
+          <TableColumn fx:id="idColumn" editable="false" prefWidth="75.0" text="ID KH" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="133.0" sortable="false" text="Tên KH" />
+            <TableColumn fx:id="phoneColumn" editable="false" prefWidth="149.0" sortable="false" text="Phone KH" />
+            <TableColumn fx:id="addressColumn" editable="false" prefWidth="336.0" sortable="false" text="Địa chỉ KH" />
+        </columns>
+      </TableView>
+      <Label layoutX="266.0" layoutY="459.0" text="Tên khách hàng:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="563.0" layoutY="459.0" text="Phone khách hàng:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="266.0" layoutY="557.0" text="Địa chỉ khách hàng:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="nameLabel" layoutX="266.0" layoutY="500.0" prefHeight="44.0" prefWidth="269.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <TextField fx:id="phoneLabel" layoutX="563.0" layoutY="500.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <TextField fx:id="addressLabel" layoutX="266.0" layoutY="602.0" prefHeight="44.0" prefWidth="546.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Button fx:id="editButton" layoutX="266.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#editButtonOnClicked" text="Chỉnh sửa thông tin">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="addButton" layoutX="492.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#addButtonOnClicked" text="Thêm khách hàng">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="saveButton" layoutX="703.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="44.0" prefWidth="117.0" text="Lưu">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label fx:id="notificationLabel" layoutX="29.0" layoutY="565.0" prefHeight="74.0" prefWidth="202.0" textFill="#b91515" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="531.0" prefHeight="27.0" prefWidth="101.0" text="Thông báo:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteButton" layoutX="890.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="44.0" prefWidth="115.0" text="Xóa" />
+      <Button fx:id="reloadButton" layoutX="890.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#reloadPane" prefHeight="44.0" prefWidth="115.0" text="Tải lại trang" />
+    </children>
+</Pane>
