@@ -1,26 +1,18 @@
 package controller.KhachHang;
 
-import entity.Item;
 import entity.KhachHang;
-import entity.ThietBi;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.KhachHangRepository;
 import repository.KhachHangRepository_impl;
-import utility.SQLCommand;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
