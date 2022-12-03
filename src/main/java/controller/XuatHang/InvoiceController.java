@@ -5,6 +5,7 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InvoiceController implements Initializable {
+public class InvoiceController {
     //table
     @FXML
     private TableView<Item> table;
@@ -69,25 +70,28 @@ public class InvoiceController implements Initializable {
     private TextField totalLabel;
     /* Các biến */
 
+    static Integer subtotal = 0;
+
     ObservableList<Item> itemList = FXCollections.observableArrayList();
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadDataPane();
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        loadDataPane();
+//    }
     public void loadDataPane(){
-        if(itemList.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Cảnh báo!");
-            alert.setHeaderText("Không có item nào được chọn");
-            alert.showAndWait();
+        for(Item item : itemList){
+            Integer var = item.getSoLuongItem()*item.getGiaItem();
+            item.setTotalPriceItem(var);
+            subtotal += var;
         }
         table.setItems(itemList);
+        subTotalLabel.setText(String.valueOf(subtotal));
         sttColumn.setCellValueFactory(column-> new ReadOnlyObjectWrapper<Number>(table.getItems().indexOf(column.getValue())+1));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("tenItem"));
         modelColumn.setCellValueFactory(new PropertyValueFactory<>("modelItem"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("soLuongItem"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("giaItem"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<>("totalPriceItem"));
     }
 
     @FXML

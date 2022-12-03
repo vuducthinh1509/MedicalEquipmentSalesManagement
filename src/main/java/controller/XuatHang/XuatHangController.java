@@ -145,7 +145,7 @@ public class XuatHangController implements Initializable {
     @FXML
     public void loadItemInCart(){
         for(Item item:selectedItemList){
-            item.setTotalPriceItem(item.getSoLuongItem()* item.getGiaItem());
+            item.setTotalPriceItem(item.getSoLuongItem() * item.getGiaItem());
         }
         tongTienThanhToanLabel.setText(String.valueOf(tinhTongGiaTriDonHang()));
         tableCart.setItems(selectedItemList);
@@ -227,7 +227,10 @@ public class XuatHangController implements Initializable {
         loader.setLocation(getClass().getResource("/view/XuatHang/invoicePane.fxml"));
         Parent invoicePane = loader.load();
         InvoiceController invoiceController = loader.getController();
-        invoiceController.itemList = selectedItemList;
+        for(Item item : selectedItemList){
+            invoiceController.itemList.add(item);
+        }
+        invoiceController.loadDataPane();
         Stage stage = new Stage();
         stage.setTitle("Đơn hàng");
         Scene scene = new Scene(invoicePane);
