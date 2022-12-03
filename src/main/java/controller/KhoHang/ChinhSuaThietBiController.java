@@ -72,7 +72,7 @@ public class ChinhSuaThietBiController {
         }
         maNVNhapLabel.setText(thietBi.getMaNVNguoiNhap());
         thoiGianBaoHanhLabel.setText(thietBi.getThoiGianBaoHanh());
-        giaLabel.setText(thietBi.getGiaThietBi());
+        giaLabel.setText(String.valueOf(thietBi.getGiaThietBi()));
         trangThaiLabel.setText(thietBi.getTrangThaiThietBi());
         if(thietBi.getNgayXuatThietBi()!=null){
             ngayXuatLabel.setValue(LocalDate.parse(String.valueOf(thietBi.getNgayXuatThietBi())));
@@ -89,7 +89,7 @@ public class ChinhSuaThietBiController {
         loadDuLieuChinhSua();
     }
     private void update(){
-        thietBiRepo.updateThietBi(idThietBi,new ThietBi(tenLabel.getText(),modelLabel.getText(),serialLabel.getText(),xuatXuLabel.getText(),mauLabel.getText(), kichThuocLabel.getText(),giaLabel.getText(),maNVNhapLabel.getText(),Date.valueOf(ngayNhapLabel.getValue().toString()),maNVXuatLabel.getText(),thoiGianBaoHanhLabel.getText(),trangThaiLabel.getText()));
+        thietBiRepo.updateThietBi(idThietBi,new ThietBi(tenLabel.getText(),modelLabel.getText(),serialLabel.getText(),xuatXuLabel.getText(),mauLabel.getText(), kichThuocLabel.getText(),Integer.valueOf(giaLabel.getText()),maNVNhapLabel.getText(),Date.valueOf(ngayNhapLabel.getValue().toString()),maNVXuatLabel.getText(),thoiGianBaoHanhLabel.getText(),trangThaiLabel.getText()));
     }
 
     @FXML

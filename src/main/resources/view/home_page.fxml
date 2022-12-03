@@ -63,6 +63,14 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
+            <Button fx:id="customerButton" layoutX="20.0" layoutY="510.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #2F333D;" text="Khách Hàng" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
                 <Button fx:id="managementButton" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #2F333D;" text="Quản lý nhân viên" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="20.0" />

@@ -65,7 +65,7 @@ public class ChiTietThietBiController {
         kichThuocLabel.setText(thietBi.getKichThuocThietBi());
         xuatXuLabel.setText(thietBi.getXuatXuThietBi());
         thoiGianBaoHanhLabel.setText(thietBi.getThoiGianBaoHanh());
-        giaLabel.setText(thietBi.getGiaThietBi());
+        giaLabel.setText(String.valueOf(thietBi.getGiaThietBi()));
         trangThaiLabel.setText(thietBi.getTrangThaiThietBi());
         nhanVien = nhanVienRepo.getInformationUserByMaNV(thietBi.getMaNVNguoiNhap());
         tenNVNhapLabel.setText(nhanVien.getHoTen());

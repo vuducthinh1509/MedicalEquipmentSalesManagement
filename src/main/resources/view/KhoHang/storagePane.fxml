@@ -51,7 +51,7 @@
       </TableView>
       <Button layoutX="879.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="39.0" prefWidth="151.0" text="Tải lại bảng" />
       <Button fx:id="addProductButton" layoutX="879.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="39.0" prefWidth="151.0" text="Thêm thiết bị" />
-         <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="779.0" layoutY="79.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="773.0" layoutY="79.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
              <image>
                  <Image url="@../../image/icons8-search.gif" />
              </image>

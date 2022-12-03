@@ -34,7 +34,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
                 thietBi.setXuatXuThietBi(rs.getString("xuatXuThietBi"));
                 thietBi.setMauThietBi(rs.getString("mauThietBi"));
                 thietBi.setKichThuocThietBi(rs.getString("kichThuocThietBi"));
-                thietBi.setGiaThietBi(rs.getString("giaThietBi"));
+                thietBi.setGiaThietBi(rs.getInt("giaThietBi"));
                 thietBi.setMaNVNguoiNhap(rs.getString("maNVNguoiNhap"));
                 thietBi.setNgayNhapThietBi(rs.getDate("ngayNhapThietBi"));
                 thietBi.setMaNVNguoiXuat(rs.getString("maNVNguoiXuat"));
@@ -54,7 +54,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
         } return thietBi;
     }
     @Override
-        public ObservableList<ThietBi> loadDataThietBi(){
+    public ObservableList<ThietBi> loadDataThietBi(){
         ObservableList<ThietBi> f = FXCollections.observableArrayList();
         try {
             conn = DbUtil.getInstance().getConnection();
@@ -67,7 +67,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
                 String serialThietBi = rs.getString("serialThietBi");
                 String mauThietBi = rs.getString("mauThietBi");
                 String kichThuocThietBi = rs.getString("kichThuocThietBi");
-                String giaThietBi = rs.getString("giaThietBi");
+                Integer giaThietBi = rs.getInt("giaThietBi");
                 String trangThaiThietBi = rs.getString("trangThaiThietBi");
                 f.add(new ThietBi(idThietBi,tenThietBi,modelThietBi,serialThietBi,mauThietBi,kichThuocThietBi,giaThietBi,trangThaiThietBi));
             }
@@ -99,7 +99,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
                 String serialThietBi = rs.getString("serialThietBi");
                 String mauThietBi = rs.getString("mauThietBi");
                 String kichThuocThietBi = rs.getString("kichThuocThietBi");
-                String giaThietBi = rs.getString("giaThietBi");
+                Integer giaThietBi = rs.getInt("giaThietBi");
                 String trangThai = rs.getString("trangThaiThietBi");
                 f.add(new ThietBi(idThietBi,tenThietBi,modelThietBi,serialThietBi,mauThietBi,kichThuocThietBi,giaThietBi,trangThai));
             }
@@ -116,6 +116,31 @@ public class ThietBiRepository_impl implements ThietBiRepository {
         }
     }
 
+    public ThietBi layThongTinThietBiTheoModel(String model){
+        ThietBi thietBi = new ThietBi();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_modelThietBi);
+            pstmt.setString(1,model);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                thietBi.setModelThietBi(rs.getString("modelThietBi"));
+                thietBi.setXuatXuThietBi(rs.getString("xuatXuThietBi"));
+                thietBi.setTenThietBi(rs.getString("tenThietBi"));
+                thietBi.setGiaThietBi(rs.getInt("giaThietBi"));
+            }
+            return thietBi;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return thietBi;
+    }
+
     @Override
     public void themThietBi(ThietBi thietBi){
         try {
@@ -128,7 +153,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             pstmt.setString(5, thietBi.getThoiGianBaoHanh());
             pstmt.setString(6, thietBi.getMauThietBi());
             pstmt.setString(7, thietBi.getKichThuocThietBi());
-            pstmt.setString(8, thietBi.getGiaThietBi());
+            pstmt.setInt(8, thietBi.getGiaThietBi());
             pstmt.setString(9, thietBi.getTrangThaiThietBi());
             pstmt.setString(10, thietBi.getMaNVNguoiNhap());
             pstmt.setString(11, String.valueOf(thietBi.getNgayNhapThietBi()));
@@ -155,7 +180,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             pstmt.setString(4, thietBi.getXuatXuThietBi());
             pstmt.setString(5, thietBi.getMauThietBi());
             pstmt.setString(6, thietBi.getKichThuocThietBi());
-            pstmt.setString(7, thietBi.getGiaThietBi());
+            pstmt.setInt(7, thietBi.getGiaThietBi());
             pstmt.setString(8, thietBi.getMaNVNguoiNhap());
             pstmt.setDate(9, thietBi.getNgayNhapThietBi());
             pstmt.setString(10, thietBi.getMaNVNguoiXuat());

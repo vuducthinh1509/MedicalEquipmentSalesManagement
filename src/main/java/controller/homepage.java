@@ -50,6 +50,8 @@ public class homepage implements Initializable {
     private Button managementButton;
 
     @FXML
+    private Button customerButton;
+    @FXML
     private Button logOutButton;
 
     @FXML
@@ -93,11 +95,9 @@ public class homepage implements Initializable {
     public void exportButtonButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
         exportButton.setStyle("-fx-background-color: #757C95;");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("export button");
-        alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
-//        mainPane.getChildren().add(trangChuPane);
+        mainPane.getChildren().clear();
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/XuatHang/exportPane.fxml"));
+        mainPane.getChildren().add(trangChuPane);
     }
 
     public void repairButtonButtonOnAction(ActionEvent event) throws IOException{
@@ -128,6 +128,14 @@ public class homepage implements Initializable {
         alert.show();
 //        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
 //        mainPane.getChildren().add(trangChuPane);
+    }
+
+    public void customerButtonOnAction(ActionEvent event) throws IOException{
+        resetBackgroundButton();
+        customerButton.setStyle("-fx-background-color: #757C95;");
+        mainPane.getChildren().clear();
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/KhachHang/customerPane.fxml"));
+        mainPane.getChildren().add(trangChuPane);
     }
 
     public void dangXuatButtonOnAction(ActionEvent event) throws IOException {

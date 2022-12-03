@@ -57,11 +57,11 @@ public class ThemThietBiController {
         String _ten = tenLabel.getText();
         String _model = modelLabel.getText();
         String _serial = serialLabel.getText();
-        String _gia = giaLabel.getText();
+        Integer _gia = Integer.valueOf(giaLabel.getText());
         String _ngayNhap = String.valueOf(ngayNhapLabel.getValue());
         String _maNVNhap = maNVNhapLabel.getText();
 
-        if ( _ten.isEmpty() || _model.isEmpty() || _serial.isEmpty()||_gia.isEmpty()|| _ngayNhap.isEmpty() || _maNVNhap.isEmpty()) {
+        if ( _ten.isEmpty() || _model.isEmpty() || _serial.isEmpty()||_gia == 0 || _ngayNhap.isEmpty() || _maNVNhap.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Cần nhập đủ các trường dữ liệu");
@@ -85,7 +85,7 @@ public class ThemThietBiController {
         String thoiGianBaoHanh = thoiGianBaoHanhLabel.getText();
         String mau = mauLabel.getText();
         String kichThuoc = kichThuocLabel.getText();
-        String gia = giaLabel.getText();
+        int gia = Integer.valueOf(giaLabel.getText());
         String trangThai = "Trong kho";
         String maNVNhap = maNVNhapLabel.getText();
         String ngayNhap = String.valueOf(ngayNhapLabel.getValue());

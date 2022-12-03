@@ -22,7 +22,7 @@ public class ThietBi {
     private String xuatXuThietBi;
     private String mauThietBi;
     private String kichThuocThietBi;
-    private String giaThietBi;
+    private Integer giaThietBi;
 
     private String maNVNguoiNhap;
 
@@ -36,7 +36,7 @@ public class ThietBi {
 
     private String trangThaiThietBi;
 
-    public ThietBi(int idThietBi,String tenThietBi, String modelThietBi,String serialThietBi,String mauThietBi, String kichThuocThietBi,String giaThietBi,String trangThaiThietBi){
+    public ThietBi(int idThietBi,String tenThietBi, String modelThietBi,String serialThietBi,String mauThietBi, String kichThuocThietBi,Integer giaThietBi,String trangThaiThietBi){
         this.idThietBi = idThietBi;
         this.tenThietBi = tenThietBi;
         this.modelThietBi = modelThietBi;
@@ -47,7 +47,7 @@ public class ThietBi {
         this.trangThaiThietBi = trangThaiThietBi;
     }
 
-    public ThietBi(String ten,String model,String serial,String xuatXu, String thoiGianBaoHanh,String mau,String kichThuoc,String gia,String trangThai,String maNVNhap, String ngayNhap){
+    public ThietBi(String ten,String model,String serial,String xuatXu, String thoiGianBaoHanh,String mau,String kichThuoc,Integer gia,String trangThai,String maNVNhap, String ngayNhap){
         this.tenThietBi = ten;
         this.modelThietBi = model;
         this.serialThietBi = serial;
@@ -61,7 +61,7 @@ public class ThietBi {
         this.ngayNhapThietBi = Date.valueOf(ngayNhap);
     }
 
-    public ThietBi(String tenThietBi, String modelThietBi, String serialThietBi, String xuatXuThietBi, String mauThietBi,String kichThuocThietBi, String giaThietBi, String maNVNguoiNhap, Date ngayNhapThietBi, String maNVNguoiXuat, String thoiGianBaoHanh, String trangThaiThietBi){
+    public ThietBi(String tenThietBi, String modelThietBi, String serialThietBi, String xuatXuThietBi, String mauThietBi,String kichThuocThietBi, Integer giaThietBi, String maNVNguoiNhap, Date ngayNhapThietBi, String maNVNguoiXuat, String thoiGianBaoHanh, String trangThaiThietBi){
         this.tenThietBi = tenThietBi;
         this.modelThietBi = modelThietBi;
         this.serialThietBi = serialThietBi;

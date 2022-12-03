@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class login {
 
-    public static int idNhanVien = 0;
+    public static int idNhanVien = -1;
     public static int role =-1;
     @FXML
     private Label loginLabel;
@@ -36,7 +36,7 @@ public class login {
         if (username.getText().isBlank() == false && password.getText().isBlank() == false) {
             if (NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId() != null) {
                 idNhanVien = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId();
-                role=NguoiDungRepo.dangnhap(username.getText(), password.getText()).getRole();
+                role = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getRole();
 //                FXMLLoader loader = new FXMLLoader();
 //                loader.setLocation(getClass().getResource("/view/home_page.fxml"));
 //                Parent chinhSuaNKView = loader.load();

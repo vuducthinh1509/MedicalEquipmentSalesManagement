@@ -40,7 +40,7 @@ public class KhoHangController implements Initializable {
     @FXML
     private TableColumn<ThietBi,String>  kichThuocColumn;
     @FXML
-    private TableColumn<ThietBi,String>  giaColumn;
+    private TableColumn<ThietBi,Double>  giaColumn;
     @FXML
     private TableColumn<ThietBi,String>  trangThaiColumn;
     @FXML
@@ -62,7 +62,7 @@ public class KhoHangController implements Initializable {
     @FXML
     private void findF(MouseEvent event) {
         ObservableList<ThietBi> thietBiList_temp = FXCollections.observableArrayList();
-        duLieuTraCuu=duLieuF.getText();
+        duLieuTraCuu = duLieuF.getText();
         String truongTraCuu = truongTraCuuF.getValue();
         try{
             if(truongTraCuu.equals("Tên")){
@@ -83,11 +83,13 @@ public class KhoHangController implements Initializable {
             }
         }
         catch (NullPointerException ex){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(null);
-            alert.setContentText("Bạn cần chọn trường tra cứu");
-            alert.show();
-            table.setItems(thietBiList);
+            thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_tenThietBi, duLieuTraCuu));
+            table.setItems(thietBiList_temp);
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//            alert.setHeaderText(null);
+//            alert.setContentText("Bạn cần chọn trường tra cứu");
+//            alert.show();
+//            table.setItems(thietBiList);
             return;
         }
     }

@@ -16,4 +16,6 @@ public interface ThietBiRepository {
     public void updateThietBi(int idThietBi, ThietBi thietBi);
 
     public void xoaThietBi(int idThietBi);
+
+    public ThietBi layThongTinThietBiTheoModel(String model);
 }
