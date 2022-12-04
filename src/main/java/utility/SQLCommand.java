@@ -51,6 +51,10 @@ public class SQLCommand {
     // Khách hàng
     public static String KhachHang_QUERY_INSERT =  "INSERT INTO `khachhang` (`tenKhachHang`,`sdtKhachHang`,`diaChiKhachHang`) VALUES (?,?,?)";
 
+
+    public static String KhachHang_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM khachhang WHERE idKhachHang = ?";
+
+    public static String KhachHang_QUERY_LAY_THONG_TIN_BY_PHONE = "SELECT * FROM khachhang WHERE sdtKhachHang = ?";
     public static String KhachHang_QUERY_GETALLDATA = "select * from khachhang";
 
     public static String KhachHang_QUERY_UPDATE =  "UPDATE `khachhang` SET " +
@@ -59,5 +63,10 @@ public class SQLCommand {
             "`diaChiKhachHang`=?  WHERE idKhachHang  = ";
 
     public static String KhachHang_DELETE_KhachHang = "DELETE FROM `khachhang` WHERE idKhachHang = ?";
+
+    public static String KhachHang_QUERY_LAY_NEXT_AUTOINDEX = "SELECT AUTO_INCREMENT\n" +
+            "FROM information_schema.TABLES\n" +
+            "WHERE TABLE_SCHEMA = \"demo\"\n" +
+            "AND TABLE_NAME = \"khachhang\"";
 }
 

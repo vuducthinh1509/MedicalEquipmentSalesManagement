@@ -78,7 +78,7 @@ public class KhachHangController implements Initializable {
 
     static boolean isSelectionMode = true;
 
-    ObservableList<String> listTruongSearch = FXCollections.observableArrayList("ID Khách Hàng", "Tên Khách Hàng");
+    ObservableList<String> listTruongSearch = FXCollections.observableArrayList("ID Khách Hàng", "Tên Khách Hàng","Số điện thoại");
 
     @SneakyThrows
     @Override
@@ -262,6 +262,15 @@ public class KhachHangController implements Initializable {
             } else if (fieldSearch.equals("Tên Khách Hàng")) {
                 for (KhachHang currentKhachHang : khachHangList) {
                     if ((currentKhachHang.getTenKhachHang().toLowerCase()).contains(textSearch)) {
+                        KhachHang clone = new KhachHang();
+                        clone.cloneKhachHang(currentKhachHang);
+                        searchList.add(clone);
+                    }
+                }
+                table.setItems(searchList);
+            } else if (fieldSearch.equals("Số điện thoại")){
+                for (KhachHang currentKhachHang : khachHangList) {
+                    if ((currentKhachHang.getPhoneKhachHang().toLowerCase()).contains(textSearch)) {
                         KhachHang clone = new KhachHang();
                         clone.cloneKhachHang(currentKhachHang);
                         searchList.add(clone);

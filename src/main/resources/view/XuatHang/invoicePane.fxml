@@ -23,12 +23,24 @@
       </Pane>
       <Pane layoutX="356.0" layoutY="105.0" prefHeight="247.0" prefWidth="348.0" style="-fx-border-color: #000000;">
          <children>
-            <Label layoutX="13.0" layoutY="14.0" text="ID:" />
-            <Label layoutX="13.0" layoutY="62.0" prefHeight="27.0" prefWidth="42.0" text="Tên:" />
-            <Label layoutX="11.0" layoutY="107.0" text="Địa chỉ:" />
-            <Label layoutX="13.0" layoutY="157.0" text="Phone:" />
-            <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" text="Tìm theo ID" />
-            <Button fx:id="addCtmLabel" layoutX="142.0" layoutY="200.0" mnemonicParsing="false" text="Thêm mới" />
+            <Label layoutX="13.0" layoutY="14.0" text="ID:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="13.0" layoutY="62.0" prefHeight="27.0" prefWidth="42.0" text="Tên:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="11.0" layoutY="107.0" text="Địa chỉ:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="13.0" layoutY="157.0" text="Phone:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="142.0" text="Tìm bằng SĐT" />
+            <Button fx:id="addCtmButton" layoutX="181.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="142.0" text="Thêm mới" />
             <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="233.0" />
             <TextField fx:id="nameCtmLabel" layoutX="87.0" layoutY="56.0" prefHeight="39.0" prefWidth="233.0" />
             <TextField fx:id="addressCtmLabel" layoutX="87.0" layoutY="101.0" prefHeight="39.0" prefWidth="233.0" />
@@ -68,7 +80,7 @@
          </children>
       </Pane>
       <Label layoutX="806.0" layoutY="179.0" text="Thông tin đơn hàng" />
-      <Button fx:id="exportButton" layoutX="761.0" layoutY="650.0" mnemonicParsing="false" text="Xuất hàng" />
+      <Button fx:id="exportButton" layoutX="761.0" layoutY="650.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" text="Xuất hàng" />
       <Button fx:id="cancelButton" layoutX="897.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="39.0" prefWidth="87.0" text="Hủy" />
    </children>
 </Pane>

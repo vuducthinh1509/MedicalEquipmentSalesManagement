@@ -5,11 +5,15 @@ import javafx.collections.ObservableList;
 
 public interface KhachHangRepository {
     public void addCustomer(KhachHang khachHang);
-    public void getInformationCustomerByID(Integer id);
+    public KhachHang getInformationCustomerByID(Integer id);
+
+    public KhachHang getInformationCustomerByPhone(String phone);
 
     public ObservableList<KhachHang> getAllDataCustomer();
 
     public void updateDataCustomer(KhachHang khachHang);
 
     public void deleteCustomer(int id);
+
+    public Integer getCountCustomer();
 }

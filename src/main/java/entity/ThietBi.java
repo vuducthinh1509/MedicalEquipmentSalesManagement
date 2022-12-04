@@ -75,4 +75,5 @@ public class ThietBi {
         this.thoiGianBaoHanh = thoiGianBaoHanh;
         this.trangThaiThietBi = trangThaiThietBi;
     }
+
 }

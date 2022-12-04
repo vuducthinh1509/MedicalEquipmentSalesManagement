@@ -19,8 +19,6 @@ public class main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
-        primaryStage.setWidth(600);
-        primaryStage.setHeight(400);
         primaryStage.setResizable(false);
         primaryStage.show();
     }

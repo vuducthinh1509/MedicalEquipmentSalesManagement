@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -8,23 +9,70 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login">
-    <children>
-        <ImageView fitHeight="203.0" fitWidth="297.0" layoutX="39.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../image/avatar--login.jpg" />
-            </image>
-        </ImageView>
-        <Label layoutX="359.0" layoutY="54.0" text="Login System" textFill="#b53c3c">
-            <font>
-                <Font size="25.0" />
-            </font>
-        </Label>
-        <Label layoutX="259.0" layoutY="152.0" text="Username:" />
-        <Label layoutX="259.0" layoutY="221.0" text="Password:" />
-        <TextField fx:id="username" layoutX="352.0" layoutY="146.0" />
-        <PasswordField fx:id="password" layoutX="352.0" layoutY="215.0" />
-        <Button fx:id="buttonLogin" layoutX="414.0" layoutY="283.0" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" text="Login" />
-        <Label fx:id="loginLabel" alignment="CENTER" layoutX="292.0" layoutY="99.0" prefHeight="27.0" prefWidth="282.0" textAlignment="CENTER" textFill="#d71919" />
-    </children>
-</AnchorPane>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login" >
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to right, #66ccff 0%, #ffffff 100%);">
+         <children>
+            <Pane prefHeight="38.0" prefWidth="400.0" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo2.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="56.0" prefWidth="400.0" />
+            <ImageView fitHeight="276.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/avatar6.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox prefHeight="600.0" prefWidth="483.0">
+         <children>
+            <Pane prefHeight="144.0" prefWidth="482.0" />
+            <HBox prefHeight="60.0" prefWidth="482.0">
+               <children>
+                  <Pane prefHeight="69.0" prefWidth="85.0">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/avatar7.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="username" prefHeight="60.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="60.0" layoutY="260.0" prefHeight="60.0" prefWidth="482.0">
+               <children>
+                  <Pane prefHeight="69.0" prefWidth="85.0">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/key.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="270.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);" />
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" prefHeight="60.0" prefWidth="382.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Login" textFill="#f2eeee">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Pane prefHeight="160.0" prefWidth="482.0" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

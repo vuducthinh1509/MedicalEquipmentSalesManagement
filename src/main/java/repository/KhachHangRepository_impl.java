@@ -1,6 +1,7 @@
 package repository;
 
 import entity.KhachHang;
+import entity.NhanVien;
 import entity.ThietBi;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,8 +37,54 @@ public class KhachHangRepository_impl implements KhachHangRepository {
         }
     }
 
-    public void getInformationCustomerByID(Integer id){
-        System.out.println("test");
+    public KhachHang getInformationCustomerByID(Integer id){
+        KhachHang khachHang = new KhachHang();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.KhachHang_QUERY_LAY_THONG_TIN_BY_ID);
+            pstmt.setInt(1,id);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                khachHang.setIdKhachHang(rs.getInt("idKhachHang"));
+                khachHang.setTenKhachHang(rs.getString("tenKhachHang"));
+                khachHang.setPhoneKhachHang(rs.getString("sdtKhachHang"));
+                khachHang.setDiaChiKhachHang(rs.getString("diaChiKhachHang"));
+            }
+            return khachHang;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return khachHang;
+    }
+
+    public KhachHang getInformationCustomerByPhone(String phone){
+        KhachHang khachHang = new KhachHang();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.KhachHang_QUERY_LAY_THONG_TIN_BY_PHONE);
+            pstmt.setString(1,phone);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                khachHang.setIdKhachHang(rs.getInt("idKhachHang"));
+                khachHang.setTenKhachHang(rs.getString("tenKhachHang"));
+                khachHang.setPhoneKhachHang(rs.getString("sdtKhachHang"));
+                khachHang.setDiaChiKhachHang(rs.getString("diaChiKhachHang"));
+            }
+            return khachHang;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return khachHang;
     }
 
     @Override
@@ -101,5 +148,27 @@ public class KhachHangRepository_impl implements KhachHangRepository {
                 e.printStackTrace();
             }
         }
+    }
+
+    public Integer getCountCustomer(){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.KhachHang_QUERY_LAY_NEXT_AUTOINDEX);
+            rs = pstmt.executeQuery();
+            while (rs.next()){
+                int a = rs.getInt(1);
+                return a;
+            }
+        } catch (SQLException ee){
+            ee.printStackTrace();
+            return 0;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
     }
 }

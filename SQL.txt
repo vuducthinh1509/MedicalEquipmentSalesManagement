@@ -71,3 +71,17 @@ create table KhachHang(
 INSERT INTO KhachHang(tenKhachHang,sdtKhachHang,diaChiKhachHang) VALUES
 ("Nguyễn Long Vũ","0123456789","Hà Nội, Việt Nam"),
 ("Nguyễn Anh Đức","0357896541","Thủ Thiêm, Hồ Chí Minh, Việt Nam");
+
+create table PhieuXuat(
+    idPhieuXuat INT NOT NULL AUTO_INCREMENT,
+    tongTien DOUBLE NOT NULL,
+    vat DOUBLE NOT NULL,
+    tienKhachTra DOUBLE NOT NULL,
+    giamGiaTheoPhanTram DOUBLE NOT NULL,
+    giamGiaTheoTien DOUBLE NOT NULL,
+    tienPhaiTra DOUBLE NOT NULL,
+    ngayXuatPhieu DATE NOT NULL,
+    idNhanVien INT NOT NULL,
+    idKhachHang INT NOT NULL,
+    CONSTRAINT PK_phieu_xuat PRIMARY KEY(idPhieuXuat)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

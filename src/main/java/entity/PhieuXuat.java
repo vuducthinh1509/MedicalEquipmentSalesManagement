@@ -16,8 +16,6 @@ import java.sql.Date;
 public class PhieuXuat {
     private int idPhieuXuat;
 
-    private String maPhieuXuat;
-
     private double tongTien;
 
     private double vat;
@@ -29,6 +27,8 @@ public class PhieuXuat {
     private double giamGiaTheoPhanTram;
 
     private double giamGiaTheoTien;
+
+    private double tienPhaiTra;
 
     private Date ngayXuatPhieu;
 

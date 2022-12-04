@@ -75,6 +75,7 @@ public class homepage implements Initializable {
         repairButton.setStyle("-fx-background-color: #2F333D;");
         maintenanceButton.setStyle("-fx-background-color: #2F333D;");
         managementButton.setStyle("-fx-background-color: #2F333D;");
+        customerButton.setStyle("-fx-background-color: #2F333D;");
     }
     public void storageButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
