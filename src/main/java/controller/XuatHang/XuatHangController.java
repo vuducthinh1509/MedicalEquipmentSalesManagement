@@ -230,6 +230,7 @@ public class XuatHangController implements Initializable {
         for(Item item : selectedItemList){
             invoiceController.itemList.add(item);
         }
+        invoiceController.loadDataItem();
         invoiceController.loadDataPane();
         Stage stage = new Stage();
         stage.setTitle("Đơn hàng");

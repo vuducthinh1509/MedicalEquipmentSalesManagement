@@ -1,9 +1,12 @@
 package controller.XuatHang;
 
 import controller.KhachHang.AddCustomerController;
+import controller.login;
 import entity.Item;
 import entity.KhachHang;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,10 +17,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import repository.KhachHangRepository;
-import repository.KhachHangRepository_impl;
+import repository.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -84,6 +88,10 @@ public class InvoiceController {
 
     static KhachHangRepository khachHangRepo = new KhachHangRepository_impl();
 
+    static PhieuXuatRepository phieuXuatRepo = new PhieuXuatRepository_impl();
+
+    static NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
+
     ObservableList<Item> itemList = FXCollections.observableArrayList();
 
     public void clearDataCustomer(){
@@ -104,7 +112,7 @@ public class InvoiceController {
         table.setItems(null);
         itemList.clear();
     }
-    public void loadDataPane(){
+    public void loadDataItem(){
         for(Item item : itemList){
             Integer var = item.getSoLuongItem()*item.getGiaItem();
             item.setTotalPriceItem(var);
@@ -120,6 +128,11 @@ public class InvoiceController {
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("totalPriceItem"));
     }
 
+    public void loadDataPane(){
+        idPhieuXuatLabel.setText(String.valueOf(phieuXuatRepo.getNextAutoIncrement()));
+        ngayXuatLabel.setText(String.valueOf(java.time.LocalDate.now()));
+        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(login.idNhanVien).getMaNV());
+    }
     public  void loadDataCustomerPane(){
         idCtmLabel.setText(String.valueOf(khachHang.getIdKhachHang()));
         nameCtmLabel.setText(khachHang.getTenKhachHang());
@@ -182,7 +195,11 @@ public class InvoiceController {
         Scene scene = new Scene(addCustomer);
         stage.setScene(scene);
         stage.show();
+    }
 
+    public void onTextChanged(InputMethodEvent event){
+        Integer discount =  Integer.valueOf(discountLabel.getText());
+        totalLabel.setText(String.valueOf(subtotal - discount));
     }
 
 }

@@ -76,8 +76,12 @@ public class EditPersonalInformation {
         soDienThoaiLabel.setText(nhanVien.getSoDienThoai());
         emailLabel.setText(nhanVien.getEmail());
         chucVuLabel.setText(nhanVien.getChucVu());
-        ngaySinhLabel.setValue(LocalDate.parse(String.valueOf(nhanVien.getNgaySinh())));
-        ngayVaoLamLabel.setValue(LocalDate.parse(String.valueOf(nhanVien.getNgayVaoLam())));
+        if(nhanVien.getNgaySinh() != null){
+            ngaySinhLabel.setValue(LocalDate.parse(String.valueOf(nhanVien.getNgaySinh())));
+        }
+        if(nhanVien.getNgayVaoLam()!=null){
+            ngayVaoLamLabel.setValue(LocalDate.parse(String.valueOf(nhanVien.getNgayVaoLam())));
+        }
         gioiTinhComboBox.getSelectionModel().select(nhanVien.getGioiTinh());
         labelMaNV.setText(nhanVien.getMaNV());
     }

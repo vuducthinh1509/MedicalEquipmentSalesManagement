@@ -106,6 +106,7 @@ public class homepage implements Initializable {
         repairButton.setStyle("-fx-background-color: #757C95;");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("repair button");
+        alert.setHeaderText("Tính năng đang được xây dựng");
         alert.show();
 //        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
 //        mainPane.getChildren().add(trangChuPane);
@@ -116,6 +117,7 @@ public class homepage implements Initializable {
         maintenanceButton.setStyle("-fx-background-color: #757C95;");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("maintenance button");
+        alert.setHeaderText("Tính năng đang được xây dựng");
         alert.show();
 //        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
 //        mainPane.getChildren().add(trangChuPane);
@@ -126,6 +128,7 @@ public class homepage implements Initializable {
         managementButton.setStyle("-fx-background-color: #757C95;");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("management button");
+        alert.setHeaderText("Tính năng đang được xây dựng");
         alert.show();
 //        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
 //        mainPane.getChildren().add(trangChuPane);
@@ -145,8 +148,8 @@ public class homepage implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Đăng nhập");
         stage.setScene(scene);
-        stage.setWidth(600);
-        stage.setHeight(400);
+        stage.setHeight(600);
+        stage.setWidth(880);
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((screenBounds.getWidth()-stage.getWidth())/2);
         stage.setY((screenBounds.getHeight()-stage.getHeight())/2);

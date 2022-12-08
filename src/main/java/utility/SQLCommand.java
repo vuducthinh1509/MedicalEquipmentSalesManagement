@@ -68,5 +68,9 @@ public class SQLCommand {
             "FROM information_schema.TABLES\n" +
             "WHERE TABLE_SCHEMA = \"demo\"\n" +
             "AND TABLE_NAME = \"khachhang\"";
+    public static String PhieuXuat_QUERY_LAY_NEXT_AUTOINDEX = "SELECT AUTO_INCREMENT\n" +
+            "FROM information_schema.TABLES\n" +
+            "WHERE TABLE_SCHEMA = \"demo\"\n" +
+            "AND TABLE_NAME = \"phieuxuat\"";
 }
 

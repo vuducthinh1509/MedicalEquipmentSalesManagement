@@ -13,12 +13,30 @@
       <Label layoutX="425.0" layoutY="14.0" text="Phiếu Xuất Hàng" />
       <Pane layoutX="31.0" layoutY="105.0" prefHeight="147.0" prefWidth="303.0" style="-fx-border-color: #000000;">
          <children>
-            <Label layoutX="24.0" layoutY="21.0" text="ID Phiếu Xuất:" />
-            <Label layoutX="24.0" layoutY="62.0" text="Ngày Xuất:" />
-            <Label layoutX="24.0" layoutY="106.0" text="Mã NV Xuất:" />
-            <Label fx:id="idPhieuXuatLabel" layoutX="146.0" layoutY="20.0" prefHeight="27.0" prefWidth="133.0" text="Label" />
-            <Label fx:id="ngayXuatLabel" layoutX="146.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0" text="Label" />
-            <Label fx:id="maNVXuatLabel" layoutX="146.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0" text="Label" />
+            <Label layoutX="24.0" layoutY="21.0" text="ID Phiếu Xuất:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="24.0" layoutY="62.0" text="Ngày Xuất:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="24.0" layoutY="106.0" text="Mã NV Xuất:">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="idPhieuXuatLabel" layoutX="156.0" layoutY="21.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
          </children>
       </Pane>
       <Pane layoutX="356.0" layoutY="105.0" prefHeight="247.0" prefWidth="348.0" style="-fx-border-color: #000000;">
@@ -71,8 +89,8 @@
             <Label layoutX="25.0" layoutY="221.0" text="Khách trả:" />
             <Label layoutX="26.0" layoutY="266.0" text="Trả lại:" />
             <TextField fx:id="subTotalLabel" layoutX="117.0" layoutY="28.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="discountLabel" layoutX="117.0" layoutY="71.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="discount1Label" layoutX="117.0" layoutY="115.0" prefHeight="39.0" prefWidth="111.0" />
+            <TextField fx:id="discountLabel" layoutX="117.0" layoutY="71.0" onInputMethodTextChanged="#onTextChanged" prefHeight="39.0" prefWidth="111.0" />
+            <TextField fx:id="discount1Label" layoutX="117.0" layoutY="115.0" onKeyPressed="#test" prefHeight="39.0" prefWidth="111.0" />
             <TextField fx:id="vatLabel" layoutX="117.0" layoutY="162.0" prefHeight="39.0" prefWidth="111.0" />
             <TextField fx:id="paidLabel" layoutX="117.0" layoutY="209.0" prefHeight="39.0" prefWidth="111.0" />
             <TextField fx:id="returnLabel" layoutX="117.0" layoutY="260.0" prefHeight="39.0" prefWidth="111.0" />
