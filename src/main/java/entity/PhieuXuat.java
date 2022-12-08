@@ -18,11 +18,7 @@ public class PhieuXuat {
 
     private double tongTien;
 
-    private double vat;
-
-    private double tienKhachTra;
-
-    private double tienTraLai;
+    private Integer vat;
 
     private double giamGiaTheoPhanTram;
 

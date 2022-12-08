@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login" >
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to right, #66ccff 0%, #ffffff 100%);">
          <children>
@@ -41,7 +41,10 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <TextField fx:id="username" prefHeight="60.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);" />
+                  <TextField fx:id="username" prefHeight="60.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
                </children>
                <VBox.margin>
                   <Insets left="50.0" right="50.0" top="50.0" />
@@ -58,13 +61,16 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="270.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);" />
+                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="270.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
+                     <font>
+                        <Font size="14.0" />
+                     </font></PasswordField>
                </children>
                <VBox.margin>
                   <Insets left="50.0" right="50.0" top="50.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" prefHeight="60.0" prefWidth="382.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Login" textFill="#f2eeee">
+            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" prefHeight="60.0" prefWidth="382.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đăng Nhập" textFill="#f2eeee">
                <VBox.margin>
                   <Insets left="50.0" right="50.0" top="50.0" />
                </VBox.margin>

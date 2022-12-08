@@ -85,11 +85,6 @@ public class KhoHangController implements Initializable {
         catch (NullPointerException ex){
             thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_tenThietBi, duLieuTraCuu));
             table.setItems(thietBiList_temp);
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//            alert.setHeaderText(null);
-//            alert.setContentText("Bạn cần chọn trường tra cứu");
-//            alert.show();
-//            table.setItems(thietBiList);
             return;
         }
     }

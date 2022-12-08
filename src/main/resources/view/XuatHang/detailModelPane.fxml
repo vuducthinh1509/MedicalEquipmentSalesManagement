@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.XuatHang.DetailModel">
+    <children>
+        <Label layoutX="256.0" layoutY="345.0" text="Thời gian bảo hành:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="508.0" layoutY="220.0" text="Giá:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="77.0" layoutY="285.0" text="Kích thước:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="74.0" layoutY="231.0" text="Màu:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="77.0" layoutY="119.0" text="Tên:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="74.0" layoutY="172.0" text="Model:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="508.0" layoutY="166.0" text="Xuất xứ:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="238.0" layoutY="30.0" prefHeight="45.0" prefWidth="425.0" text="THÔNG TIN MODEL" textFill="#f8f3f3">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="tenLabel" layoutX="218.0" layoutY="119.0" prefHeight="30.0" prefWidth="567.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label fx:id="modelLabel" layoutX="218.0" layoutY="172.0" prefHeight="30.0" prefWidth="264.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label fx:id="mauLabel" layoutX="218.0" layoutY="231.0" prefHeight="30.0" prefWidth="264.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label fx:id="thoiGianBaoHanhLabel" layoutX="464.0" layoutY="345.0" prefHeight="21.0" prefWidth="187.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label layoutX="636.0" layoutY="166.0" prefHeight="30.0" prefWidth="264.0" text="Label" textFill="#ffff8d" fx:id="xuatXuLabel">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label fx:id="kichThuocLabel" layoutX="218.0" layoutY="285.0" prefHeight="30.0" prefWidth="319.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label fx:id="giaLabel" layoutX="635.0" layoutY="220.0" prefHeight="30.0" prefWidth="187.0" text="Label" textFill="#ffff8d">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+    </children>
+</AnchorPane>

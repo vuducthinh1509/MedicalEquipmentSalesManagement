@@ -1,5 +1,6 @@
 package controller.XuatHang;
 
+import controller.KhoHang.ChiTietThietBiController;
 import entity.Item;
 import entity.ThietBi;
 import javafx.application.Platform;
@@ -56,9 +57,6 @@ public class XuatHangController implements Initializable {
     private TableColumn<ThietBi, Integer> soLuongColumnCart;
     @FXML
     private TableColumn<ThietBi, Number> thanhTienColumnCart;
-
-    @FXML
-    ObservableList<ThietBi> thietBiList = FXCollections.observableArrayList();
     @FXML
     private Label tongTienThanhToanLabel;
     private String duLieuTraCuu="";
@@ -182,7 +180,7 @@ public class XuatHangController implements Initializable {
         td.showAndWait();
         String quantity = "";
         quantity = td.getEditor().getText();
-        if(!quantity.matches("^[0-9]")){
+        if(!quantity.matches("[0-9]+")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Thông báo!");
             alert.setHeaderText("Số lượng không hợp lệ. Chỉ nhập số >=0");
@@ -235,8 +233,29 @@ public class XuatHangController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Đơn hàng");
         Scene scene = new Scene(invoicePane);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
 
+    public void chiTietModel(ActionEvent event){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/XuatHang/detailModelPane.fxml"));
+            Parent detailModel  = loader.load();
+            DetailModel detailModelController = loader.getController();
+            Item selectedItem = table.getSelectionModel().getSelectedItem();
+            if (selectedItem == null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Thông báo!");
+                alert.setHeaderText("Không thiết bị nào được chọn.");
+                alert.setContentText("Vui lòng chọn lại.");
+                alert.show();
+                return;
+            }
+            Stage stage = new Stage();
+            stage.setTitle("Thông tin thiết bị");
+            Scene scene = new Scene(detailModel);
+            stage.setScene(scene);
+            stage.show();
+    }
 }

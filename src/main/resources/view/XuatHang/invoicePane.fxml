@@ -10,8 +10,11 @@
 
 <Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1060.0" style="-: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.XuatHang.InvoiceController">
    <children>
-      <Label layoutX="425.0" layoutY="14.0" text="Phiếu Xuất Hàng" />
-      <Pane layoutX="31.0" layoutY="105.0" prefHeight="147.0" prefWidth="303.0" style="-fx-border-color: #000000;">
+      <Label layoutX="471.0" layoutY="14.0" text="PHIẾU XUẤT">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Pane layoutX="31.0" layoutY="104.0" prefHeight="147.0" prefWidth="303.0" style="-fx-border-color: #000000;">
          <children>
             <Label layoutX="24.0" layoutY="21.0" text="ID Phiếu Xuất:">
                <font>
@@ -25,21 +28,21 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label fx:id="idPhieuXuatLabel" layoutX="156.0" layoutY="21.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+            <Label fx:id="idPhieuXuatLabel" layoutX="156.0" layoutY="21.0" prefHeight="27.0" prefWidth="133.0">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+            <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0" text="Label">
+            <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0">
                <font>
                   <Font size="20.0" />
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="356.0" layoutY="105.0" prefHeight="247.0" prefWidth="348.0" style="-fx-border-color: #000000;">
+      <Pane layoutX="31.0" layoutY="310.0" prefHeight="259.0" prefWidth="303.0" style="-fx-border-color: #000000;">
          <children>
             <Label layoutX="13.0" layoutY="14.0" text="ID:">
                <font>
@@ -57,48 +60,120 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="142.0" text="Tìm bằng SĐT" />
-            <Button fx:id="addCtmButton" layoutX="181.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="142.0" text="Thêm mới" />
-            <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="233.0" />
-            <TextField fx:id="nameCtmLabel" layoutX="87.0" layoutY="56.0" prefHeight="39.0" prefWidth="233.0" />
-            <TextField fx:id="addressCtmLabel" layoutX="87.0" layoutY="101.0" prefHeight="39.0" prefWidth="233.0" />
-            <TextField fx:id="phoneCtmLabel" layoutX="87.0" layoutY="151.0" prefHeight="39.0" prefWidth="233.0" />
+            <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="96.0" text="Tìm bằng SĐT" />
+            <Button fx:id="addCtmButton" layoutX="118.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="87.0" text="Thêm mới">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="185.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="nameCtmLabel" layoutX="87.0" layoutY="56.0" prefHeight="39.0" prefWidth="185.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="addressCtmLabel" layoutX="87.0" layoutY="101.0" prefHeight="39.0" prefWidth="185.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="phoneCtmLabel" layoutX="87.0" layoutY="151.0" prefHeight="39.0" prefWidth="185.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <Button fx:id="deleteButton" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" text="Xóa">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="saveButton" disable="true" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="75.0" text="Lưu" visible="false" />
          </children>
       </Pane>
-      <Label layoutX="59.0" layoutY="69.0" text="Thông tin phiếu xuất hàng" />
-      <Label layoutX="410.0" layoutY="69.0" text="Thông tin khách hàng" />
-      <TableView fx:id="table" layoutX="16.0" layoutY="357.0" prefHeight="370.0" prefWidth="693.0">
+      <Label layoutX="31.0" layoutY="68.0" text="Thông tin phiếu xuất hàng">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="272.0" text="Thông tin khách hàng">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <Pane layoutX="357.0" layoutY="523.0" prefHeight="188.0" prefWidth="557.0" style="-fx-border-color: #000000;">
+         <children>
+            <Label layoutX="30.0" layoutY="34.0" text="Tổng:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="302.0" layoutY="34.0" text="Giảm giá:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="27.0" layoutY="82.0" text="Giảm giá:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="241.0" layoutY="91.0" text="\%" />
+            <Label layoutX="512.0" layoutY="39.0" text="VND" />
+            <Label layoutX="302.0" layoutY="82.0" text="VAT:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="30.0" layoutY="136.0" text="Tổng:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="subTotalLabel" layoutX="117.0" layoutY="28.0" prefHeight="39.0" prefWidth="111.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="discountLabel" layoutX="391.0" layoutY="28.0" prefHeight="39.0" prefWidth="111.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="discount1Label" layoutX="117.0" layoutY="80.0" prefHeight="39.0" prefWidth="111.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="vatLabel" editable="false" layoutX="391.0" layoutY="76.0" prefHeight="39.0" prefWidth="111.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="totalLabel" editable="false" layoutX="117.0" layoutY="130.0" prefHeight="39.0" prefWidth="111.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+         </children>
+      </Pane>
+      <Label layoutX="357.0" layoutY="486.0" text="Thông tin đơn hàng">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="exportButton" layoutX="923.0" layoutY="624.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" text="Xuất hàng">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="923.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="39.0" prefWidth="111.0" text="Hủy">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutX="351.0" layoutY="105.0" prefHeight="374.0" prefWidth="683.0">
         <columns>
           <TableColumn fx:id="sttColumn" prefWidth="52.0" text="STT" />
-          <TableColumn fx:id="nameColumn" prefWidth="197.0" text="Tên TB" />
-            <TableColumn fx:id="modelColumn" prefWidth="104.0" text="Model TB" />
-            <TableColumn fx:id="priceColumn" prefWidth="93.0" text="Giá TB" />
-            <TableColumn fx:id="quantityColumn" prefWidth="120.0" text="Số lượng TB" />
-            <TableColumn fx:id="amountColumn" prefWidth="126.0" text="Thành tiền" />
+          <TableColumn fx:id="nameColumn" prefWidth="267.0" text="Tên TB" />
+            <TableColumn fx:id="modelColumn" prefWidth="89.0" text="Model TB" />
+            <TableColumn fx:id="priceColumn" prefWidth="77.0" text="Giá TB" />
+            <TableColumn fx:id="quantityColumn" prefWidth="92.0" text="Số lượng TB" />
+            <TableColumn fx:id="amountColumn" prefWidth="105.0" text="Thành tiền" />
         </columns>
       </TableView>
-      <Pane layoutX="741.0" layoutY="217.0" prefHeight="363.0" prefWidth="296.0" style="-fx-border-color: #000000;">
-         <children>
-            <Label layoutX="30.0" layoutY="34.0" text="Tổng:" />
-            <Label layoutX="29.0" layoutY="77.0" text="Giảm giá:" />
-            <Label layoutX="28.0" layoutY="121.0" text="Giảm giá:" />
-            <Label layoutX="232.0" layoutY="121.0" text="\%" />
-            <Label layoutX="232.0" layoutY="77.0" text="VND" />
-            <Label layoutX="28.0" layoutY="168.0" text="VAT:" />
-            <Label layoutX="30.0" layoutY="318.0" text="Tổng:" />
-            <Label layoutX="25.0" layoutY="221.0" text="Khách trả:" />
-            <Label layoutX="26.0" layoutY="266.0" text="Trả lại:" />
-            <TextField fx:id="subTotalLabel" layoutX="117.0" layoutY="28.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="discountLabel" layoutX="117.0" layoutY="71.0" onInputMethodTextChanged="#onTextChanged" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="discount1Label" layoutX="117.0" layoutY="115.0" onKeyPressed="#test" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="vatLabel" layoutX="117.0" layoutY="162.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="paidLabel" layoutX="117.0" layoutY="209.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="returnLabel" layoutX="117.0" layoutY="260.0" prefHeight="39.0" prefWidth="111.0" />
-            <TextField fx:id="totalLabel" layoutX="117.0" layoutY="312.0" prefHeight="39.0" prefWidth="111.0" />
-         </children>
-      </Pane>
-      <Label layoutX="806.0" layoutY="179.0" text="Thông tin đơn hàng" />
-      <Button fx:id="exportButton" layoutX="761.0" layoutY="650.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" text="Xuất hàng" />
-      <Button fx:id="cancelButton" layoutX="897.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="39.0" prefWidth="87.0" text="Hủy" />
+      <Label layoutX="357.0" layoutY="68.0" text="Thông tin sản phẩm">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="tinhTienButton" layoutX="923.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#tinhTienButtonOnClicked" prefHeight="39.0" prefWidth="111.0" text="Tính Tiền">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

@@ -30,4 +30,11 @@ public class KhachHang {
         this.phoneKhachHang = khachHang.getPhoneKhachHang();
         this.diaChiKhachHang = khachHang.getDiaChiKhachHang();
     }
+
+    public void setDefault(){
+        this.idKhachHang = -1;
+        this.tenKhachHang = "";
+        this.phoneKhachHang = "";
+        this.diaChiKhachHang = "";
+    }
 }
