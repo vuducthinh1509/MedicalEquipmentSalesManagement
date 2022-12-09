@@ -28,13 +28,11 @@ public class ThietBi {
 
     private Date ngayNhapThietBi;
 
-    private String maNVNguoiXuat;
-
-    private Date ngayXuatThietBi;
-
     private String thoiGianBaoHanh;
 
     private String trangThaiThietBi;
+
+    private Integer idPhieuXuat;
 
     public ThietBi(int idThietBi,String tenThietBi, String modelThietBi,String serialThietBi,String mauThietBi, String kichThuocThietBi,Integer giaThietBi,String trangThaiThietBi){
         this.idThietBi = idThietBi;
@@ -60,8 +58,7 @@ public class ThietBi {
         this.maNVNguoiNhap = maNVNhap;
         this.ngayNhapThietBi = Date.valueOf(ngayNhap);
     }
-
-    public ThietBi(String tenThietBi, String modelThietBi, String serialThietBi, String xuatXuThietBi, String mauThietBi,String kichThuocThietBi, Integer giaThietBi, String maNVNguoiNhap, Date ngayNhapThietBi, String maNVNguoiXuat, String thoiGianBaoHanh, String trangThaiThietBi){
+    public ThietBi(String tenThietBi, String modelThietBi, String serialThietBi, String xuatXuThietBi, String mauThietBi,String kichThuocThietBi, Integer giaThietBi, String maNVNguoiNhap, Date ngayNhapThietBi, String thoiGianBaoHanh, String trangThaiThietBi){
         this.tenThietBi = tenThietBi;
         this.modelThietBi = modelThietBi;
         this.serialThietBi = serialThietBi;
@@ -71,9 +68,7 @@ public class ThietBi {
         this.giaThietBi = giaThietBi;
         this.maNVNguoiNhap = maNVNguoiNhap;
         this.ngayNhapThietBi = ngayNhapThietBi;
-        this.maNVNguoiXuat = maNVNguoiXuat;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
         this.trangThaiThietBi = trangThaiThietBi;
     }
-
 }

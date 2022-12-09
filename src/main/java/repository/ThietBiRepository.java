@@ -3,6 +3,8 @@ package repository;
 import entity.ThietBi;
 import javafx.collections.ObservableList;
 
+import java.sql.Date;
+
 public interface ThietBiRepository {
 
     public void themThietBi(ThietBi thietBi);
@@ -18,4 +20,8 @@ public interface ThietBiRepository {
     public void xoaThietBi(int idThietBi);
 
     public ThietBi layThongTinThietBiTheoModel(String model);
+
+    public ObservableList<Integer> findAllDeviceByModel(String model);
+
+    public void updatePhieuXuatThietBi(int idThietBi,Integer idPhieuXuat);
 }

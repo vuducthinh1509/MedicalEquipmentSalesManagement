@@ -37,10 +37,9 @@ public class ThietBiRepository_impl implements ThietBiRepository {
                 thietBi.setGiaThietBi(rs.getInt("giaThietBi"));
                 thietBi.setMaNVNguoiNhap(rs.getString("maNVNguoiNhap"));
                 thietBi.setNgayNhapThietBi(rs.getDate("ngayNhapThietBi"));
-                thietBi.setMaNVNguoiXuat(rs.getString("maNVNguoiXuat"));
-                thietBi.setNgayXuatThietBi(rs.getDate("ngayXuatThietBi"));
                 thietBi.setThoiGianBaoHanh(rs.getString("thoiGianBaoHanh"));
                 thietBi.setTrangThaiThietBi(rs.getString("trangThaiThietBi"));
+                thietBi.setIdPhieuXuat(rs.getInt("idPhieuXuat"));
             }
             return thietBi;
         } catch (SQLException e) {
@@ -116,6 +115,31 @@ public class ThietBiRepository_impl implements ThietBiRepository {
         }
     }
 
+    @Override
+    public ObservableList<Integer> findAllDeviceByModel(String model){
+        ObservableList<Integer> idList = FXCollections.observableArrayList();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_ALL_DEVICE_BY_MODEL);
+            pstmt.setString(1, model );
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int idThietBi = rs.getInt("idThietBi");
+                idList.add(idThietBi);
+            }
+            return idList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return idList;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @Override
     public ThietBi layThongTinThietBiTheoModel(String model){
         ThietBi thietBi = new ThietBi();
         try {
@@ -128,6 +152,9 @@ public class ThietBiRepository_impl implements ThietBiRepository {
                 thietBi.setXuatXuThietBi(rs.getString("xuatXuThietBi"));
                 thietBi.setTenThietBi(rs.getString("tenThietBi"));
                 thietBi.setGiaThietBi(rs.getInt("giaThietBi"));
+                thietBi.setMauThietBi(rs.getString("mauThietBi"));
+                thietBi.setKichThuocThietBi(rs.getString("kichThuocThietBi"));
+                thietBi.setThoiGianBaoHanh(rs.getString("thoiGianBaoHanh"));
             }
             return thietBi;
         } catch (SQLException e) {
@@ -183,9 +210,26 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             pstmt.setInt(7, thietBi.getGiaThietBi());
             pstmt.setString(8, thietBi.getMaNVNguoiNhap());
             pstmt.setDate(9, thietBi.getNgayNhapThietBi());
-            pstmt.setString(10, thietBi.getMaNVNguoiXuat());
-            pstmt.setString(11, thietBi.getThoiGianBaoHanh());
-            pstmt.setString(12, thietBi.getTrangThaiThietBi());
+            pstmt.setString(10, thietBi.getThoiGianBaoHanh());
+            pstmt.setString(11, thietBi.getTrangThaiThietBi());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void updatePhieuXuatThietBi(int idThietBi, Integer idPhieuXuat){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPHIEUXUAT + idThietBi);;
+            pstmt.setInt(1, idPhieuXuat);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

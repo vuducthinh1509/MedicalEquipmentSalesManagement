@@ -14,23 +14,22 @@ import java.sql.Date;
 @AllArgsConstructor
 
 public class PhieuXuat {
-    private int idPhieuXuat;
+    private int idInvoice;
 
-    private double tongTien;
+    private double subTotalInvoice;
 
-    private Integer vat;
+    private Integer vatInvoice;
 
-    private double giamGiaTheoPhanTram;
+    private double discountInvoice;
 
-    private double giamGiaTheoTien;
+    private double discount1Invoice;
 
-    private double tienPhaiTra;
+    private double totalInvoice;
 
-    private Date ngayXuatPhieu;
+    private Date exportDateInvoice;
 
-    private int idNhanVien;
+    private Integer idEmployeeInvoice;
 
-    private int idKhachHang;
+    private Integer idCustomerInvoice;
 
-    private ObservableList<Item> itemList;
 }

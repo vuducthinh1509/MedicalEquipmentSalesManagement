@@ -41,12 +41,18 @@ public class SQLCommand {
             "`giaThietBi`=?," +
             "`maNVNguoiNhap`=?," +
             "`ngayNhapThietBi`=?," +
-            "`maNVNguoiXuat`=?," +
             "`thoiGianBaoHanh`=?," +
             "`trangThaiThietBi`=? WHERE idThietBi = ";
+
+    public static String Thiet_Bi_QUERY_UPDATE_IDPHIEUXUAT = "UPDATE `thietbi` SET " +
+            "`idPhieuXuat`=?," +
+            "`trangThaiThietBi`='Đã xuất' WHERE idThietBi = ";
     public static String Thiet_Bi_QUERY_getCountModel = "select modelThietBi,xuatXuThietBi,tenThietBi,giaThietBi , count(*) from thietbi\n" +
             "where trangThaiThietBi = 'Trong kho'\n" +
             "group by modelThietBi;";
+
+    public static String Thiet_Bi_QUERY_ALL_DEVICE_BY_MODEL = "select idThietBi from thietbi\n" +
+            "where trangThaiThietBi = 'Trong kho' and modelThietBi = ?";
 
     // Khách hàng
     public static String KhachHang_QUERY_INSERT =  "INSERT INTO `khachhang` (`tenKhachHang`,`sdtKhachHang`,`diaChiKhachHang`) VALUES (?,?,?)";
@@ -64,13 +70,12 @@ public class SQLCommand {
 
     public static String KhachHang_DELETE_KhachHang = "DELETE FROM `khachhang` WHERE idKhachHang = ?";
 
-    public static String KhachHang_QUERY_LAY_NEXT_AUTOINDEX = "SELECT AUTO_INCREMENT\n" +
-            "FROM information_schema.TABLES\n" +
-            "WHERE TABLE_SCHEMA = \"demo\"\n" +
-            "AND TABLE_NAME = \"khachhang\"";
-    public static String PhieuXuat_QUERY_LAY_NEXT_AUTOINDEX = "SELECT AUTO_INCREMENT\n" +
-            "FROM information_schema.TABLES\n" +
-            "WHERE TABLE_SCHEMA = \"demo\"\n" +
-            "AND TABLE_NAME = \"phieuxuat\"";
+    public static String KhachHang_QUERY_LAY_NEXT_AUTOINDEX = "SELECT AUTO_INCREMENT FROM information_schema.TABLES " +
+            "WHERE TABLE_SCHEMA = 'demo' AND TABLE_NAME = 'khachhang'";
+    public static String PhieuXuat_QUERY_LAY_NEXT_AUTOINDEX = "SELECT auto_increment FROM information_schema.TABLES \n" +
+            "WHERE TABLE_SCHEMA = 'demo' AND TABLE_NAME = 'phieuxuat';";
+    public static String PhieuXuat_QUERY_INSERT = "INSERT INTO `phieuxuat` (`subTotalInvoice`,`vatInvoice`,`discountInvoice`,`discount1Invoice`,`totalInvoice`,`exportDateInvoice`,`idEmployeeInvoice`,`idCustomerInvoice`) VALUES (?,?,?,?,?,?,?,?)";
+
+    public static String PhieuXuat_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM phieuXuat where idInvoice = ?";
 }
 

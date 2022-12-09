@@ -48,7 +48,7 @@ public class login {
                 stage.setScene(scene);
                 stage.setWidth(1280);
                 stage.setHeight(760);
-                stage.setResizable(true);
+                stage.setResizable(false);
                 stage.centerOnScreen();
                 stage.show();
             } else {

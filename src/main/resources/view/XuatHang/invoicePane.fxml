@@ -147,7 +147,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="exportButton" layoutX="923.0" layoutY="624.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" text="Xuất hàng">
+      <Button fx:id="exportButton" layoutX="923.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="39.0" prefWidth="111.0" text="Xuất hàng">
          <font>
             <Font size="14.0" />
          </font></Button>

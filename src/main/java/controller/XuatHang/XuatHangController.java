@@ -1,9 +1,7 @@
 package controller.XuatHang;
 
-import controller.KhoHang.ChiTietThietBiController;
 import entity.Item;
 import entity.ThietBi;
-import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +18,6 @@ import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.ItemReposioty_impl;
 import repository.ItemRepository;
-import utility.SQLCommand;
 
 import java.io.IOException;
 import java.net.URL;
@@ -238,11 +235,11 @@ public class XuatHangController implements Initializable {
         stage.show();
     }
 
-    public void chiTietModel(ActionEvent event){
+    public void chiTietModel(ActionEvent event) throws IOException{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/view/XuatHang/detailModelPane.fxml"));
             Parent detailModel  = loader.load();
-            DetailModel detailModelController = loader.getController();
+            DetailModelController detailModelController = loader.getController();
             Item selectedItem = table.getSelectionModel().getSelectedItem();
             if (selectedItem == null) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -251,6 +248,9 @@ public class XuatHangController implements Initializable {
                 alert.setContentText("Vui lòng chọn lại.");
                 alert.show();
                 return;
+            } else {
+                detailModelController.modelThietBi = selectedItem.getModelItem();
+                detailModelController.loadDataPane();
             }
             Stage stage = new Stage();
             stage.setTitle("Thông tin thiết bị");

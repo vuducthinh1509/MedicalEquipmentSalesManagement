@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.XuatHang.DetailModel">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.XuatHang.DetailModelController">
     <children>
-        <Label layoutX="256.0" layoutY="345.0" text="Thời gian bảo hành:" textFill="WHITE">
+        <Label layoutX="502.0" layoutY="285.0" text="Thời gian bảo hành:" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -62,7 +62,7 @@
             <font>
                 <Font name="System Bold" size="20.0" />
             </font></Label>
-        <Label fx:id="thoiGianBaoHanhLabel" layoutX="464.0" layoutY="345.0" prefHeight="21.0" prefWidth="187.0" text="Label" textFill="#ffff8d">
+        <Label fx:id="thoiGianBaoHanhLabel" layoutX="703.0" layoutY="285.0" prefHeight="30.0" prefWidth="164.0" text="Label" textFill="#ffff8d">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font></Label>

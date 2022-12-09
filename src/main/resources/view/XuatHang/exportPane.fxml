@@ -21,7 +21,7 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                <MenuItem mnemonicParsing="false" text="Xem thông tin các thiết bị" />
+                <MenuItem mnemonicParsing="false" onAction="#chiTietModel" text="Xem thông tin các thiết bị" />
               </items>
             </ContextMenu>
          </contextMenu>

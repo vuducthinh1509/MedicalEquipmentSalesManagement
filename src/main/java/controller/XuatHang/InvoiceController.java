@@ -4,6 +4,7 @@ import controller.KhachHang.AddCustomerController;
 import controller.login;
 import entity.Item;
 import entity.KhachHang;
+import entity.PhieuXuat;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -25,6 +26,8 @@ import repository.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -88,6 +91,8 @@ public class InvoiceController {
 
     static Integer subtotal = 0;
 
+    static Integer idInvoice = -1;
+
     KhachHang khachHang = new KhachHang();
 
     static KhachHangRepository khachHangRepo = new KhachHangRepository_impl();
@@ -96,8 +101,23 @@ public class InvoiceController {
 
     static NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
 
+    static ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
+
+    static boolean tinhTienButtonIsClicked = false;
+
     ObservableList<Item> itemList = FXCollections.observableArrayList();
 
+    private boolean isFullFillCustomerPane(){
+        String id = idCtmLabel.getText();
+        String name = nameCtmLabel.getText();
+        String phone = phoneCtmLabel.getText();
+        String address = addressCtmLabel.getText();
+        if(id.isEmpty()||name.isEmpty()||phone.isEmpty()||address.isEmpty()){
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     public void onEditDataCustomer(boolean key){
         idCtmLabel.setEditable(key);
@@ -139,7 +159,8 @@ public class InvoiceController {
     }
 
     public void loadDataPane(){
-        idPhieuXuatLabel.setText(String.valueOf(phieuXuatRepo.getNextAutoIncrement()));
+        idInvoice = phieuXuatRepo.getNextAutoIncrement();
+        idPhieuXuatLabel.setText(String.valueOf(idInvoice));
         ngayXuatLabel.setText(String.valueOf(java.time.LocalDate.now()));
         maNVXuatLabel.setText(nhanVienRepo.getInformationUser(login.idNhanVien).getMaNV());
     }
@@ -236,6 +257,7 @@ public class InvoiceController {
         }
     }
     public void tinhTienButtonOnClicked(MouseEvent event){
+        tinhTienButtonIsClicked = true;
         String regex = "[0-9]+";
         String discount = discountLabel.getText();
         String discount1 = discount1Label.getText();
@@ -261,6 +283,47 @@ public class InvoiceController {
                 vatLabel.setText(String.valueOf(vat));
                 totalLabel.setText(String.valueOf(_total));
             }
+        }
+    }
+
+    public void exportButtonOnClicked(MouseEvent event){
+        if(isFullFillCustomerPane() && tinhTienButtonIsClicked){
+            String maNVXuat = maNVXuatLabel.getText();
+            Integer idInvoice = Integer.valueOf(idPhieuXuatLabel.getText());
+            Double subTotalInvoice = Double.valueOf(subTotalLabel.getText());
+            Integer vatInvoice = Integer.valueOf(vatLabel.getText());
+            Double discountInvoice = Double.valueOf(discountLabel.getText());
+            Double discount1Invoice = Double.valueOf(discount1Label.getText());
+            Double totalInvoice = Double.valueOf(totalLabel.getText());
+            String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
+            Integer idEmployeeInvoice = login.idNhanVien;
+            Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());
+            PhieuXuat phieuXuat = new PhieuXuat(idInvoice,subTotalInvoice,vatInvoice,discountInvoice,discount1Invoice,totalInvoice,Date.valueOf(exportDateInvoice),idEmployeeInvoice,idCustomerInvoice);
+            phieuXuatRepo.addInvoice(phieuXuat);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Xuất hàng thành công");
+            alert.showAndWait();
+            for(Item item : itemList){
+                int index = 0;
+                int quantity = item.getSoLuongItem();
+                ObservableList<Integer> idList = FXCollections.observableArrayList();
+                idList = thietBiRepo.findAllDeviceByModel(item.getModelItem());
+                for(Integer i :idList){
+                    if(index<quantity){
+                        thietBiRepo.updatePhieuXuatThietBi(i,idInvoice);
+                        index++;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Cần nhập đủ thông tin của khách hàng và tính tiền");
+            alert.setContentText("Vui lòng thử lại");
+            alert.showAndWait();
         }
     }
 }

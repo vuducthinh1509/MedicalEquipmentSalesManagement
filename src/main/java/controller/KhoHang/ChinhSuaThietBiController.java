@@ -1,19 +1,18 @@
 package controller.KhoHang;
 
 import entity.NhanVien;
+import entity.PhieuXuat;
 import entity.ThietBi;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import repository.NhanVienRepository;
-import repository.NhanVienRepository_impl;
-import repository.ThietBiRepository;
-import repository.ThietBiRepository_impl;
+import repository.*;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -45,7 +44,7 @@ public class ChinhSuaThietBiController {
     @FXML
     private TextField trangThaiLabel;
     @FXML
-    private DatePicker ngayXuatLabel;
+    private Label ngayXuatLabel;
     @FXML
     private TextField maNVXuatLabel;
     @FXML
@@ -54,12 +53,15 @@ public class ChinhSuaThietBiController {
     private int idThietBi;
     private ThietBi thietBi = new ThietBi();
 
-    private ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
+    static PhieuXuatRepository phieuXuatRepo = new PhieuXuatRepository_impl();
+
+    static ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
+
+    static NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
 
     @FXML
     public void loadDuLieuChinhSua(){
         NhanVien nhanVien = new NhanVien();
-        NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
         thietBi = thietBiRepo.chiTietThietBi(idThietBi);
         tenLabel.setText(thietBi.getTenThietBi());
         modelLabel.setText(thietBi.getModelThietBi());
@@ -71,17 +73,23 @@ public class ChinhSuaThietBiController {
             ngayNhapLabel.setValue(LocalDate.parse(String.valueOf(thietBi.getNgayNhapThietBi())));
         }
         maNVNhapLabel.setText(thietBi.getMaNVNguoiNhap());
+        nhanVien = nhanVienRepo.getInformationUserByMaNV(thietBi.getMaNVNguoiNhap());
+        tenNVNhapLabel.setText(nhanVien.getHoTen());
         thoiGianBaoHanhLabel.setText(thietBi.getThoiGianBaoHanh());
         giaLabel.setText(String.valueOf(thietBi.getGiaThietBi()));
         trangThaiLabel.setText(thietBi.getTrangThaiThietBi());
-        if(thietBi.getNgayXuatThietBi()!=null){
-            ngayXuatLabel.setValue(LocalDate.parse(String.valueOf(thietBi.getNgayXuatThietBi())));
+        PhieuXuat phieuXuat = new PhieuXuat();
+        if(thietBi.getIdPhieuXuat()!=0){
+            phieuXuat = phieuXuatRepo.getDetailInvoiceByID(thietBi.getIdPhieuXuat());
+            NhanVien nhanVienE = new NhanVien();
+            nhanVienE = nhanVienRepo.getInformationUser(phieuXuat.getIdEmployeeInvoice());
+            ngayXuatLabel.setText(String.valueOf(phieuXuat.getExportDateInvoice()));
+            tenNVXuatLabel.setText(nhanVienE.getHoTen());
+            maNVXuatLabel.setText(nhanVienE.getMaNV());
         }
-        maNVXuatLabel.setText(thietBi.getMaNVNguoiXuat());
-        nhanVien = nhanVienRepo.getInformationUserByMaNV(thietBi.getMaNVNguoiNhap());
-        tenNVNhapLabel.setText(nhanVien.getHoTen());
-        nhanVien = nhanVienRepo.getInformationUserByMaNV(thietBi.getMaNVNguoiXuat());
-        tenNVXuatLabel.setText(nhanVien.getHoTen());
+        else {
+            ngayXuatLabel.setText("");
+        }
     }
     @FXML
     public void setChinhSuaThietBi(ThietBi thietBi){
@@ -89,7 +97,7 @@ public class ChinhSuaThietBiController {
         loadDuLieuChinhSua();
     }
     private void update(){
-        thietBiRepo.updateThietBi(idThietBi,new ThietBi(tenLabel.getText(),modelLabel.getText(),serialLabel.getText(),xuatXuLabel.getText(),mauLabel.getText(), kichThuocLabel.getText(),Integer.valueOf(giaLabel.getText()),maNVNhapLabel.getText(),Date.valueOf(ngayNhapLabel.getValue().toString()),maNVXuatLabel.getText(),thoiGianBaoHanhLabel.getText(),trangThaiLabel.getText()));
+        thietBiRepo.updateThietBi(idThietBi,new ThietBi(tenLabel.getText(),modelLabel.getText(),serialLabel.getText(),xuatXuLabel.getText(),mauLabel.getText(), kichThuocLabel.getText(),Integer.valueOf(giaLabel.getText()),maNVNhapLabel.getText(),Date.valueOf(ngayNhapLabel.getValue().toString()),thoiGianBaoHanhLabel.getText(),trangThaiLabel.getText()));
     }
 
     @FXML
