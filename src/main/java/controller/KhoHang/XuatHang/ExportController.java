@@ -1,4 +1,4 @@
-package controller.XuatHang;
+package controller.KhoHang.XuatHang;
 
 import entity.Item;
 import entity.ThietBi;
@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class XuatHangController implements Initializable {
+public class ExportController implements Initializable {
     @FXML
     private TableView<Item> table;
     @FXML
@@ -219,7 +219,7 @@ public class XuatHangController implements Initializable {
 
     public void payButtonOnClicked(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/XuatHang/invoicePane.fxml"));
+        loader.setLocation(getClass().getResource("/view/KhoHang/XuatHang/invoicePane.fxml"));
         Parent invoicePane = loader.load();
         InvoiceController invoiceController = loader.getController();
         for(Item item : selectedItemList){
@@ -237,7 +237,7 @@ public class XuatHangController implements Initializable {
 
     public void chiTietModel(ActionEvent event) throws IOException{
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/XuatHang/detailModelPane.fxml"));
+            loader.setLocation(getClass().getResource("/view/KhoHang/XuatHang/detailModelPane.fxml"));
             Parent detailModel  = loader.load();
             DetailModelController detailModelController = loader.getController();
             Item selectedItem = table.getSelectionModel().getSelectedItem();

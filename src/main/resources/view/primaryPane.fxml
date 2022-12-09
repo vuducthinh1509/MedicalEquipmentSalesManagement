@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1060.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.primaryPane">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrimaryPane">
     <children>
         <Label layoutX="443.0" layoutY="35.0" prefHeight="45.0" prefWidth="294.0" text="Thông tin nhân viên" textFill="WHITE">
             <font>
@@ -74,11 +74,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="editButton" layoutX="640.0" layoutY="610.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="39.0" prefWidth="179.0" text="Chỉnh sửa ">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
       <Label fx:id="labelHoTen" layoutX="628.0" layoutY="137.0" prefHeight="30.0" prefWidth="450.0" text="" textFill="WHITE">
          <font>
             <Font size="20.0" />
@@ -124,7 +119,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="reloadButton" layoutX="875.0" layoutY="610.0" mnemonicParsing="false" onAction="#load_data" prefHeight="39.0" prefWidth="89.0" text="Reload">
+      <Button fx:id="editButton1" layoutX="696.0" layoutY="682.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="39.0" prefWidth="179.0" text="Chỉnh sửa ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="reloadButton1" layoutX="914.0" layoutY="682.0" mnemonicParsing="false" onAction="#load_data" prefHeight="39.0" prefWidth="133.0" text="Tải lại trang">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

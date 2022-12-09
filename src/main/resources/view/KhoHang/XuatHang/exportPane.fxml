@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1126.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.XuatHang.ExportController">
+   <children>
+      <TableView fx:id="table" layoutX="47.0" layoutY="15.0" prefHeight="330.0" prefWidth="823.0">
+        <columns>
+          <TableColumn fx:id="sttColumn" prefWidth="56.0" resizable="false" text="STT" />
+            <TableColumn fx:id="tenColumn" prefWidth="334.0" text="Tên TB" />
+            <TableColumn fx:id="modelColumn" prefWidth="113.0" resizable="false" text="Model TB" />
+            <TableColumn prefWidth="111.0" resizable="false" text="Xuất xứ TB" fx:id="xuatXuColumn" />
+            <TableColumn fx:id="soLuongColumn" prefWidth="101.0" resizable="false" text="Số lượng" />
+            <TableColumn fx:id="giaColumn" prefWidth="107.0" resizable="false" text="Giá" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#chiTietModel" text="Xem thông tin các thiết bị" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <TableView fx:id="tableCart" layoutX="47.0" layoutY="358.0" prefHeight="364.0" prefWidth="823.0">
+        <columns>
+          <TableColumn fx:id="sttColumnCart" prefWidth="47.0" resizable="false" text="STT" />
+          <TableColumn fx:id="tenColumnCart" prefWidth="242.0" text="Tên TB" />
+            <TableColumn fx:id="modelColumnCart" prefWidth="104.0" resizable="false" text="Model TB" />
+            <TableColumn prefWidth="113.0" resizable="false" text="Xuất xứ TB" fx:id="xuatXuColumnCart" />
+            <TableColumn fx:id="soLuongColumnCart" prefWidth="101.0" resizable="false" text="Số lượng" />
+            <TableColumn fx:id="giaColumnCart" prefWidth="91.0" resizable="false" text="Giá" />
+            <TableColumn fx:id="thanhTienColumnCart" prefWidth="125.0" resizable="false" text="Thành tiền" />
+        </columns>
+      </TableView>
+      <Button layoutX="888.0" layoutY="306.0" mnemonicParsing="false" onAction="#addItemToCart" prefHeight="39.0" prefWidth="114.0" text="Thêm">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="payButton" layoutX="917.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#payButtonOnClicked" prefHeight="35.0" prefWidth="128.0" text="Thanh toán">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Label layoutX="917.0" layoutY="454.0" text="Tổng đơn hàng:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="tongTienThanhToanLabel" layoutX="917.0" layoutY="497.0" prefHeight="35.0" prefWidth="140.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <ComboBox fx:id="truongTraCuuF" layoutX="888.0" layoutY="62.0" prefHeight="39.0" prefWidth="140.0" promptText="Chọn trường dữ liệu" />
+      <TextField fx:id="duLieuF" layoutX="888.0" layoutY="14.0" prefHeight="39.0" prefWidth="218.0" />
+      <Button layoutX="888.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#searchClick" prefHeight="39.0" prefWidth="140.0" text="Tìm kiếm">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+   </children>
+</Pane>

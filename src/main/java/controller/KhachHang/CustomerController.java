@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class KhachHangController implements Initializable {
+public class CustomerController implements Initializable {
     @FXML
     private TableView<KhachHang> table;
 

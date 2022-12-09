@@ -1,35 +1,22 @@
-package controller.XuatHang;
+package controller.KhoHang.XuatHang;
 
-import controller.KhachHang.AddCustomerController;
-import controller.login;
+import controller.LoginPage;
 import entity.Item;
 import entity.KhachHang;
 import entity.PhieuXuat;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import repository.*;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 
 public class InvoiceController {
     //table
@@ -162,7 +149,7 @@ public class InvoiceController {
         idInvoice = phieuXuatRepo.getNextAutoIncrement();
         idPhieuXuatLabel.setText(String.valueOf(idInvoice));
         ngayXuatLabel.setText(String.valueOf(java.time.LocalDate.now()));
-        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(login.idNhanVien).getMaNV());
+        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(LoginPage.idNhanVien).getMaNV());
     }
     public  void loadDataCustomerPane(){
         idCtmLabel.setText(String.valueOf(khachHang.getIdKhachHang()));
@@ -296,7 +283,7 @@ public class InvoiceController {
             Double discount1Invoice = Double.valueOf(discount1Label.getText());
             Double totalInvoice = Double.valueOf(totalLabel.getText());
             String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
-            Integer idEmployeeInvoice = login.idNhanVien;
+            Integer idEmployeeInvoice = LoginPage.idNhanVien;
             Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());
             PhieuXuat phieuXuat = new PhieuXuat(idInvoice,subTotalInvoice,vatInvoice,discountInvoice,discount1Invoice,totalInvoice,Date.valueOf(exportDateInvoice),idEmployeeInvoice,idCustomerInvoice);
             phieuXuatRepo.addInvoice(phieuXuat);

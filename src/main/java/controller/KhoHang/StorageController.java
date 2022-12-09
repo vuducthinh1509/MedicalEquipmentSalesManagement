@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.*;
@@ -24,7 +25,9 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-public class KhoHangController implements Initializable {
+public class StorageController implements Initializable {
+    @FXML
+    private Pane mainPane;
     @FXML
     private TableView<ThietBi> table;
     @FXML
@@ -48,6 +51,8 @@ public class KhoHangController implements Initializable {
 
     @FXML
     private Button reloadTableButton;
+    @FXML
+    private Button exportButton;
     @FXML
     private ComboBox<String> truongTraCuuF;
     @FXML
@@ -114,9 +119,9 @@ public class KhoHangController implements Initializable {
 
     public void chiTietThietBi(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/KhoHang/chiTietThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/KhoHang/ReadInformationDevice.fxml"));
         Parent chiTietTB  = loader.load();
-        ChiTietThietBiController chiTietTBController = loader.getController();
+        ReadInformationDevice chiTietTBController = loader.getController();
         ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
         if (selectedThietBi == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -136,7 +141,7 @@ public class KhoHangController implements Initializable {
 
     public void themThietBi(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/KhoHang/themThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/KhoHang/AddDevice.fxml"));
         Parent themThietBi = loader.load();
         Stage stage = new Stage();
         stage.setTitle("Thêm thiết bị");
@@ -147,9 +152,9 @@ public class KhoHangController implements Initializable {
 
     public void chinhSuaThietBi (ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/KhoHang/chinhSuaThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/KhoHang/EditInformationDevice.fxml"));
         Parent chinhSuaThietBiView = loader.load();
-        ChinhSuaThietBiController controller = loader.getController();
+        EditInformationDevice controller = loader.getController();
         ThietBi selected = table.getSelectionModel().getSelectedItem();
         if(selected == null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -188,5 +193,11 @@ public class KhoHangController implements Initializable {
             loadDataThietBi();
         } else if (option.get() == ButtonType.CANCEL) {}
 
+    }
+
+    public void exportButtonOnClicked(MouseEvent event) throws IOException{
+        Pane exportPane = FXMLLoader.load(getClass().getResource("/view/KhoHang/XuatHang/exportPane.fxml"));
+        mainPane.getChildren().add(exportPane);
+        mainPane.toFront();
     }
 }

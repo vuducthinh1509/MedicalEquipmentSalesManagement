@@ -1,30 +1,20 @@
 package controller.NhanVien;
 
-import controller.login;
+import controller.LoginPage;
 import entity.NhanVien;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
-import utility.DbUtil;
-import view.main;
 
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class EditPersonalInformation {
     @FXML
@@ -69,7 +59,7 @@ public class EditPersonalInformation {
     }
 
     public void loadData_Edit(){
-        nhanVien = nhanVienRepo.getInformationUser(login.idNhanVien);
+        nhanVien = nhanVienRepo.getInformationUser(LoginPage.idNhanVien);
         hoTenLabel.setText(nhanVien.getHoTen());
         diaChiThuongTruLabel.setText(nhanVien.getDiaChiThuongTru());
         CCCDLabel.setText(nhanVien.getCCCD());

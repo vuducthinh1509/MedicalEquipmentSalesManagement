@@ -77,5 +77,7 @@ public class SQLCommand {
     public static String PhieuXuat_QUERY_INSERT = "INSERT INTO `phieuxuat` (`subTotalInvoice`,`vatInvoice`,`discountInvoice`,`discount1Invoice`,`totalInvoice`,`exportDateInvoice`,`idEmployeeInvoice`,`idCustomerInvoice`) VALUES (?,?,?,?,?,?,?,?)";
 
     public static String PhieuXuat_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM phieuXuat where idInvoice = ?";
+
+    public static String PhieuXuat_QUERY_LAY_THONG_TIN = "SELECT * from phieuxuat";
 }
 

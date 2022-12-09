@@ -20,8 +20,8 @@ module com.example.medicaldevicessalesmanagementsystem {
     opens controller.KhoHang to javafx.fxml;
     exports controller.KhoHang;
 
-    opens controller.XuatHang to javafx.fxml;
-    exports controller.XuatHang;
+    opens controller.KhoHang.XuatHang to javafx.fxml;
+    exports controller.KhoHang.XuatHang;
 
     opens controller.KhachHang to javafx.fxml;
     exports controller.KhachHang;

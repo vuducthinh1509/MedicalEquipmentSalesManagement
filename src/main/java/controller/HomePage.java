@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class homepage implements Initializable {
+public class HomePage implements Initializable {
     @FXML
     private BorderPane borderPane;
 
@@ -38,13 +38,10 @@ public class homepage implements Initializable {
     private Button storageButton;
 
     @FXML
-    private Button exportButton;
+    private Button exportInvoiceButton;
 
     @FXML
     private Button repairButton;
-
-    @FXML
-    private Button maintenanceButton;
 
     @FXML
     private Button managementButton;
@@ -62,7 +59,7 @@ public class homepage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
-        if(login.role!=0){
+        if(LoginPage.role!=0){
             managementButton.setDisable(true);
             managementButton.setVisible(false);
         }
@@ -70,10 +67,9 @@ public class homepage implements Initializable {
     public void resetBackgroundButton(){
         homePageButton.setStyle("-fx-background-color: #2F333D;");
         storageButton.setStyle("-fx-background-color: #2F333D;");
-        exportButton.setStyle("-fx-background-color: #2F333D;");
+        exportInvoiceButton.setStyle("-fx-background-color: #2F333D;");
         storageButton.setStyle("-fx-background-color: #2F333D;");
         repairButton.setStyle("-fx-background-color: #2F333D;");
-        maintenanceButton.setStyle("-fx-background-color: #2F333D;");
         managementButton.setStyle("-fx-background-color: #2F333D;");
         customerButton.setStyle("-fx-background-color: #2F333D;");
     }
@@ -81,7 +77,7 @@ public class homepage implements Initializable {
         resetBackgroundButton();
         storageButton.setStyle("-fx-background-color: #757C95;");
         mainPane.getChildren().clear();
-        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/KhoHang/storagePane.fxml"));
+        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/KhoHang/StoragePane.fxml"));
         mainPane.getChildren().add(storagePane);
     }
 
@@ -93,12 +89,13 @@ public class homepage implements Initializable {
         mainPane.getChildren().add(trangChuPane);
     }
 
-    public void exportButtonButtonOnAction(ActionEvent event) throws IOException{
+    public void exportInvoiceButtonButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
-        exportButton.setStyle("-fx-background-color: #757C95;");
-        mainPane.getChildren().clear();
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/XuatHang/exportPane.fxml"));
-        mainPane.getChildren().add(trangChuPane);
+        exportInvoiceButton.setStyle("-fx-background-color: #757C95;");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("export button");
+        alert.setHeaderText("Tính năng đang được xây dựng");
+        alert.show();
     }
 
     public void repairButtonButtonOnAction(ActionEvent event) throws IOException{
@@ -106,17 +103,6 @@ public class homepage implements Initializable {
         repairButton.setStyle("-fx-background-color: #757C95;");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("repair button");
-        alert.setHeaderText("Tính năng đang được xây dựng");
-        alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
-//        mainPane.getChildren().add(trangChuPane);
-    }
-
-    public void maintenanceButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        maintenanceButton.setStyle("-fx-background-color: #757C95;");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("maintenance button");
         alert.setHeaderText("Tính năng đang được xây dựng");
         alert.show();
 //        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
@@ -144,7 +130,7 @@ public class homepage implements Initializable {
 
     public void dangXuatButtonOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("login_page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Đăng nhập");
         stage.setScene(scene);

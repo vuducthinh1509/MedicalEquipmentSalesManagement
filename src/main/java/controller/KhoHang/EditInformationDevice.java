@@ -9,16 +9,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import repository.*;
 
-import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 
-public class ChinhSuaThietBiController {
+public class EditInformationDevice {
     @FXML
     private TextField tenLabel;
     @FXML

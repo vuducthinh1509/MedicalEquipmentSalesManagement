@@ -15,7 +15,7 @@ import view.main;
 
 import java.io.IOException;
 
-public class login {
+public class LoginPage {
 
     public static int idNhanVien = -1;
     public static int role =-1;
@@ -37,19 +37,15 @@ public class login {
             if (NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId() != null) {
                 idNhanVien = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId();
                 role = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getRole();
-//                FXMLLoader loader = new FXMLLoader();
-//                loader.setLocation(getClass().getResource("/view/home_page.fxml"));
-//                Parent chinhSuaNKView = loader.load();
-//                primaryPane controller = loader.getController();
                 Stage stage = (Stage) buttonLogin.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("home_page.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("HomePage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("Quản lý bán hàng thiết bị y tế");
                 stage.setScene(scene);
-                stage.setWidth(1280);
-                stage.setHeight(760);
-                stage.setResizable(false);
+                stage.setWidth(1366);
+                stage.setHeight(780);
                 stage.centerOnScreen();
+                stage.setResizable(false);
                 stage.show();
             } else {
                 loginLabel.setText("Sai tài khoản hoặc mật khẩu");

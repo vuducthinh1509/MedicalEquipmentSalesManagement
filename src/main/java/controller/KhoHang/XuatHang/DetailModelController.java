@@ -1,15 +1,10 @@
-package controller.XuatHang;
+package controller.KhoHang.XuatHang;
 
 import entity.ThietBi;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class DetailModelController {
     @FXML

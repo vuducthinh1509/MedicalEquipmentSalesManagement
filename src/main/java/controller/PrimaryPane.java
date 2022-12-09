@@ -11,17 +11,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import org.w3c.dom.events.MouseEvent;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
-import view.main;
 
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class primaryPane implements Initializable {
+public class PrimaryPane implements Initializable {
     @FXML
     private Label labelMaNV;
 
@@ -64,7 +62,7 @@ public class primaryPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load_data();
-        if(login.role ==0){
+        if(LoginPage.role ==0){
             editButton.setDisable(true);
             editButton.setVisible(false);
             reloadButton.setDisable(true);
@@ -74,7 +72,7 @@ public class primaryPane implements Initializable {
         }
     }
     public void load_data(){
-        NhanVien nhanVien = nhanVienRepository.getInformationUser(login.idNhanVien);
+        NhanVien nhanVien = nhanVienRepository.getInformationUser(LoginPage.idNhanVien);
         labelMaNV.setText(nhanVien.getMaNV());
         labelGioiTinh.setText(nhanVien.getGioiTinh());
         labelHoTen.setText(nhanVien.getHoTen());

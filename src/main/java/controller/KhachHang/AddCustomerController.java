@@ -1,7 +1,6 @@
 package controller.KhachHang;
 
-import controller.XuatHang.InvoiceController;
-import entity.Item;
+import controller.KhoHang.XuatHang.InvoiceController;
 import entity.KhachHang;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +9,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 import repository.KhachHangRepository;
 import repository.KhachHangRepository_impl;
 
@@ -60,7 +57,7 @@ public class AddCustomerController implements Initializable {
         }
         else {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/XuatHang/invoicePane.fxml"));
+            loader.setLocation(getClass().getResource("/view/KhoHang/XuatHang/invoicePane.fxml"));
             Parent invoicePane = loader.load();
             InvoiceController invoiceController = loader.getController();
             invoiceController.setCustomer(new KhachHang(khachHangRepo.getCountCustomer(),name,phone,address));

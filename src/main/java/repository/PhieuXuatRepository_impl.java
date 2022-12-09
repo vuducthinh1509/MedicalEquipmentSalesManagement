@@ -1,7 +1,10 @@
 package repository;
 
+import entity.KhachHang;
 import entity.NhanVien;
 import entity.PhieuXuat;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utility.DbUtil;
 import utility.SQLCommand;
 
@@ -89,5 +92,37 @@ public class PhieuXuatRepository_impl implements PhieuXuatRepository {
                 e.printStackTrace();
             }
         } return phieuXuat;
+    }
+
+    @Override
+    public ObservableList<PhieuXuat> getAllDataInvoice(){
+        ObservableList<PhieuXuat> invoiceList = FXCollections.observableArrayList();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuXuat_QUERY_LAY_THONG_TIN);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int id = rs.getInt("idInvoice");
+                Double subTotal = rs.getDouble("subTotalInvoice");
+                Integer vat = rs.getInt("vatInvoice");
+                Double discount = rs.getDouble("discountInvoice");
+                Double discount1 = rs.getDouble("discount1Invoice");
+                Double total = rs.getDouble("totalInvoice");
+                Date exportDate = rs.getDate("exportDateInvoice");
+                Integer idEmployee = rs.getInt("idEmployeeInvoice");
+                Integer idCustomer = rs.getInt("idCustomerInvoice");
+                invoiceList.add(new PhieuXuat(id,subTotal,vat,discount,discount1,total,exportDate,idEmployee,idCustomer));
+            }
+            return invoiceList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return invoiceList;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

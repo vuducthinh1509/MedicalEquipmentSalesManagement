@@ -13,9 +13,7 @@ import lombok.SneakyThrows;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
 
-import java.time.LocalDate;
-
-public class ThemThietBiController {
+public class AddDeviceController {
     @FXML
     private TextField tenLabel;
     @FXML

@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import repository.*;
 
-import java.time.LocalDate;
-
-public class ChiTietThietBiController {
+public class ReadInformationDevice {
     @FXML
     Label tenLabel;
     @FXML
