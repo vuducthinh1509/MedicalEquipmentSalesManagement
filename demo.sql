@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 09:33 PM
+-- Generation Time: Dec 29, 2022 at 06:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -101,6 +101,26 @@ INSERT INTO `nhanvien` (`id`, `maNV`, `hoTen`, `ngaySinh`, `diaChiThuongTru`, `C
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `phieubaohanh`
+--
+
+CREATE TABLE `phieubaohanh` (
+  `id` int(11) NOT NULL,
+  `ngayBaoHanh` date NOT NULL,
+  `noteKhachHang` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `noteNhanVien` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `chiPhiBaoHanh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `idThietBi` int(11) NOT NULL,
+  `trangThai` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `idKhachHang` int(11) NOT NULL,
+  `idNhanVienTaoPhieu` int(11) NOT NULL,
+  `idNhanVienPhuTrach` int(11) NOT NULL,
+  `ngayBanGiao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `phieuxuat`
 --
 
@@ -121,8 +141,9 @@ CREATE TABLE `phieuxuat` (
 --
 
 INSERT INTO `phieuxuat` (`idInvoice`, `subTotalInvoice`, `vatInvoice`, `discountInvoice`, `discount1Invoice`, `totalInvoice`, `exportDateInvoice`, `idEmployeeInvoice`, `idCustomerInvoice`) VALUES
-(1, 560000, 44400, 60000, 10, 489000, '2022-12-10', 2, 1),
-(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 3, 4);
+(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 3, 4),
+(5, 560000, 44400, 60000, 10, 489000, '2022-12-29', 2, 1),
+(6, 660000, 53400, 60000, 10, 588000, '2022-12-29', 2, 7);
 
 -- --------------------------------------------------------
 
@@ -143,19 +164,20 @@ CREATE TABLE `thietbi` (
   `ngayNhapThietBi` date NOT NULL,
   `thoiGianBaoHanh` varchar(255) CHARACTER SET utf8 NOT NULL,
   `trangThaiThietBi` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `idPhieuXuat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `idPhieuXuat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `trangThaiBaoHanh` varchar(255) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `thietbi`
 --
 
-INSERT INTO `thietbi` (`idThietBi`, `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`, `thoiGianBaoHanh`, `trangThaiThietBi`, `idPhieuXuat`) VALUES
-(1, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000000', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-14', '2 năm', 'Đã xuất', '2'),
-(2, 'Máy đo huyết áp bắp tay tự động Omron Hem-7121', 'Hem7121', 'DT000001', 'Canada', 'Trắng', '103x80x129mm', 1190000, 'NV01', '2022-11-23', '3 năm', 'Trong kho', NULL),
-(3, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000002', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV01', '2022-11-27', '2 năm', 'Trong kho', NULL),
-(4, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000003', 'Việt Nam', 'Trắng đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-27', '2 năm', 'Trong kho', NULL),
-(5, 'Đai lưng cột sống CPO-6223', 'CPO-6223', 'DT000004', 'Trung Quốc', 'Đen', '2x2x2m', 560000, 'NV01', '2022-11-26', 'Không', 'Đã xuất', '1');
+INSERT INTO `thietbi` (`idThietBi`, `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`, `thoiGianBaoHanh`, `trangThaiThietBi`, `idPhieuXuat`, `trangThaiBaoHanh`) VALUES
+(1, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'JP000000', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-14', '2 năm', 'Đã xuất', '2', NULL),
+(2, 'Máy đo huyết áp bắp tay tự động Omron Hem-7121', 'Hem7121', 'DT000001', 'Canada', 'Trắng', '103x80x129mm', 1190000, 'NV01', '2022-11-23', '3 năm', 'Trong kho', NULL, NULL),
+(3, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000002', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV01', '2022-11-27', '2 năm', 'Đã xuất', '6', NULL),
+(4, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000003', 'Việt Nam', 'Trắng đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-27', '2 năm', 'Trong kho', NULL, NULL),
+(5, 'Đai lưng cột sống CPO-6223', 'CPO-6223', 'DT000004', 'Trung Quốc', 'Đen', '2x2x2m', 560000, 'NV01', '2022-11-26', 'Không', 'Đã xuất', '5', NULL);
 
 --
 -- Indexes for dumped tables
@@ -182,6 +204,12 @@ ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`maNV`),
   ADD UNIQUE KEY `maNV` (`maNV`),
   ADD KEY `FK_nhan_vien` (`id`);
+
+--
+-- Indexes for table `phieubaohanh`
+--
+ALTER TABLE `phieubaohanh`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `phieuxuat`
@@ -213,10 +241,16 @@ ALTER TABLE `nguoidung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `phieubaohanh`
+--
+ALTER TABLE `phieubaohanh`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `phieuxuat`
 --
 ALTER TABLE `phieuxuat`
-  MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `thietbi`
