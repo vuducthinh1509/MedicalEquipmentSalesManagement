@@ -139,6 +139,31 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    @Override
+    public ObservableList<Integer> findAllDeviceByIdInvoice(Integer idInvoice){
+        ObservableList<Integer> IDs = FXCollections.observableArrayList();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_idPhieuXuat);
+            pstmt.setInt(1, idInvoice );
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int idThietBi = rs.getInt("idThietBi");
+                IDs.add(idThietBi);
+            }
+            return IDs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return IDs;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @Override
     public ThietBi layThongTinThietBiTheoModel(String model){
         ThietBi thietBi = new ThietBi();
@@ -241,6 +266,24 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    @Override
+    public void updatePhieuXuatThietBi_Delete(int idThietBi){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT);;
+            pstmt.setInt(1, idThietBi);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @Override
     public void xoaThietBi(int idThietBi){
         try {
@@ -250,6 +293,33 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             pstmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @Override
+    public ObservableList<ThietBi> timTatCaThietBiTrangThaiDaXuat(){
+        ObservableList<ThietBi> f = FXCollections.observableArrayList();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int idThietBi = rs.getInt("idThietBi");
+                String tenThietBi = rs.getString("tenThietBi");
+                String modelThietBi = rs.getString("modelThietBi");
+                String serialThietBi = rs.getString("serialThietBi");
+                int idPhieuXuat = rs.getInt("idPhieuXuat");
+                f.add(new ThietBi(idThietBi,tenThietBi,modelThietBi,serialThietBi,idPhieuXuat));
+            }
+            return f;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return f;
         }finally {
             try {
                 DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);

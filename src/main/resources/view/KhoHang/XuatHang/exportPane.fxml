@@ -22,6 +22,7 @@
             <ContextMenu>
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#chiTietModel" text="Xem thông tin các thiết bị" />
+                  <MenuItem mnemonicParsing="false" onAction="#addItemToCart" text="Thêm vào giỏ hàng" />
               </items>
             </ContextMenu>
          </contextMenu>

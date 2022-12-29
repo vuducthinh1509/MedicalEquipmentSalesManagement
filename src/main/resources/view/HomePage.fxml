@@ -47,7 +47,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="repairButton" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="QL SỮA CHỮA BẢO TRÌ" textFill="WHITE">
+                <Button fx:id="repairButton" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="QL BẢO TRÌ SỬA CHỮA" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExportInvoice.DetailInvoice">
+   <children>
+      <Label layoutX="473.0" layoutY="30.0" text="Chi Tiết Phiếu Xuất">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="101.0" text="ID:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="751.0" layoutY="101.0" text="Tổng giá trị:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="756.0" layoutY="153.0" text="Phí VAT:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="751.0" layoutY="202.0" text="Giảm giá:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="751.0" layoutY="253.0" text="Giảm giá:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="756.0" layoutY="303.0" text="Tổng:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="153.0" text="Ngày xuất:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="101.0" text="ID Khách hàng:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="153.0" text="Tên khách hàng:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="397.0" layoutY="202.0" text="Số điện thoại KH:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="253.0" text="Tên nhân viên:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="202.0" text="Mã nhân viên:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idLabel" editable="false" layoutX="191.0" layoutY="95.0" prefHeight="39.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subTotalLabel" editable="false" layoutX="905.0" layoutY="95.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="vatLabel" editable="false" layoutX="905.0" layoutY="147.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="discountLabel" editable="false" layoutX="905.0" layoutY="196.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="discount1Label" editable="false" layoutX="905.0" layoutY="247.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="totalLabel" editable="false" layoutX="905.0" layoutY="297.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="idCtmLabel" editable="false" layoutX="549.0" layoutY="95.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="nameCtmLabel" editable="false" layoutX="549.0" layoutY="147.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="phoneCtmLabel" editable="false" layoutX="549.0" layoutY="196.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="maNVLabel" editable="false" layoutX="191.0" layoutY="196.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="nameEplLabel" editable="false" layoutX="191.0" layoutY="247.0" prefWidth="180.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="exportDateLabel" disable="true" editable="false" layoutX="191.0" layoutY="147.0" prefHeight="39.0" prefWidth="180.0" />
+      <Button layoutX="1001.0" layoutY="657.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="39.0" prefWidth="84.0" text="Đóng">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="597.0" layoutY="408.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="84.0" text="Lưu" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutX="51.0" layoutY="371.0" prefHeight="364.0" prefWidth="894.0">
+         <columns>
+            <TableColumn fx:id="sttColumn" prefWidth="47.0" resizable="false" text="STT" />
+            <TableColumn fx:id="tenColumn" prefWidth="316.0" text="Tên Thiết Bị" />
+            <TableColumn fx:id="modelColumn" prefWidth="110.0" resizable="false" text="Model TB" />
+            <TableColumn fx:id="serialColumn" prefWidth="106.0" resizable="false" text="Serial TB" />
+            <TableColumn fx:id="mauColumn" prefWidth="103.0" resizable="false" text="Màu" />
+            <TableColumn fx:id="kichThuocColumn" prefWidth="114.0" resizable="false" text="Kích thước" />
+            <TableColumn fx:id="giaColumn" prefWidth="97.0" resizable="false" text="Giá" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>

@@ -102,21 +102,39 @@ public class PhieuXuatRepository_impl implements PhieuXuatRepository {
             pstmt = conn.prepareStatement(SQLCommand.PhieuXuat_QUERY_LAY_THONG_TIN);
             rs = pstmt.executeQuery();
             while(rs.next()) {
-                int id = rs.getInt("idInvoice");
-                Double subTotal = rs.getDouble("subTotalInvoice");
+                Integer id = rs.getInt("idInvoice");
+                Float subTotal = rs.getFloat("subTotalInvoice");
                 Integer vat = rs.getInt("vatInvoice");
-                Double discount = rs.getDouble("discountInvoice");
-                Double discount1 = rs.getDouble("discount1Invoice");
-                Double total = rs.getDouble("totalInvoice");
+                Float discount = rs.getFloat("discountInvoice");
+                Float discount1 = rs.getFloat("discount1Invoice");
+                Float total = rs.getFloat("totalInvoice");
                 Date exportDate = rs.getDate("exportDateInvoice");
                 Integer idEmployee = rs.getInt("idEmployeeInvoice");
                 Integer idCustomer = rs.getInt("idCustomerInvoice");
-                invoiceList.add(new PhieuXuat(id,subTotal,vat,discount,discount1,total,exportDate,idEmployee,idCustomer));
+                PhieuXuat phieuXuat = new PhieuXuat(id,subTotal,vat,discount,discount1,total,exportDate,idEmployee,idCustomer);
+                invoiceList.add(phieuXuat);
             }
             return invoiceList;
         } catch (SQLException e) {
             e.printStackTrace();
             return invoiceList;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void deleteInvoice(int idInvoice){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuXuat_DELETE_PhieuXuat);
+            pstmt.setInt(1, idInvoice );
+            pstmt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }finally {
             try {
                 DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);

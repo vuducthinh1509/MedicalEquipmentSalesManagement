@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExportInvoice.ExportInvoiceController">
    <children>
       <Label layoutX="469.0" layoutY="32.0" text="Quản Lý Phiếu Xuất">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TableView layoutX="220.0" layoutY="139.0" prefHeight="361.0" prefWidth="687.0">
+       <Pane layoutX="263.0" layoutY="78.0" prefHeight="50.0" prefWidth="457.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+           <children>
+               <TextField fx:id="duLieuSearch" layoutX="7.0" prefHeight="50.0" prefWidth="238.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                   <font>
+                       <Font size="15.0" />
+                   </font>
+               </TextField>
+               <ComboBox fx:id="truongSearch" layoutX="246.0" layoutY="1.0" prefHeight="49.0" prefWidth="213.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
+           </children>
+       </Pane>
+       <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="736.0" layoutY="78.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../../image/icons8-search.gif" />
+           </image>
+       </ImageView>
+      <TableView fx:id="table" layoutX="220.0" layoutY="139.0" prefHeight="361.0" prefWidth="750.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="STT" />
-          <TableColumn prefWidth="109.0" text="ID Phiếu Xuất" />
-            <TableColumn prefWidth="108.0" text="Tổng tiền" />
-            <TableColumn prefWidth="124.0" text="Tên Khách Hàng" />
-            <TableColumn prefWidth="119.0" text="Tên Nhân Viên" />
-            <TableColumn prefWidth="150.0" text="Ngày Xuất" />
+          <TableColumn fx:id="sttColumn" prefWidth="75.0" text="STT" />
+            <TableColumn fx:id="idColumn" prefWidth="108.0" text="ID Phiếu Xuất" />
+            <TableColumn fx:id="nameCtmColumn" prefWidth="151.0" text="Tên Khách Hàng" />
+            <TableColumn fx:id="nameEplColumn" prefWidth="179.0" text="Tên Nhân Viên" />
+            <TableColumn fx:id="dateColumn" prefWidth="124.0" text="Ngày Xuất" />
+            <TableColumn fx:id="totalColumn" prefWidth="124.0" text="Tổng tiền" />
         </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#detailInvoice" text="Xem chi tiết phiếu xuất" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteInvoice" text="Xóa phiếu xuất" />
+                  <MenuItem mnemonicParsing="false" onAction="#detailCustomer" text="Xem thông tin khách hàng" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </TableView>
    </children>
 </Pane>

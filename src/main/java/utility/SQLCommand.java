@@ -22,6 +22,10 @@ public class SQLCommand {
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi = "SELECT * FROM thietbi where trangThaiThietBi like ?";
 
+    public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat = "SELECT * FROM thietbi where trangThaiThietBi = 'Đã xuất'";
+
+    public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_idPhieuXuat = "SELECT * FROM thietbi where idPhieuXuat = ?";
+
     public static String Thiet_Bi_DELETE_ThietBi = "DELETE FROM `thietbi` WHERE idThietBi = ?";
     public static String Thiet_Bi_QUERY_INSERT_ThietBi = "INSERT INTO `thietbi`( `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `thoiGianBaoHanh`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `trangThaiThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     public static String Nhan_Vien_QUERY_UPDATE =  "UPDATE `nhanvien` SET " +
@@ -47,6 +51,9 @@ public class SQLCommand {
     public static String Thiet_Bi_QUERY_UPDATE_IDPHIEUXUAT = "UPDATE `thietbi` SET " +
             "`idPhieuXuat`=?," +
             "`trangThaiThietBi`='Đã xuất' WHERE idThietBi = ";
+
+    public static String Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT = "update \t`thietbi` set `idPhieuXuat` = null, `trangThaiThietBi` = 'Trong kho' where idThietBi = ?;";
+
     public static String Thiet_Bi_QUERY_getCountModel = "select modelThietBi,xuatXuThietBi,tenThietBi,giaThietBi , count(*) from thietbi\n" +
             "where trangThaiThietBi = 'Trong kho'\n" +
             "group by modelThietBi;";
@@ -78,6 +85,11 @@ public class SQLCommand {
 
     public static String PhieuXuat_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM phieuXuat where idInvoice = ?";
 
-    public static String PhieuXuat_QUERY_LAY_THONG_TIN = "SELECT * from phieuxuat";
+    public static String PhieuXuat_QUERY_LAY_THONG_TIN = "SELECT * FROM phieuxuat";
+
+    public static String PhieuXuat_DELETE_PhieuXuat = "DELETE FROM `phieuxuat` WHERE idInvoice = ?";
+
+    public static String PhieuBaoHanh_QUERY_LAY_NEXT_AUTOINDEX = "SELECT auto_increment FROM information_schema.TABLES \n" +
+            "WHERE TABLE_SCHEMA = 'demo' AND TABLE_NAME = 'phieubaohanh';";
 }
 

@@ -21,7 +21,13 @@ public interface ThietBiRepository {
 
     public ThietBi layThongTinThietBiTheoModel(String model);
 
+    public ObservableList<ThietBi> timTatCaThietBiTrangThaiDaXuat();
+
     public ObservableList<Integer> findAllDeviceByModel(String model);
 
     public void updatePhieuXuatThietBi(int idThietBi,Integer idPhieuXuat);
+
+    public ObservableList<Integer> findAllDeviceByIdInvoice(Integer idInvoice);
+
+    public void updatePhieuXuatThietBi_Delete(int idThietBi);
 }

@@ -173,46 +173,47 @@ public class ExportController implements Initializable {
         }
         TextInputDialog td = new TextInputDialog();
         td.setTitle("Input");
-        td.setHeaderText("Nhập số lượng cần xuất");
-        td.showAndWait();
-        String quantity = "";
-        quantity = td.getEditor().getText();
-        if(!quantity.matches("[0-9]+")){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Số lượng không hợp lệ. Chỉ nhập số >=0");
-            alert.setContentText("Vui lòng chọn lại");
-            alert.show();
-        }
-        else {
-            Integer quantitySelected = Integer.valueOf(quantity);
-            if(selectedItem.getSoLuongItem()<quantitySelected || quantitySelected<=0){
+        td.setHeaderText("Nhập số lượng:");
+        String quantity;
+        if(td.showAndWait().isPresent()){
+            quantity = td.getEditor().getText();
+            if(!quantity.matches("^\\d+$")){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Thông báo!");
-                alert.setHeaderText("Số lượng không hợp lệ (<="+ selectedItem.getSoLuongItem()+")");
+                alert.setHeaderText("Số lượng không hợp lệ. Chỉ nhập số >=0");
                 alert.setContentText("Vui lòng chọn lại");
                 alert.show();
-                return;
             }
             else {
-                Item _item = new Item();
-                selectedItem.setSoLuongItem(quantitySelected);
-                if(!selectedItemList.isEmpty()){
-                    for(Item item : selectedItemList){
-                        if(item.getModelItem().equals(selectedItem.getModelItem())){
-                            _item = item;
-                            // nó sẽ bị giật giật ở bảng giỏ hàng
+                Integer quantitySelected = Integer.parseInt(quantity);
+                if(selectedItem.getSoLuongItem() < quantitySelected || quantitySelected<=0){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Thông báo!");
+                    alert.setHeaderText("Số lượng không hợp lệ (<="+ selectedItem.getSoLuongItem()+")");
+                    alert.setContentText("Vui lòng chọn lại");
+                    alert.show();
+                    return;
+                }
+                else {
+                    Item _item = new Item();
+                    selectedItem.setSoLuongItem(quantitySelected);
+                    if(!selectedItemList.isEmpty()){
+                        for(Item item : selectedItemList){
+                            if(item.getModelItem().equals(selectedItem.getModelItem())){
+                                _item = item;
+                                // nó sẽ bị giật giật ở bảng giỏ hàng
 //                        Platform.runLater(() ->  selectedItemList.remove(item));
+                            }
                         }
                     }
+                    if(_item!=null){
+                        selectedItemList.remove(_item);
+                    }
+                    selectedItemList.add(selectedItem);
+                    loadItemInCart();
+                    loadDataItem();
+                    return;
                 }
-                if(_item!=null){
-                    selectedItemList.remove(_item);
-                }
-                selectedItemList.add(selectedItem);
-                loadItemInCart();
-                loadDataItem();
-                return;
             }
         }
     }

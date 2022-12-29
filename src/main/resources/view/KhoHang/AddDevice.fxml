@@ -65,15 +65,42 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tenLabel" layoutX="220.0" layoutY="101.0" prefHeight="39.0" prefWidth="730.0" />
-      <TextField fx:id="modelLabel" layoutX="220.0" layoutY="153.0" />
-      <TextField fx:id="serialLabel" layoutX="724.0" layoutY="153.0" />
-      <TextField layoutX="219.0" layoutY="202.0" fx:id="xuatXuLabel" />
-      <TextField fx:id="mauLabel" layoutX="219.0" layoutY="253.0" />
-      <TextField fx:id="kichThuocLabel" layoutX="219.0" layoutY="303.0" />
-      <TextField fx:id="maNVNhapLabel" layoutX="725.0" layoutY="358.0" />
-      <TextField fx:id="thoiGianBaoHanhLabel" layoutX="724.0" layoutY="202.0" />
-      <TextField fx:id="giaLabel" layoutX="724.0" layoutY="252.0" />
+      <TextField fx:id="tenLabel" layoutX="220.0" layoutY="101.0" prefHeight="39.0" prefWidth="730.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="modelLabel" layoutX="220.0" layoutY="153.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="serialLabel" layoutX="724.0" layoutY="153.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField layoutX="219.0" layoutY="202.0" fx:id="xuatXuLabel">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="mauLabel" layoutX="219.0" layoutY="253.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="kichThuocLabel" layoutX="219.0" layoutY="303.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="maNVNhapLabel" layoutX="725.0" layoutY="358.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="thoiGianBaoHanhLabel" layoutX="724.0" layoutY="202.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="giaLabel" layoutX="724.0" layoutY="252.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
       <DatePicker fx:id="ngayNhapLabel" layoutX="219.0" layoutY="358.0" />
       <Button fx:id="saveButton" layoutX="710.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#saveAction" prefHeight="51.0" prefWidth="118.0" text="Lưu">
          <font>

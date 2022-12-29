@@ -92,21 +92,17 @@ public class HomePage implements Initializable {
     public void exportInvoiceButtonButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
         exportInvoiceButton.setStyle("-fx-background-color: #757C95;");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("export button");
-        alert.setHeaderText("Tính năng đang được xây dựng");
-        alert.show();
+        mainPane.getChildren().clear();
+        Pane exportInvoicePane =  FXMLLoader.load(main.class.getResource("/view/ExportInvoice/ExportInvoicePane.fxml"));
+        mainPane.getChildren().add(exportInvoicePane);
     }
 
     public void repairButtonButtonOnAction(ActionEvent event) throws IOException{
         resetBackgroundButton();
         repairButton.setStyle("-fx-background-color: #757C95;");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("repair button");
-        alert.setHeaderText("Tính năng đang được xây dựng");
-        alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
-//        mainPane.getChildren().add(trangChuPane);
+        mainPane.getChildren().clear();
+        Pane BHBTPane =  FXMLLoader.load(main.class.getResource("/view/BaoHanhBaoTri/BHBTPane.fxml"));
+        mainPane.getChildren().add(BHBTPane);
     }
 
     public void managementButtonOnAction(ActionEvent event) throws IOException{

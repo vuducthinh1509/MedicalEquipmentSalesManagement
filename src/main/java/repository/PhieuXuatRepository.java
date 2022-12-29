@@ -13,4 +13,6 @@ public interface PhieuXuatRepository {
     public PhieuXuat getDetailInvoiceByID(Integer idPhieuXuat);
 
     public ObservableList<PhieuXuat> getAllDataInvoice();
+
+    public void deleteInvoice(int idInvoice);
 }

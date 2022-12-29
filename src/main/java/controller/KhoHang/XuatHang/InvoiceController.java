@@ -59,7 +59,6 @@ public class InvoiceController {
     private Button tinhTienButton;
     @FXML
     private Button deleteButton;
-
     @FXML
     private Button saveButton;
     /* thông tin đơn hàng */

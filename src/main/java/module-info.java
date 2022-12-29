@@ -11,11 +11,17 @@ module com.example.medicaldevicessalesmanagementsystem {
     opens view to javafx.fxml;
     exports view;
 
+    opens test to javafx.fxml;
+    exports test;
+
     opens entity to javafx.fxml;
     exports entity;
 
     opens controller.NhanVien to javafx.fxml;
     exports controller.NhanVien;
+
+    opens controller.BaoHanhBaoTri to javafx.fxml;
+    exports controller.BaoHanhBaoTri;
 
     opens controller.KhoHang to javafx.fxml;
     exports controller.KhoHang;
@@ -25,5 +31,15 @@ module com.example.medicaldevicessalesmanagementsystem {
 
     opens controller.KhachHang to javafx.fxml;
     exports controller.KhachHang;
+
+    opens controller.ExportInvoice to javafx.fxml;
+    exports  controller.ExportInvoice;
+
+    opens controller.BaoHanhBaoTri.BaoHanh to javafx.fxml;
+    exports controller.BaoHanhBaoTri.BaoHanh;
+
+    opens controller.BaoHanhBaoTri.BaoTri to javafx.fxml;
+    exports controller.BaoHanhBaoTri.BaoTri;
+
 
 }

@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import repository.KhachHangRepository;
+import repository.KhachHangRepository_impl;
+import repository.PhieuXuatRepository;
+import repository.PhieuXuatRepository_impl;
 
 
 import java.sql.Date;
@@ -34,6 +38,7 @@ public class ThietBi {
 
     private Integer idPhieuXuat;
 
+    private String tenKhachHang;
     public ThietBi(int idThietBi,String tenThietBi, String modelThietBi,String serialThietBi,String mauThietBi, String kichThuocThietBi,Integer giaThietBi,String trangThaiThietBi){
         this.idThietBi = idThietBi;
         this.tenThietBi = tenThietBi;
@@ -70,5 +75,13 @@ public class ThietBi {
         this.ngayNhapThietBi = ngayNhapThietBi;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
         this.trangThaiThietBi = trangThaiThietBi;
+    }
+
+    public ThietBi(int idThietBi, String tenThietBi,String modelThietBi,String serialThietBi,Integer idPhieuXuat){
+        this.idThietBi = idThietBi;
+        this.tenThietBi = tenThietBi;
+        this.modelThietBi = modelThietBi;
+        this.serialThietBi = serialThietBi;
+        this.idPhieuXuat = idPhieuXuat;
     }
 }
