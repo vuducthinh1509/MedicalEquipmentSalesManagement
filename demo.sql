@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2023 at 03:39 PM
+-- Generation Time: Jan 03, 2023 at 03:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -101,6 +101,60 @@ INSERT INTO `nhanvien` (`id`, `maNV`, `hoTen`, `ngaySinh`, `diaChiThuongTru`, `C
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `phieubaohanh`
+--
+
+CREATE TABLE `phieubaohanh` (
+  `id` int(11) NOT NULL,
+  `ngayBaoHanh` date NOT NULL,
+  `noteKhachHang` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `noteNhanVien` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `chiPhiBaoHanh` varchar(255) DEFAULT NULL,
+  `idThietBi` int(11) NOT NULL,
+  `trangThai` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `idKhachHang` int(11) NOT NULL,
+  `idNhanVienTaoPhieu` int(11) NOT NULL,
+  `ngayBanGiao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `phieubaohanh`
+--
+
+INSERT INTO `phieubaohanh` (`id`, `ngayBaoHanh`, `noteKhachHang`, `noteNhanVien`, `chiPhiBaoHanh`, `idThietBi`, `trangThai`, `idKhachHang`, `idNhanVienTaoPhieu`, `ngayBanGiao`) VALUES
+(1, '2023-01-01', '', NULL, NULL, 1, 'Đang bảo hành', 7, 2, NULL),
+(2, '2023-01-01', '', NULL, NULL, 5, 'Đang bảo hành', 1, 2, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phieuxuat`
+--
+
+CREATE TABLE `phieuxuat` (
+  `idInvoice` int(11) NOT NULL,
+  `subTotalInvoice` float NOT NULL,
+  `vatInvoice` int(11) NOT NULL,
+  `discountInvoice` float NOT NULL,
+  `discount1Invoice` float NOT NULL,
+  `totalInvoice` float NOT NULL,
+  `exportDateInvoice` date NOT NULL,
+  `idEmployeeInvoice` int(11) NOT NULL,
+  `idCustomerInvoice` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `phieuxuat`
+--
+
+INSERT INTO `phieuxuat` (`idInvoice`, `subTotalInvoice`, `vatInvoice`, `discountInvoice`, `discount1Invoice`, `totalInvoice`, `exportDateInvoice`, `idEmployeeInvoice`, `idCustomerInvoice`) VALUES
+(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 3, 4),
+(5, 560000, 44400, 60000, 10, 489000, '2022-12-29', 2, 1),
+(6, 660000, 53400, 60000, 10, 588000, '2022-12-29', 2, 7);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thietbi`
 --
 
@@ -159,6 +213,18 @@ ALTER TABLE `nhanvien`
   ADD KEY `FK_nhan_vien` (`id`);
 
 --
+-- Indexes for table `phieubaohanh`
+--
+ALTER TABLE `phieubaohanh`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `phieuxuat`
+--
+ALTER TABLE `phieuxuat`
+  ADD PRIMARY KEY (`idInvoice`);
+
+--
 -- Indexes for table `thietbi`
 --
 ALTER TABLE `thietbi`
@@ -180,6 +246,18 @@ ALTER TABLE `khachhang`
 --
 ALTER TABLE `nguoidung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `phieubaohanh`
+--
+ALTER TABLE `phieubaohanh`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `phieuxuat`
+--
+ALTER TABLE `phieuxuat`
+  MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `thietbi`
