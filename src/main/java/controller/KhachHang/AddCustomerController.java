@@ -57,7 +57,7 @@ public class AddCustomerController implements Initializable {
         }
         else {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/KhoHang/XuatHang/invoicePane.fxml"));
+            loader.setLocation(getClass().getResource("/view/Storage/XuatHang/invoicePane.fxml"));
             Parent invoicePane = loader.load();
             InvoiceController invoiceController = loader.getController();
             invoiceController.setCustomer(new KhachHang(khachHangRepo.getCountCustomer(),name,phone,address));

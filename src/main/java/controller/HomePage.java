@@ -77,7 +77,7 @@ public class HomePage implements Initializable {
         resetBackgroundButton();
         storageButton.setStyle("-fx-background-color: #757C95;");
         mainPane.getChildren().clear();
-        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/KhoHang/StoragePane.fxml"));
+        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/Storage/StoragePane.fxml"));
         mainPane.getChildren().add(storagePane);
     }
 
@@ -101,7 +101,7 @@ public class HomePage implements Initializable {
         resetBackgroundButton();
         repairButton.setStyle("-fx-background-color: #757C95;");
         mainPane.getChildren().clear();
-        Pane BHBTPane =  FXMLLoader.load(main.class.getResource("/view/BaoHanhBaoTri/BHBTPane.fxml"));
+        Pane BHBTPane =  FXMLLoader.load(main.class.getResource("/view/BaoHanh/BaoHanhPane.fxml"));
         mainPane.getChildren().add(BHBTPane);
     }
 
@@ -120,7 +120,7 @@ public class HomePage implements Initializable {
         resetBackgroundButton();
         customerButton.setStyle("-fx-background-color: #757C95;");
         mainPane.getChildren().clear();
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/KhachHang/customerPane.fxml"));
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/Customer/customerPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }
 

@@ -274,7 +274,6 @@ public class InvoiceController {
 
     public void exportButtonOnClicked(MouseEvent event){
         if(isFullFillCustomerPane() && tinhTienButtonIsClicked){
-            String maNVXuat = maNVXuatLabel.getText();
             Integer idInvoice = Integer.valueOf(idPhieuXuatLabel.getText());
             Double subTotalInvoice = Double.valueOf(subTotalLabel.getText());
             Integer vatInvoice = Integer.valueOf(vatLabel.getText());

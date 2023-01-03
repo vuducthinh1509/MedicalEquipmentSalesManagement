@@ -86,7 +86,7 @@ public class PrimaryPane implements Initializable {
     }
     public void editPersonalInformationOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/NhanVien/editPersonalInformation.fxml"));
+        loader.setLocation(getClass().getResource("/view/Employee/editPersonalInformation.fxml"));
         Parent chinhSuaThongTinCaNhan = loader.load();
         EditPersonalInformation controller = loader.getController();
         Stage stage = new Stage();

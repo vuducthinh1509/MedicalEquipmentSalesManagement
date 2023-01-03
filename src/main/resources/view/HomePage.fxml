@@ -31,7 +31,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="storageButton" mnemonicParsing="false" onAction="#storageButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="QL KHO" textFill="WHITE">
+                <Button fx:id="storageButton" mnemonicParsing="false" onAction="#storageButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="KHO" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -39,7 +39,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="exportInvoiceButton" mnemonicParsing="false" onAction="#exportInvoiceButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="QL PHIẾU XUẤT" textFill="WHITE">
+                <Button fx:id="exportInvoiceButton" mnemonicParsing="false" onAction="#exportInvoiceButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="PHIẾU XUẤT" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -47,15 +47,15 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="repairButton" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="QL BẢO TRÌ SỬA CHỮA" textFill="WHITE">
+                <Button fx:id="repairButton" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="70.0" prefWidth="230.0" style="-fx-background-color: #2F333D;" text="BẢO HÀNH" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                     <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Button>
-            <Button fx:id="customerButton" layoutX="20.0" layoutY="510.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="55.0" prefWidth="222.0" style="-fx-background-color: #2F333D;" text="QL KHÁCH HÀNG" textFill="WHITE">
+            <Button fx:id="customerButton" layoutX="20.0" layoutY="510.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="55.0" prefWidth="222.0" style="-fx-background-color: #2F333D;" text="KHÁCH HÀNG" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -63,7 +63,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-                <Button fx:id="managementButton" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="57.0" prefWidth="222.0" style="-fx-background-color: #2F333D;" text="QL NHÂN VIÊN" textFill="WHITE">
+                <Button fx:id="managementButton" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="57.0" prefWidth="222.0" style="-fx-background-color: #2F333D;" text="NHÂN VIÊN" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>

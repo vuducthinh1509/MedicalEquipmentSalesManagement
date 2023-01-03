@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import repository.KhachHangRepository;
+import repository.KhachHangRepository_impl;
+import repository.ThietBiRepository;
+import repository.ThietBiRepository_impl;
 
 import java.sql.Date;
 
@@ -20,7 +24,7 @@ public class PhieuBaoHanh {
 
     private String noteNhanVien;
 
-    private Integer chiPhiBaoHanh;
+    private String chiPhiBaoHanh;
 
     private Integer idThietBi;
 
@@ -42,7 +46,33 @@ public class PhieuBaoHanh {
 
     private String tenNhanVienTaoPhieu;
 
-    private Integer idNhanVienPhuTrach;
+    public PhieuBaoHanh(Date ngayBaoHanh,String noteKhachHang,Integer idThietBi,Integer idKhachHang,Integer idNhanVienTaoPhieu){
+        this.ngayBaoHanh = ngayBaoHanh;
+        this.noteKhachHang = noteKhachHang;
+        this.idThietBi = idThietBi;
+        this.idKhachHang = idKhachHang;
+        this.idNhanVienTaoPhieu = idNhanVienTaoPhieu;
+    }
 
-    private String tenNhanVienPhuTrach;
+    public PhieuBaoHanh(Integer id,Date ngayBaoHanh,String noteKhachHang,String noteNhanVien,String chiPhiBaoHanh,Integer idThietBi,String trangThai,Integer idKhachHang,Integer idNhanVienTaoPhieu,Date ngayBanGiao){
+        this.id = id;
+        this.ngayBaoHanh = ngayBaoHanh;
+        this.noteKhachHang = noteKhachHang;
+        this.noteNhanVien = noteNhanVien;
+        this.chiPhiBaoHanh = chiPhiBaoHanh;
+        this.idThietBi = idThietBi;
+        this.trangThai = trangThai;
+        this.idKhachHang = idKhachHang;
+        this.idNhanVienTaoPhieu = idNhanVienTaoPhieu;
+        this.ngayBanGiao = ngayBanGiao;
+    }
+
+    public void loadData(){
+        ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
+        ThietBi thietBi = thietBiRepo.chiTietThietBi(this.idThietBi);
+        this.serialThietBi = thietBi.getSerialThietBi();
+        KhachHangRepository khachHangRepo = new KhachHangRepository_impl();
+        KhachHang khachHang = khachHangRepo.getInformationCustomerByID(this.idKhachHang);
+        this.tenKhachHang = khachHang.getTenKhachHang();
+    }
 }

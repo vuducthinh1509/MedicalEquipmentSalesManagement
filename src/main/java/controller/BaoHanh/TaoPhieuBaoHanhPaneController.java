@@ -1,11 +1,9 @@
-package controller.BaoHanhBaoTri.BaoHanh;
+package controller.BaoHanh;
 
 import controller.ExportInvoice.DetailInvoice;
+import controller.KhachHang.DetailCustomerController;
 import controller.LoginPage;
-import entity.Item;
-import entity.KhachHang;
-import entity.PhieuXuat;
-import entity.ThietBi;
+import entity.*;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +21,7 @@ import repository.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 public class TaoPhieuBaoHanhPaneController implements Initializable {
@@ -62,15 +61,27 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
     private TextField addressCtmLabel;
     @FXML
     private TextField phoneCtmLabel;
+
+    @FXML
+    private Label tenThietBiLabel;
+    @FXML
+    private Label modelThietBiLabel;
+    @FXML
+    private Label serialThietBiLabel;
     @FXML
     private Button findCtmButton;
     @FXML
     private Button addCtmButton;
 
     @FXML
+    private Button addPBHButton;
+    @FXML
     private Button deleteButton;
     @FXML
     private Button saveButton;
+
+    @FXML
+    private TextField noteCtmLabel;
 
     static PhieuBaoHanhRepository phieuBaoHanhRepo = new PhieuBaoHanhRepository_impl();
 
@@ -87,9 +98,23 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
     KhachHang khachHang = new KhachHang();
     static Integer idPBH = -1;
 
+    static Integer idThietBi = -1;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDataPane();
+    }
+
+    private boolean isFullFillCustomerPane(){
+        String id = idCtmLabel.getText();
+        String name = nameCtmLabel.getText();
+        String phone = phoneCtmLabel.getText();
+        String address = addressCtmLabel.getText();
+        if(id.isEmpty()||name.isEmpty()||phone.isEmpty()||address.isEmpty()){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void loadDataPane(){
@@ -233,5 +258,61 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void detailCustomer(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/KhachHang/DetailCustomer.fxml"));
+        Parent detailCustomer  = loader.load();
+        DetailCustomerController detailCustomerController = loader.getController();
+        ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
+        PhieuXuat selectedInvoice = phieuXuatRepo.getDetailInvoiceByID(selectedThietBi.getIdPhieuXuat());
+        if (selectedInvoice == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không thiết bị nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
+            return;
+        }
+        khachHang = khachHangRepo.getInformationCustomerByID(selectedInvoice.getIdCustomerInvoice());
+        detailCustomerController.setCustomer(khachHang);
+        detailCustomerController.loadDataPane();
+        Stage stage = new Stage();
+        stage.setTitle("Thông tin khách hàng");
+        Scene scene = new Scene(detailCustomer);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void setOnMouseClicked(MouseEvent event){
+        ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
+        idThietBi = selectedThietBi.getIdThietBi();
+        tenThietBiLabel.setText(selectedThietBi.getTenThietBi());
+        modelThietBiLabel.setText(selectedThietBi.getModelThietBi());
+        serialThietBiLabel.setText(selectedThietBi.getSerialThietBi());
+    }
+
+    public void addPBHButtonOnClicked(MouseEvent event){
+        if(isFullFillCustomerPane()&& idThietBi != -1){
+            thietBiRepo.updateIDPhieuBaoHanh(idThietBi,idPBH);
+            String ngayTao = String.valueOf(ngayXuatLabel.getText());
+            String noteKhachHang = noteCtmLabel.getText();
+            Integer idTB = idThietBi;
+            Integer idKH = Integer.valueOf(idCtmLabel.getText());
+            Integer idNV = LoginPage.idNhanVien;
+            PhieuBaoHanh phieuBaohanh = new PhieuBaoHanh(Date.valueOf(ngayTao),noteKhachHang,idTB,idKH,idNV);
+            phieuBaoHanhRepo.taoPhieuBaoHanh(phieuBaohanh);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Tạo phiếu bảo hành thành công");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Cần nhập đủ thông tin của khách hàng và lựa chọn thiết bị");
+            alert.setContentText("Vui lòng thử lại");
+            alert.showAndWait();
+        }
     }
 }

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 06:15 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 03, 2023 at 03:39 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `khachhang` (
   `idKhachHang` int(11) NOT NULL,
-  `tenKhachHang` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `sdtKhachHang` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `diaChiKhachHang` varchar(255) CHARACTER SET utf8 NOT NULL
+  `tenKhachHang` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sdtKhachHang` varchar(255) NOT NULL,
+  `diaChiKhachHang` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -52,8 +52,8 @@ INSERT INTO `khachhang` (`idKhachHang`, `tenKhachHang`, `sdtKhachHang`, `diaChiK
 
 CREATE TABLE `nguoidung` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -79,16 +79,16 @@ INSERT INTO `nguoidung` (`id`, `username`, `password`, `role`) VALUES
 CREATE TABLE `nhanvien` (
   `id` int(11) NOT NULL,
   `maNV` varchar(255) NOT NULL,
-  `hoTen` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `hoTen` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `ngaySinh` date NOT NULL,
-  `diaChiThuongTru` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `diaChiThuongTru` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `CCCD` varchar(255) NOT NULL,
   `soDienThoai` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `ngayVaoLam` date NOT NULL,
-  `chucVu` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `gioiTinh` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `chucVu` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `gioiTinh` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `nhanvien`
@@ -101,83 +101,36 @@ INSERT INTO `nhanvien` (`id`, `maNV`, `hoTen`, `ngaySinh`, `diaChiThuongTru`, `C
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phieubaohanh`
---
-
-CREATE TABLE `phieubaohanh` (
-  `id` int(11) NOT NULL,
-  `ngayBaoHanh` date NOT NULL,
-  `noteKhachHang` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `noteNhanVien` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `chiPhiBaoHanh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idThietBi` int(11) NOT NULL,
-  `trangThai` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `idKhachHang` int(11) NOT NULL,
-  `idNhanVienTaoPhieu` int(11) NOT NULL,
-  `idNhanVienPhuTrach` int(11) NOT NULL,
-  `ngayBanGiao` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `phieuxuat`
---
-
-CREATE TABLE `phieuxuat` (
-  `idInvoice` int(11) NOT NULL,
-  `subTotalInvoice` float NOT NULL,
-  `vatInvoice` int(11) NOT NULL,
-  `discountInvoice` float NOT NULL,
-  `discount1Invoice` float NOT NULL,
-  `totalInvoice` float NOT NULL,
-  `exportDateInvoice` date NOT NULL,
-  `idEmployeeInvoice` int(11) NOT NULL,
-  `idCustomerInvoice` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `phieuxuat`
---
-
-INSERT INTO `phieuxuat` (`idInvoice`, `subTotalInvoice`, `vatInvoice`, `discountInvoice`, `discount1Invoice`, `totalInvoice`, `exportDateInvoice`, `idEmployeeInvoice`, `idCustomerInvoice`) VALUES
-(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 3, 4),
-(5, 560000, 44400, 60000, 10, 489000, '2022-12-29', 2, 1),
-(6, 660000, 53400, 60000, 10, 588000, '2022-12-29', 2, 7);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `thietbi`
 --
 
 CREATE TABLE `thietbi` (
   `idThietBi` int(11) NOT NULL,
-  `tenThietBi` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `modelThietBi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `serialThietBi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `xuatXuThietBi` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `mauThietBi` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `kichThuocThietBi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tenThietBi` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `modelThietBi` varchar(255) NOT NULL,
+  `serialThietBi` varchar(255) NOT NULL,
+  `xuatXuThietBi` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mauThietBi` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `kichThuocThietBi` varchar(255) DEFAULT NULL,
   `giaThietBi` double DEFAULT NULL,
-  `maNVNguoiNhap` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `maNVNguoiNhap` varchar(255) NOT NULL,
   `ngayNhapThietBi` date NOT NULL,
-  `thoiGianBaoHanh` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `trangThaiThietBi` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `idPhieuXuat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `trangThaiBaoHanh` varchar(255) CHARACTER SET utf8 DEFAULT NULL
+  `thoiGianBaoHanh` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `idPhieuBaoHanh` int(11) DEFAULT NULL,
+  `idPhieuXuat` varchar(255) DEFAULT NULL,
+  `trangThaiThietBi` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `thietbi`
 --
 
-INSERT INTO `thietbi` (`idThietBi`, `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`, `thoiGianBaoHanh`, `trangThaiThietBi`, `idPhieuXuat`, `trangThaiBaoHanh`) VALUES
-(1, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'JP000000', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-14', '2 năm', 'Đã xuất', '2', NULL),
-(2, 'Máy đo huyết áp bắp tay tự động Omron Hem-7121', 'Hem7121', 'DT000001', 'Canada', 'Trắng', '103x80x129mm', 1190000, 'NV01', '2022-11-23', '3 năm', 'Trong kho', NULL, NULL),
-(3, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000002', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV01', '2022-11-27', '2 năm', 'Đã xuất', '6', NULL),
-(4, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000003', 'Việt Nam', 'Trắng đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-27', '2 năm', 'Trong kho', NULL, NULL),
-(5, 'Đai lưng cột sống CPO-6223', 'CPO-6223', 'DT000004', 'Trung Quốc', 'Đen', '2x2x2m', 560000, 'NV01', '2022-11-26', 'Không', 'Đã xuất', '5', NULL);
+INSERT INTO `thietbi` (`idThietBi`, `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`, `thoiGianBaoHanh`, `idPhieuBaoHanh`, `idPhieuXuat`, `trangThaiThietBi`) VALUES
+(1, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'JP000000', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-14', '2 năm', 1, '2', 'Đã xuất'),
+(2, 'Máy đo huyết áp bắp tay tự động Omron Hem-7121', 'Hem7121', 'DT000001', 'Canada', 'Trắng', '103x80x129mm', 1190000, 'NV01', '2022-11-23', '3 năm', NULL, NULL, 'Trong kho'),
+(3, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000002', 'Việt Nam', 'Trắng Đen', '62.2x37x33.1mm', 660000, 'NV01', '2022-11-27', '2 năm', NULL, '6', 'Đã xuất'),
+(4, 'Máy đo SP02 Jumper 5000D', 'Jumper500D', 'DT000003', 'Việt Nam', 'Trắng đen', '62.2x37x33.1mm', 660000, 'NV02', '2022-11-27', '2 năm', NULL, NULL, 'Trong kho'),
+(5, 'Đai lưng cột sống CPO-6223', 'CPO-6223', 'CP000004', 'Trung Quốc', 'Đen', '2x2x2m', 560000, 'NV01', '2022-11-26', 'Không', 2, '5', 'Đã xuất');
 
 --
 -- Indexes for dumped tables
@@ -206,18 +159,6 @@ ALTER TABLE `nhanvien`
   ADD KEY `FK_nhan_vien` (`id`);
 
 --
--- Indexes for table `phieubaohanh`
---
-ALTER TABLE `phieubaohanh`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `phieuxuat`
---
-ALTER TABLE `phieuxuat`
-  ADD PRIMARY KEY (`idInvoice`);
-
---
 -- Indexes for table `thietbi`
 --
 ALTER TABLE `thietbi`
@@ -239,18 +180,6 @@ ALTER TABLE `khachhang`
 --
 ALTER TABLE `nguoidung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `phieubaohanh`
---
-ALTER TABLE `phieubaohanh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `phieuxuat`
---
-ALTER TABLE `phieuxuat`
-  MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `thietbi`

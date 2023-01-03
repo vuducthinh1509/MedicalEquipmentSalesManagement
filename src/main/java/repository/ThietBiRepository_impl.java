@@ -328,4 +328,22 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    public void updateIDPhieuBaoHanh(int idThietBi, Integer idPBH){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPBH);;
+            pstmt.setInt(1, idPBH);
+            pstmt.setInt(2, idThietBi);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

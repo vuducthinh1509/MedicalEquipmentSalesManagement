@@ -22,7 +22,7 @@ public class SQLCommand {
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi = "SELECT * FROM thietbi where trangThaiThietBi like ?";
 
-    public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat = "SELECT * FROM thietbi where trangThaiThietBi = 'Đã xuất'";
+    public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat = "SELECT * FROM thietbi where trangThaiThietBi = 'Đã xuất' and idPhieuBaoHanh is null";
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_idPhieuXuat = "SELECT * FROM thietbi where idPhieuXuat = ?";
 
@@ -52,6 +52,8 @@ public class SQLCommand {
             "`idPhieuXuat`=?," +
             "`trangThaiThietBi`='Đã xuất' WHERE idThietBi = ";
 
+    public static String Thiet_Bi_QUERY_UPDATE_IDPBH = "UPDATE `thietbi` SET" +
+            "`idPhieuBaoHanh` = ? WHERE idThietBi = ? ";
     public static String Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT = "update \t`thietbi` set `idPhieuXuat` = null, `trangThaiThietBi` = 'Trong kho' where idThietBi = ?;";
 
     public static String Thiet_Bi_QUERY_getCountModel = "select modelThietBi,xuatXuThietBi,tenThietBi,giaThietBi , count(*) from thietbi\n" +
@@ -91,5 +93,10 @@ public class SQLCommand {
 
     public static String PhieuBaoHanh_QUERY_LAY_NEXT_AUTOINDEX = "SELECT auto_increment FROM information_schema.TABLES \n" +
             "WHERE TABLE_SCHEMA = 'demo' AND TABLE_NAME = 'phieubaohanh';";
+
+    public static String PhieuBaoHanh_QUERY_INSERT = "INSERT INTO `phieubaohanh` (`ngayBaoHanh`,`noteKhachHang`,`idThietBi`,`idKhachHang`,`idNhanVienTaoPhieu`, `trangThai`) VALUES (?,?,?,?,?,'Đang bảo hành')";
+
+    public static String PhieuBaoHanh_QUERY_GETALLDATA = "SELECT * FROM `phieubaohanh`";
+
 }
 

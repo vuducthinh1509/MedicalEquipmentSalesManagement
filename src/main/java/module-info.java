@@ -20,8 +20,8 @@ module com.example.medicaldevicessalesmanagementsystem {
     opens controller.NhanVien to javafx.fxml;
     exports controller.NhanVien;
 
-    opens controller.BaoHanhBaoTri to javafx.fxml;
-    exports controller.BaoHanhBaoTri;
+    opens controller.BaoHanh to javafx.fxml;
+    exports controller.BaoHanh;
 
     opens controller.KhoHang to javafx.fxml;
     exports controller.KhoHang;
@@ -34,12 +34,6 @@ module com.example.medicaldevicessalesmanagementsystem {
 
     opens controller.ExportInvoice to javafx.fxml;
     exports  controller.ExportInvoice;
-
-    opens controller.BaoHanhBaoTri.BaoHanh to javafx.fxml;
-    exports controller.BaoHanhBaoTri.BaoHanh;
-
-    opens controller.BaoHanhBaoTri.BaoTri to javafx.fxml;
-    exports controller.BaoHanhBaoTri.BaoTri;
 
 
 }

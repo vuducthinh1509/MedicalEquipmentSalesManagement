@@ -30,4 +30,6 @@ public interface ThietBiRepository {
     public ObservableList<Integer> findAllDeviceByIdInvoice(Integer idInvoice);
 
     public void updatePhieuXuatThietBi_Delete(int idThietBi);
+
+    public void updateIDPhieuBaoHanh(int idThietBi, Integer idPBH);
 }
