@@ -9,91 +9,104 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="859.0" style="-fx-background-color: linear-gradient(to top left, #ffccff 50%, #ccffff 50%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to right, #66ccff 0%, #ffffff 100%);">
+      <ImageView fitHeight="489.0" fitWidth="658.0" layoutX="502.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo2.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0">
          <children>
-            <Pane prefHeight="38.0" prefWidth="400.0" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/logo2.png" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="56.0" prefWidth="400.0" />
-            <ImageView fitHeight="276.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/avatar6.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox prefHeight="600.0" prefWidth="483.0">
-         <children>
-            <Pane prefHeight="144.0" prefWidth="482.0" />
-            <HBox prefHeight="60.0" prefWidth="482.0">
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0">
                <children>
-                  <Pane prefHeight="69.0" prefWidth="85.0">
-                     <children>
-                        <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/avatar7.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <TextField fx:id="username" prefHeight="60.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
-                     <font>
-                        <Font size="14.0" />
-                     </font></TextField>
+                  <Pane prefHeight="38.0" prefWidth="400.0" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/logo2.png" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="56.0" prefWidth="400.0" />
+                  <ImageView fitHeight="276.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/avatar6.png" />
+                     </image>
+                  </ImageView>
                </children>
-               <VBox.margin>
-                  <Insets left="50.0" right="50.0" top="50.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox layoutX="60.0" layoutY="260.0" prefHeight="60.0" prefWidth="482.0">
+            </VBox>
+            <VBox prefHeight="600.0" prefWidth="483.0">
                <children>
-                  <Pane prefHeight="69.0" prefWidth="85.0">
+                  <Pane prefHeight="144.0" prefWidth="482.0" />
+                  <HBox prefHeight="60.0" prefWidth="482.0">
                      <children>
-                        <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/key.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <PasswordField fx:id="password" prefHeight="60.0" prefWidth="270.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
-                     <font>
-                        <Font size="14.0" />
-                     </font></PasswordField>
-               </children>
-               <VBox.margin>
-                  <Insets left="50.0" right="50.0" top="50.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="49.0" prefWidth="382.0">
-               <children>
-                  <Pane prefHeight="52.0" prefWidth="382.0">
-                     <children>
-                        <Label fx:id="loginLabel" alignment="CENTER" layoutX="2.0" layoutY="3.0" prefHeight="31.0" prefWidth="279.0" textFill="#e40808">
+                        <Pane prefHeight="69.0" prefWidth="85.0">
+                           <children>
+                              <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/avatar7.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <TextField fx:id="username" prefHeight="60.0" prefWidth="270.0" promptText="Username" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
                            <font>
                               <Font size="14.0" />
-                           </font></Label>
+                           </font>
+                        </TextField>
                      </children>
-                  </Pane>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="60.0" layoutY="260.0" prefHeight="60.0" prefWidth="482.0">
+                     <children>
+                        <Pane prefHeight="69.0" prefWidth="85.0">
+                           <children>
+                              <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="19.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/key.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <PasswordField fx:id="password" prefHeight="60.0" prefWidth="270.0" promptText="Password" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="49.0" prefWidth="382.0">
+                     <children>
+                        <Pane prefHeight="52.0" prefWidth="382.0">
+                           <children>
+                              <Label fx:id="loginLabel" alignment="CENTER" layoutX="2.0" layoutY="3.0" prefHeight="31.0" prefWidth="279.0" textFill="#e40808">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="100.0" right="100.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" prefHeight="60.0" prefWidth="382.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đăng Nhập" textFill="#f2eeee">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Pane prefHeight="160.0" prefWidth="482.0" />
                </children>
-               <VBox.margin>
-                  <Insets left="100.0" right="100.0" top="20.0" />
-               </VBox.margin>
-            </HBox>
-            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#dangNhapButtonOnAction" prefHeight="60.0" prefWidth="382.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đăng Nhập" textFill="#f2eeee">
-               <VBox.margin>
-                  <Insets left="50.0" right="50.0" top="20.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Pane prefHeight="160.0" prefWidth="482.0" />
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
-</HBox>
+</Pane>
