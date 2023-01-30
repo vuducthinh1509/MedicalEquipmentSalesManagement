@@ -13,9 +13,9 @@
 
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.StorageController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản lý kho hàng" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản Lý Kho Hàng" textAlignment="CENTER">
          <font>
-            <Font size="26.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
        <Pane layoutX="57.0" layoutY="79.0" prefHeight="50.0" prefWidth="716.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
@@ -28,7 +28,7 @@
                <ComboBox fx:id="truongTraCuuF" layoutX="485.0" layoutY="1.0" prefHeight="49.0" prefWidth="231.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
            </children>
        </Pane>
-      <TableView fx:id="table" layoutX="15.0" layoutY="154.0" prefHeight="598.0" prefWidth="910.0">
+      <TableView fx:id="table" layoutX="30.0" layoutY="149.0" prefHeight="598.0" prefWidth="910.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
           <TableColumn fx:id="tenColumn" prefWidth="261.0" text="Tên" />
@@ -49,22 +49,22 @@
               </ContextMenu>
           </contextMenu>
       </TableView>
-      <Button layoutX="951.0" layoutY="629.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="39.0" prefWidth="151.0" text="Tải lại bảng">
+      <Button layoutX="967.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="40.0" prefWidth="130.0" text="Tải lại bảng">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font></Button>
-      <Button fx:id="addProductButton" layoutX="951.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="39.0" prefWidth="151.0" text="Thêm thiết bị">
+      <Button fx:id="addProductButton" layoutX="967.0" layoutY="609.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="40.0" prefWidth="130.0" text="Thêm thiết bị">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font></Button>
          <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="773.0" layoutY="79.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
              <image>
                  <Image url="@../../image/icons8-search.gif" />
              </image>
          </ImageView>
-      <Button fx:id="exportButton" layoutX="951.0" layoutY="688.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="39.0" prefWidth="151.0" text="Xuất Hàng">
+      <Button fx:id="exportButton" layoutX="967.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="40.0" prefWidth="130.0" text="Xuất Hàng">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font>
       </Button>
    </children>

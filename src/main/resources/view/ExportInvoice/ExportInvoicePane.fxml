@@ -14,10 +14,10 @@
    <children>
       <Label layoutX="469.0" layoutY="32.0" text="Quản Lý Phiếu Xuất">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-       <Pane layoutX="263.0" layoutY="78.0" prefHeight="50.0" prefWidth="457.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+       <Pane layoutX="294.0" layoutY="91.0" prefHeight="50.0" prefWidth="457.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
            <children>
                <TextField fx:id="duLieuSearch" layoutX="7.0" prefHeight="50.0" prefWidth="238.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
                    <font>
@@ -27,19 +27,19 @@
                <ComboBox fx:id="truongSearch" layoutX="246.0" layoutY="1.0" prefHeight="49.0" prefWidth="213.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
            </children>
        </Pane>
-       <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="736.0" layoutY="78.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
+       <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="767.0" layoutY="91.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../../image/icons8-search.gif" />
            </image>
        </ImageView>
-      <TableView fx:id="table" layoutX="220.0" layoutY="139.0" prefHeight="361.0" prefWidth="750.0">
+      <TableView fx:id="table" layoutX="180.0" layoutY="169.0" prefHeight="361.0" prefWidth="807.0">
         <columns>
           <TableColumn fx:id="sttColumn" prefWidth="75.0" text="STT" />
             <TableColumn fx:id="idColumn" prefWidth="108.0" text="ID Phiếu Xuất" />
-            <TableColumn fx:id="nameCtmColumn" prefWidth="151.0" text="Tên Khách Hàng" />
-            <TableColumn fx:id="nameEplColumn" prefWidth="179.0" text="Tên Nhân Viên" />
-            <TableColumn fx:id="dateColumn" prefWidth="124.0" text="Ngày Xuất" />
-            <TableColumn fx:id="totalColumn" prefWidth="124.0" text="Tổng tiền" />
+            <TableColumn fx:id="nameCtmColumn" prefWidth="173.0" text="Tên Khách Hàng" />
+            <TableColumn fx:id="nameEplColumn" prefWidth="175.0" text="Tên Nhân Viên" />
+            <TableColumn fx:id="dateColumn" prefWidth="143.0" text="Ngày Xuất" />
+            <TableColumn fx:id="totalColumn" prefWidth="132.0" text="Tổng tiền" />
         </columns>
          <contextMenu>
             <ContextMenu>

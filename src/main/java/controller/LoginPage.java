@@ -38,7 +38,7 @@ public class LoginPage {
                 idNhanVien = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId();
                 role = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getRole();
                 Stage stage = (Stage) buttonLogin.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("HomePage.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("home3.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("Quản lý bán hàng thiết bị y tế");
                 stage.setScene(scene);
