@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1400.0" styleClass="test-background" stylesheets="@../style/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePage">
+    <top>
+        <HBox prefHeight="159.0" prefWidth="1360.0" spacing="30.0" styleClass="border-bottom" stylesheets="@../style/styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="homePageButton" mnemonicParsing="false" onAction="#homePageButtonOnAction" prefHeight="156.0" prefWidth="201.0" styleClass="button-background" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <HBox alignment="CENTER" prefHeight="149.0" prefWidth="179.0" spacing="20.0">
+                            <children>
+                                <ImageView fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/25694.png" />
+                                    </image></ImageView>
+                                <Label prefHeight="136.0" prefWidth="119.0" stylesheets="@../style/styles.css" text="Trang chủ">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </graphic>
+                </Button>
+                <Pane prefHeight="160.0" prefWidth="8.0" />
+                <Button fx:id="storageButton" mnemonicParsing="false" onAction="#storageButtonOnAction" prefHeight="156.0" prefWidth="119.0" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/2875878.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Kho hàng" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass>
+                </Button>
+                <Button fx:id="exportInvoiceButton" layoutX="377.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportInvoiceButtonButtonOnAction" prefHeight="156.0" prefWidth="120.0" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/1372789.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Xuất/nhập" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font></Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass></Button>
+                <Button layoutX="487.0" layoutY="10.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="120.0" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/1524855.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Bảo hành" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font></Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass>
+                </Button>
+                <Button fx:id="repairButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="155.0" prefWidth="127.0" stylesheets="@../style/.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/2696528.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Sửa chữa" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font></Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass>
+                </Button>
+                <Button fx:id="customerButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="156.0" prefWidth="133.0" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="148.0" prefWidth="103.0">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/1077012.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Khách hàng" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font></Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass>
+                </Button>
+                <Button fx:id="managementButton" layoutX="267.0" layoutY="10.0" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="156.0" prefWidth="120.0" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <ImageView fitHeight="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/3281869.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="Nhân viên" textFill="#97999a">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font></Label>
+                            </children>
+                        </VBox>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="button-background" />
+                        <String fx:value="button-hover" />
+                    </styleClass>
+                </Button>
+                <Pane prefHeight="157.0" prefWidth="76.0" />
+                <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#dangXuatButtonOnAction" prefHeight="156.0" prefWidth="63.0" styleClass="button-background" stylesheets="@../style/styles.css">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/1286853.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <Pane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" styleClass="main-background" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>

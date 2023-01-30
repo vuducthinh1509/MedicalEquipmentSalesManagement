@@ -16,7 +16,7 @@ import repository.*;
 import java.sql.Date;
 import java.time.LocalDate;
 
-public class EditInformationDevice {
+public class ChinhSuaThongTinController {
     @FXML
     private TextField tenLabel;
     @FXML

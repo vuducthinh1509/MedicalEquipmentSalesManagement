@@ -121,7 +121,7 @@ public class StorageController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/Storage/ReadInformationDevice.fxml"));
         Parent chiTietTB  = loader.load();
-        ReadInformationDevice chiTietTBController = loader.getController();
+        XemChiTietController chiTietTBController = loader.getController();
         ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
         if (selectedThietBi == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -131,7 +131,7 @@ public class StorageController implements Initializable {
             alert.show();
             return;
         }
-        chiTietTBController.setThietBi(selectedThietBi);
+        chiTietTBController.setThietBi(selectedThietBi.getIdThietBi());
         Stage stage = new Stage();
         stage.setTitle("Thông tin thiết bị");
         Scene scene = new Scene(chiTietTB);
@@ -154,7 +154,7 @@ public class StorageController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/Storage/EditInformationDevice.fxml"));
         Parent chinhSuaThietBiView = loader.load();
-        EditInformationDevice controller = loader.getController();
+        ChinhSuaThongTinController controller = loader.getController();
         ThietBi selected = table.getSelectionModel().getSelectedItem();
         if(selected == null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

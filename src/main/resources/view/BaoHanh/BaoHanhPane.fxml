@@ -23,17 +23,17 @@
             <ContextMenu>
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#xemChiTietPhieuBaoHanh" text="Xem chi tiết phiếu bảo hành" />
-                  <MenuItem mnemonicParsing="false" text="Xem chi thiết thiết bị" />
-                  <MenuItem mnemonicParsing="false" text="Chỉnh sửa trạng thái" />
-                  <MenuItem mnemonicParsing="false" text="Chỉnh sửa ghi chú khách hàng" />
-                  <MenuItem mnemonicParsing="false" text="Chỉnh sửa ghi chú nhân viên" />
+                  <MenuItem mnemonicParsing="false" onAction="#xemChiTietThietBi" text="Xem chi thiết thiết bị" />
+                  <MenuItem mnemonicParsing="false" onAction="#chinhSuaTrangThai" text="Chỉnh sửa trạng thái" />
+                  <MenuItem mnemonicParsing="false" onAction="#chinhSuaGhiChuKhachHang" text="Chỉnh sửa ghi chú khách hàng" />
+                  <MenuItem mnemonicParsing="false" onAction="#chinhSuaGhiChuNhanVien" text="Chỉnh sửa ghi chú nhân viên" />
               </items>
             </ContextMenu>
          </contextMenu>
       </TableView>
       <Label layoutX="454.0" layoutY="39.0" text="Quản Lý Phiếu Bảo Hành">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Button fx:id="createButton" layoutX="433.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#createButtonOnClicked" prefHeight="44.0" prefWidth="229.0" text="Tạo phiếu bảo hành">

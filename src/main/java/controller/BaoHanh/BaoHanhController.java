@@ -1,6 +1,8 @@
 package controller.BaoHanh;
 
+import controller.KhoHang.XemChiTietController;
 import entity.PhieuBaoHanh;
+import entity.ThietBi;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,15 +12,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import repository.PhieuBaoHanhRepository;
 import repository.PhieuBaoHanhRepository_impl;
+import utility.Box;
 
 import java.io.IOException;
 import java.net.URL;
@@ -85,10 +86,101 @@ public class BaoHanhController implements Initializable {
         loader.setLocation(getClass().getResource("/view/BaoHanh/ChiTietPBHPane.fxml"));
         Parent chiThietPBH  = loader.load();
         ChiTietPBHController chiTietPBHController = loader.getController();
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không phiếu bảo hành nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
+            return;
+        }
+        chiTietPBHController.setPhieuBaoHanh(selected.getId());
+        chiTietPBHController.loadDuLieuPhieuBaoHanh();
         Stage stage = new Stage();
         stage.setTitle("Thông tin thiết bị");
         Scene scene = new Scene(chiThietPBH);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void xemChiTietThietBi(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/Storage/ReadInformationDevice.fxml"));
+        Parent chiTietTB  = loader.load();
+        XemChiTietController chiTietTBController = loader.getController();
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không thiết bị nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
+            return;
+        }
+        chiTietTBController.setThietBi(selected.getIdThietBi());
+        Stage stage = new Stage();
+        stage.setTitle("Thông tin thiết bị");
+        Scene scene = new Scene(chiTietTB);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void chinhSuaTrangThai(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/BaoHanh/ChinhSuaTrangThaiPane.fxml"));
+        Parent chinhSuaTrangThai  = loader.load();
+        ChinhSuaTrangThaiController chinhSuaTrangThaiController = loader.getController();
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Không thiết bị nào được chọn.");
+            alert.setContentText("Vui lòng chọn lại.");
+            alert.show();
+            return;
+        }
+        chinhSuaTrangThaiController.id = selected.getId();
+        chinhSuaTrangThaiController.trangThaiCuoiCung = selected.getTrangThai();
+        chinhSuaTrangThaiController.loadData();
+        Stage stage = new Stage();
+        stage.setTitle("Chỉnh sửa trạng thái bảo hành");
+        Scene scene = new Scene(chinhSuaTrangThai);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void chinhSuaGhiChuNhanVien(ActionEvent event){
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        Integer id = selected.getId();
+        TextInputDialog td = new TextInputDialog();
+        td.setTitle("Input");
+        td.setHeaderText("Nhập ghi chú của nhân viên:");
+        String note;
+        if(td.showAndWait().isPresent()){
+            note = td.getEditor().getText();
+            if(note.isEmpty()){
+                Box.alertBox("Thông báo!", "Ghi chú trống","Vui lòng nhập lại");
+            } else {
+                phieuBaoHanhRepo.capNhatNoteNhanVien(id,note);
+            }
+        }
+    }
+
+    public void chinhSuaGhiChuKhachHang(ActionEvent event){
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        Integer id = selected.getId();
+        TextInputDialog td = new TextInputDialog();
+        td.setTitle("Input");
+        td.setHeaderText("Nhập ghi chú của khách hàng:");
+        String note;
+        if(td.showAndWait().isPresent()){
+            note = td.getEditor().getText();
+            if(note.isEmpty()){
+                Box.alertBox("Thông báo!", "Ghi chú trống","Vui lòng nhập lại");
+            } else {
+                phieuBaoHanhRepo.capNhatNoteKhachHang(id,note);
+            }
+        }
     }
 }

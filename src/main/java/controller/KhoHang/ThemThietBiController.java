@@ -13,7 +13,7 @@ import lombok.SneakyThrows;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
 
-public class AddDeviceController {
+public class ThemThietBiController {
     @FXML
     private TextField tenLabel;
     @FXML

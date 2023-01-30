@@ -1,10 +1,8 @@
 package controller.ExportInvoice;
 
 import controller.KhachHang.DetailCustomerController;
-import controller.KhoHang.ReadInformationDevice;
 import entity.KhachHang;
 import entity.PhieuXuat;
-import entity.ThietBi;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

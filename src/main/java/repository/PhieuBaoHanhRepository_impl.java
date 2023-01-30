@@ -94,4 +94,123 @@ public class PhieuBaoHanhRepository_impl implements PhieuBaoHanhRepository{
             }
         }
     }
+
+    public PhieuBaoHanh layDuLieuPhieuBaoHanhTheoID(Integer id){
+        PhieuBaoHanh phieuBaoHanh = new PhieuBaoHanh();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_GET_DATE_BY_ID);
+            pstmt.setInt(1,id);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                phieuBaoHanh.setId(rs.getInt("id"));
+                phieuBaoHanh.setNgayBaoHanh(rs.getDate("ngayBaoHanh"));
+                phieuBaoHanh.setNoteKhachHang(rs.getString("noteKhachHang"));
+                phieuBaoHanh.setNoteNhanVien(rs.getString("noteNhanVien"));
+                phieuBaoHanh.setChiPhiBaoHanh(rs.getString("chiPhiBaoHanh"));
+                phieuBaoHanh.setIdThietBi(rs.getInt("idThietBi"));
+                phieuBaoHanh.setTrangThai(rs.getString("trangThai"));
+                phieuBaoHanh.setIdKhachHang(rs.getInt("idKhachHang"));
+                phieuBaoHanh.setIdNhanVienTaoPhieu(rs.getInt("idNhanVienTaoPhieu"));
+                phieuBaoHanh.setNgayBanGiao(rs.getDate("ngayBanGiao"));
+            }
+            return phieuBaoHanh;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return phieuBaoHanh;
+    }
+
+    public void capNhatTrangThai(Integer id, Date ngayBanGiao, String chiPhi,String noteNhanVien){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_UPDATE_TrangThai + id);
+            pstmt.setDate(1,ngayBanGiao);
+            pstmt.setString( 2,chiPhi);
+            pstmt.setString(3,noteNhanVien);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void capNhatTrangThai1(Integer id){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_UPDATE_TrangThai1);
+            pstmt.setInt(1,id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void capNhatTrangThai2(Integer id,String chiPhi, String noteNhanVien){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_UPDATE_TrangThai2 + id);
+            pstmt.setString(1,chiPhi);
+            pstmt.setString(2,noteNhanVien);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void capNhatNoteNhanVien(Integer id, String note){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_UPDATE_NoteNhanVien + id);
+            pstmt.setString(1,note);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void capNhatNoteKhachHang(Integer id, String note){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_QUERY_UPDATE_NoteKhachHang + id);
+            pstmt.setString(1,note);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

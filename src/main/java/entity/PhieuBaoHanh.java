@@ -28,6 +28,10 @@ public class PhieuBaoHanh {
 
     private Integer idThietBi;
 
+    private String tenThietBi;
+
+    private String modelThietBi;
+
     private String serialThietBi;
 
     private Date ngayBanGiao;
@@ -70,9 +74,26 @@ public class PhieuBaoHanh {
     public void loadData(){
         ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
         ThietBi thietBi = thietBiRepo.chiTietThietBi(this.idThietBi);
+        this.tenThietBi = thietBi.getTenThietBi();
+        this.modelThietBi = thietBi.getModelThietBi();
         this.serialThietBi = thietBi.getSerialThietBi();
         KhachHangRepository khachHangRepo = new KhachHangRepository_impl();
         KhachHang khachHang = khachHangRepo.getInformationCustomerByID(this.idKhachHang);
         this.tenKhachHang = khachHang.getTenKhachHang();
+        this.phoneKhachHang = khachHang.getPhoneKhachHang();
+        this.diaChiKhachHang = khachHang.getDiaChiKhachHang();
+    }
+
+    public void copyPhieuBaoHanh(PhieuBaoHanh clone){
+        this.id = clone.getId();
+        this.ngayBaoHanh = clone.getNgayBaoHanh();
+        this.noteKhachHang = clone.getNoteKhachHang();
+        this.noteNhanVien = clone.getNoteNhanVien();
+        this.chiPhiBaoHanh = clone.getChiPhiBaoHanh();
+        this.idThietBi = clone.getIdThietBi();
+        this.trangThai = clone.getTrangThai();
+        this.idKhachHang = clone.getIdKhachHang();
+        this.idNhanVienTaoPhieu = clone.getIdNhanVienTaoPhieu();
+        this.ngayBanGiao = clone.getNgayBanGiao();
     }
 }

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import repository.*;
 
-public class ReadInformationDevice {
+public class XemChiTietController {
     @FXML
     Label tenLabel;
     @FXML
@@ -48,9 +48,9 @@ public class ReadInformationDevice {
 
     static NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
 
-    public void setThietBi(ThietBi thietBi){
+    public void setThietBi(Integer id){
         clean();
-        loadDataThietBi(thietBi.getIdThietBi());
+        loadDataThietBi(id);
     }
 
     @FXML

@@ -98,5 +98,18 @@ public class SQLCommand {
 
     public static String PhieuBaoHanh_QUERY_GETALLDATA = "SELECT * FROM `phieubaohanh`";
 
+    public static String PhieuBaoHanh_QUERY_GET_DATE_BY_ID = "SELECT * FROM phieubaohanh WHERE id = ?";
+
+    public static String PhieuBaoHanh_QUERY_UPDATE_TrangThai = "update phieubaohanh set trangThai = 'Đã bàn giao', ngayBanGiao = ? , chiPhiBaoHanh = ?, noteNhanVien = ? where id =";
+
+    public static String PhieuBaoHanh_QUERY_UPDATE_TrangThai1 = "update phieubaohanh set trangThai = 'Đang bảo hành', noteNhanVien = null, chiPhiBaoHanh = null, ngayBanGiao = null where id = ?;";
+
+    public static String PhieuBaoHanh_QUERY_UPDATE_TrangThai2 = "update phieubaohanh set trangThai = 'Có thể bàn giao'," +
+            "chiPhiBaoHanh = ?," +
+            "noteNhanVien = ? where id =";
+
+    public static String PhieuBaoHanh_QUERY_UPDATE_NoteNhanVien = "update phieubaohanh set noteNhanVien = ? where id =";
+
+    public static String PhieuBaoHanh_QUERY_UPDATE_NoteKhachHang = "update phieubaohanh set noteKhachHang = ? where id =";
 }
 

@@ -1,0 +1,33 @@
+.border-bottom{
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #1C98E4;
+}
+.bottom{
+    -fx-background-color: #1C98E4;
+    -fx-background-radius: 50;
+}
+.test-background{
+    -fx-background-color: #fed6e3;
+}
+.gradient{
+    -fx-background-color:linear-gradient(to top, #CCFFFF, transparent);
+}
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);
+}
+.button-background {
+    -fx-background-color: #fed6e3;
+}
+
+.button-click:focused {
+    -fx-background-color: #66FFFF;
+}
+.button-hover:hover {
+    -fx-background-color: #fed2f6
+}
+.main-background {
+    -fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%)
+}
+.diagonal-split-background{
+    -fx-background-color: linear-gradient(to top left, #ffccff 50%, #ccffff 50%);
+}
