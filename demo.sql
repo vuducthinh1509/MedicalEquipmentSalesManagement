@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2023 at 03:45 PM
+-- Generation Time: Jan 30, 2023 at 04:37 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -64,11 +64,7 @@ CREATE TABLE `nguoidung` (
 INSERT INTO `nguoidung` (`id`, `username`, `password`, `role`) VALUES
 (1, 'admin', '1', 0),
 (2, 'thinh', '1', 1),
-(3, 'quang', '1', 2),
-(4, 'vu', '1', 1),
-(5, 'duc', '1', 2),
-(6, 'duc1', '1', 2),
-(7, 'giang', '1', 1);
+(8, 'quang', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -96,7 +92,7 @@ CREATE TABLE `nhanvien` (
 
 INSERT INTO `nhanvien` (`id`, `maNV`, `hoTen`, `ngaySinh`, `diaChiThuongTru`, `CCCD`, `soDienThoai`, `email`, `ngayVaoLam`, `chucVu`, `gioiTinh`) VALUES
 (2, 'NV01', 'Vũ Đức Thịnh', '2002-09-15', 'Hà Nội', '035202001419', '0968968032', 'vuducthinh1509@gmail.com', '2020-01-01', 'Nhân viên bán hàng', 'Nam'),
-(3, 'NV02', 'Lại Đăng Quang', '2002-01-18', 'Hà Nam', '03520200364', '0123456789', 'quangvippro@gmail.com', '2021-01-15', 'Nhân viên bảo trì', 'Nam');
+(8, 'NV02', 'Lại Đăng Quang', '2002-01-18', 'Hà Nam', '03520200364', '0123456789', 'quangvippro@gmail.com', '2021-01-15', 'Nhân viên bảo trì', 'Nam');
 
 -- --------------------------------------------------------
 
@@ -122,8 +118,8 @@ CREATE TABLE `phieubaohanh` (
 --
 
 INSERT INTO `phieubaohanh` (`id`, `ngayBaoHanh`, `noteKhachHang`, `noteNhanVien`, `chiPhiBaoHanh`, `idThietBi`, `trangThai`, `idKhachHang`, `idNhanVienTaoPhieu`, `ngayBanGiao`) VALUES
-(1, '2023-01-01', '', NULL, NULL, 1, 'Đang bảo hành', 7, 2, NULL),
-(2, '2023-01-01', '', NULL, NULL, 5, 'Đang bảo hành', 1, 2, NULL);
+(1, '2023-01-01', 'a', 'ab', '', 1, 'Đã bàn giao', 7, 2, '2023-01-15'),
+(2, '2023-01-01', 'cd', 'cde', NULL, 5, 'Đang bảo hành', 1, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -148,7 +144,7 @@ CREATE TABLE `phieuxuat` (
 --
 
 INSERT INTO `phieuxuat` (`idInvoice`, `subTotalInvoice`, `vatInvoice`, `discountInvoice`, `discount1Invoice`, `totalInvoice`, `exportDateInvoice`, `idEmployeeInvoice`, `idCustomerInvoice`) VALUES
-(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 3, 4),
+(2, 660000, 53400, 60000, 10, 588000, '2022-12-10', 8, 4),
 (5, 560000, 44400, 60000, 10, 489000, '2022-12-29', 2, 1),
 (6, 660000, 53400, 60000, 10, 588000, '2022-12-29', 2, 7);
 
@@ -245,7 +241,7 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `phieubaohanh`
