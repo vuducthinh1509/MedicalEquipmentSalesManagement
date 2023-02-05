@@ -7,91 +7,91 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1180.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhanVien.EditPersonalInformation">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="1180.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhanVien.EditPersonalInformation">
     <children>
-        <Label layoutX="384.0" layoutY="48.0" prefHeight="45.0" prefWidth="437.0" text="Chỉnh sửa thông tin cá nhân" textFill="WHITE">
+        <Label layoutX="381.0" layoutY="37.0" prefHeight="45.0" prefWidth="437.0" text="Chỉnh sửa thông tin cá nhân">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Label fx:id="labelMaNV" layoutX="225.0" layoutY="383.0" prefHeight="21.0" prefWidth="89.0" textFill="WHITE">
+        <Label fx:id="labelMaNV" layoutX="224.0" layoutY="432.0" prefHeight="30.0" prefWidth="96.0">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label layoutX="83.0" layoutY="378.0" text="Mã nhân viên:" textFill="WHITE">
+        <Label layoutX="77.0" layoutY="429.0" text="Mã nhân viên:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <ImageView fitHeight="236.0" fitWidth="212.0" layoutX="83.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="236.0" fitWidth="212.0" layoutX="77.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../image/avatar--login.jpg" />
+                <Image url="@../../image/1077063.png" />
             </image>
         </ImageView>
-        <Label layoutX="389.0" layoutY="137.0" text="Họ và tên:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="118.0" text="Họ và tên:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="183.0" text="Giới tính:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="164.0" text="Giới tính:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="230.0" text="Ngày sinh:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="211.0" text="Ngày sinh:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="277.0" text="Địa chỉ thường trú:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="258.0" text="Địa chỉ thường trú:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="323.0" text="CCCD:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="304.0" text="CCCD:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="368.0" text="Số điện thoại:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="349.0" text="Số điện thoại:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="420.0" text="Email:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="401.0" text="Email:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="466.0" text="Ngày vào làm:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="447.0" text="Ngày vào làm:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="389.0" layoutY="509.0" text="Chức vụ:" textFill="WHITE">
+        <Label layoutX="389.0" layoutY="490.0" text="Chức vụ:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-      <Button fx:id="saveButton" layoutX="877.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="39.0" prefWidth="99.0" text="Lưu">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="1018.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="39.0" prefWidth="81.0" text="Hủy">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TextField fx:id="hoTenLabel" disable="true" layoutX="622.0" layoutY="137.0" prefHeight="30.0" prefWidth="354.0" />
-      <TextField fx:id="diaChiThuongTruLabel" layoutX="622.0" layoutY="277.0" prefHeight="30.0" prefWidth="354.0" />
-      <TextField fx:id="CCCDLabel" disable="true" layoutX="622.0" layoutY="323.0" prefHeight="30.0" prefWidth="354.0" />
-      <TextField fx:id="soDienThoaiLabel" layoutX="622.0" layoutY="368.0" prefHeight="30.0" prefWidth="354.0" />
-      <TextField fx:id="emailLabel" layoutX="622.0" layoutY="420.0" prefHeight="30.0" prefWidth="354.0" />
-      <TextField fx:id="chucVuLabel" disable="true" layoutX="622.0" layoutY="509.0" prefHeight="30.0" prefWidth="354.0" />
-      <ComboBox fx:id="gioiTinhComboBox" layoutX="622.0" layoutY="186.0" prefHeight="30.0" prefWidth="156.0" />
-      <DatePicker fx:id="ngaySinhLabel" layoutX="622.0" layoutY="233.0" prefHeight="30.0" prefWidth="174.0" />
-      <DatePicker fx:id="ngayVaoLamLabel" layoutX="622.0" layoutY="466.0" prefHeight="30.0" prefWidth="174.0" />
+        <Button fx:id="saveButton" layoutX="927.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="1062.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <TextField fx:id="hoTenLabel" disable="true" layoutX="622.0" layoutY="118.0" prefHeight="30.0" prefWidth="354.0" />
+        <TextField fx:id="diaChiThuongTruLabel" layoutX="622.0" layoutY="258.0" prefHeight="30.0" prefWidth="354.0" />
+        <TextField fx:id="CCCDLabel" disable="true" layoutX="622.0" layoutY="304.0" prefHeight="30.0" prefWidth="354.0" />
+        <TextField fx:id="soDienThoaiLabel" layoutX="622.0" layoutY="349.0" prefHeight="30.0" prefWidth="354.0" />
+        <TextField fx:id="emailLabel" layoutX="622.0" layoutY="401.0" prefHeight="30.0" prefWidth="354.0" />
+        <TextField fx:id="chucVuLabel" disable="true" layoutX="622.0" layoutY="490.0" prefHeight="30.0" prefWidth="354.0" />
+        <ComboBox fx:id="gioiTinhComboBox" layoutX="622.0" layoutY="167.0" prefHeight="30.0" prefWidth="156.0" />
+        <DatePicker fx:id="ngaySinhLabel" layoutX="622.0" layoutY="214.0" prefHeight="30.0" prefWidth="174.0" />
+        <DatePicker fx:id="ngayVaoLamLabel" layoutX="622.0" layoutY="447.0" prefHeight="30.0" prefWidth="174.0" />
     </children>
 </Pane>

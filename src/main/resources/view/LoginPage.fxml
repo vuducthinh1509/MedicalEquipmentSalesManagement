@@ -9,8 +9,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="859.0" style="-fx-background-color: linear-gradient(to top left, #ffccff 50%, #ccffff 50%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="859.0" style="-fx-background-color: linear-gradient(to top left, #ffccff 0%, #ccffff 50%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
    <children>
+      <ImageView fitHeight="429.0" fitWidth="588.0" layoutX="555.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo3.png" />
+         </image>
+      </ImageView>
       <HBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0">

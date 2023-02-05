@@ -31,3 +31,8 @@
 .diagonal-split-background{
     -fx-background-color: linear-gradient(to top left, #ffccff 50%, #ccffff 50%);
 }
+.border-text {
+    -fx-background-color:  rgba(0,0,0,0);
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);
+}
