@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" stylesheets="@../../style/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ThemThietBiController">
+    <children>
+        <Label layoutX="524.0" layoutY="328.0" text="Mã NV nhập:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="74.0" layoutY="272.0" text="Màu:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="73.0" layoutY="106.0" text="Tên thiết bị:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="73.0" layoutY="158.0" prefHeight="30.0" prefWidth="74.0" text="Model:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="522.0" layoutY="158.0" text="Số Serial:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="70.0" layoutY="213.0" text="Xuất xứ:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="515.0" layoutY="214.0" text="Thời gian bảo hành:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="71.0" layoutY="328.0" text="Kích thước:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="522.0" layoutY="272.0" text="Giá:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="303.0" layoutY="21.0" prefHeight="45.0" prefWidth="425.0" text="Thêm thiết bị">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+      <Label layoutX="70.0" layoutY="385.0" text="Ngày nhập:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tenLabel" layoutX="220.0" layoutY="101.0" prefHeight="39.0" prefWidth="730.0" styleClass="border-text" stylesheets="@../../style/styles.css">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="modelLabel" layoutX="219.0" layoutY="155.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="serialLabel" layoutX="724.0" layoutY="153.0" prefHeight="37.0" prefWidth="223.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField layoutX="219.0" layoutY="210.0" styleClass="border-text" fx:id="xuatXuLabel">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="mauLabel" layoutX="219.0" layoutY="269.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="kichThuocLabel" layoutX="219.0" layoutY="324.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="maNVNhapLabel" layoutX="724.0" layoutY="325.0" prefHeight="37.0" prefWidth="223.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="thoiGianBaoHanhLabel" layoutX="724.0" layoutY="211.0" prefHeight="37.0" prefWidth="223.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <TextField fx:id="giaLabel" layoutX="724.0" layoutY="269.0" prefHeight="37.0" prefWidth="223.0" styleClass="border-text">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <DatePicker fx:id="ngayNhapLabel" layoutX="219.0" layoutY="382.0" prefHeight="37.0" prefWidth="200.0" styleClass="border-text" />
+      <Button fx:id="saveButton" layoutX="676.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#saveAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="820.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#cancelAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

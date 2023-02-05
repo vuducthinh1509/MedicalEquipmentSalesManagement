@@ -57,7 +57,7 @@ public class HomePage implements Initializable {
     @SneakyThrows
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
         if(LoginPage.role!=0){
             managementButton.setDisable(true);
@@ -74,51 +74,45 @@ public class HomePage implements Initializable {
         customerButton.setStyle("-fx-background-color: #2F333D;");
     }
     public void storageButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        storageButton.setStyle("-fx-background-color: #757C95;");
+
         mainPane.getChildren().clear();
         Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/Storage/StoragePane.fxml"));
         mainPane.getChildren().add(storagePane);
     }
 
     public void homePageButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        homePageButton.setStyle("-fx-background-color: #757C95;");
+
         mainPane.getChildren().clear();
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }
 
     public void exportInvoiceButtonButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        exportInvoiceButton.setStyle("-fx-background-color: #757C95;");
+
         mainPane.getChildren().clear();
         Pane exportInvoicePane =  FXMLLoader.load(main.class.getResource("/view/ExportInvoice/ExportInvoicePane.fxml"));
         mainPane.getChildren().add(exportInvoicePane);
     }
 
     public void repairButtonButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        repairButton.setStyle("-fx-background-color: #757C95;");
+
         mainPane.getChildren().clear();
         Pane BHBTPane =  FXMLLoader.load(main.class.getResource("/view/BaoHanh/BaoHanhPane.fxml"));
         mainPane.getChildren().add(BHBTPane);
     }
 
     public void managementButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        managementButton.setStyle("-fx-background-color: #757C95;");
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("management button");
         alert.setHeaderText("Tính năng đang được xây dựng");
         alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("primaryPane.fxml"));
+//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
 //        mainPane.getChildren().add(trangChuPane);
     }
 
     public void customerButtonOnAction(ActionEvent event) throws IOException{
-        resetBackgroundButton();
-        customerButton.setStyle("-fx-background-color: #757C95;");
+
         mainPane.getChildren().clear();
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/Customer/customerPane.fxml"));
         mainPane.getChildren().add(trangChuPane);

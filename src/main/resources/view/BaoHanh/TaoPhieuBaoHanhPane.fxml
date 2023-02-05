@@ -11,9 +11,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1126.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BaoHanh.TaoPhieuBaoHanhPaneController">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1126.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" stylesheets="@../../style/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BaoHanh.TaoPhieuBaoHanhPaneController">
     <children>
-        <Label layoutX="471.0" layoutY="14.0" text="PHIẾU BẢO HÀNH">
+        <Label layoutX="477.0" layoutY="14.0" text="PHIẾU BẢO HÀNH">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font></Label>
@@ -35,11 +35,11 @@
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0">
+                <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0" styleClass="border-text">
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0">
+                <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0" styleClass="border-text">
                     <font>
                         <Font size="20.0" />
                     </font></Label>
@@ -63,28 +63,28 @@
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="96.0" text="Tìm bằng SĐT" />
-                <Button fx:id="addCtmButton" layoutX="118.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="87.0" text="Thêm mới">
+                <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm bằng SĐT" textFill="WHITE" />
+                <Button fx:id="addCtmButton" layoutX="118.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm mới" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font></Button>
-                <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="185.0">
+                <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="185.0" styleClass="border-text">
                     <font>
                         <Font size="18.0" />
                     </font></TextField>
-                <TextField fx:id="nameCtmLabel" layoutX="87.0" layoutY="56.0" prefHeight="39.0" prefWidth="185.0">
+                <TextField fx:id="nameCtmLabel" layoutX="87.0" layoutY="56.0" prefHeight="39.0" prefWidth="185.0" styleClass="border-text">
                     <font>
                         <Font size="18.0" />
                     </font></TextField>
-                <TextField fx:id="addressCtmLabel" layoutX="87.0" layoutY="101.0" prefHeight="39.0" prefWidth="185.0">
+                <TextField fx:id="addressCtmLabel" layoutX="87.0" layoutY="101.0" prefHeight="39.0" prefWidth="185.0" styleClass="border-text">
                     <font>
                         <Font size="18.0" />
                     </font></TextField>
-                <TextField fx:id="phoneCtmLabel" layoutX="87.0" layoutY="151.0" prefHeight="39.0" prefWidth="185.0">
+                <TextField fx:id="phoneCtmLabel" layoutX="87.0" layoutY="151.0" prefHeight="39.0" prefWidth="185.0" styleClass="border-text">
                     <font>
                         <Font size="18.0" />
                     </font></TextField>
-                <Button fx:id="deleteButton" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" text="Xóa">
+                <Button fx:id="deleteButton" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xóa" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -100,29 +100,28 @@
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font></Label>
-        <Pane layoutX="386.0" layoutY="119.0" prefHeight="50.0" prefWidth="572.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+        <Pane layoutX="372.0" layoutY="119.0" prefHeight="50.0" prefWidth="426.0" style="-fx-background-color: #ffffff;">
             <children>
                 <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="351.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </TextField>
-                <ComboBox fx:id="truongTraCuuF" layoutX="358.0" layoutY="1.0" prefHeight="49.0" prefWidth="218.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
             </children>
         </Pane>
-        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="978.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="808.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../image/icons8-search.gif" />
+                <Image url="@../../image/2811806.png" />
             </image>
         </ImageView>
-        <TableView fx:id="table" layoutX="386.0" layoutY="195.0" onMouseClicked="#setOnMouseClicked" prefHeight="374.0" prefWidth="680.0">
+        <TableView fx:id="table" layoutX="372.0" layoutY="193.0" onMouseClicked="#setOnMouseClicked" prefHeight="374.0" prefWidth="740.0">
             <columns>
                 <TableColumn fx:id="sttColumn" prefWidth="52.0" text="STT" />
-                <TableColumn fx:id="tenColumn" prefWidth="233.0" text="Tên TB" />
-                <TableColumn fx:id="modelColumn" prefWidth="83.0" text="Model TB" />
-                <TableColumn fx:id="serialColumn" prefWidth="74.0" text="Serial TB" />
-                <TableColumn fx:id="idPXColumn" minWidth="0.0" prefWidth="107.0" text="ID Phiếu Xuất" />
-                <TableColumn fx:id="tenKHColumn" prefWidth="129.0" text="Tên Khách Hàng" />
+                <TableColumn fx:id="tenColumn" prefWidth="197.0" text="Tên TB" />
+                <TableColumn fx:id="modelColumn" prefWidth="103.0" text="Model TB" />
+                <TableColumn fx:id="serialColumn" prefWidth="90.0" text="Serial TB" />
+                <TableColumn fx:id="idPXColumn" minWidth="0.0" prefWidth="137.0" text="ID Phiếu Xuất" />
+                <TableColumn fx:id="tenKHColumn" prefWidth="160.0" text="Tên Khách Hàng" />
             </columns>
          <contextMenu>
             <ContextMenu>
@@ -133,7 +132,7 @@
             </ContextMenu>
          </contextMenu>
         </TableView>
-        <Label layoutX="386.0" layoutY="68.0" text="Thông tin sản phẩm">
+        <Label layoutX="372.0" layoutY="68.0" text="Thông tin sản phẩm">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
@@ -168,9 +167,10 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <TextField fx:id="noteCtmLabel" layoutX="254.0" layoutY="89.0" prefHeight="39.0" prefWidth="595.0" />
+            <TextField fx:id="noteCtmLabel" layoutX="254.0" layoutY="89.0" prefHeight="39.0" prefWidth="595.0" styleClass="border-text" />
          </children>
       </Pane>
-      <Button fx:id="addPBHButton" layoutX="960.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="39.0" prefWidth="96.0" text="Lưu" />
+      <Button fx:id="addPBHButton" layoutX="957.0" layoutY="642.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE" />
+          <ComboBox fx:id="truongTraCuuF" layoutX="869.0" layoutY="120.0" opacity="0.7" prefHeight="49.0" prefWidth="193.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
     </children>
 </Pane>

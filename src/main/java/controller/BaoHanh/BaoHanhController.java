@@ -2,7 +2,6 @@ package controller.BaoHanh;
 
 import controller.KhoHang.XemChiTietController;
 import entity.PhieuBaoHanh;
-import entity.ThietBi;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -106,7 +105,7 @@ public class BaoHanhController implements Initializable {
 
     public void xemChiTietThietBi(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/ReadInformationDevice.fxml"));
+        loader.setLocation(getClass().getResource("/view/Storage/XemChiTietThietBi.fxml"));
         Parent chiTietTB  = loader.load();
         XemChiTietController chiTietTBController = loader.getController();
         PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();

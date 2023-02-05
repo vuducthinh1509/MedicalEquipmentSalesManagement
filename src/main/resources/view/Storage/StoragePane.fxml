@@ -11,61 +11,46 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
-<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.StorageController">
-   <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản lý kho hàng" textAlignment="CENTER">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Label>
-       <Pane layoutX="57.0" layoutY="79.0" prefHeight="50.0" prefWidth="716.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
-           <children>
-               <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="430.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
-                   <font>
-                       <Font size="15.0" />
-                   </font>
-               </TextField>
-               <ComboBox fx:id="truongTraCuuF" layoutX="485.0" layoutY="1.0" prefHeight="49.0" prefWidth="231.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
-           </children>
-       </Pane>
-      <TableView fx:id="table" layoutX="15.0" layoutY="154.0" prefHeight="598.0" prefWidth="910.0">
-        <columns>
-          <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
-          <TableColumn fx:id="tenColumn" prefWidth="261.0" text="Tên" />
-            <TableColumn fx:id="modelColumn" prefWidth="96.0" text="Model" />
-            <TableColumn fx:id="serialColumn" prefWidth="94.0" text="Serial" />
-            <TableColumn fx:id="mauColumn" prefWidth="95.0" text="Màu" />
-            <TableColumn fx:id="kichThuocColumn" prefWidth="115.0" text="Kích Thước" />
-            <TableColumn fx:id="giaColumn" minWidth="0.0" prefWidth="94.0" text="Giá" />
-            <TableColumn fx:id="trangThaiColumn" prefWidth="111.0" text="Trạng Thái" />
-        </columns>
-          <contextMenu>
-              <ContextMenu>
-                  <items>
-                      <MenuItem mnemonicParsing="false" onAction="#chiTietThietBi" text="Xem thông tin thiết bị" />
-                      <MenuItem mnemonicParsing="false" onAction="#chinhSuaThietBi" text="Chỉnh sửa thông tin thiết bị" />
-                      <MenuItem mnemonicParsing="false" onAction="#xoaThietBi" text="Xóa thiết bị" />
-                  </items>
-              </ContextMenu>
-          </contextMenu>
-      </TableView>
-      <Button layoutX="951.0" layoutY="629.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="39.0" prefWidth="151.0" text="Tải lại bảng">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-      <Button fx:id="addProductButton" layoutX="951.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="39.0" prefWidth="151.0" text="Thêm thiết bị">
-         <font>
-            <Font size="14.0" />
-         </font></Button>
-         <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="773.0" layoutY="79.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
-             <image>
-                 <Image url="@../../image/icons8-search.gif" />
-             </image>
-         </ImageView>
-      <Button fx:id="exportButton" layoutX="951.0" layoutY="688.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="39.0" prefWidth="151.0" text="Xuất Hàng">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-   </children>
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.StorageController">
+    <children>
+        <Pane layoutX="33.0" layoutY="23.0" prefHeight="50.0" prefWidth="772.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="565.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+            </children>
+        </Pane>
+        <TableView fx:id="table" layoutX="33.0" layoutY="92.0" prefHeight="514.0" prefWidth="1084.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
+                <TableColumn fx:id="tenColumn" prefWidth="261.0" text="Tên" />
+                <TableColumn fx:id="modelColumn" prefWidth="96.0" text="Model" />
+                <TableColumn fx:id="serialColumn" prefWidth="94.0" text="Serial" />
+                <TableColumn fx:id="mauColumn" prefWidth="95.0" text="Màu" />
+                <TableColumn fx:id="kichThuocColumn" prefWidth="124.0" text="Kích Thước" />
+                <TableColumn fx:id="giaColumn" minWidth="0.0" prefWidth="167.0" text="Giá" />
+                <TableColumn fx:id="trangThaiColumn" prefWidth="129.0" text="Trạng Thái" />
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#chiTietThietBi" text="Xem thông tin thiết bị" />
+                        <MenuItem mnemonicParsing="false" onAction="#chinhSuaThietBi" text="Chỉnh sửa thông tin thiết bị" />
+                        <MenuItem mnemonicParsing="false" onAction="#xoaThietBi" text="Xóa thiết bị" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <Button layoutX="1133.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại bảng" textFill="WHITE" />
+        <Button fx:id="addProductButton" layoutX="1133.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm thiết bị" textFill="WHITE" />
+        <Button fx:id="exportButton" layoutX="1133.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xuất Hàng" textFill="WHITE" />
+        <ComboBox fx:id="truongTraCuuF" layoutX="927.0" layoutY="24.0" opacity="0.7" prefHeight="49.0" prefWidth="190.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
+      <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="821.0" layoutY="23.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/2811806.png" />
+         </image>
+      </ImageView>
+    </children>
 </Pane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrimaryPane">
+    <children>
+        <Label layoutX="631.0" layoutY="36.0" prefHeight="45.0" prefWidth="294.0" text="Thông tin nhân viên">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelMaNV" layoutX="195.0" layoutY="384.0" prefHeight="21.0" prefWidth="89.0">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="379.0" text="Mã nhân viên:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="151.0" fitWidth="142.0" layoutX="67.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/1077063.png" />
+            </image></ImageView>
+        <Label layoutX="389.0" layoutY="137.0" text="Họ và tên:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="886.0" layoutY="137.0" text="Giới tính:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="886.0" layoutY="179.0" text="Ngày sinh:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="389.0" layoutY="379.0" text="Địa chỉ thường trú:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="389.0" layoutY="185.0" text="CCCD:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="391.0" layoutY="240.0" text="Số điện thoại:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="389.0" layoutY="284.0" text="Email:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="389.0" layoutY="330.0" text="Ngày vào làm:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="889.0" layoutY="225.0" text="Chức vụ:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelHoTen" layoutX="580.0" layoutY="137.0" prefHeight="30.0" prefWidth="242.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelGioiTinh" layoutX="1006.0" layoutY="137.0" prefHeight="30.0" prefWidth="222.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelNgaySinh" layoutX="1006.0" layoutY="179.0" prefHeight="30.0" prefWidth="212.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelCCCD" layoutX="580.0" layoutY="185.0" prefHeight="30.0" prefWidth="294.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelDiaChiThuongTru" layoutX="580.0" layoutY="379.0" prefHeight="30.0" prefWidth="450.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelSoDienThoai" layoutX="580.0" layoutY="242.0" prefHeight="30.0" prefWidth="268.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelEmail" layoutX="580.0" layoutY="284.0" prefHeight="30.0" prefWidth="450.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelNgayVaoLam" layoutX="580.0" layoutY="330.0" prefHeight="30.0" prefWidth="450.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelChucVu" layoutX="1006.0" layoutY="225.0" prefHeight="30.0" prefWidth="251.0" text="">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Button fx:id="editButton1" layoutX="840.0" layoutY="551.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="39.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Chỉnh sửa " textFill="WHITE" />
+        <Button fx:id="reloadButton1" layoutX="1078.0" layoutY="551.0" mnemonicParsing="false" onAction="#load_data" prefHeight="39.0" prefWidth="133.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE" />
+    </children>
+</Pane>

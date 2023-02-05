@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.XuatHang.ExportController">
+   <children>
+      <TableView fx:id="table" layoutX="47.0" layoutY="15.0" prefHeight="275.0" prefWidth="1036.0">
+        <columns>
+          <TableColumn fx:id="sttColumn" prefWidth="56.0" resizable="false" text="STT" />
+            <TableColumn fx:id="tenColumn" prefWidth="334.0" text="Tên TB" />
+            <TableColumn fx:id="modelColumn" prefWidth="163.0" resizable="false" text="Model TB" />
+            <TableColumn prefWidth="132.0" resizable="false" text="Xuất xứ TB" fx:id="xuatXuColumn" />
+            <TableColumn fx:id="soLuongColumn" prefWidth="140.0" resizable="false" text="Số lượng" />
+            <TableColumn fx:id="giaColumn" prefWidth="210.0" resizable="false" text="Giá" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#chiTietModel" text="Xem thông tin các thiết bị" />
+                  <MenuItem mnemonicParsing="false" onAction="#addItemToCart" text="Thêm vào giỏ hàng" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <TableView fx:id="tableCart" layoutX="47.0" layoutY="301.0" prefHeight="306.0" prefWidth="1036.0">
+        <columns>
+          <TableColumn fx:id="sttColumnCart" prefWidth="47.0" resizable="false" text="STT" />
+          <TableColumn fx:id="tenColumnCart" prefWidth="242.0" text="Tên TB" />
+            <TableColumn fx:id="modelColumnCart" prefWidth="129.0" resizable="false" text="Model TB" />
+            <TableColumn prefWidth="119.0" resizable="false" text="Xuất xứ TB" fx:id="xuatXuColumnCart" />
+            <TableColumn fx:id="soLuongColumnCart" prefWidth="135.0" resizable="false" text="Số lượng" />
+            <TableColumn fx:id="giaColumnCart" prefWidth="168.0" resizable="false" text="Giá" />
+            <TableColumn fx:id="thanhTienColumnCart" prefWidth="195.0" resizable="false" text="Thành tiền" />
+        </columns>
+      </TableView>
+      <Button layoutX="1122.0" layoutY="234.0" mnemonicParsing="false" onAction="#addItemToCart" prefHeight="56.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="payButton" layoutX="1102.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#payButtonOnClicked" prefHeight="56.0" prefWidth="153.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thanh toán" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="1102.0" layoutY="398.0" text="Tổng đơn hàng:">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="tongTienThanhToanLabel" layoutX="1102.0" layoutY="441.0" prefHeight="35.0" prefWidth="140.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <ComboBox fx:id="truongTraCuuF" layoutX="1125.0" layoutY="73.0" prefHeight="39.0" prefWidth="170.0" promptText="Bộ lọc tìm kiếm" style="-fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%); -fx-font-size: 16;" />
+      <TextField fx:id="duLieuF" layoutX="1122.0" layoutY="24.0" prefHeight="39.0" prefWidth="218.0" />
+      <Button layoutX="1122.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#searchClick" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm kiếm" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+   </children>
+</Pane>
