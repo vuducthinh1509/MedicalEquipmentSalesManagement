@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
@@ -22,15 +24,9 @@ import java.util.ResourceBundle;
 
 
 public class HomePage implements Initializable {
-    @FXML
-    private BorderPane borderPane;
 
     @FXML
-    private Pane titlePane;
-
-    @FXML
-    private Label titleText;
-
+    private Label trangChuLabel;
     @FXML
     private Button homePageButton;
 
@@ -42,7 +38,6 @@ public class HomePage implements Initializable {
 
     @FXML
     private Button repairButton;
-
     @FXML
     private Button managementButton;
 
@@ -63,46 +58,34 @@ public class HomePage implements Initializable {
             managementButton.setDisable(true);
             managementButton.setVisible(false);
         }
-    }
-    public void resetBackgroundButton(){
-        homePageButton.setStyle("-fx-background-color: #2F333D;");
-        storageButton.setStyle("-fx-background-color: #2F333D;");
-        exportInvoiceButton.setStyle("-fx-background-color: #2F333D;");
-        storageButton.setStyle("-fx-background-color: #2F333D;");
-        repairButton.setStyle("-fx-background-color: #2F333D;");
-        managementButton.setStyle("-fx-background-color: #2F333D;");
-        customerButton.setStyle("-fx-background-color: #2F333D;");
+        homePageButton.focusedProperty();
     }
     public void storageButtonOnAction(ActionEvent event) throws IOException{
-
         mainPane.getChildren().clear();
         Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/Storage/StoragePane.fxml"));
         mainPane.getChildren().add(storagePane);
+        trangChuLabel.setStyle("");
     }
 
     public void homePageButtonOnAction(ActionEvent event) throws IOException{
-
         mainPane.getChildren().clear();
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }
 
     public void exportInvoiceButtonButtonOnAction(ActionEvent event) throws IOException{
-
         mainPane.getChildren().clear();
         Pane exportInvoicePane =  FXMLLoader.load(main.class.getResource("/view/ExportInvoice/ExportInvoicePane.fxml"));
         mainPane.getChildren().add(exportInvoicePane);
     }
 
     public void repairButtonButtonOnAction(ActionEvent event) throws IOException{
-
         mainPane.getChildren().clear();
         Pane BHBTPane =  FXMLLoader.load(main.class.getResource("/view/BaoHanh/BaoHanhPane.fxml"));
         mainPane.getChildren().add(BHBTPane);
     }
 
     public void managementButtonOnAction(ActionEvent event) throws IOException{
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("management button");
         alert.setHeaderText("Tính năng đang được xây dựng");
@@ -112,7 +95,6 @@ public class HomePage implements Initializable {
     }
 
     public void customerButtonOnAction(ActionEvent event) throws IOException{
-
         mainPane.getChildren().clear();
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/Customer/customerPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
@@ -131,6 +113,4 @@ public class HomePage implements Initializable {
         stage.setY((screenBounds.getHeight()-stage.getHeight())/2);
         stage.show();
     }
-
-
 }

@@ -38,14 +38,14 @@ public class LoginPage {
                 idNhanVien = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getId();
                 role = NguoiDungRepo.dangnhap(username.getText(), password.getText()).getRole();
                 Stage stage = (Stage) buttonLogin.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("home3.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("HomePage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
-                stage.setTitle("Quản lý bán hàng thiết bị y tế");
+                stage.setTitle("Quản Lý Bán Hàng Thiết Bị Y Tế");
                 stage.setScene(scene);
                 stage.setWidth(1366);
                 stage.setHeight(780);
                 stage.centerOnScreen();
-                stage.setResizable(false);
+                stage.setResizable(true);
                 stage.show();
             } else {
                 loginLabel.setText("Sai tài khoản hoặc mật khẩu");

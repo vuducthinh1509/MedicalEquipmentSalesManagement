@@ -118,7 +118,13 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button fx:id="editButton1" layoutX="840.0" layoutY="551.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="39.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Chỉnh sửa " textFill="WHITE" />
-        <Button fx:id="reloadButton1" layoutX="1078.0" layoutY="551.0" mnemonicParsing="false" onAction="#load_data" prefHeight="39.0" prefWidth="133.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE" />
+        <Button fx:id="editButton" layoutX="846.0" layoutY="536.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Chỉnh sửa " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Button fx:id="reloadButton" layoutX="1079.0" layoutY="536.0" mnemonicParsing="false" onAction="#load_data" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
     </children>
 </Pane>

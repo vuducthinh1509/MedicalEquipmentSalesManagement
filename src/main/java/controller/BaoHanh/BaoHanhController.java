@@ -54,9 +54,17 @@ public class BaoHanhController implements Initializable {
     ObservableList<PhieuBaoHanh> phieuBaoHanhList = FXCollections.observableArrayList();
 
     public void createButtonOnClicked(MouseEvent event) throws IOException {
-        Pane taoPhieuBaoHanhPane = FXMLLoader.load(getClass().getResource("/view/BaoHanh/TaoPhieuBaoHanhPane.fxml"));
-        mainPane.getChildren().add(taoPhieuBaoHanhPane);
-        mainPane.toFront();
+//        Pane taoPhieuBaoHanhPane = FXMLLoader.load(getClass().getResource("/view/BaoHanh/TaoPhieuBaoHanhPane.fxml"));
+//        mainPane.getChildren().add(taoPhieuBaoHanhPane);
+//        mainPane.toFront();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/BaoHanh/TaoPhieuBaoHanhPane.fxml"));
+        Parent taoPhieuBaoHanh = loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("Tạo phiếu bảo hành");
+        Scene scene = new Scene(taoPhieuBaoHanh);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @Override

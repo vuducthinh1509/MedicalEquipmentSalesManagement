@@ -35,11 +35,11 @@
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0" styleClass="border-text">
+                <Label fx:id="ngayXuatLabel" layoutX="156.0" layoutY="62.0" prefHeight="27.0" prefWidth="133.0">
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0" styleClass="border-text">
+                <Label fx:id="maNVXuatLabel" layoutX="156.0" layoutY="106.0" prefHeight="27.0" prefWidth="133.0">
                     <font>
                         <Font size="20.0" />
                     </font></Label>
@@ -63,11 +63,8 @@
                     <font>
                         <Font size="20.0" />
                     </font></Label>
-                <Button fx:id="findCtmButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm bằng SĐT" textFill="WHITE" />
-                <Button fx:id="addCtmButton" layoutX="118.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm mới" textFill="WHITE">
-                    <font>
-                        <Font size="14.0" />
-                    </font></Button>
+                <Button fx:id="findCtmButton" layoutX="7.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#findCtmButtonOnClicked" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm" textFill="WHITE" />
+                <Button fx:id="addCtmButton" layoutX="114.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addCtmButtonOnClicked" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm" textFill="WHITE" />
                 <TextField fx:id="idCtmLabel" layoutX="87.0" layoutY="8.0" prefHeight="39.0" prefWidth="185.0" styleClass="border-text">
                     <font>
                         <Font size="18.0" />
@@ -84,11 +81,7 @@
                     <font>
                         <Font size="18.0" />
                     </font></TextField>
-                <Button fx:id="deleteButton" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xóa" textFill="WHITE">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Button>
+                <Button fx:id="deleteButton" layoutX="214.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xóa" textFill="WHITE" />
                 <Button fx:id="saveButton" disable="true" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="75.0" text="Lưu" visible="false" />
             </children>
         </Pane>
@@ -170,7 +163,12 @@
             <TextField fx:id="noteCtmLabel" layoutX="254.0" layoutY="89.0" prefHeight="39.0" prefWidth="595.0" styleClass="border-text" />
          </children>
       </Pane>
-      <Button fx:id="addPBHButton" layoutX="957.0" layoutY="642.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE" />
+      <Button fx:id="addPBHButton" layoutX="966.0" layoutY="611.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE" />
           <ComboBox fx:id="truongTraCuuF" layoutX="869.0" layoutY="120.0" opacity="0.7" prefHeight="49.0" prefWidth="193.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
+      <Button layoutX="966.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
     </children>
 </Pane>
