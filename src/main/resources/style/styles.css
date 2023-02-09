@@ -26,7 +26,7 @@
 .button-click:focused .label {
     -fx-text-fill: #000000;
     -fx-border-width: 0 0 2 0;
-    -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);
+    -fx-border-color: #669999
 }
 .button-hover:hover {
     -fx-background-color: #fed2f6

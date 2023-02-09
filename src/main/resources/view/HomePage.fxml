@@ -167,7 +167,6 @@
                <styleClass>
                   <String fx:value="button-background" />
                   <String fx:value="button-click" />
-                  <String fx:value="button-hover" />
                </styleClass>
                 </Button>
             </children>
