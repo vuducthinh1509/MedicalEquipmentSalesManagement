@@ -7,11 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExportInvoice.DetailInvoice">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1126.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExportInvoice.DetailInvoice">
    <children>
-      <Label layoutX="473.0" layoutY="30.0" text="Chi Tiết Phiếu Xuất">
+      <Label layoutX="485.0" layoutY="28.0" prefHeight="39.0" prefWidth="225.0" text="Chi Tiết Phiếu Xuất">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
       <Label layoutX="40.0" layoutY="101.0" text="ID:">
@@ -130,9 +130,9 @@
          </font>
       </TextField>
       <DatePicker fx:id="exportDateLabel" disable="true" editable="false" layoutX="191.0" layoutY="147.0" prefHeight="39.0" prefWidth="180.0" />
-      <Button layoutX="1001.0" layoutY="657.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="39.0" prefWidth="84.0" text="Đóng">
+      <Button layoutX="995.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="53.0" prefWidth="95.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đóng" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Button>
       <Button layoutX="597.0" layoutY="408.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="84.0" text="Lưu" visible="false">
@@ -140,7 +140,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="51.0" layoutY="371.0" prefHeight="364.0" prefWidth="894.0">
+      <TableView fx:id="table" layoutX="51.0" layoutY="371.0" prefHeight="397.0" prefWidth="894.0">
          <columns>
             <TableColumn fx:id="sttColumn" prefWidth="47.0" resizable="false" text="STT" />
             <TableColumn fx:id="tenColumn" prefWidth="316.0" text="Tên Thiết Bị" />

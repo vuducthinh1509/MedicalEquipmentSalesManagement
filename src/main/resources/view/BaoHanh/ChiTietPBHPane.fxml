@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="650.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BaoHanh.ChiTietPBHController">
+<Pane prefHeight="650.0" prefWidth="1126.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" stylesheets="@../../style/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BaoHanh.ChiTietPBHController">
    <children>
       <Label layoutX="450.0" layoutY="40.0" text="Chi Tiết Phiếu Bảo Hành">
          <font>
@@ -178,7 +178,7 @@
          <font>
             <Font name="System Italic" size="20.0" />
          </font></Label>
-      <Button layoutX="478.0" layoutY="582.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnAction" prefHeight="39.0" prefWidth="85.0" text="Đóng">
+      <Button layoutX="532.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnAction" prefHeight="39.0" prefWidth="85.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đóng" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

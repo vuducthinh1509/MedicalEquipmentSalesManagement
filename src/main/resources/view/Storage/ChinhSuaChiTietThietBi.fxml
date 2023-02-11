@@ -1,91 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: #2F333D;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ChinhSuaThongTinController">
+<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ChinhSuaThongTinController">
     <children>
-        <Label layoutX="528.0" layoutY="172.0" text="Thời gian bảo hành:" textFill="WHITE">
+        <Label layoutX="528.0" layoutY="172.0" text="Thời gian bảo hành:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="531.0" layoutY="412.0" text="Tên NV xuất:" textFill="WHITE">
+        <Label layoutX="531.0" layoutY="412.0" text="Tên NV xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="371.0" text="Mã NV xuất:" textFill="WHITE">
+        <Label layoutX="533.0" layoutY="371.0" text="Mã NV xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="75.0" layoutY="516.0" prefHeight="30.0" prefWidth="145.0" text="Tên NV nhập:" textFill="WHITE">
+        <Label layoutX="75.0" layoutY="516.0" prefHeight="30.0" prefWidth="145.0" text="Tên NV nhập:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="74.0" layoutY="462.0" text="Mã NV nhập:" textFill="WHITE">
+        <Label layoutX="74.0" layoutY="462.0" text="Mã NV nhập:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="222.0" text="Giá:" textFill="WHITE">
+        <Label layoutX="533.0" layoutY="222.0" text="Giá:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="73.0" layoutY="356.0" text="Kích thước:" textFill="WHITE">
+        <Label layoutX="73.0" layoutY="356.0" text="Kích thước:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="75.0" layoutY="310.0" text="Màu:" textFill="WHITE">
+        <Label layoutX="75.0" layoutY="310.0" text="Màu:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="77.0" layoutY="119.0" text="Tên:" textFill="WHITE">
+        <Label layoutX="77.0" layoutY="119.0" text="Tên:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="74.0" layoutY="172.0" text="Model:" textFill="WHITE">
+        <Label layoutX="74.0" layoutY="172.0" text="Model:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="78.0" layoutY="216.0" text="Serial:" textFill="WHITE">
+        <Label layoutX="78.0" layoutY="216.0" text="Serial:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="77.0" layoutY="266.0" text="Xuất xứ:" textFill="WHITE">
+        <Label layoutX="77.0" layoutY="266.0" text="Xuất xứ:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="266.0" text="Trạng thái:" textFill="WHITE">
+        <Label layoutX="533.0" layoutY="266.0" text="Trạng thái:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="303.0" layoutY="21.0" prefHeight="45.0" prefWidth="425.0" text="Thông Tin Chi Tiết Thiết Bị" textFill="#f8f3f3">
+        <Label alignment="CENTER" layoutX="303.0" layoutY="21.0" prefHeight="45.0" prefWidth="425.0" text="Thông Tin Chi Tiết Thiết Bị">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Label layoutX="73.0" layoutY="411.0" text="Ngày nhập:" textFill="WHITE">
+        <Label layoutX="73.0" layoutY="411.0" text="Ngày nhập:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="324.0" prefHeight="30.0" prefWidth="108.0" text="Ngày xuất:" textFill="WHITE">
+        <Label layoutX="533.0" layoutY="324.0" prefHeight="30.0" prefWidth="108.0" text="Ngày xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -144,11 +140,11 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button fx:id="saveButton" layoutX="743.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="39.0" prefWidth="89.0" text="Lưu">
+      <Button fx:id="saveButton" layoutX="743.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" text="Lưu" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button cancelButton="true" layoutX="846.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="39.0" prefWidth="66.0" text="Hủy">
+      <Button cancelButton="true" layoutX="846.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="45.0" prefWidth="80.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" text="Hủy" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
