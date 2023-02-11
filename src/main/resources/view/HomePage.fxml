@@ -29,7 +29,7 @@
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../image/25694.png" />
+                              <Image url="@../image/553416.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="trangChuLabel" prefHeight="30.0" prefWidth="87.0" stylesheets="@../style/styles.css" text="Trang chủ" textAlignment="CENTER" textFill="#97999a">
