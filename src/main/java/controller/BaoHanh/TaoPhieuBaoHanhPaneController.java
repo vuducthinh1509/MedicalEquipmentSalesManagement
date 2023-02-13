@@ -1,8 +1,8 @@
 package controller.BaoHanh;
 
-import controller.ExportInvoice.DetailInvoice;
+import controller.PhieuXuat.DetailInvoice;
 import controller.KhachHang.DetailCustomerController;
-import controller.LoginPage;
+import controller.TaiKhoan.LoginController;
 import entity.*;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
@@ -124,7 +124,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         idPBH = phieuBaoHanhRepo.getNextAutoIncrement();
         idPBHLabel.setText(String.valueOf(idPBH));
         ngayXuatLabel.setText(String.valueOf(java.time.LocalDate.now()));
-        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(LoginPage.idNhanVien).getMaNV());
+        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(LoginController.idNhanVien).getMaNV());
         thietBiList.addAll(thietBiRepo.timTatCaThietBiTrangThaiDaXuat());
         for(ThietBi curr: thietBiList){
             PhieuXuat phieuXuat = new PhieuXuat();
@@ -239,7 +239,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
 
     public void detailInvoice(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/ExportInvoice/DetailInvoice.fxml"));
+        loader.setLocation(getClass().getResource("/view/PhieuXuat/DetailInvoice.fxml"));
         Parent detailInvoice  = loader.load();
         DetailInvoice detailInvoiceController = loader.getController();
         ThietBi selectedDevice = table.getSelectionModel().getSelectedItem();
@@ -301,7 +301,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
             String noteKhachHang = noteCtmLabel.getText();
             Integer idTB = idThietBi;
             Integer idKH = Integer.valueOf(idCtmLabel.getText());
-            Integer idNV = LoginPage.idNhanVien;
+            Integer idNV = LoginController.idNhanVien;
             PhieuBaoHanh phieuBaohanh = new PhieuBaoHanh(Date.valueOf(ngayTao),noteKhachHang,idTB,idKH,idNV);
             phieuBaoHanhRepo.taoPhieuBaoHanh(phieuBaohanh);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

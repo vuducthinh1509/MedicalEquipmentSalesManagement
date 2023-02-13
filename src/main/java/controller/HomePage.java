@@ -1,5 +1,6 @@
 package controller;
 
+import controller.TaiKhoan.LoginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -54,7 +52,7 @@ public class HomePage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
-        if(LoginPage.role!=0){
+        if(LoginController.role!=0){
             managementButton.setDisable(true);
             managementButton.setVisible(false);
         }
@@ -62,7 +60,7 @@ public class HomePage implements Initializable {
     }
     public void storageButtonOnAction(ActionEvent event) throws IOException{
         mainPane.getChildren().clear();
-        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/Storage/StoragePane.fxml"));
+        Pane storagePane =  FXMLLoader.load(main.class.getResource("/view/Kho/StoragePane.fxml"));
         mainPane.getChildren().add(storagePane);
         trangChuLabel.setStyle("");
     }
@@ -75,7 +73,7 @@ public class HomePage implements Initializable {
 
     public void exportInvoiceButtonButtonOnAction(ActionEvent event) throws IOException{
         mainPane.getChildren().clear();
-        Pane exportInvoicePane =  FXMLLoader.load(main.class.getResource("/view/ExportInvoice/ExportInvoicePane.fxml"));
+        Pane exportInvoicePane =  FXMLLoader.load(main.class.getResource("/view/PhieuXuat/ExportInvoicePane.fxml"));
         mainPane.getChildren().add(exportInvoicePane);
     }
 
@@ -96,7 +94,7 @@ public class HomePage implements Initializable {
 
     public void customerButtonOnAction(ActionEvent event) throws IOException{
         mainPane.getChildren().clear();
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/Customer/customerPane.fxml"));
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/KhachHang/customerPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }
 

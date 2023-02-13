@@ -14,6 +14,12 @@ import java.sql.Date;
 
 public class NhanVien {
 
+    private String username;
+
+    private String password;
+
+    private Integer role;
+
     private Integer id;
 
     private String maNV;
@@ -35,5 +41,16 @@ public class NhanVien {
     private String chucVu;
 
     private String gioiTinh;
+
+    private String cauHoi;
+
+    private String cauTraLoi;
+
+    public NhanVien(String username,String password, String cauHoi, String cauTraLoi){
+        this.username = username;
+        this.password = password;
+        this.cauHoi = cauHoi;
+        this.cauTraLoi = cauTraLoi;
+    }
 
 }

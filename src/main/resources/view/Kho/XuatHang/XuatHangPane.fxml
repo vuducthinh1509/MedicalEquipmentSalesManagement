@@ -38,11 +38,11 @@
             <TableColumn fx:id="thanhTienColumnCart" prefWidth="195.0" resizable="false" text="Thành tiền" />
         </columns>
       </TableView>
-      <Button layoutX="1122.0" layoutY="234.0" mnemonicParsing="false" onAction="#addItemToCart" prefHeight="56.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm" textFill="WHITE">
+      <Button layoutX="1097.0" layoutY="240.0" mnemonicParsing="false" onAction="#addItemToCart" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="payButton" layoutX="1102.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#payButtonOnClicked" prefHeight="56.0" prefWidth="153.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thanh toán" textFill="WHITE">
+      <Button fx:id="payButton" layoutX="1102.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#payButtonOnClicked" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thanh toán" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -54,9 +54,9 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <ComboBox fx:id="truongTraCuuF" layoutX="1125.0" layoutY="73.0" prefHeight="39.0" prefWidth="170.0" promptText="Bộ lọc tìm kiếm" style="-fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%); -fx-font-size: 16;" />
-      <TextField fx:id="duLieuF" layoutX="1122.0" layoutY="24.0" prefHeight="39.0" prefWidth="218.0" />
-      <Button layoutX="1122.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#searchClick" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm kiếm" textFill="WHITE">
+      <ComboBox fx:id="truongTraCuuF" layoutX="1097.0" layoutY="74.0" prefHeight="39.0" prefWidth="170.0" promptText="Bộ lọc tìm kiếm" style="-fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%); -fx-font-size: 16;" />
+      <TextField fx:id="duLieuF" layoutX="1097.0" layoutY="25.0" prefHeight="39.0" prefWidth="218.0" />
+      <Button layoutX="1097.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#searchClick" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tìm kiếm" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Button>

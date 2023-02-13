@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrimaryPane">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrangChuPane">
     <children>
         <Label layoutX="631.0" layoutY="36.0" prefHeight="45.0" prefWidth="294.0" text="Thông tin nhân viên">
             <font>
@@ -118,13 +118,9 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button fx:id="editButton" layoutX="846.0" layoutY="536.0" mnemonicParsing="false" onAction="#editPersonalInformationOnAction" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Chỉnh sửa " textFill="WHITE">
+      <Button fx:id="changePasswordButton" layoutX="973.0" layoutY="519.0" mnemonicParsing="false" onAction="#changePasswordButtonOnAction" prefHeight="39.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đổi mật khẩu" textFill="WHITE">
          <font>
-            <Font size="20.0" />
-         </font></Button>
-        <Button fx:id="reloadButton" layoutX="1079.0" layoutY="536.0" mnemonicParsing="false" onAction="#load_data" prefHeight="44.0" prefWidth="161.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
          </font></Button>
     </children>
 </Pane>

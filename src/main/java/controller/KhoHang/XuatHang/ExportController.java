@@ -220,7 +220,7 @@ public class ExportController implements Initializable {
 
     public void payButtonOnClicked(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/XuatHang/HoaDonPane.fxml"));
+        loader.setLocation(getClass().getResource("/view/Kho/XuatHang/HoaDonPane.fxml"));
         Parent invoicePane = loader.load();
         InvoiceController invoiceController = loader.getController();
         for(Item item : selectedItemList){
@@ -238,7 +238,7 @@ public class ExportController implements Initializable {
 
     public void chiTietModel(ActionEvent event) throws IOException{
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/Storage/XuatHang/ChiTietModelPane.fxml"));
+            loader.setLocation(getClass().getResource("/view/Kho/XuatHang/ChiTietModelPane.fxml"));
             Parent detailModel  = loader.load();
             DetailModelController detailModelController = loader.getController();
             Item selectedItem = table.getSelectionModel().getSelectedItem();

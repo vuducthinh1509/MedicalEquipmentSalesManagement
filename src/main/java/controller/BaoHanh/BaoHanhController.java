@@ -1,6 +1,7 @@
 package controller.BaoHanh;
 
 import controller.KhoHang.XemChiTietController;
+import entity.KhachHang;
 import entity.PhieuBaoHanh;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
@@ -13,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -23,6 +25,8 @@ import utility.Box;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BaoHanhController implements Initializable {
     @FXML
@@ -49,9 +53,21 @@ public class BaoHanhController implements Initializable {
     @FXML
     private Button createButton;
 
+
+    @FXML
+    private ComboBox<String> truongSearch;
+    @FXML
+    private TextField duLieuSearch;
+    @FXML
+    private ImageView searchButton;
+
+    ObservableList<String> listTruongSearch = FXCollections.observableArrayList("Serial","Tên Khách Hàng");
     static PhieuBaoHanhRepository phieuBaoHanhRepo = new PhieuBaoHanhRepository_impl();
 
     ObservableList<PhieuBaoHanh> phieuBaoHanhList = FXCollections.observableArrayList();
+
+    @FXML
+    ObservableList<PhieuBaoHanh> searchList = FXCollections.observableArrayList();
 
     public void createButtonOnClicked(MouseEvent event) throws IOException {
 //        Pane taoPhieuBaoHanhPane = FXMLLoader.load(getClass().getResource("/view/BaoHanh/TaoPhieuBaoHanhPane.fxml"));
@@ -86,6 +102,9 @@ public class BaoHanhController implements Initializable {
         tenKhachHangColumn.setCellValueFactory(new PropertyValueFactory<>("tenKhachHang"));
         ngayBaoHanhColumn.setCellValueFactory(new PropertyValueFactory<>("ngayBaoHanh"));
         ngayBanGiaoColumn.setCellValueFactory(new PropertyValueFactory<>("ngayBanGiao"));
+        truongSearch.valueProperty().set(null);
+        duLieuSearch.setText("");
+        truongSearch.setItems(listTruongSearch);
     }
 
     public void xemChiTietPhieuBaoHanh(ActionEvent event) throws IOException{
@@ -113,7 +132,7 @@ public class BaoHanhController implements Initializable {
 
     public void xemChiTietThietBi(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/XemChiTietThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/Kho/XemChiTietThietBi.fxml"));
         Parent chiTietTB  = loader.load();
         XemChiTietController chiTietTBController = loader.getController();
         PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
@@ -188,6 +207,52 @@ public class BaoHanhController implements Initializable {
             } else {
                 phieuBaoHanhRepo.capNhatNoteKhachHang(id,note);
             }
+        }
+    }
+
+    public void searchButtonOnClicked(MouseEvent mouseEvent) {
+        searchList.clear();
+        String textSearch = duLieuSearch.getText().trim().toLowerCase();
+        String fieldSearch = truongSearch.getValue();
+        try {
+            if (fieldSearch.equals("Serial")) {
+                if(textSearch.isEmpty()){
+                    table.setItems(phieuBaoHanhList);
+                } else {
+                    for (PhieuBaoHanh current : phieuBaoHanhList) {
+                            if ((current.getSerialThietBi().trim().toLowerCase().equals(textSearch))) {
+                                PhieuBaoHanh clone = new PhieuBaoHanh();
+                                clone.copyPhieuBaoHanh(current);
+                                searchList.add(clone);
+                            }
+                            table.setItems(searchList);
+                    }
+                }
+            } else if (fieldSearch.equals("Tên Khách Hàng")) {
+                for (PhieuBaoHanh current : phieuBaoHanhList) {
+                    if ((current.getTenKhachHang().toLowerCase()).contains(textSearch)) {
+                        PhieuBaoHanh clone = new PhieuBaoHanh();
+                        clone.copyPhieuBaoHanh(current);
+                        searchList.add(clone);
+                    }
+                }
+                table.setItems(searchList);
+            }
+            if(searchList.isEmpty()&&!textSearch.isEmpty()){
+                table.setItems(phieuBaoHanhList);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Thông báo!");
+                alert.setHeaderText("Không tìm thấy kết quả phù hợp");
+                alert.setContentText("Vui lòng thử lại");
+                alert.showAndWait();
+            }
+        } catch (NullPointerException ex) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo!");
+            alert.setHeaderText("Chưa chọn trường tìm kiếm!");
+            alert.setContentText("Vui lòng chọn lại");
+            alert.show();
+            return;
         }
     }
 }

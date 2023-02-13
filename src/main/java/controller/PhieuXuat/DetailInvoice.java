@@ -1,6 +1,5 @@
-package controller.ExportInvoice;
+package controller.PhieuXuat;
 
-import entity.Item;
 import entity.PhieuXuat;
 import entity.ThietBi;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -16,14 +15,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 import repository.PhieuXuatRepository;
 import repository.PhieuXuatRepository_impl;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
 
 import java.net.URL;
-import java.sql.Date;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package controller.ExportInvoice;
+package controller.PhieuXuat;
 
 import controller.KhachHang.DetailCustomerController;
 import entity.KhachHang;
@@ -90,7 +90,7 @@ public class ExportInvoiceController implements Initializable {
 
     public void detailInvoice(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/ExportInvoice/DetailInvoice.fxml"));
+        loader.setLocation(getClass().getResource("/view/PhieuXuat/DetailInvoice.fxml"));
         Parent detailInvoice  = loader.load();
         DetailInvoice detailInvoiceController = loader.getController();
         PhieuXuat selectedInvoice = table.getSelectionModel().getSelectedItem();

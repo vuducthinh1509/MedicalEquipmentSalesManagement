@@ -119,7 +119,7 @@ public class StorageController implements Initializable {
 
     public void chiTietThietBi(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/XemChiTietThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/Kho/XemChiTietThietBi.fxml"));
         Parent chiTietTB  = loader.load();
         XemChiTietController chiTietTBController = loader.getController();
         ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
@@ -141,7 +141,7 @@ public class StorageController implements Initializable {
 
     public void themThietBi(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/ThemThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/Kho/ThemThietBi.fxml"));
         Parent themThietBi = loader.load();
         Stage stage = new Stage();
         stage.setTitle("Thêm thiết bị");
@@ -152,7 +152,7 @@ public class StorageController implements Initializable {
 
     public void chinhSuaThietBi (ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/Storage/ChinhSuaChiTietThietBi.fxml"));
+        loader.setLocation(getClass().getResource("/view/Kho/ChinhSuaChiTietThietBi.fxml"));
         Parent chinhSuaThietBiView = loader.load();
         ChinhSuaThongTinController controller = loader.getController();
         ThietBi selected = table.getSelectionModel().getSelectedItem();
@@ -196,7 +196,7 @@ public class StorageController implements Initializable {
     }
 
     public void exportButtonOnClicked(MouseEvent event) throws IOException{
-        Pane exportPane = FXMLLoader.load(getClass().getResource("/view/Storage/XuatHang/XuatHangPane.fxml"));
+        Pane exportPane = FXMLLoader.load(getClass().getResource("/view/Kho/XuatHang/XuatHangPane.fxml"));
         mainPane.getChildren().add(exportPane);
         mainPane.toFront();
     }

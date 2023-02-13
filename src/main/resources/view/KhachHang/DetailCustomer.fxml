@@ -14,7 +14,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="idLabel" layoutX="171.0" layoutY="56.0" prefHeight="27.0" prefWidth="192.0" text="a">
+      <Label fx:id="idLabel" layoutX="171.0" layoutY="56.0" prefHeight="27.0" prefWidth="192.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel" layoutX="171.0" layoutY="91.0" prefHeight="27.0" prefWidth="192.0" text="a">
+      <Label fx:id="nameLabel" layoutX="171.0" layoutY="91.0" prefHeight="27.0" prefWidth="192.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -34,7 +34,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="phoneLabel" layoutX="171.0" layoutY="126.0" prefHeight="27.0" prefWidth="192.0" text="a">
+      <Label fx:id="phoneLabel" layoutX="171.0" layoutY="126.0" prefHeight="27.0" prefWidth="192.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="addressLabel" layoutX="171.0" layoutY="164.0" prefHeight="27.0" prefWidth="192.0" text="a">
+      <Label fx:id="addressLabel" layoutX="171.0" layoutY="164.0" prefHeight="27.0" prefWidth="192.0">
          <font>
             <Font size="18.0" />
          </font>

@@ -1,9 +1,6 @@
 package repository;
 
-import entity.NguoiDung;
 import entity.NhanVien;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import utility.DbUtil;
 import utility.SQLCommand;
 
@@ -103,5 +100,79 @@ public class NhanVienRepository_impl implements NhanVienRepository {
                 e.printStackTrace();
             }
         }
+    }
+
+    public NhanVien dangNhap(String tentaikhoan, String password){
+        NhanVien nhanVien = new NhanVien();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_DANG_NHAP);
+            pstmt.setString(1, tentaikhoan);
+            pstmt.setString(2, password);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                nhanVien.setId(rs.getInt("id"));
+                nhanVien.setRole(rs.getInt("role"));
+                nhanVien.setUsername(rs.getString("username"));
+                nhanVien.setPassword(rs.getString("password"));
+            }
+            return nhanVien;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return nhanVien;
+    }
+
+    public Integer kiemTraTaiKhoanTonTai(String username){
+        Integer id = -1;
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_KIEM_TRA_TON_TAI);
+            pstmt.setString(1,username);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                id = rs.getInt("id");
+            }
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return id;
+    }
+
+    public NhanVien xacThucTaiKhoan(String username){
+        NhanVien nhanVien = new NhanVien();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_KIEM_TRA_TON_TAI);
+            pstmt.setString(1,username);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                nhanVien.setCauHoi(rs.getString("cauHoi"));
+                nhanVien.setCauTraLoi(rs.getString("cauTraLoi"));
+                nhanVien.setPassword(rs.getString("password"));
+                nhanVien.setUsername(rs.getString("username"));
+            }
+            return nhanVien;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return nhanVien;
     }
 }

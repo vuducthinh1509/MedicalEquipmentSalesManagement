@@ -3,7 +3,9 @@ package utility;
 public class SQLCommand {
 
     // Người Dùng
-    public static String Nguoi_Dung_Query_Dang_Nhap = "SELECT * FROM nguoidung where username = ? AND password = ?";
+    public static String Nhan_Vien_QUERY_DANG_NHAP = "SELECT * FROM nhanvien where username = ? AND password = ?";
+
+    public static String Nhan_Vien_QUERY_KIEM_TRA_TON_TAI = "SELECT * from nhanvien where username = ?";
 
     // Nhân viên
     public static String Nhan_Vien_QUERY_LAY_THONG_TIN = "SELECT * FROM nhanvien WHERE id = ? ";

@@ -1,6 +1,6 @@
 package controller.NhanVien;
 
-import controller.LoginPage;
+import controller.TaiKhoan.LoginController;
 import entity.NhanVien;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +13,6 @@ import lombok.SneakyThrows;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class EditPersonalInformation {
@@ -59,7 +58,7 @@ public class EditPersonalInformation {
     }
 
     public void loadData_Edit(){
-        nhanVien = nhanVienRepo.getInformationUser(LoginPage.idNhanVien);
+        nhanVien = nhanVienRepo.getInformationUser(LoginController.idNhanVien);
         hoTenLabel.setText(nhanVien.getHoTen());
         diaChiThuongTruLabel.setText(nhanVien.getDiaChiThuongTru());
         CCCDLabel.setText(nhanVien.getCCCD());
@@ -86,33 +85,33 @@ public class EditPersonalInformation {
     @SneakyThrows
     @FXML
     private void save_ChinhSua(MouseEvent event) {
-        String ngaySinh = String.valueOf(ngaySinhLabel.getValue());
-        String ngayVaoLam = String.valueOf(ngayVaoLamLabel.getValue());
-        String diaChiThuongTru = diaChiThuongTruLabel.getText();
-        String soDienThoai = soDienThoaiLabel.getText();
-        String email = emailLabel.getText();
-
-        if ( ngaySinh.isEmpty() || ngayVaoLam.isEmpty() || diaChiThuongTru.isEmpty()||soDienThoai.isEmpty() || email.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Cần nhập đủ các trường dữ liệu");
-            alert.showAndWait();
-        } else {
-            update();
-            Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
-            alert_TC.setHeaderText(null);
-            alert_TC.setContentText("Chỉnh sửa thành công");
-            alert_TC.showAndWait();
-            final Node source = (Node) event.getSource();
-            final Stage stage = (Stage) source.getScene().getWindow();
-            stage.close();
-        }
+//        String ngaySinh = String.valueOf(ngaySinhLabel.getValue());
+//        String ngayVaoLam = String.valueOf(ngayVaoLamLabel.getValue());
+//        String diaChiThuongTru = diaChiThuongTruLabel.getText();
+//        String soDienThoai = soDienThoaiLabel.getText();
+//        String email = emailLabel.getText();
+//
+//        if ( ngaySinh.isEmpty() || ngayVaoLam.isEmpty() || diaChiThuongTru.isEmpty()||soDienThoai.isEmpty() || email.isEmpty()) {
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setHeaderText(null);
+//            alert.setContentText("Cần nhập đủ các trường dữ liệu");
+//            alert.showAndWait();
+//        } else {
+//            update();
+//            Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
+//            alert_TC.setHeaderText(null);
+//            alert_TC.setContentText("Chỉnh sửa thành công");
+//            alert_TC.showAndWait();
+//            final Node source = (Node) event.getSource();
+//            final Stage stage = (Stage) source.getScene().getWindow();
+//            stage.close();
+//        }
     }
 
     private void update() {
-        nhanVienRepo.updateInformation(new NhanVien(nhanVien.getId(),nhanVien.getMaNV(),nhanVien.getHoTen(), Date.valueOf(ngaySinhLabel.getValue().toString()),
-                diaChiThuongTruLabel.getText(), nhanVien.getCCCD(), soDienThoaiLabel.getText(),emailLabel.getText(),Date.valueOf(ngayVaoLamLabel.getValue().toString()),
-                nhanVien.getChucVu(),gioiTinhComboBox.getSelectionModel().getSelectedItem().toString()));
+//        nhanVienRepo.updateInformation(new NhanVien(nhanVien.getId(),nhanVien.getMaNV(),nhanVien.getHoTen(), Date.valueOf(ngaySinhLabel.getValue().toString()),
+//                diaChiThuongTruLabel.getText(), nhanVien.getCCCD(), soDienThoaiLabel.getText(),emailLabel.getText(),Date.valueOf(ngayVaoLamLabel.getValue().toString()),
+//                nhanVien.getChucVu(),gioiTinhComboBox.getSelectionModel().getSelectedItem().toString()));
     }
 
 

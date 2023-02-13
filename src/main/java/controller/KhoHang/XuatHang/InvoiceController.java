@@ -1,6 +1,6 @@
 package controller.KhoHang.XuatHang;
 
-import controller.LoginPage;
+import controller.TaiKhoan.LoginController;
 import entity.Item;
 import entity.KhachHang;
 import entity.PhieuXuat;
@@ -148,7 +148,7 @@ public class InvoiceController {
         idInvoice = phieuXuatRepo.getNextAutoIncrement();
         idPhieuXuatLabel.setText(String.valueOf(idInvoice));
         ngayXuatLabel.setText(String.valueOf(java.time.LocalDate.now()));
-        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(LoginPage.idNhanVien).getMaNV());
+        maNVXuatLabel.setText(nhanVienRepo.getInformationUser(LoginController.idNhanVien).getMaNV());
     }
     public  void loadDataCustomerPane(){
         idCtmLabel.setText(String.valueOf(khachHang.getIdKhachHang()));
@@ -281,7 +281,7 @@ public class InvoiceController {
             Double discount1Invoice = Double.valueOf(discount1Label.getText());
             Double totalInvoice = Double.valueOf(totalLabel.getText());
             String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
-            Integer idEmployeeInvoice = LoginPage.idNhanVien;
+            Integer idEmployeeInvoice = LoginController.idNhanVien;
             Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());
             PhieuXuat phieuXuat = new PhieuXuat(idInvoice,subTotalInvoice,vatInvoice,discountInvoice,discount1Invoice,totalInvoice,Date.valueOf(exportDateInvoice),idEmployeeInvoice,idCustomerInvoice);
             phieuXuatRepo.addInvoice(phieuXuat);

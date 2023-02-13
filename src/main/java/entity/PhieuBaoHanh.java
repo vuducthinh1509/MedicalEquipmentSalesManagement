@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import repository.KhachHangRepository;
-import repository.KhachHangRepository_impl;
-import repository.ThietBiRepository;
-import repository.ThietBiRepository_impl;
+import repository.*;
 
 import java.sql.Date;
 
@@ -79,6 +76,8 @@ public class PhieuBaoHanh {
         this.serialThietBi = thietBi.getSerialThietBi();
         KhachHangRepository khachHangRepo = new KhachHangRepository_impl();
         KhachHang khachHang = khachHangRepo.getInformationCustomerByID(this.idKhachHang);
+        NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
+        this.tenNhanVienTaoPhieu = nhanVienRepo.getInformationUser(idNhanVienTaoPhieu).getHoTen();
         this.tenKhachHang = khachHang.getTenKhachHang();
         this.phoneKhachHang = khachHang.getPhoneKhachHang();
         this.diaChiKhachHang = khachHang.getDiaChiKhachHang();
@@ -94,6 +93,9 @@ public class PhieuBaoHanh {
         this.trangThai = clone.getTrangThai();
         this.idKhachHang = clone.getIdKhachHang();
         this.idNhanVienTaoPhieu = clone.getIdNhanVienTaoPhieu();
+        this.tenNhanVienTaoPhieu = clone.getTenNhanVienTaoPhieu();
         this.ngayBanGiao = clone.getNgayBanGiao();
+        this.tenKhachHang = clone.getTenKhachHang();
+        this.serialThietBi = clone.getSerialThietBi();
     }
 }

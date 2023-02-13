@@ -32,8 +32,11 @@ module com.example.medicaldevicessalesmanagementsystem {
     opens controller.KhachHang to javafx.fxml;
     exports controller.KhachHang;
 
-    opens controller.ExportInvoice to javafx.fxml;
-    exports  controller.ExportInvoice;
+    opens controller.PhieuXuat to javafx.fxml;
+    exports  controller.PhieuXuat;
+
+    exports controller.TaiKhoan;
+    opens controller.TaiKhoan to javafx.fxml;
 
 
 }
