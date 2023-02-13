@@ -72,26 +72,16 @@
                               <Font size="14.0" />
                            </font>
                         </PasswordField>
-                        <TextField fx:id="passwordText" visible="false">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
                      </children>
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="50.0" />
                      </VBox.margin>
                   </HBox>
-                  <CheckBox fx:id="checkBox" mnemonicParsing="false" onAction="#changeVisibility" prefHeight="20.0" prefWidth="130.0" text="Hiện mật khẩu">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </CheckBox>
                   <HBox prefHeight="49.0" prefWidth="382.0">
                      <children>
-                        <Pane prefHeight="49.0" prefWidth="307.0">
+                        <Pane prefHeight="52.0" prefWidth="382.0">
                            <children>
-                              <Label fx:id="loginLabel" alignment="CENTER" layoutX="2.0" layoutY="3.0" prefHeight="38.0" prefWidth="279.0" textFill="#e40808">
+                              <Label fx:id="loginLabel" alignment="CENTER" layoutX="2.0" layoutY="3.0" prefHeight="31.0" prefWidth="279.0" textFill="#e40808">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
