@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TrangChuPane">
     <children>
-        <Label layoutX="631.0" layoutY="36.0" prefHeight="45.0" prefWidth="294.0" text="Thông tin nhân viên">
+        <Label layoutX="536.0" layoutY="37.0" prefHeight="45.0" prefWidth="294.0" text="Thông tin nhân viên">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>

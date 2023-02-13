@@ -1,16 +1,24 @@
 package controller;
 
+import controller.NhanVien.EditPersonalInformation;
+import controller.TaiKhoan.DoiMatKhauController;
 import controller.TaiKhoan.LoginController;
+import controller.TaiKhoan.QuenMatKhauController;
 import entity.NhanVien;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,7 +60,8 @@ public class TrangChuPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load_data();
-        if(LoginController.role ==0 && LoginController.idNhanVien ==1){
+        if(LoginController.role == 0 && LoginController.idNhanVien == 1){
+            changePasswordButton.setVisible(false);
             labelMaNV.setText("admin");
             labelHoTen.setText("admin");
         }
@@ -82,7 +91,16 @@ public class TrangChuPane implements Initializable {
 //        stage.setScene(scene);
 //        stage.show();
 //    }
-    public void changePasswordButtonOnAction(ActionEvent event){
-
+    public void changePasswordButtonOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/view/TaiKhoan/DoiMatKhauPane.fxml"));
+        Parent doiMatKhau = loader.load();
+        DoiMatKhauController doiMatKhauController = loader.getController();
+        doiMatKhauController.setUsername(LoginController._username);
+        Stage stage = new Stage();
+        stage.setTitle("Đổi mật khẩu");
+        Scene scene = new Scene(doiMatKhau);
+        stage.setScene(scene);
+        stage.show();
     }
 }

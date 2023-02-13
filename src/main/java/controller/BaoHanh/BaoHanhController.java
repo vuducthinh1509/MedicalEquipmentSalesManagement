@@ -137,11 +137,7 @@ public class BaoHanhController implements Initializable {
         XemChiTietController chiTietTBController = loader.getController();
         PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         chiTietTBController.setThietBi(selected.getIdThietBi());
@@ -159,11 +155,7 @@ public class BaoHanhController implements Initializable {
         ChinhSuaTrangThaiController chinhSuaTrangThaiController = loader.getController();
         PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         chinhSuaTrangThaiController.id = selected.getId();
@@ -240,18 +232,10 @@ public class BaoHanhController implements Initializable {
             }
             if(searchList.isEmpty()&&!textSearch.isEmpty()){
                 table.setItems(phieuBaoHanhList);
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Không tìm thấy kết quả phù hợp");
-                alert.setContentText("Vui lòng thử lại");
-                alert.showAndWait();
+                Box.alertBox_No_Result();
             }
         } catch (NullPointerException ex) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Chưa chọn trường tìm kiếm!");
-            alert.setContentText("Vui lòng chọn lại");
-            alert.show();
+            Box.alertBox("Thông báo!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
             return;
         }
     }

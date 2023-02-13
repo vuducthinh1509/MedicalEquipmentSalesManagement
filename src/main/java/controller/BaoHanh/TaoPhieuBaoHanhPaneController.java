@@ -16,9 +16,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import lombok.SneakyThrows;
 import repository.*;
+import utility.Box;
+import utility.SQLCommand;
 
 import java.io.IOException;
 import java.net.URL;
@@ -101,11 +105,41 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
 
     static Integer idThietBi = -1;
 
+    @FXML
+    private TextField duLieuSearch;
+    @FXML
+    private ImageView searchButton;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDataPane();
     }
 
+    @SneakyThrows
+    @FXML
+    private void searchButtonOnClicked(MouseEvent event) {
+        ObservableList<ThietBi> thietBiList_temp = FXCollections.observableArrayList();
+        String duLieuTraCuu = duLieuSearch.getText();
+        try{
+            thietBiList_temp.addAll(thietBiRepo.timTatCaThietBiDaXuatTheoSerial(duLieuTraCuu));
+            if(thietBiList_temp.size()==0){
+                table.setItems(thietBiList);
+                Box.alertBox_No_Result();
+                return;
+            }
+            for(ThietBi curr: thietBiList_temp){
+                PhieuXuat phieuXuat = new PhieuXuat();
+                phieuXuat = phieuXuatRepo.getDetailInvoiceByID(curr.getIdPhieuXuat());
+                phieuXuat.setNameCtmAndEpl();
+                curr.setTenKhachHang(phieuXuat.getNameCustomer());
+            }
+            table.setItems(thietBiList_temp);
+        }
+        catch (NullPointerException ex){
+            table.setItems(thietBiList);
+            return;
+        }
+    }
     private boolean isFullFillCustomerPane(){
         String id = idCtmLabel.getText();
         String name = nameCtmLabel.getText();
@@ -139,6 +173,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         serialColumn.setCellValueFactory(new PropertyValueFactory<>("serialThietBi"));
         idPXColumn.setCellValueFactory(new PropertyValueFactory<>("idPhieuXuat"));
         tenKHColumn.setCellValueFactory(new PropertyValueFactory<>("tenKhachHang"));
+        duLieuSearch.setText("");
     }
 
     public void onEditDataCustomer(boolean key){

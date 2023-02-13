@@ -171,4 +171,26 @@ public class KhachHangRepository_impl implements KhachHangRepository {
         }
         return 0;
     }
+
+    public Integer kiemTraTonTai(String phone){
+        Integer id = -1;
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.KhachHang_QUERY_KIEM_TRA_TON_TAI);
+            pstmt.setString(1,phone);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                id = rs.getInt("idKhachHang");
+            }
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return id;
+    }
 }

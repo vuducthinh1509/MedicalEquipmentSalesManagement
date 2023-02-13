@@ -15,7 +15,7 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("LoginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("TaiKhoan/LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("Đăng nhập");
         primaryStage.setScene(scene);

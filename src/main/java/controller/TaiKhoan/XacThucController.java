@@ -54,4 +54,10 @@ public class XacThucController {
             Box.alertBox("Thất bại","Câu trả lời chưa chính xác","Vui lòng thử lại sau");
         }
     }
+
+    public void cancelButtonOnAction(ActionEvent event){
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }

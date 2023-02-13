@@ -16,4 +16,6 @@ public interface KhachHangRepository {
     public void deleteCustomer(int id);
 
     public Integer getCountCustomer();
+
+    public Integer kiemTraTonTai(String phone);
 }

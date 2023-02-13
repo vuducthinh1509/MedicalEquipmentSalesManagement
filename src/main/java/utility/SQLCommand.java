@@ -4,8 +4,9 @@ public class SQLCommand {
 
     // Người Dùng
     public static String Nhan_Vien_QUERY_DANG_NHAP = "SELECT * FROM nhanvien where username = ? AND password = ?";
-
     public static String Nhan_Vien_QUERY_KIEM_TRA_TON_TAI = "SELECT * from nhanvien where username = ?";
+
+    public static String Nhan_Vien_QUERY_UPDATE_PASSWORD = "update nhanvien set `password` = ? where username = ?";
 
     // Nhân viên
     public static String Nhan_Vien_QUERY_LAY_THONG_TIN = "SELECT * FROM nhanvien WHERE id = ? ";
@@ -25,6 +26,8 @@ public class SQLCommand {
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi = "SELECT * FROM thietbi where trangThaiThietBi like ?";
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat = "SELECT * FROM thietbi where trangThaiThietBi = 'Đã xuất' and idPhieuBaoHanh is null";
+
+    public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat_SerialThietBi = "SELECT * from thietbi where trangThaiThietBi = 'Đã xuất' and idPhieuBaoHanh is null and serialThietBi = ?";
 
     public static String Thiet_Bi_QUERY_LAY_THONG_TIN_BY_idPhieuXuat = "SELECT * FROM thietbi where idPhieuXuat = ?";
 
@@ -68,7 +71,7 @@ public class SQLCommand {
     // Khách hàng
     public static String KhachHang_QUERY_INSERT =  "INSERT INTO `khachhang` (`tenKhachHang`,`sdtKhachHang`,`diaChiKhachHang`) VALUES (?,?,?)";
 
-
+    public static String KhachHang_QUERY_KIEM_TRA_TON_TAI = "Select * from khachhang where sdtKhachHang = ?";
     public static String KhachHang_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM khachhang WHERE idKhachHang = ?";
 
     public static String KhachHang_QUERY_LAY_THONG_TIN_BY_PHONE = "SELECT * FROM khachhang WHERE sdtKhachHang = ?";

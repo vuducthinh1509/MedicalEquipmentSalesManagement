@@ -100,7 +100,7 @@ public class HomePage implements Initializable {
 
     public void dangXuatButtonOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("LoginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("TaiKhoan/LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Đăng nhập");
         stage.setScene(scene);

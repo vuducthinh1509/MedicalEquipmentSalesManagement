@@ -1,5 +1,6 @@
 package controller.TaiKhoan;
 
+import entity.NhanVien;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
+import utility.Box;
+import utility.Validate;
 import view.main;
 
 import java.io.IOException;
@@ -17,6 +20,8 @@ public class LoginController {
 
     public static int idNhanVien = -1;
     public static int role =-1;
+
+    public static String _username;
     @FXML
     private Label loginLabel;
 
@@ -27,18 +32,34 @@ public class LoginController {
     private PasswordField password;
 
     @FXML
-    private Button buttonLogin;
+    private CheckBox checkBox;
 
     @FXML
-    private Button forgotButton;
+    private TextField passwordText;
+
+    @FXML
+    private Button buttonLogin;
+
 
     static NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
 
     public void dangNhapButtonOnAction(ActionEvent event) throws IOException {
-        if (username.getText().isBlank() == false && password.getText().isBlank() == false) {
-            if (nhanVienRepo.dangNhap(username.getText(), password.getText()).getId() != null) {
-                idNhanVien = nhanVienRepo.dangNhap(username.getText(), password.getText()).getId();
-                role = nhanVienRepo.dangNhap(username.getText(), password.getText()).getRole();
+        String pw;
+        if(checkBox.isSelected()){
+            pw = passwordText.getText();
+        } else {
+            pw = password.getText();
+        }
+        if (username.getText().isBlank() == false && pw.isBlank() == false) {
+            if(!Validate.validatePassword(pw)){
+                loginLabel.setText("Mật khẩu chỉ bao gồm 3-20 kí tự, không chứa khoảng trắng");
+                return;
+            }
+            if (nhanVienRepo.dangNhap1(username.getText(), pw)) {
+                NhanVien nhanVien = nhanVienRepo.dangNhap(username.getText(), pw);
+                idNhanVien = nhanVien.getId();
+                role = nhanVien.getRole();
+                _username = nhanVien.getUsername();
                 Stage stage = (Stage) buttonLogin.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("HomePage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
@@ -66,5 +87,17 @@ public class LoginController {
         Scene scene = new Scene(quenMatKhau);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void changeVisibility(ActionEvent event){
+        if(checkBox.isSelected()){
+            passwordText.setText(password.getText());
+            passwordText.setVisible(true);
+            password.setVisible(false);
+            return;
+        }
+        password.setText(passwordText.getText());
+        password.setVisible(true);
+        passwordText.setVisible(false);
     }
 }

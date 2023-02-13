@@ -14,6 +14,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import repository.*;
+import utility.Box;
+import utility.Validate;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -43,6 +45,8 @@ public class InvoiceController {
     @FXML
     private Label maNVXuatLabel;
     // thông tin khách hàng
+    @FXML
+    private Button cancel1Button;
     @FXML
     private TextField idCtmLabel;
     @FXML
@@ -100,13 +104,11 @@ public class InvoiceController {
         String address = addressCtmLabel.getText();
         if(id.isEmpty()||name.isEmpty()||phone.isEmpty()||address.isEmpty()){
             return false;
-        } else {
-            return true;
         }
+        return true;
     }
 
     public void onEditDataCustomer(boolean key){
-        idCtmLabel.setEditable(key);
         nameCtmLabel.setEditable(key);
         phoneCtmLabel.setEditable(key);
         addressCtmLabel.setEditable(key);
@@ -168,24 +170,15 @@ public class InvoiceController {
         td.showAndWait();
         String phone = "";
         phone = td.getEditor().getText();
-        String pattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
-        if(!phone.matches(pattern)){
+        if(!Validate.validatePhoneVN(phone)){
             clearDataCustomer();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Số điện thoại không hợp lệ");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
+            Box.alertBox("Thất bại!","Số điện thoại không hợp lệ","Vui lòng thử lại");
         } else {
             khachHang = khachHangRepo.getInformationCustomerByPhone(phone);
             String phoneCtm = khachHang.getPhoneKhachHang();
             if(phoneCtm == null){
                 clearDataCustomer();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Không tìm thấy kết quả phù hợp");
-                alert.setContentText("Vui lòng nhập lại");
-                alert.show();
+                Box.alertBox_No_Result();
             } else {
                 loadDataCustomerPane();
             }
@@ -208,39 +201,44 @@ public class InvoiceController {
         clearDataCustomer();
         idCtmLabel.setText(String.valueOf(khachHangRepo.getCountCustomer()));
         onEditDataCustomer(true);
-        findCtmButton.setDisable(true);
-        idCtmLabel.setEditable(false);
+        findCtmButton.setVisible(false);
         deleteButton.setVisible(false);
-        deleteButton.setDisable(true);
+        addCtmButton.setVisible(false);
         saveButton.setVisible(true);
-        saveButton.setDisable(false);
+        cancel1Button.setVisible(true);
+    }
+
+    public void cancel1ButtonOnClicked(MouseEvent event){
+        clearDataCustomer();
+        addCtmButton.setVisible(true);
+        findCtmButton.setVisible(true);
+        deleteButton.setVisible(true);
+        saveButton.setVisible(false);
+        cancel1Button.setVisible(false);
     }
 
     public void saveButtonOnClicked(MouseEvent event){
         String name = nameCtmLabel.getText();
         String phone = phoneCtmLabel.getText();
         String address = addressCtmLabel.getText();
-        String pattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
         if(name.isEmpty()||phone.isEmpty()||address.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Cần nhập đầy đủ các trường");
-            alert.setContentText("Vui lòng thử lại sau");
-            alert.showAndWait();
-        } else if(!phone.matches(pattern)){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Số điện thoại không hợp lệ");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
-        } else {
-            onEditDataCustomer(false);
-            saveButton.setVisible(false);
-            saveButton.setDisable(true);
-            deleteButton.setVisible(true);
-            deleteButton.setDisable(false);
-            findCtmButton.setDisable(false);
+            Box.alertBox("Thông báo!","Cần nhập đầy đủ các trường","Vui lòng thử lại sau");
+            return;
         }
+        if(!Validate.validatePhoneVN(phone)){
+            Box.alertBox("Thất bại!","Số điện thoại không hợp lệ","Vui lòng thử lại");
+            return;
+        }
+        if(khachHangRepo.kiemTraTonTai(phone)!=-1){
+            Box.alertBox("Thất bại!","Khách hàng đã tồn tại","Vui lòng thử lại");
+            return;
+        }
+        onEditDataCustomer(false);
+        saveButton.setVisible(false);
+        saveButton.setDisable(true);
+        deleteButton.setVisible(true);
+        deleteButton.setDisable(false);
+        findCtmButton.setDisable(false);
     }
     public void tinhTienButtonOnClicked(MouseEvent event){
         tinhTienButtonIsClicked = true;
@@ -248,17 +246,11 @@ public class InvoiceController {
         String discount = discountLabel.getText();
         String discount1 = discount1Label.getText();
         if(discount.isEmpty()||discount1.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Cần nhập đầy đủ các trường");
-            alert.setContentText("Vui lòng thử lại sau");
-            alert.showAndWait();
+            Box.alertBox("Thông báo!","Cần nhập đầy đủ các trường","Vui lòng thử lại sau");
+
         } else {
             if(!discount.matches(regex)||!discount1.matches(regex)){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Giá trị nhập phải là số");
-                alert.setContentText("Vui lòng kiểm tra lại.");
+                Box.alertBox("Thông báo!","Giá trị nhập phải là số","Vui lòng kiểm tra lại.");
             } else {
                 Integer dc = Integer.valueOf(discount);
                 Integer dc1 = Integer.valueOf(discount1);
@@ -274,6 +266,9 @@ public class InvoiceController {
 
     public void exportButtonOnClicked(MouseEvent event){
         if(isFullFillCustomerPane() && tinhTienButtonIsClicked){
+            String name = nameCtmLabel.getText();
+            String phone = phoneCtmLabel.getText();
+            String address = addressCtmLabel.getText();
             Integer idInvoice = Integer.valueOf(idPhieuXuatLabel.getText());
             Double subTotalInvoice = Double.valueOf(subTotalLabel.getText());
             Integer vatInvoice = Integer.valueOf(vatLabel.getText());
@@ -283,12 +278,18 @@ public class InvoiceController {
             String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
             Integer idEmployeeInvoice = LoginController.idNhanVien;
             Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());
+            if(khachHangRepo.kiemTraTonTai(phone)==-1){
+                khachHangRepo.addCustomer(new KhachHang(name,phone,address));
+            } else {
+                Box.alertBox("Thất bại!","Khách hàng này đã tồn tại","Vui lòng thử lại");
+                return;
+            }
             PhieuXuat phieuXuat = new PhieuXuat(idInvoice,subTotalInvoice,vatInvoice,discountInvoice,discount1Invoice,totalInvoice,Date.valueOf(exportDateInvoice),idEmployeeInvoice,idCustomerInvoice);
             phieuXuatRepo.addInvoice(phieuXuat);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Xuất hàng thành công");
-            alert.showAndWait();
+            Box.alertBox("Thông báo!","Xuất hàng thành công","");
+            final Node source = (Node) event.getSource();
+            final Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
             for(Item item : itemList){
                 int index = 0;
                 int quantity = item.getSoLuongItem();
@@ -304,11 +305,7 @@ public class InvoiceController {
                 }
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Cần nhập đủ thông tin của khách hàng và tính tiền");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
+            Box.alertBox("Thông báo!","Cần nhập đủ thông tin của khách hàng và tính tiền","Vui lòng thử lại");
         }
     }
 }

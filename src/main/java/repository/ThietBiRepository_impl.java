@@ -329,6 +329,35 @@ public class ThietBiRepository_impl implements ThietBiRepository {
         }
     }
 
+    @Override
+    public ObservableList<ThietBi> timTatCaThietBiDaXuatTheoSerial(String serial){
+        ObservableList<ThietBi> f = FXCollections.observableArrayList();
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_trangThaiThietBi_Da_Xuat_SerialThietBi);
+            pstmt.setString(1, serial);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                int idThietBi = rs.getInt("idThietBi");
+                String tenThietBi = rs.getString("tenThietBi");
+                String modelThietBi = rs.getString("modelThietBi");
+                String serialThietBi = rs.getString("serialThietBi");
+                int idPhieuXuat = rs.getInt("idPhieuXuat");
+                f.add(new ThietBi(idThietBi,tenThietBi,modelThietBi,serialThietBi,idPhieuXuat));
+            }
+            return f;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return f;
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void updateIDPhieuBaoHanh(int idThietBi, Integer idPBH){
         try {
             conn = DbUtil.getInstance().getConnection();

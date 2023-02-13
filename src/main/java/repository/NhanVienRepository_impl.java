@@ -129,6 +129,30 @@ public class NhanVienRepository_impl implements NhanVienRepository {
         return nhanVien;
     }
 
+    public boolean dangNhap1(String username,String password){
+        boolean isValid = false;
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_DANG_NHAP);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                isValid = true;
+            }
+            return isValid;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isValid;
+    }
+
     public Integer kiemTraTaiKhoanTonTai(String username){
         Integer id = -1;
         try {
@@ -174,5 +198,23 @@ public class NhanVienRepository_impl implements NhanVienRepository {
                 e.printStackTrace();
             }
         } return nhanVien;
+    }
+
+    public void doiMatKhau(String username, String newPassword){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Nhan_Vien_QUERY_UPDATE_PASSWORD);
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2,username);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -95,14 +95,14 @@
             </font></Label>
         <Pane layoutX="372.0" layoutY="119.0" prefHeight="50.0" prefWidth="426.0" style="-fx-background-color: #ffffff;">
             <children>
-                <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="351.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                <TextField fx:id="duLieuSearch" layoutX="7.0" prefHeight="50.0" prefWidth="351.0" promptText="Nhập Serial thiết bị" style="-fx-background-color: 0;">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </TextField>
             </children>
         </Pane>
-        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="60.0" layoutX="808.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="808.0" layoutY="119.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../image/2811806.png" />
             </image>
@@ -167,7 +167,6 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-          <ComboBox fx:id="truongTraCuuF" layoutX="869.0" layoutY="120.0" opacity="0.7" prefHeight="49.0" prefWidth="193.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
       <Button layoutX="966.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
          <font>
             <Font size="20.0" />
