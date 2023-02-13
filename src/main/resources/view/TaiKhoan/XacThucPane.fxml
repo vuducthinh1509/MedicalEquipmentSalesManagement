@@ -39,19 +39,19 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="144.0" layoutY="14.0" text="Xác Thực Tài Khoản">
+      <Label layoutX="173.0" layoutY="14.0" text="Xác Thực Tài Khoản">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextArea layoutX="52.0" layoutY="65.0" prefHeight="66.0" prefWidth="428.0" text="Bạn cần trả lời chính xác câu hỏi sau để có thể lấy được mật khẩu." wrapText="true">
+      <TextArea layoutX="52.0" layoutY="65.0" prefHeight="66.0" prefWidth="428.0" style="-fx-background-color: 0;" text="Bạn cần trả lời chính xác câu hỏi sau để có thể lấy được mật khẩu!" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </TextArea>
       <Label layoutX="31.0" layoutY="153.0" text="Tên tài khoản:">
          <font>
-            <Font size="18.0" />
+            <Font name="System Italic" size="18.0" />
          </font>
       </Label>
       <Label fx:id="usernameLabel" layoutX="161.0" layoutY="153.0" prefHeight="27.0" prefWidth="292.0">

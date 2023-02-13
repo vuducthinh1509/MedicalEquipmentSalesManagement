@@ -1,56 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.DoiMatKhauController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="557.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.DoiMatKhauController">
    <children>
       <Label layoutX="214.0" layoutY="22.0" text="Đổi Mật Khẩu">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="193.0" text="Mật khẩu mới:">
+      <Label layoutX="36.0" layoutY="193.0" text="Xác nhận mật khẩu:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="142.0" text="Mật khẩu mới:">
+      <Label layoutX="36.0" layoutY="142.0" text="Mật khẩu mới:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="88.0" text="Mật khẩu cũ:">
+      <Label layoutX="36.0" layoutY="90.0" text="Mật khẩu cũ:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <PasswordField fx:id="oldPassword" layoutX="235.0" layoutY="84.0" promptText="Nhập mật khẩu cũ">
+      <PasswordField fx:id="oldPassword" layoutX="235.0" layoutY="84.0" promptText="Nhập mật khẩu cũ" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="newPassword" layoutX="235.0" layoutY="137.0" promptText="Nhập mật khẩu mới">
+      <PasswordField fx:id="newPassword" layoutX="235.0" layoutY="137.0" promptText="Nhập mật khẩu mới" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="newPassword1" layoutX="235.0" layoutY="188.0" promptText="Nhập lại mật khẩu mới">
+      <PasswordField fx:id="newPassword1" layoutX="235.0" layoutY="188.0" promptText="Nhập lại mật khẩu mới" style="-fx-background-color: rgba(0,0,0,0); -fx-border-width: 0 0 2 0; -fx-border-color: linear-gradient(to right, #3399ff 30%, #66ff66 100%);">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Button fx:id="saveButton" layoutX="282.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="Lưu">
+      <Button fx:id="saveButton" layoutX="282.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="387.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="Hủy">
+      <Button fx:id="cancelButton" layoutX="387.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
