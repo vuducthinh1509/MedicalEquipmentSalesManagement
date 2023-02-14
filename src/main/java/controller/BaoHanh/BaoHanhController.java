@@ -20,10 +20,13 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import repository.PhieuBaoHanhRepository;
 import repository.PhieuBaoHanhRepository_impl;
+import repository.ThietBiRepository;
+import repository.ThietBiRepository_impl;
 import utility.Box;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -63,6 +66,8 @@ public class BaoHanhController implements Initializable {
 
     ObservableList<String> listTruongSearch = FXCollections.observableArrayList("Serial","Tên Khách Hàng");
     static PhieuBaoHanhRepository phieuBaoHanhRepo = new PhieuBaoHanhRepository_impl();
+
+    static ThietBiRepository thietBiRepo = new ThietBiRepository_impl();
 
     ObservableList<PhieuBaoHanh> phieuBaoHanhList = FXCollections.observableArrayList();
 
@@ -114,11 +119,7 @@ public class BaoHanhController implements Initializable {
         ChiTietPBHController chiTietPBHController = loader.getController();
         PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không phiếu bảo hành nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("phiếu bảo hành");
             return;
         }
         chiTietPBHController.setPhieuBaoHanh(selected.getId());
@@ -238,5 +239,25 @@ public class BaoHanhController implements Initializable {
             Box.alertBox("Thông báo!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
             return;
         }
+    }
+
+    public void xoaPhieuBaoHanhOnAction(ActionEvent event){
+        PhieuBaoHanh selected = table.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            Box.alertBox_None_Selection("phiếu xuất");
+            return;
+        }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa thiết bị");
+        alert.setHeaderText("Bạn có thực sự muốn xóa phiếu xuất này ?");
+        alert.setContentText("Nếu bạn đồng ý xóa dữ liệu sẽ bị xóa và không thể khôi phục!");
+        Optional<ButtonType> option = alert.showAndWait();
+        if (option.get() == null) {}
+        else if (option.get() == ButtonType.OK) {
+            phieuBaoHanhRepo.deletePhieuBaoHanh(selected.getId());
+            thietBiRepo.updatePhieuBaoHanh_Delete(selected.getIdThietBi());
+            Box.alertBox("Thành công!","Xóa phiếu bảo hành thành công","");
+            phieuBaoHanhList.remove(selected);
+        } else if (option.get() == ButtonType.CANCEL) {}
     }
 }

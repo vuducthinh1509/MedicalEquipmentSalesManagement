@@ -77,55 +77,55 @@
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Label fx:id="tenLabel" layoutX="226.0" layoutY="119.0" prefHeight="30.0" prefWidth="754.0" text="Label">
+        <Label fx:id="tenLabel" layoutX="226.0" layoutY="119.0" prefHeight="30.0" prefWidth="754.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="modelLabel" layoutX="229.0" layoutY="172.0" prefHeight="30.0" prefWidth="264.0" text="Label" textFill="#030300">
+        <Label fx:id="modelLabel" layoutX="229.0" layoutY="172.0" prefHeight="30.0" prefWidth="264.0" textFill="#030300">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="mauLabel" layoutX="229.0" layoutY="310.0" prefHeight="30.0" prefWidth="264.0" text="Label">
+        <Label fx:id="mauLabel" layoutX="229.0" layoutY="310.0" prefHeight="30.0" prefWidth="264.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="thoiGianBaoHanhLabel" layoutX="740.0" layoutY="172.0" prefHeight="21.0" prefWidth="187.0" text="Label">
+        <Label fx:id="thoiGianBaoHanhLabel" layoutX="740.0" layoutY="172.0" prefHeight="21.0" prefWidth="187.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="serialLabel" layoutX="229.0" layoutY="216.0" prefHeight="30.0" prefWidth="264.0" text="Label">
+        <Label fx:id="serialLabel" layoutX="229.0" layoutY="216.0" prefHeight="30.0" prefWidth="264.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label layoutX="229.0" layoutY="266.0" prefHeight="30.0" prefWidth="264.0" text="Label" fx:id="xuatXuLabel">
+        <Label layoutX="229.0" layoutY="266.0" prefHeight="30.0" prefWidth="264.0" fx:id="xuatXuLabel">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="kichThuocLabel" layoutX="229.0" layoutY="356.0" prefHeight="30.0" prefWidth="319.0" text="Label" textFill="#0a0a00">
+        <Label fx:id="kichThuocLabel" layoutX="229.0" layoutY="356.0" prefHeight="30.0" prefWidth="319.0" textFill="#0a0a00">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="giaLabel" layoutX="740.0" layoutY="216.0" prefHeight="30.0" prefWidth="187.0" text="Label">
+        <Label fx:id="giaLabel" layoutX="740.0" layoutY="222.0" prefHeight="30.0" prefWidth="187.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="maNVNhapLabel" layoutX="224.0" layoutY="462.0" prefHeight="30.0" prefWidth="246.0" text="Label">
+        <Label fx:id="maNVNhapLabel" layoutX="224.0" layoutY="462.0" prefHeight="30.0" prefWidth="246.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="tenNVNhapLabel" layoutX="226.0" layoutY="516.0" prefHeight="30.0" prefWidth="223.0" text="Label">
+        <Label fx:id="tenNVNhapLabel" layoutX="226.0" layoutY="516.0" prefHeight="30.0" prefWidth="223.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="maNVXuatLabel" layoutX="712.0" layoutY="462.0" prefHeight="30.0" prefWidth="255.0" text="Label">
+        <Label fx:id="maNVXuatLabel" layoutX="712.0" layoutY="462.0" prefHeight="30.0" prefWidth="255.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="tenNVXuatLabel" layoutX="716.0" layoutY="516.0" prefHeight="30.0" prefWidth="264.0" text="Label">
+        <Label fx:id="tenNVXuatLabel" layoutX="716.0" layoutY="516.0" prefHeight="30.0" prefWidth="264.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
-        <Label fx:id="trangThaiLabel" layoutX="740.0" layoutY="266.0" prefHeight="30.0" prefWidth="264.0" text="Label">
+        <Label fx:id="trangThaiLabel" layoutX="747.0" layoutY="263.0" prefHeight="30.0" prefWidth="264.0">
             <font>
                 <Font size="20.0" />
             </font></Label>
@@ -139,12 +139,12 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="ngayNhapLabel" layoutX="226.0" layoutY="411.0" prefHeight="30.0" prefWidth="255.0" text="Label">
+      <Label fx:id="ngayNhapLabel" layoutX="226.0" layoutY="411.0" prefHeight="30.0" prefWidth="255.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="ngayXuatLabel" layoutX="712.0" layoutY="411.0" prefHeight="30.0" prefWidth="255.0" text="Label">
+      <Label fx:id="ngayXuatLabel" layoutX="712.0" layoutY="411.0" prefHeight="30.0" prefWidth="255.0">
          <font>
             <Font size="20.0" />
          </font>

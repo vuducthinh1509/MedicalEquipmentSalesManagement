@@ -34,4 +34,6 @@ public interface ThietBiRepository {
     public void updateIDPhieuBaoHanh(int idThietBi, Integer idPBH);
 
     public ObservableList<ThietBi> timTatCaThietBiDaXuatTheoSerial(String serial);
+
+    public void updatePhieuBaoHanh_Delete(int id);
 }

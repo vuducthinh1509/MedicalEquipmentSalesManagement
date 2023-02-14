@@ -53,7 +53,6 @@ public class ThongTinNV {
     private void getInformationUser(Integer id) {
         NhanVien nhanVien = new NhanVien();
         nhanVien = nhanVienRepo.getInformationUser(id);
-        System.out.println(nhanVien.getHoTen());
         labelMaNV.setText(nhanVien.getMaNV());
         labelHoTen.setText(nhanVien.getHoTen());
         labelNgaySinh.setText(String.valueOf(nhanVien.getNgaySinh()));

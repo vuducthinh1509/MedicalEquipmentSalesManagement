@@ -12,7 +12,7 @@ public class test extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        String password = "abc";
-        System.out.println(Validate.validatePassword(password));
+        String password = "12a";
+        System.out.println(Validate.validateNumber(password));
     }
 }

@@ -70,17 +70,17 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="tenKH" layoutX="164.0" layoutY="14.0" prefHeight="30.0" prefWidth="179.0">
+            <Label fx:id="tenKH" layoutX="164.0" layoutY="14.0" prefHeight="30.0" prefWidth="250.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="sdtKH" layoutX="164.0" layoutY="64.0" prefHeight="30.0" prefWidth="179.0">
+            <Label fx:id="sdtKH" layoutX="164.0" layoutY="64.0" prefHeight="30.0" prefWidth="202.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="diaChiKH" layoutX="164.0" layoutY="119.0" prefHeight="30.0" prefWidth="179.0">
+            <Label fx:id="diaChiKH" layoutX="164.0" layoutY="119.0" prefHeight="30.0" prefWidth="250.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -119,7 +119,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="327.0" layoutY="60.0" prefHeight="27.0" prefWidth="69.0" text="Chi phí:">
+            <Label layoutX="310.0" layoutY="60.0" prefHeight="27.0" prefWidth="69.0" text="Chi phí:">
                <font>
                   <Font size="20.0" />
                </font>

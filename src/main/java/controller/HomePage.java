@@ -53,7 +53,6 @@ public class HomePage implements Initializable {
         Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
         if(LoginController.role!=0){
-            managementButton.setDisable(true);
             managementButton.setVisible(false);
         }
         homePageButton.focusedProperty();

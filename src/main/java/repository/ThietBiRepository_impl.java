@@ -375,4 +375,22 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    @Override
+    public void updatePhieuBaoHanh_Delete(int id){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUBAOHANH);;
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

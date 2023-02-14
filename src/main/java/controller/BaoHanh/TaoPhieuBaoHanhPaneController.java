@@ -221,50 +221,11 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         }
     }
 
-    public void addCtmButtonOnClicked(MouseEvent event) throws IOException {
-        clearDataCustomer();
-        idCtmLabel.setText(String.valueOf(khachHangRepo.getCountCustomer()));
-        onEditDataCustomer(true);
-        idCtmLabel.setEditable(false);
-        addCtmButton.setVisible(false);
-        findCtmButton.setVisible(false);
-        deleteButton.setVisible(false);
-        saveButton.setVisible(true);
-        cancelButton1.setVisible(true);
-    }
 
     public void deleteButtonOnClicked(MouseEvent event){
         clearDataCustomer();
         khachHang.setDefault();
     }
-
-    public void saveButtonOnClicked(MouseEvent event){
-        String name = nameCtmLabel.getText();
-        String phone = phoneCtmLabel.getText();
-        String address = addressCtmLabel.getText();
-        if(name.isEmpty()||phone.isEmpty()||address.isEmpty()){
-            Box.alertBox_None_Full_Fill();
-        } else if(Validate.validatePhoneVN(phone)){
-            Box.alertBox("Thông báo","Số điện thoại không hợp lệ","Vui lòng thử lại");
-        } else {
-            onEditDataCustomer(false);
-            saveButton.setVisible(false);
-            saveButton.setDisable(true);
-            deleteButton.setVisible(true);
-            deleteButton.setDisable(false);
-            findCtmButton.setDisable(false);
-        }
-    }
-
-    public void cancelButton1OnClicked(MouseEvent event){
-        clearDataCustomer();
-        saveButton.setVisible(false);
-        cancelButton1.setVisible(false);
-        addCtmButton.setVisible(true);
-        findCtmButton.setVisible(true);
-        deleteButton.setVisible(true);
-    }
-
     public void detailInvoice(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/PhieuXuat/DetailInvoice.fxml"));
@@ -272,11 +233,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         DetailInvoice detailInvoiceController = loader.getController();
         ThietBi selectedDevice = table.getSelectionModel().getSelectedItem();
         if (selectedDevice == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         detailInvoiceController.setInvoiceByID(selectedDevice.getIdPhieuXuat());
@@ -297,11 +254,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         ThietBi selectedThietBi = table.getSelectionModel().getSelectedItem();
         PhieuXuat selectedInvoice = phieuXuatRepo.getDetailInvoiceByID(selectedThietBi.getIdPhieuXuat());
         if (selectedInvoice == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         khachHang = khachHangRepo.getInformationCustomerByID(selectedInvoice.getIdCustomerInvoice());
@@ -332,16 +285,12 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
             Integer idNV = LoginController.idNhanVien;
             PhieuBaoHanh phieuBaohanh = new PhieuBaoHanh(Date.valueOf(ngayTao),noteKhachHang,idTB,idKH,idNV);
             phieuBaoHanhRepo.taoPhieuBaoHanh(phieuBaohanh);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Tạo phiếu bảo hành thành công");
-            alert.showAndWait();
+            Box.alertBox("Thành công!","Tạo phiếu bảo hành thành công","");
+            final Node source = (Node) event.getSource();
+            final Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Cần nhập đủ thông tin của khách hàng và lựa chọn thiết bị");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
+            Box.alertBox("Thất bại!","Cần nhập đủ thông tin của khách hàng và lựa chọn thiết bị.","Vui lòng thử lại");
         }
     }
 

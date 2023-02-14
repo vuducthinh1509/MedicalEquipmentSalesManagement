@@ -19,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
+import org.w3c.dom.ls.LSOutput;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 
@@ -32,6 +33,7 @@ import java.util.ResourceBundle;
 public class QuanLy implements Initializable {
     public TableColumn gioiTinhColumn;
     public TableColumn diaChiThuongTruColumn;
+
     @FXML
     private TableView<NhanVien> table;
     @FXML

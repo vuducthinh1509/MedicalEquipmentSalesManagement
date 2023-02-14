@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
@@ -64,6 +65,7 @@ public class LoginController {
                 FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("HomePage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("Quản Lý Bán Hàng Thiết Bị Y Tế");
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("/image/logo3.png")));
                 stage.setScene(scene);
                 stage.setWidth(1366);
                 stage.setHeight(780);

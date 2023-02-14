@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.ItemReposioty_impl;
 import repository.ItemRepository;
+import utility.Box;
 
 import java.io.IOException;
 import java.net.URL;
@@ -164,11 +165,7 @@ public class ExportController implements Initializable {
     public void addItemToCart(ActionEvent event){
         Item selectedItem =  table.getSelectionModel().getSelectedItem();
         if(selectedItem==null){
-            Alert m = new Alert(Alert.AlertType.INFORMATION);
-            m.setTitle("Thông báo!");
-            m.setHeaderText("Chưa chọn thiết bị");
-            m.setContentText("Vui lòng chọn lại");
-            m.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         TextInputDialog td = new TextInputDialog();
@@ -243,11 +240,7 @@ public class ExportController implements Initializable {
             DetailModelController detailModelController = loader.getController();
             Item selectedItem = table.getSelectionModel().getSelectedItem();
             if (selectedItem == null) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Không thiết bị nào được chọn.");
-                alert.setContentText("Vui lòng chọn lại.");
-                alert.show();
+                Box.alertBox_None_Selection("thiết bị");
                 return;
             } else {
                 detailModelController.modelThietBi = selectedItem.getModelItem();

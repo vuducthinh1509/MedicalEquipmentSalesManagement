@@ -70,6 +70,8 @@ public class SQLCommand {
             "`idPhieuBaoHanh` = ? WHERE idThietBi = ? ";
     public static String Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT = "update \t`thietbi` set `idPhieuXuat` = null, `trangThaiThietBi` = 'Trong kho' where idThietBi = ?;";
 
+    public static String Thiet_Bi_QUERY_CLEAR_IDPHIEUBAOHANH = "update \t`thietbi` set `idPhieuBaoHanh` = null where idThietBi = ?;";
+
     public static String Thiet_Bi_QUERY_getCountModel = "select modelThietBi,xuatXuThietBi,tenThietBi,giaThietBi , count(*) from thietbi\n" +
             "where trangThaiThietBi = 'Trong kho'\n" +
             "group by modelThietBi;";
@@ -125,5 +127,7 @@ public class SQLCommand {
     public static String PhieuBaoHanh_QUERY_UPDATE_NoteNhanVien = "update phieubaohanh set noteNhanVien = ? where id =";
 
     public static String PhieuBaoHanh_QUERY_UPDATE_NoteKhachHang = "update phieubaohanh set noteKhachHang = ? where id =";
+
+    public static String PhieuBaoHanh_DELTE_BY_ID = "DELETE FROM `phieubaohanh` WHERE id = ?";
 }
 

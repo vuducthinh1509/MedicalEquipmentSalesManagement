@@ -14,6 +14,7 @@ import lombok.SneakyThrows;
 import repository.KhachHangRepository;
 import repository.KhachHangRepository_impl;
 import utility.Box;
+import utility.Validate;
 
 import java.net.URL;
 import java.util.Optional;
@@ -55,6 +56,8 @@ public class CustomerController implements Initializable {
     @FXML
     private Button saveButton;
 
+    @FXML
+    private Button cancelButton;
 
     @FXML
     private ComboBox<String> truongSearch;
@@ -86,6 +89,7 @@ public class CustomerController implements Initializable {
         loadDataCustomer();
     }
 
+
     public void clearDataPane() {
         nameLabel.clear();
         phoneLabel.clear();
@@ -112,8 +116,6 @@ public class CustomerController implements Initializable {
     }
 
     public void loadDataCustomer() {
-        saveButton.setDisable(true);
-        addButton.setDisable(false);
         editButton.setDisable(true);
         onEdit(false);
         khachHangList.clear();
@@ -148,47 +150,70 @@ public class CustomerController implements Initializable {
         notificationLabel.setText("Bạn đang chỉnh sửa thông tin khách hàng");
         isSelectionMode = false;
         editModeOnAction = true;
-        editButton.setDisable(true);
-        addButton.setDisable(true);
-        saveButton.setDisable(false);
+        editButton.setVisible(false);
+        addButton.setVisible(false);
+        saveButton.setVisible(true);
+        cancelButton.setVisible(true);
         onEdit(true);
     }
 
     @SneakyThrows
     @FXML
     private void saveButtonOnClicked(MouseEvent event) {
+        String tenKH = nameLabel.getText();
+        String phoneKH = phoneLabel.getText();
+        String addressKH = addressLabel.getText();
         if (editModeOnAction) {
-            String tenKH = nameLabel.getText();
-            String phoneKH = phoneLabel.getText();
-            String addressKH = addressLabel.getText();
             if (tenKH.isEmpty() || phoneKH.isEmpty() || addressKH.isEmpty()) {
-                notificationLabel.setText("Bạn cần nhập đầy đủ các trường.");
-                editButton.setDisable(true);
+                Box.alertBox_None_Full_Fill();
+            } else if (!Validate.validatePhoneVN(phoneKH)) {
+                Box.alertBox("Thất bại!", "Số điện thoại không hợp lệ", "Vui lòng thử lại");
             } else {
                 updateDataCustomer();
                 notificationLabel.setText("Chỉnh sửa thành công!");
-                clearDataPane();
-                onEdit(false);
-                editButton.setDisable(true);
-                loadDataCustomer();
                 isSelectionMode = true;
                 editModeOnAction = false;
+                onEdit(false);
+                editButton.setVisible(true);
+                addButton.setVisible(true);
+                saveButton.setVisible(false);
+                cancelButton.setVisible(false);
+                loadDataCustomer();
+                clearDataPane();
             }
         } else {
-            String tenKH = nameLabel.getText();
-            String phoneKH = phoneLabel.getText();
-            String addressKH = addressLabel.getText();
             if (tenKH.isEmpty() || phoneKH.isEmpty() || addressKH.isEmpty()) {
-                notificationLabel.setText("Bạn cần nhập đầy đủ các trường");
+                Box.alertBox_None_Full_Fill();
+            } else if (!Validate.validatePhoneVN(phoneKH)) {
+                Box.alertBox("Thất bại!", "Số điện thoại không hợp lệ", "Vui lòng thử lại");
+            } else if (khachHangRepo.kiemTraTonTai(phoneKH) != -1) {
+                Box.alertBox("Thất bại!", "Khách hàng đã tồn tại", "Vui lòng thử lại");
             } else {
                 isSelectionMode = true;
                 KhachHang ctm = new KhachHang(tenKH, phoneKH, addressKH);
                 khachHangRepo.addCustomer(ctm);
                 khachHangList.add(ctm);
                 notificationLabel.setText("Thêm thành công!");
+                addButton.setVisible(true);
+                editButton.setVisible(true);
+                saveButton.setVisible(false);
+                cancelButton.setVisible(false);
+                editButton.setDisable(true);
                 loadDataCustomer();
             }
         }
+    }
+
+    public void cancelButtonOnClicked(MouseEvent event){
+        isSelectionMode = true;
+        clearDataPane();
+        addButton.setVisible(true);
+        editButton.setVisible(true);
+        saveButton.setVisible(false);
+        cancelButton.setVisible(false);
+        editButton.setDisable(true);
+        notificationLabel.setText("");
+        onEdit(false);
     }
 
     public void updateDataCustomer() {
@@ -213,9 +238,10 @@ public class CustomerController implements Initializable {
     public void addButtonOnClicked(MouseEvent event) {
         notificationLabel.setText("Bạn đang thêm khách hàng mới");
         editModeOnAction = false;
-        addButton.setDisable(true);
-        editButton.setDisable(true);
-        saveButton.setDisable(false);
+        addButton.setVisible(false);
+        editButton.setVisible(false);
+        saveButton.setVisible(true);
+        cancelButton.setVisible(true);
         isSelectionMode = false;
         clearDataPane();
         onEdit(true);
@@ -291,19 +317,12 @@ public class CustomerController implements Initializable {
         ButtonType buttonNo = new ButtonType("No",ButtonBar.ButtonData.NO);
         alert.getButtonTypes().setAll(buttonYes,buttonNo);
         Optional<ButtonType> result = alert.showAndWait();
-        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-        alert1.setTitle("Thông báo!");
         if(result.get().getButtonData() == ButtonBar.ButtonData.YES){
             int idKhachHang = ctm.getIdKhachHang();
             khachHangRepo.deleteCustomer(idKhachHang);
             khachHangList.remove(ctm);
-            alert1.setContentText("Thành công");
-            alert1.show();
+            Box.alertBox("Thành công!","Xóa thành công","");
             reloadPane();
-        }
-        else if(result.get().getButtonData() == ButtonBar.ButtonData.NO){
-            alert1.setContentText("Thất bại");
-            alert1.show();
         }
 
     }

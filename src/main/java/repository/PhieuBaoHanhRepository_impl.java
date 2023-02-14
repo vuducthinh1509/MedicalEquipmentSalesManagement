@@ -213,4 +213,21 @@ public class PhieuBaoHanhRepository_impl implements PhieuBaoHanhRepository{
             }
         }
     }
+
+    public void deletePhieuBaoHanh(int id){
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.PhieuBaoHanh_DELTE_BY_ID);
+            pstmt.setInt(1, id );
+            pstmt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

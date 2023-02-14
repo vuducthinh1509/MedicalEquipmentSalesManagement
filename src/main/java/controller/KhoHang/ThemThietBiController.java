@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
+import utility.Box;
+import utility.Validate;
 
 public class ThemThietBiController {
     @FXML
@@ -52,24 +54,30 @@ public class ThemThietBiController {
     @SneakyThrows
     @FXML
     private void saveAction(MouseEvent event) {
+
         String _ten = tenLabel.getText();
         String _model = modelLabel.getText();
         String _serial = serialLabel.getText();
-        Integer _gia = Integer.valueOf(giaLabel.getText());
-        String _ngayNhap = String.valueOf(ngayNhapLabel.getValue());
+        Integer _gia = -1;
+        if(!Validate.validateNumber(giaLabel.getText())){
+            Box.alertBox("Thất bại!","Giá phải là một số","Vui lòng thử lại");
+            return;
+        }
+        if(!giaLabel.getText().isEmpty()){
+            _gia = Integer.valueOf(giaLabel.getText());
+        }
+
+        String _ngayNhap = "";
+        if(ngayNhapLabel.getValue() != null){
+            _ngayNhap = String.valueOf(ngayNhapLabel.getValue());
+        }
         String _maNVNhap = maNVNhapLabel.getText();
 
-        if ( _ten.isEmpty() || _model.isEmpty() || _serial.isEmpty()||_gia == 0 || _ngayNhap.isEmpty() || _maNVNhap.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Cần nhập đủ các trường dữ liệu");
-            alert.showAndWait();
+        if ( _ten.isEmpty() || _model.isEmpty() || _serial.isEmpty()||_gia == -1 || _ngayNhap.isEmpty() || _maNVNhap.isEmpty()) {
+            Box.alertBox_None_Full_Fill();
         } else {
             insert();
-            Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
-            alert_TC.setHeaderText(null);
-            alert_TC.setContentText("Thêm thành công");
-            alert_TC.showAndWait();
+            Box.alertBox("Thành công!","Thêm thành công thiết bị","");
             final Node source = (Node) event.getSource();
             final Stage stage = (Stage) source.getScene().getWindow();
             stage.close();

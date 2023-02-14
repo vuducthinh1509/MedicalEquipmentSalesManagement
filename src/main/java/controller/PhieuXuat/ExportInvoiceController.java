@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import repository.*;
+import utility.Box;
 
 import java.io.IOException;
 import java.net.URL;
@@ -139,11 +140,7 @@ public class ExportInvoiceController implements Initializable {
     public void deleteInvoice(ActionEvent event) throws IOException{
         PhieuXuat phieuXuat = table.getSelectionModel().getSelectedItem();
         if (phieuXuat == null) {
-            Alert m = new Alert(Alert.AlertType.INFORMATION);
-            m.setTitle("Thông báo!");
-            m.setHeaderText("Không nhân khẩu nào được chọn.");
-            m.setContentText("Vui lòng chọn lại.");
-            m.show();
+            Box.alertBox_None_Selection("phiếu xuất");
             return;
         }
         int id = phieuXuat.getIdInvoice();

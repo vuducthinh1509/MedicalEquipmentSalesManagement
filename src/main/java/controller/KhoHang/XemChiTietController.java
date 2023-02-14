@@ -34,6 +34,8 @@ public class XemChiTietController {
     Label tenNVNhapLabel;
 
     @FXML
+    Label trangThaiBaoHanhLabel;
+    @FXML
     Label ngayXuatLabel;
     @FXML
     Label maNVXuatLabel;

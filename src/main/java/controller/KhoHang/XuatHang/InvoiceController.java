@@ -95,6 +95,8 @@ public class InvoiceController {
 
     static boolean tinhTienButtonIsClicked = false;
 
+    static boolean addCustomer = false;
+
     ObservableList<Item> itemList = FXCollections.observableArrayList();
 
     private boolean isFullFillCustomerPane(){
@@ -114,6 +116,7 @@ public class InvoiceController {
         addressCtmLabel.setEditable(key);
     }
     public void clearDataCustomer(){
+        addCustomer = false;
         idCtmLabel.clear();
         nameCtmLabel.clear();
         phoneCtmLabel.clear();
@@ -209,6 +212,7 @@ public class InvoiceController {
     }
 
     public void cancel1ButtonOnClicked(MouseEvent event){
+        addCustomer = false;
         clearDataCustomer();
         addCtmButton.setVisible(true);
         findCtmButton.setVisible(true);
@@ -233,34 +237,36 @@ public class InvoiceController {
             Box.alertBox("Thất bại!","Khách hàng đã tồn tại","Vui lòng thử lại");
             return;
         }
+        addCustomer = true;
         onEditDataCustomer(false);
         saveButton.setVisible(false);
+        cancel1Button.setVisible(false);
         saveButton.setDisable(true);
         deleteButton.setVisible(true);
-        deleteButton.setDisable(false);
-        findCtmButton.setDisable(false);
+        addCtmButton.setVisible(true);
+        findCtmButton.setVisible(true);
     }
     public void tinhTienButtonOnClicked(MouseEvent event){
         tinhTienButtonIsClicked = true;
-        String regex = "[0-9]+";
         String discount = discountLabel.getText();
         String discount1 = discount1Label.getText();
-        if(discount.isEmpty()||discount1.isEmpty()){
-            Box.alertBox("Thông báo!","Cần nhập đầy đủ các trường","Vui lòng thử lại sau");
-
+        if(!Validate.validateNumber(discount)||!Validate.validateNumber(discount1)){
+            Box.alertBox("Thông báo!","Giá trị nhập phải là số","Vui lòng kiểm tra lại.");
         } else {
-            if(!discount.matches(regex)||!discount1.matches(regex)){
-                Box.alertBox("Thông báo!","Giá trị nhập phải là số","Vui lòng kiểm tra lại.");
-            } else {
-                Integer dc = Integer.valueOf(discount);
-                Integer dc1 = Integer.valueOf(discount1);
-                Integer totalNoVAT = subtotal - dc - subtotal * dc1/100;
-                Integer vat = totalNoVAT/10;
-                Float total = (float) totalNoVAT+vat;
-                Integer _total = Math.round(total / 1000+1) * 1000;
-                vatLabel.setText(String.valueOf(vat));
-                totalLabel.setText(String.valueOf(_total));
+            Double dc1 = 0.0 ;
+            Double dc = 0.0;
+            if(!discount.isEmpty()){
+                dc = Double.valueOf(discount);
             }
+            if(!discount1.isEmpty()){
+                dc1 = Double.valueOf(discount1);
+            }
+            Double totalNoVAT = subtotal - dc - subtotal * dc1/100;
+            Double vat = totalNoVAT/10;
+            Double total = (Double) totalNoVAT + vat;
+            Long _total = Math.round(total / 1000+1) * 1000;
+            vatLabel.setText(String.valueOf(vat));
+            totalLabel.setText(String.valueOf(_total));
         }
     }
 
@@ -272,17 +278,20 @@ public class InvoiceController {
             Integer idInvoice = Integer.valueOf(idPhieuXuatLabel.getText());
             Double subTotalInvoice = Double.valueOf(subTotalLabel.getText());
             Integer vatInvoice = Integer.valueOf(vatLabel.getText());
-            Double discountInvoice = Double.valueOf(discountLabel.getText());
-            Double discount1Invoice = Double.valueOf(discount1Label.getText());
+            Double discountInvoice = 0.0;
+            Double discount1Invoice = 0.0;
+            if(!discount1Label.getText().isEmpty()){
+                discount1Invoice = Double.valueOf(discount1Label.getText());
+            }
+            if(!discountLabel.getText().isEmpty()){
+                discount1Invoice = Double.valueOf(discountLabel.getText());
+            }
             Double totalInvoice = Double.valueOf(totalLabel.getText());
             String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
             Integer idEmployeeInvoice = LoginController.idNhanVien;
             Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());
-            if(khachHangRepo.kiemTraTonTai(phone)==-1){
+            if(addCustomer){
                 khachHangRepo.addCustomer(new KhachHang(name,phone,address));
-            } else {
-                Box.alertBox("Thất bại!","Khách hàng này đã tồn tại","Vui lòng thử lại");
-                return;
             }
             PhieuXuat phieuXuat = new PhieuXuat(idInvoice,subTotalInvoice,vatInvoice,discountInvoice,discount1Invoice,totalInvoice,Date.valueOf(exportDateInvoice),idEmployeeInvoice,idCustomerInvoice);
             phieuXuatRepo.addInvoice(phieuXuat);

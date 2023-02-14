@@ -23,4 +23,6 @@ public interface PhieuBaoHanhRepository {
     public void capNhatNoteNhanVien(Integer id, String note);
 
     public void capNhatNoteKhachHang(Integer id, String note);
+
+    public void deletePhieuBaoHanh(int id);
 }

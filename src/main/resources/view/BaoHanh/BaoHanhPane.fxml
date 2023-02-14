@@ -45,6 +45,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#chinhSuaTrangThai" text="Chỉnh sửa trạng thái" />
                   <MenuItem mnemonicParsing="false" onAction="#chinhSuaGhiChuKhachHang" text="Chỉnh sửa ghi chú khách hàng" />
                   <MenuItem mnemonicParsing="false" onAction="#chinhSuaGhiChuNhanVien" text="Chỉnh sửa ghi chú nhân viên" />
+                  <MenuItem mnemonicParsing="false" onAction="#xoaPhieuBaoHanhOnAction" text="Xóa phiếu bảo hành" />
               </items>
             </ContextMenu>
          </contextMenu>

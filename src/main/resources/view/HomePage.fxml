@@ -99,7 +99,7 @@
                                         <Image url="@../image/2696528.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Sửa chữa" textFill="#97999a">
+                                <Label text="Bảo Hành" textFill="#97999a">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font></Label>
