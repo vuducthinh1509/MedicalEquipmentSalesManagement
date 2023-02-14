@@ -38,5 +38,8 @@ module com.example.medicaldevicessalesmanagementsystem {
     exports controller.TaiKhoan;
     opens controller.TaiKhoan to javafx.fxml;
 
+    exports controller.QuanLy;
+    opens controller.QuanLy to javafx.fxml;
+
 
 }

@@ -9,9 +9,24 @@ public class SQLCommand {
     public static String Nhan_Vien_QUERY_UPDATE_PASSWORD = "update nhanvien set `password` = ? where username = ?";
 
     // Nhân viên
-    public static String Nhan_Vien_QUERY_LAY_THONG_TIN = "SELECT * FROM nhanvien WHERE id = ? ";
+    public static String Nhan_Vien_QUERY_INSERT_Nhan_Vien = "INSERT INTO `nhanvien`( `maNV`, `hoTen`, `ngaySinh`, `diaChiThuongTru`, `CCCD`, `soDienThoai`, `email`, `ngayVaoLam`, `chucVu`, `gioiTinh`,`role`,`username`,`password`,`cauHoi`,`cauTraLoi`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    public static String Nhan_Vien_QUERY_DELETE_Nhan_Vien = "DELETE FROM `nhanvien` WHERE id = ?";
+    public static String Nhan_Vien_QUERY_LAY_THONG_TIN_BY_ID = "SELECT * FROM nhanvien WHERE id = ? ";
+    public static String Nhan_Vien_QUERY_LAY_THONG_TIN = "SELECT * FROM nhanvien  ";
 
-    public static String Nhan_Vien_QUERY_LAY_THONG_TIN_BY_MaNV = "SELECT * FROM nhanvien WHERE maNV = ? ";
+    public static String Nhan_Vien_QUERY_LAY_THONG_TIN_BY_MaNV = "SELECT * FROM nhanvien WHERE maNV like ? ";
+    public static String Nhan_Vien_QUERY_LAY_THONG_TIN_BY_hoTen = "SELECT * FROM nhanvien WHERE hoTen like ? ";
+
+    public static String Nhan_Vien_QUERY_LAY_NEXT_INDEX = "SELECT AUTO_INCREMENT FROM information_schema.TABLES " +
+            "WHERE TABLE_SCHEMA = 'demo' AND TABLE_NAME = 'nhanvien'";
+    public static String Nhan_Vien_QUERY_UPDATE =  "UPDATE `nhanvien` SET " +
+            "`ngaySinh`=?," +
+            "`diaChiThuongTru`=?," +
+            "`soDienThoai`=?," +
+            "`email`=?," +
+            "`ngayVaoLam`=?," +
+            "`chucVu`=?," +
+            "`gioiTinh`=?  WHERE id  = ";
 
     //Thiết bị
 
@@ -33,13 +48,7 @@ public class SQLCommand {
 
     public static String Thiet_Bi_DELETE_ThietBi = "DELETE FROM `thietbi` WHERE idThietBi = ?";
     public static String Thiet_Bi_QUERY_INSERT_ThietBi = "INSERT INTO `thietbi`( `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `thoiGianBaoHanh`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `trangThaiThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-    public static String Nhan_Vien_QUERY_UPDATE =  "UPDATE `nhanvien` SET " +
-            "`ngaySinh`=?," +
-            "`diaChiThuongTru`=?," +
-            "`soDienThoai`=?," +
-            "`email`=?," +
-            "`ngayVaoLam`=?," +
-            "`gioiTinh`=?  WHERE id  = ";
+
     public static String Thiet_Bi_QUERY_UPDATE = "UPDATE `thietbi` SET " +
             "`tenThietBi`=?," +
             "`modelThietBi`=?," +

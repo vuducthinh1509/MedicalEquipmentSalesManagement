@@ -16,6 +16,7 @@ import repository.NhanVienRepository_impl;
 import java.time.LocalDate;
 
 public class EditPersonalInformation {
+    public Integer idNhanVien;
     @FXML
     private TextField hoTenLabel;
 

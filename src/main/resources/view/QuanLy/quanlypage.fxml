@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1060.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuanLy.QuanLy">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="391.0" layoutY="14.0" prefHeight="45.0" prefWidth="250.0" text="Quản lý nhân viên" textAlignment="CENTER">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <Pane layoutX="73.0" layoutY="79.0" prefHeight="50.0" prefWidth="716.0" style="-fx-background-color: #91f0fa; -fx-background-radius: 30;">
+            <children>
+                <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="430.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <ComboBox fx:id="truongTraCuuF" layoutX="485.0" layoutY="1.0" prefHeight="49.0" prefWidth="231.0" promptText="Chọn trường tra cứu" style="-fx-font-size: 15; -fx-background-radius: 15; -fx-background-color: #01CCE8;" />
+            </children>
+        </Pane>
+        <TableView fx:id="table" layoutX="73.0" layoutY="148.0" prefHeight="549.0" prefWidth="743.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
+                <TableColumn fx:id="maNVColumn" prefWidth="99.4000015258789" text="Mã nhân viên" />
+                <TableColumn fx:id="hoTenColumn" prefWidth="187.0" text="Họ và tên" />
+                <TableColumn fx:id="gioiTinhColumn" prefWidth="107.39996337890625" text="Giới tính" />
+                <TableColumn fx:id="diaChiThuongTruColumn" prefWidth="313.39996337890625" text="Địa chỉ thường trú" />
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#thongTinNV" text="Xem thông tin nhân viên" />
+                        <MenuItem mnemonicParsing="false" onAction="#EditNV" text="Chỉnh sửa thông tin nhân viên" />
+                        <MenuItem mnemonicParsing="false" onAction="#DeleteNV" text="Xóa nhân viên" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+        <Button layoutX="849.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#loadDataNV" prefHeight="39.0" prefWidth="151.0" text="Tải lại bảng" />
+        <Button fx:id="addProductButton" layoutX="849.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#themNV" prefHeight="39.0" prefWidth="151.0" text="Thêm nhân viên" />
+        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="45.0" layoutX="794.0" layoutY="82.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../image/icons8-search.gif" />
+            </image>
+        </ImageView>
+    </children>
+</Pane>

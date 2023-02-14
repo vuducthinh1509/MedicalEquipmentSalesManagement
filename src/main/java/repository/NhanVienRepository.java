@@ -1,6 +1,7 @@
 package repository;
 
 import entity.NhanVien;
+import javafx.collections.ObservableList;
 
 public interface NhanVienRepository {
 
@@ -17,4 +18,13 @@ public interface NhanVienRepository {
 
     public void doiMatKhau(String username, String newPassword);
 
+    public void themNV (NhanVien nhanVien);
+    public void xoaNV(Integer id);
+    public ObservableList<NhanVien> loadDataNV();
+    public NhanVien getInformationByName(String hoTen);
+    public ObservableList<NhanVien> timNhanVienTheoTruong(String queryTheoTruong, String duLieuTraCuu);
+    public int getNextAutoIncrement();
 }
+
+
+

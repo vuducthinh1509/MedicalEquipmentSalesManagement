@@ -84,12 +84,9 @@ public class HomePage implements Initializable {
     }
 
     public void managementButtonOnAction(ActionEvent event) throws IOException{
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("management button");
-        alert.setHeaderText("Tính năng đang được xây dựng");
-        alert.show();
-//        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("TrangChuPane.fxml"));
-//        mainPane.getChildren().add(trangChuPane);
+        mainPane.getChildren().clear();
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/QuanLy/quanlypage.fxml"));
+        mainPane.getChildren().add(trangChuPane);
     }
 
     public void customerButtonOnAction(ActionEvent event) throws IOException{
