@@ -94,7 +94,7 @@ public class HomePage implements Initializable {
 
     public void customerButtonOnAction(ActionEvent event) throws IOException{
         mainPane.getChildren().clear();
-        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/KhachHang/customerPane.fxml"));
+        Pane trangChuPane =  FXMLLoader.load(main.class.getResource("/view/KhachHang/CustomerPane.fxml"));
         mainPane.getChildren().add(trangChuPane);
     }
 

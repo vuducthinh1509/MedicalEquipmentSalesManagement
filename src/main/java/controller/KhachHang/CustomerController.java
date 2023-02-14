@@ -3,6 +3,7 @@ package controller.KhachHang;
 import entity.KhachHang;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -12,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import lombok.SneakyThrows;
 import repository.KhachHangRepository;
 import repository.KhachHangRepository_impl;
+import utility.Box;
 
 import java.net.URL;
 import java.util.Optional;
@@ -53,8 +55,6 @@ public class CustomerController implements Initializable {
     @FXML
     private Button saveButton;
 
-    @FXML
-    private Button deleteButton;
 
     @FXML
     private ComboBox<String> truongSearch;
@@ -101,8 +101,17 @@ public class CustomerController implements Initializable {
         }
     }
 
+    public void reloadPane(){
+        clearDataPane();
+        notificationLabel.setText("");
+        duLieuSearch.setText("");
+        saveButton.setDisable(true);
+        addButton.setDisable(false);
+        editButton.setDisable(true);
+        table.setItems(khachHangList);
+    }
+
     public void loadDataCustomer() {
-        deleteButton.setDisable(true);
         saveButton.setDisable(true);
         addButton.setDisable(false);
         editButton.setDisable(true);
@@ -119,23 +128,11 @@ public class CustomerController implements Initializable {
         truongSearch.setItems(listTruongSearch);
     }
 
-    public void reloadPane(){
-        clearDataPane();
-        notificationLabel.setText("");
-        duLieuSearch.setText("");
-        saveButton.setDisable(true);
-        addButton.setDisable(false);
-        editButton.setDisable(true);
-        deleteButton.setDisable(true);
-        table.setItems(khachHangList);
-    }
-
     public void setOnMouseClicked(MouseEvent event) {
         if (isSelectionMode) {
             khachHang = table.getSelectionModel().getSelectedItem();
             notificationLabel.setText("");
             editButton.setDisable(false);
-            deleteButton.setDisable(false);
             if (khachHang != null) {
                 nameLabel.setText(khachHang.getTenKhachHang());
                 phoneLabel.setText(khachHang.getPhoneKhachHang());
@@ -143,10 +140,7 @@ public class CustomerController implements Initializable {
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Bạn không thể lựa chọn lúc này.");
-            alert.setContentText("Hoàn thành tác vụ hiện tại và ấn Lưu");
-            alert.showAndWait();
+            Box.alertBox_Warning("Thông báo!","Bạn không thể lựa chọn lúc này.","Hoàn thành tác vụ hiện tại và ấn Lưu");
         }
     }
 
@@ -156,7 +150,6 @@ public class CustomerController implements Initializable {
         editModeOnAction = true;
         editButton.setDisable(true);
         addButton.setDisable(true);
-        deleteButton.setDisable(true);
         saveButton.setDisable(false);
         onEdit(true);
     }
@@ -223,7 +216,6 @@ public class CustomerController implements Initializable {
         addButton.setDisable(true);
         editButton.setDisable(true);
         saveButton.setDisable(false);
-        deleteButton.setDisable(true);
         isSelectionMode = false;
         clearDataPane();
         onEdit(true);
@@ -280,23 +272,16 @@ public class CustomerController implements Initializable {
             }
             if(searchList.isEmpty()&&isValid&&!textSearch.isEmpty()){
                 table.setItems(khachHangList);
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Không tìm thấy kết quả phù hợp");
-                alert.setContentText("Vui lòng thử lại");
-                alert.showAndWait();
+                Box.alertBox_No_Result();
             }
         } catch (NullPointerException ex) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Chưa chọn trường tìm kiếm!");
-            alert.setContentText("Vui lòng chọn lại");
-            alert.show();
+            Box.alertBox("Thất bại!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
             return;
         }
     }
 
-    public void deleteButtonOnClicked(MouseEvent event){
+    public void deleteButtonOnAction(ActionEvent event){
         KhachHang ctm = table.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Xoá");

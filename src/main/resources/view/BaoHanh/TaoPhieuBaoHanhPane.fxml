@@ -82,7 +82,8 @@
                         <Font size="18.0" />
                     </font></TextField>
                 <Button fx:id="deleteButton" layoutX="214.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xóa" textFill="WHITE" />
-                <Button fx:id="saveButton" disable="true" layoutX="214.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="75.0" text="Lưu" visible="false" />
+                <Button fx:id="saveButton" layoutX="126.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE" visible="false" />
+            <Button fx:id="cancelButton1" layoutX="214.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#cancelButton1OnClicked" prefHeight="39.0" prefWidth="75.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE" visible="false" />
             </children>
         </Pane>
         <Label layoutX="31.0" layoutY="68.0" text="Thông tin phiếu bảo hành">

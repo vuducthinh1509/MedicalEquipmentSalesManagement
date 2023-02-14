@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.DoiMatKhauController">
    <children>
       <Label layoutX="214.0" layoutY="22.0" text="Đổi Mật Khẩu">
@@ -45,15 +44,35 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Button fx:id="saveButton" layoutX="282.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="Lưu">
+      <Button fx:id="saveButton" layoutX="279.0" layoutY="274.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="39.0" prefWidth="72.0" text="Lưu">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="387.0" layoutY="252.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="Hủy">
+      <Button fx:id="cancelButton" layoutX="382.0" layoutY="274.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="72.0" text="Hủy">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <CheckBox fx:id="checkBox" layoutX="343.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeVisibility" text="Hiện mật khẩu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <TextField fx:id="oldPasswordText" layoutX="235.0" layoutY="84.0" promptText="Nhập mật khẩu cũ" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="newPasswordText" layoutX="235.0" layoutY="137.0" promptText="Nhập mật khẩu mới" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="newPassword1Text" layoutX="235.0" layoutY="188.0" promptText="Nhập lại mật khẩu mới" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

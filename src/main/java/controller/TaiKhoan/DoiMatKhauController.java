@@ -89,7 +89,7 @@ public class DoiMatKhauController {
         stage.close();
     }
 
-    public void isCheck(ActionEvent event){
+    public void changeVisibility(ActionEvent event){
         if(checkBox.isSelected()) {
             isShowed = true;
             oldPasswordText.setText(oldPassword.getText());

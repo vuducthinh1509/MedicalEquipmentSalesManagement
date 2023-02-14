@@ -30,6 +30,13 @@
                 <TableColumn fx:id="phoneColumn" editable="false" prefWidth="155.0" sortable="false" text="Phone KH" />
                 <TableColumn fx:id="addressColumn" editable="false" prefWidth="277.0" sortable="false" text="Địa chỉ KH" />
             </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#deleteButtonOnAction" text="Xóa khách hàng" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
         </TableView>
         <Label layoutX="757.0" layoutY="101.0" text="Tên khách hàng:">
             <font>
@@ -67,7 +74,7 @@
             <font>
                 <Font size="20.0" />
             </font></Button>
-        <Label fx:id="notificationLabel" layoutX="757.0" layoutY="436.0" prefHeight="85.0" prefWidth="214.0" textFill="#b91515" wrapText="true">
+        <Label fx:id="notificationLabel" layoutX="757.0" layoutY="426.0" prefHeight="85.0" prefWidth="301.0" textFill="#b91515" wrapText="true">
             <font>
                 <Font size="20.0" />
             </font>
@@ -77,14 +84,6 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button fx:id="deleteButton" layoutX="1215.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#deleteButtonOnClicked" prefHeight="44.0" prefWidth="115.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xóa" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font></Button>
-        <Button fx:id="reloadButton" layoutX="1041.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#reloadPane" prefHeight="44.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font></Button>
         <ComboBox fx:id="truongSearch" layoutX="528.0" layoutY="28.0" opacity="0.72" prefHeight="49.0" prefWidth="202.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
       <ImageView fx:id="searchButton" fitHeight="50.0" fitWidth="60.0" layoutX="463.0" layoutY="27.0" onMouseClicked="#searchButtonOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -23,6 +23,7 @@ import lombok.SneakyThrows;
 import repository.*;
 import utility.Box;
 import utility.SQLCommand;
+import utility.Validate;
 
 import java.io.IOException;
 import java.net.URL;
@@ -77,7 +78,8 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
     private Button findCtmButton;
     @FXML
     private Button addCtmButton;
-
+    @FXML
+    private Button cancelButton1;
     @FXML
     private Button addPBHButton;
     @FXML
@@ -204,24 +206,15 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         td.showAndWait();
         String phone = "";
         phone = td.getEditor().getText();
-        String pattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
-        if(!phone.matches(pattern)){
+        if(!Validate.validatePhoneVN(phone)){
             clearDataCustomer();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Số điện thoại không hợp lệ");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
+            Box.alertBox("Thông báo","Số điện thoại không hợp lệ","Vui lòng thử lại");
         } else {
             khachHang = khachHangRepo.getInformationCustomerByPhone(phone);
             String phoneCtm = khachHang.getPhoneKhachHang();
             if(phoneCtm == null){
                 clearDataCustomer();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Thông báo!");
-                alert.setHeaderText("Không tìm thấy kết quả phù hợp");
-                alert.setContentText("Vui lòng nhập lại");
-                alert.show();
+                Box.alertBox_No_Result();
             } else {
                 loadDataCustomerPane();
             }
@@ -232,12 +225,12 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         clearDataCustomer();
         idCtmLabel.setText(String.valueOf(khachHangRepo.getCountCustomer()));
         onEditDataCustomer(true);
-        findCtmButton.setDisable(true);
         idCtmLabel.setEditable(false);
+        addCtmButton.setVisible(false);
+        findCtmButton.setVisible(false);
         deleteButton.setVisible(false);
-        deleteButton.setDisable(true);
         saveButton.setVisible(true);
-        saveButton.setDisable(false);
+        cancelButton1.setVisible(true);
     }
 
     public void deleteButtonOnClicked(MouseEvent event){
@@ -249,19 +242,10 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         String name = nameCtmLabel.getText();
         String phone = phoneCtmLabel.getText();
         String address = addressCtmLabel.getText();
-        String pattern = "^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$";
         if(name.isEmpty()||phone.isEmpty()||address.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Cần nhập đầy đủ các trường");
-            alert.setContentText("Vui lòng thử lại sau");
-            alert.showAndWait();
-        } else if(!phone.matches(pattern)){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Số điện thoại không hợp lệ");
-            alert.setContentText("Vui lòng thử lại");
-            alert.showAndWait();
+            Box.alertBox_None_Full_Fill();
+        } else if(Validate.validatePhoneVN(phone)){
+            Box.alertBox("Thông báo","Số điện thoại không hợp lệ","Vui lòng thử lại");
         } else {
             onEditDataCustomer(false);
             saveButton.setVisible(false);
@@ -270,6 +254,15 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
             deleteButton.setDisable(false);
             findCtmButton.setDisable(false);
         }
+    }
+
+    public void cancelButton1OnClicked(MouseEvent event){
+        clearDataCustomer();
+        saveButton.setVisible(false);
+        cancelButton1.setVisible(false);
+        addCtmButton.setVisible(true);
+        findCtmButton.setVisible(true);
+        deleteButton.setVisible(true);
     }
 
     public void detailInvoice(ActionEvent event) throws IOException {
