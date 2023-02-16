@@ -7,24 +7,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.DoiMatKhauController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="557.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.DoiMatKhauController">
    <children>
       <Label layoutX="214.0" layoutY="22.0" text="Đổi Mật Khẩu">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="193.0" text="Mật khẩu mới:">
+      <Label layoutX="36.0" layoutY="193.0" text="Xác nhận mật khẩu:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="142.0" text="Mật khẩu mới:">
+      <Label layoutX="36.0" layoutY="142.0" text="Mật khẩu mới:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="88.0" text="Mật khẩu cũ:">
+      <Label layoutX="36.0" layoutY="89.0" text="Mật khẩu cũ:">
          <font>
             <Font size="20.0" />
          </font>
@@ -44,17 +44,17 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Button fx:id="saveButton" layoutX="279.0" layoutY="274.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="39.0" prefWidth="72.0" text="Lưu">
+      <Button fx:id="saveButton" layoutX="279.0" layoutY="274.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="39.0" prefWidth="72.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="382.0" layoutY="274.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="72.0" text="Hủy">
+      <Button fx:id="cancelButton" layoutX="382.0" layoutY="274.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="72.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <CheckBox fx:id="checkBox" layoutX="343.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeVisibility" text="Hiện mật khẩu">
+      <CheckBox fx:id="checkBox" layoutX="343.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeVisibility" opacity="0.72" text="Hiện mật khẩu">
          <font>
             <Font size="14.0" />
          </font>

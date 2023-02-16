@@ -7,24 +7,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.XacThucController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="520.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TaiKhoan.XacThucController">
    <children>
       <Label layoutX="31.0" layoutY="200.0" text="Câu hỏi:">
          <font>
-            <Font size="18.0" />
+            <Font name="System Italic" size="18.0" />
          </font>
       </Label>
       <Label layoutX="31.0" layoutY="255.0" text="Câu trả lời:">
          <font>
-            <Font size="18.0" />
+            <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#xacThucButtonOnAction" text="Xác thực" fx:id="xacThucButton">
+      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#xacThucButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xác thực" textFill="WHITE" fx:id="xacThucButton">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="huyButton" layoutX="367.0" layoutY="313.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="71.0" text="Hủy">
+      <Button fx:id="huyButton" layoutX="367.0" layoutY="313.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -39,16 +39,16 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="173.0" layoutY="14.0" text="Xác Thực Tài Khoản">
+      <Label layoutX="173.0" layoutY="25.0" text="Xác Thực Tài Khoản">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextArea layoutX="52.0" layoutY="65.0" prefHeight="66.0" prefWidth="428.0" style="-fx-background-color: 0;" text="Bạn cần trả lời chính xác câu hỏi sau để có thể lấy được mật khẩu!" wrapText="true">
+      <Label layoutX="89.0" layoutY="81.0" prefHeight="39.0" prefWidth="353.0" text="Trả lời chính xác câu hỏi để lấy lại mật khẩu!" textFill="RED">
          <font>
-            <Font size="18.0" />
+            <Font name="System Italic" size="18.0" />
          </font>
-      </TextArea>
+      </Label>
       <Label layoutX="31.0" layoutY="153.0" text="Tên tài khoản:">
          <font>
             <Font name="System Italic" size="18.0" />
