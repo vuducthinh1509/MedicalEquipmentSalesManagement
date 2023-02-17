@@ -13,9 +13,9 @@ import java.sql.*;
 
 public class ThietBiRepository_impl implements ThietBiRepository {
     private ResultSet rs = null;
-    private Statement stmt = null;
+    private final Statement stmt = null;
     private PreparedStatement pstmt = null;
-    private CallableStatement cstmt = null;
+    private final CallableStatement cstmt = null;
     private Connection conn = null;
 
     @Override
@@ -253,7 +253,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
     public void updatePhieuXuatThietBi(int idThietBi, Integer idPhieuXuat){
         try {
             conn = DbUtil.getInstance().getConnection();
-            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPHIEUXUAT + idThietBi);;
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPHIEUXUAT + idThietBi);
             pstmt.setInt(1, idPhieuXuat);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -271,7 +271,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
     public void updatePhieuXuatThietBi_Delete(int idThietBi){
         try {
             conn = DbUtil.getInstance().getConnection();
-            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT);;
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUXUAT);
             pstmt.setInt(1, idThietBi);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -361,7 +361,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
     public void updateIDPhieuBaoHanh(int idThietBi, Integer idPBH){
         try {
             conn = DbUtil.getInstance().getConnection();
-            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPBH);;
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_UPDATE_IDPBH);
             pstmt.setInt(1, idPBH);
             pstmt.setInt(2, idThietBi);
             pstmt.executeUpdate();
@@ -380,7 +380,7 @@ public class ThietBiRepository_impl implements ThietBiRepository {
     public void updatePhieuBaoHanh_Delete(int id){
         try {
             conn = DbUtil.getInstance().getConnection();
-            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUBAOHANH);;
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_CLEAR_IDPHIEUBAOHANH);
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {

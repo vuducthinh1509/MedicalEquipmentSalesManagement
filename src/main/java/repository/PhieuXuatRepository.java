@@ -6,13 +6,13 @@ import javafx.collections.ObservableList;
 
 public interface PhieuXuatRepository {
 
-    public int getNextAutoIncrement();
+    int getNextAutoIncrement();
 
-    public void addInvoice(PhieuXuat phieuXuat);
+    void addInvoice(PhieuXuat phieuXuat);
 
-    public PhieuXuat getDetailInvoiceByID(Integer idPhieuXuat);
+    PhieuXuat getDetailInvoiceByID(Integer idPhieuXuat);
 
-    public ObservableList<PhieuXuat> getAllDataInvoice();
+    ObservableList<PhieuXuat> getAllDataInvoice();
 
-    public void deleteInvoice(int idInvoice);
+    void deleteInvoice(int idInvoice);
 }

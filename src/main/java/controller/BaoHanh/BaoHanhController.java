@@ -159,8 +159,8 @@ public class BaoHanhController implements Initializable {
             Box.alertBox_None_Selection("thiết bị");
             return;
         }
-        chinhSuaTrangThaiController.id = selected.getId();
-        chinhSuaTrangThaiController.trangThaiCuoiCung = selected.getTrangThai();
+        ChinhSuaTrangThaiController.id = selected.getId();
+        ChinhSuaTrangThaiController.trangThaiCuoiCung = selected.getTrangThai();
         chinhSuaTrangThaiController.loadData();
         Stage stage = new Stage();
         stage.setTitle("Chỉnh sửa trạng thái bảo hành");
@@ -237,7 +237,6 @@ public class BaoHanhController implements Initializable {
             }
         } catch (NullPointerException ex) {
             Box.alertBox("Thông báo!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
-            return;
         }
     }
 

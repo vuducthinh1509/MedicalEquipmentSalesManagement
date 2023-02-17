@@ -1,5 +1,6 @@
 package utility;
 
+import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -71,5 +72,12 @@ public class Validate {
         // Return if the password
         // matched the ReGex
         return m.matches();
+    }
+
+    public static String dinhDangTien(Integer value){
+        String patternTienTe = "###,###đ";
+        DecimalFormat formatTienTe = new DecimalFormat(patternTienTe);
+        String stringTienTe= formatTienTe.format(value);
+        return stringTienTe;
     }
 }

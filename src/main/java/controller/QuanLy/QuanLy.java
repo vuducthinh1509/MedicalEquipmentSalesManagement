@@ -23,6 +23,7 @@ import org.w3c.dom.ls.LSOutput;
 import repository.NhanVienRepository;
 import repository.NhanVienRepository_impl;
 
+import utility.Box;
 import utility.SQLCommand;
 
 import java.io.IOException;
@@ -80,7 +81,6 @@ public class QuanLy implements Initializable {
             alert.setContentText("Bạn cần chọn trường tra cứu");
             alert.show();
             table.setItems(NhanVienList);
-            return;
         }
     }
     @SneakyThrows
@@ -182,9 +182,9 @@ public class QuanLy implements Initializable {
             NhanVienRepo.xoaNV(_idNhanVien);
             loadDataNV();
         } else if (option.get() == ButtonType.CANCEL) {}
+    }
+}
 
-    }
-    }
 
 
 

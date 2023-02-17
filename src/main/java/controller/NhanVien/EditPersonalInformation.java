@@ -49,7 +49,7 @@ public class EditPersonalInformation {
 
     String gioiTinhC = null;
 
-    private NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
+    private final NhanVienRepository nhanVienRepo = new NhanVienRepository_impl();
     private NhanVien nhanVien = new NhanVien();
 
     public void edit(){

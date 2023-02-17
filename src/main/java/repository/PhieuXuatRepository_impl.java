@@ -13,9 +13,9 @@ import java.sql.*;
 public class PhieuXuatRepository_impl implements PhieuXuatRepository {
 
     private ResultSet rs = null;
-    private Statement stmt = null;
+    private final Statement stmt = null;
     private PreparedStatement pstmt = null;
-    private CallableStatement cstmt = null;
+    private final CallableStatement cstmt = null;
     private Connection conn = null;
     @Override
     public int getNextAutoIncrement(){

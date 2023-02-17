@@ -1,8 +1,16 @@
 package view;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import utility.Validate;
+
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class test extends Application {
 
@@ -11,8 +19,6 @@ public class test extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        String password = "12a";
-        System.out.println(Validate.validateNumber(password));
+    public void start(Stage primaryStage) throws IOException {
     }
 }

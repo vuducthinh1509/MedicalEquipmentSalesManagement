@@ -61,10 +61,8 @@ public class DoiMatKhauController {
         }
         if(!newpw.equals(newpw1)){
             Box.alertBox("Thất bại!","Mật khẩu mới không trùng hợp","Vui lòng thử lại");
-            return;
         } else if(newpw.equals(newpw1) && newpw.equals(old)){
             Box.alertBox("Thất bại!","Mật khẩu mới không được trùng với mật khẩu cũ","Vui lòng thử lại");
-            return;
         } else if(newpw.equals(newpw1) && !old.equals(newpw )) {
             if(!Validate.validatePassword(newpw)){
                 Box.alertBox("Thất bại!","Mật khẩu chỉ bao gồm 3-20 kí tự, không chứa khoảng trắng","");
@@ -72,7 +70,6 @@ public class DoiMatKhauController {
             }
             if (!nhanVienRepository.dangNhap1(username, old)) {
                 Box.alertBox("Thất bại!", "Mật khẩu cũ không chính xác", "Vui lòng thử lại");
-                return;
             } else {
                 nhanVienRepository.doiMatKhau(username, newpw);
                 Box.alertBox("Thành công!", "Đổi mật khẩu thành công", "");

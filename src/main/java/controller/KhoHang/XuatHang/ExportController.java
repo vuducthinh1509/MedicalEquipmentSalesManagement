@@ -57,7 +57,7 @@ public class ExportController implements Initializable {
     private TableColumn<ThietBi, Number> thanhTienColumnCart;
     @FXML
     private Label tongTienThanhToanLabel;
-    private String duLieuTraCuu="";
+    private final String duLieuTraCuu="";
     static ItemRepository itemRepo = new ItemReposioty_impl();
     @FXML
     ObservableList<Item> itemList = FXCollections.observableArrayList();
@@ -106,12 +106,6 @@ public class ExportController implements Initializable {
                 }
             }
             table.setItems(searchList);
-//            Alert m = new Alert(Alert.AlertType.INFORMATION);
-//            m.setTitle("Thông báo!");
-//            m.setHeaderText("Chưa chọn trường tìm kiếm!");
-//            m.setContentText("Mời chọn lại!");
-//            m.show();
-            return;
         }
     }
     @FXML
@@ -189,7 +183,6 @@ public class ExportController implements Initializable {
                     alert.setHeaderText("Số lượng không hợp lệ (<="+ selectedItem.getSoLuongItem()+")");
                     alert.setContentText("Vui lòng chọn lại");
                     alert.show();
-                    return;
                 }
                 else {
                     Item _item = new Item();
@@ -209,7 +202,6 @@ public class ExportController implements Initializable {
                     selectedItemList.add(selectedItem);
                     loadItemInCart();
                     loadDataItem();
-                    return;
                 }
             }
         }

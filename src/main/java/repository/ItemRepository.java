@@ -8,5 +8,5 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public interface ItemRepository{
-    public ObservableList<Item> loadDataItem();
+    ObservableList<Item> loadDataItem();
 }

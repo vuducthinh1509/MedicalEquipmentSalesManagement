@@ -303,7 +303,6 @@ public class CustomerController implements Initializable {
         } catch (NullPointerException ex) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             Box.alertBox("Thất bại!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
-            return;
         }
     }
 

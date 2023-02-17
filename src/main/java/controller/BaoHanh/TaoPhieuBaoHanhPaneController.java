@@ -139,7 +139,6 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         }
         catch (NullPointerException ex){
             table.setItems(thietBiList);
-            return;
         }
     }
     private boolean isFullFillCustomerPane(){
@@ -147,11 +146,7 @@ public class TaoPhieuBaoHanhPaneController implements Initializable {
         String name = nameCtmLabel.getText();
         String phone = phoneCtmLabel.getText();
         String address = addressCtmLabel.getText();
-        if(id.isEmpty()||name.isEmpty()||phone.isEmpty()||address.isEmpty()){
-            return false;
-        } else {
-            return true;
-        }
+        return !id.isEmpty() && !name.isEmpty() && !phone.isEmpty() && !address.isEmpty();
     }
 
     public void loadDataPane(){

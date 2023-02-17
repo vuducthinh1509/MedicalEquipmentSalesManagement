@@ -51,7 +51,7 @@ public class LoginController {
         } else {
             pw = password.getText();
         }
-        if (username.getText().isBlank() == false && pw.isBlank() == false) {
+        if (!username.getText().isBlank() && !pw.isBlank()) {
             if(!Validate.validatePassword(pw)){
                 loginLabel.setText("Mật khẩu chỉ bao gồm 3-20 kí tự, không chứa khoảng trắng");
                 return;

@@ -4,18 +4,18 @@ import entity.KhachHang;
 import javafx.collections.ObservableList;
 
 public interface KhachHangRepository {
-    public void addCustomer(KhachHang khachHang);
-    public KhachHang getInformationCustomerByID(Integer id);
+    void addCustomer(KhachHang khachHang);
+    KhachHang getInformationCustomerByID(Integer id);
 
-    public KhachHang getInformationCustomerByPhone(String phone);
+    KhachHang getInformationCustomerByPhone(String phone);
 
-    public ObservableList<KhachHang> getAllDataCustomer();
+    ObservableList<KhachHang> getAllDataCustomer();
 
-    public void updateDataCustomer(KhachHang khachHang);
+    void updateDataCustomer(KhachHang khachHang);
 
-    public void deleteCustomer(int id);
+    void deleteCustomer(int id);
 
-    public Integer getCountCustomer();
+    Integer getCountCustomer();
 
-    public Integer kiemTraTonTai(String phone);
+    Integer kiemTraTonTai(String phone);
 }

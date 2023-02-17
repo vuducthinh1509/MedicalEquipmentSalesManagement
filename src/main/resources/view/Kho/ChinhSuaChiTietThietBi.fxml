@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ChinhSuaThongTinController">
+<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.ChinhSuaThongTinController">
     <children>
         <Label layoutX="528.0" layoutY="172.0" text="Thời gian bảo hành:">
             <font>
@@ -111,7 +112,7 @@
             <Font size="14.0" />
          </font></TextField>
       <DatePicker fx:id="ngayNhapLabel" layoutX="220.0" layoutY="407.0" />
-      <Label fx:id="ngayXuatLabel" text="Label" />
+      <Label fx:id="ngayXuatLabel" layoutX="966.0" layoutY="121.0" text="(*)" textFill="#ff9500" />
       <TextField fx:id="maNVNhapLabel" layoutX="220.0" layoutY="458.0">
          <font>
             <Font size="14.0" />
@@ -148,5 +149,9 @@
          <font>
             <Font size="14.0" />
          </font></Button>
+      <Label layoutX="395.0" layoutY="165.0" text="(*)" textFill="#ff9000" />
+      <Label layoutX="395.0" layoutY="218.0" text="(*)" textFill="#ff9000" />
+      <Label layoutX="395.0" layoutY="460.0" text="(*)" textFill="#ff9000" />
+      <Label layoutX="482.0" layoutY="409.0" text="(*)" textFill="#ff9000" />
     </children>
 </AnchorPane>

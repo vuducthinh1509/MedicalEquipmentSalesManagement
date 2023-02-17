@@ -19,6 +19,7 @@ import repository.PhieuXuatRepository;
 import repository.PhieuXuatRepository_impl;
 import repository.ThietBiRepository;
 import repository.ThietBiRepository_impl;
+import utility.Validate;
 
 import java.net.URL;
 import java.text.NumberFormat;
@@ -26,7 +27,7 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class DetailInvoice implements Initializable {
+public class DetailInvoice {
     @FXML
     private TableView<ThietBi> table;
     @FXML
@@ -88,24 +89,18 @@ public class DetailInvoice implements Initializable {
         clone.setNameCtmAndEpl();
         setInvoice(clone);
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadDataInvoice();
-    }
     public void loadDataInvoice(){
         idList = thietBiRepo.findAllDeviceByIdInvoice(invoice.getIdInvoice());
         for(Integer _id : idList){
             thietBiList.add(thietBiRepo.chiTietThietBi(_id));
         }
         table.setItems(thietBiList);
-        Locale loc = new Locale("nv","VN");
-        NumberFormat formatter = NumberFormat.getCurrencyInstance(loc);
         idLabel.setText(String.valueOf(invoice.getIdInvoice()));
-        subTotalLabel.setText(String.valueOf(formatter.format(invoice.getSubTotalInvoice())));
-        vatLabel.setText(String.valueOf(invoice.getVatInvoice()));
-        discountLabel.setText(formatter.format(invoice.getDiscountInvoice()));
-        discount1Label.setText(String.valueOf(invoice.getDiscount1Invoice()));
-        totalLabel.setText(formatter.format(invoice.getTotalInvoice()));
+        subTotalLabel.setText(Validate.dinhDangTien(invoice.getSubTotalInvoice()));
+        vatLabel.setText(Validate.dinhDangTien(invoice.getVatInvoice()));
+        discountLabel.setText(Validate.dinhDangTien(invoice.getDiscountInvoice()));
+        discount1Label.setText(String.valueOf(invoice.getDiscount1Invoice())+"%");
+        totalLabel.setText(Validate.dinhDangTien(invoice.getTotalInvoice()));
         if(invoice.getExportDateInvoice()!=null){
             exportDateLabel.setValue(LocalDate.parse(String.valueOf(invoice.getExportDateInvoice())));
         }

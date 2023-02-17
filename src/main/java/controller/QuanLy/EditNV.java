@@ -62,7 +62,7 @@ public class EditNV implements Initializable {
     //String gioiTinhC = null;
     //String chucvu = null;
 
-    private NhanVienRepository nhanVienRepo1 = new NhanVienRepository_impl();
+    private final NhanVienRepository nhanVienRepo1 = new NhanVienRepository_impl();
     private NhanVien nhanVien1 = new NhanVien();
 
     ObservableList<String> Listchucvu = FXCollections.observableArrayList("Quản Lý","Nhân viên bán hàng","Nhân viên kho");
@@ -75,9 +75,11 @@ public class EditNV implements Initializable {
     }
     public void setGioiTinhComboBox( ActionEvent event ){
         gioiTinh1.setText((String) gioiTinhComboBox.getValue());
-    };
+    }
+
     public void setChucVuComboBox( ActionEvent event ){chucvu1.setText((String) chucVuComboBox.getValue());
-    };
+    }
+
     public void loadData_Edit(){
         nhanVien1 = nhanVienRepo1.getInformationUser(idNhanVien);
         hoTenLabel.setText(nhanVien1.getHoTen());

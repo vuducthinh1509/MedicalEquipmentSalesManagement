@@ -96,11 +96,7 @@ public class ExportInvoiceController implements Initializable {
         DetailInvoice detailInvoiceController = loader.getController();
         PhieuXuat selectedInvoice = table.getSelectionModel().getSelectedItem();
         if (selectedInvoice == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         detailInvoiceController.setInvoice(selectedInvoice);
@@ -224,7 +220,6 @@ public class ExportInvoiceController implements Initializable {
             alert.setHeaderText("Chưa chọn trường tìm kiếm!");
             alert.setContentText("Vui lòng chọn lại");
             alert.show();
-            return;
         }
     }
 }

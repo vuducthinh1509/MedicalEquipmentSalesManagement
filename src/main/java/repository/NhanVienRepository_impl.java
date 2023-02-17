@@ -10,9 +10,9 @@ import java.sql.*;
 
 public class NhanVienRepository_impl implements NhanVienRepository {
     private ResultSet rs = null;
-    private Statement stmt = null;
+    private final Statement stmt = null;
     private PreparedStatement pstmt = null;
-    private CallableStatement cstmt = null;
+    private final CallableStatement cstmt = null;
     private Connection conn = null;
     private int id;
 
