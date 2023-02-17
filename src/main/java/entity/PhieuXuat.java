@@ -17,15 +17,15 @@ import java.sql.Date;
 public class PhieuXuat {
     private int idInvoice;
 
-    private double subTotalInvoice;
+    private Integer subTotalInvoice;
 
     private Integer vatInvoice;
 
-    private double discountInvoice;
+    private Integer discountInvoice;
 
-    private double discount1Invoice;
+    private Integer discount1Invoice;
 
-    private double totalInvoice;
+    private Integer totalInvoice;
 
     private Date exportDateInvoice;
 
@@ -41,7 +41,7 @@ public class PhieuXuat {
 
     private String phoneCustomer;
 
-    public PhieuXuat(int idInvoice,double subTotalInvoice,int vatInvoice,double discountInvoice,double discount1Invoice,double totalInvoice,Date exportDateInvoice,Integer idEmployeeInvoice,Integer idCustomerInvoice){
+    public PhieuXuat(int idInvoice,Integer subTotalInvoice,int vatInvoice,Integer discountInvoice,Integer discount1Invoice,Integer totalInvoice,Date exportDateInvoice,Integer idEmployeeInvoice,Integer idCustomerInvoice){
 
         this.idInvoice = idInvoice;
         this.subTotalInvoice = subTotalInvoice;

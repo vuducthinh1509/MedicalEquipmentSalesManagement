@@ -107,6 +107,10 @@ public class InvoiceController {
         if(id.isEmpty()||name.isEmpty()||phone.isEmpty()||address.isEmpty()){
             return false;
         }
+        if(saveButton.isVisible()==true){
+            Box.alertBox("Thất bại!","Ấn Lưu khách hàng","Vui lòng thử lại");
+            return false;
+        }
         return true;
     }
 
@@ -250,24 +254,27 @@ public class InvoiceController {
         tinhTienButtonIsClicked = true;
         String discount = discountLabel.getText();
         String discount1 = discount1Label.getText();
-        if(!Validate.validateNumber(discount)||!Validate.validateNumber(discount1)){
-            Box.alertBox("Thông báo!","Giá trị nhập phải là số","Vui lòng kiểm tra lại.");
-        } else {
-            Double dc1 = 0.0 ;
-            Double dc = 0.0;
-            if(!discount.isEmpty()){
-                dc = Double.valueOf(discount);
+        Integer dc1 = 0;
+        Integer dc = 0;
+        if(!discount.isEmpty()&&!discount1.isEmpty()){
+            if(!Validate.validateNumber(discount)||!Validate.validateNumber(discount1)){
+                Box.alertBox("Thông báo!","Giá trị nhập phải là số","Vui lòng kiểm tra lại.");
+            } else {
+                dc = Integer.valueOf(discount);
+                dc1 = Integer.valueOf(discount1);
             }
-            if(!discount1.isEmpty()){
-                dc1 = Double.valueOf(discount1);
-            }
-            Double totalNoVAT = subtotal - dc - subtotal * dc1/100;
-            Double vat = totalNoVAT/10;
-            Double total = (Double) totalNoVAT + vat;
-            Long _total = Math.round(total / 1000+1) * 1000;
-            vatLabel.setText(String.valueOf(vat));
-            totalLabel.setText(String.valueOf(_total));
+        } else if(discount.isEmpty()&&!discount1.isEmpty()){
+            dc = 0;
+            dc1 = dc1 = Integer.valueOf(discount1);
+        } else if(!discount.isEmpty()&&discount1.isEmpty()){
+            dc1 = 0;
+            dc = Integer.valueOf(discount);
         }
+        Integer totalNoVAT = subtotal - dc - subtotal * dc1/100;
+        Integer vat = totalNoVAT/10;
+        Integer total = (Integer) totalNoVAT + vat;
+        vatLabel.setText(String.valueOf(vat));
+        totalLabel.setText(String.valueOf(total));
     }
 
     public void exportButtonOnClicked(MouseEvent event){
@@ -276,17 +283,17 @@ public class InvoiceController {
             String phone = phoneCtmLabel.getText();
             String address = addressCtmLabel.getText();
             Integer idInvoice = Integer.valueOf(idPhieuXuatLabel.getText());
-            Double subTotalInvoice = Double.valueOf(subTotalLabel.getText());
+            Integer subTotalInvoice = Integer.valueOf(subTotalLabel.getText());
             Integer vatInvoice = Integer.valueOf(vatLabel.getText());
-            Double discountInvoice = 0.0;
-            Double discount1Invoice = 0.0;
+            Integer discountInvoice = 0;
+            Integer discount1Invoice = 0;
             if(!discount1Label.getText().isEmpty()){
-                discount1Invoice = Double.valueOf(discount1Label.getText());
+                discount1Invoice = Integer.valueOf(discount1Label.getText());
             }
             if(!discountLabel.getText().isEmpty()){
-                discount1Invoice = Double.valueOf(discountLabel.getText());
+                discount1Invoice = Integer.valueOf(discountLabel.getText());
             }
-            Double totalInvoice = Double.valueOf(totalLabel.getText());
+            Integer totalInvoice = Integer.valueOf(totalLabel.getText());
             String exportDateInvoice = String.valueOf(ngayXuatLabel.getText());
             Integer idEmployeeInvoice = LoginController.idNhanVien;
             Integer idCustomerInvoice = Integer.valueOf(idCtmLabel.getText());

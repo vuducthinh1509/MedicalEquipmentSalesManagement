@@ -101,7 +101,7 @@ public class DetailInvoice implements Initializable {
         Locale loc = new Locale("nv","VN");
         NumberFormat formatter = NumberFormat.getCurrencyInstance(loc);
         idLabel.setText(String.valueOf(invoice.getIdInvoice()));
-        subTotalLabel.setText(formatter.format(invoice.getSubTotalInvoice()));
+        subTotalLabel.setText(String.valueOf(formatter.format(invoice.getSubTotalInvoice())));
         vatLabel.setText(String.valueOf(invoice.getVatInvoice()));
         discountLabel.setText(formatter.format(invoice.getDiscountInvoice()));
         discount1Label.setText(String.valueOf(invoice.getDiscount1Invoice()));

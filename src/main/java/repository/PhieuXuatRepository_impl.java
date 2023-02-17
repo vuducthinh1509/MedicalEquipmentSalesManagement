@@ -44,11 +44,11 @@ public class PhieuXuatRepository_impl implements PhieuXuatRepository {
         try {
             conn = DbUtil.getInstance().getConnection();
             pstmt = conn.prepareStatement(SQLCommand.PhieuXuat_QUERY_INSERT);
-            pstmt.setDouble(1, phieuXuat.getSubTotalInvoice());
+            pstmt.setInt(1, phieuXuat.getSubTotalInvoice());
             pstmt.setInt(2, phieuXuat.getVatInvoice());
-            pstmt.setDouble(3, phieuXuat.getDiscountInvoice());
-            pstmt.setDouble(4, phieuXuat.getDiscount1Invoice());
-            pstmt.setDouble(5, phieuXuat.getTotalInvoice());
+            pstmt.setInt(3, phieuXuat.getDiscountInvoice());
+            pstmt.setInt(4, phieuXuat.getDiscount1Invoice());
+            pstmt.setInt(5, phieuXuat.getTotalInvoice());
             pstmt.setDate(6, phieuXuat.getExportDateInvoice());
             pstmt.setInt(7, phieuXuat.getIdEmployeeInvoice());
             pstmt.setInt(8, phieuXuat.getIdCustomerInvoice());
@@ -73,11 +73,11 @@ public class PhieuXuatRepository_impl implements PhieuXuatRepository {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 phieuXuat.setIdInvoice(rs.getInt("idInvoice"));
-                phieuXuat.setSubTotalInvoice(rs.getDouble("subTotalInvoice"));
+                phieuXuat.setSubTotalInvoice(rs.getInt("subTotalInvoice"));
                 phieuXuat.setVatInvoice(rs.getInt("vatInvoice"));
-                phieuXuat.setDiscountInvoice(rs.getDouble("discountInvoice"));
-                phieuXuat.setDiscount1Invoice(rs.getDouble("discount1Invoice"));
-                phieuXuat.setTotalInvoice(rs.getDouble("totalInvoice"));
+                phieuXuat.setDiscountInvoice(rs.getInt("discountInvoice"));
+                phieuXuat.setDiscount1Invoice(rs.getInt("discount1Invoice"));
+                phieuXuat.setTotalInvoice(rs.getInt("totalInvoice"));
                 phieuXuat.setExportDateInvoice(rs.getDate("exportDateInvoice"));
                 phieuXuat.setIdEmployeeInvoice(rs.getInt("idEmployeeInvoice"));
                 phieuXuat.setIdCustomerInvoice(rs.getInt("idCustomerInvoice"));
@@ -103,11 +103,11 @@ public class PhieuXuatRepository_impl implements PhieuXuatRepository {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 Integer id = rs.getInt("idInvoice");
-                Float subTotal = rs.getFloat("subTotalInvoice");
+                Integer subTotal = rs.getInt("subTotalInvoice");
                 Integer vat = rs.getInt("vatInvoice");
-                Float discount = rs.getFloat("discountInvoice");
-                Float discount1 = rs.getFloat("discount1Invoice");
-                Float total = rs.getFloat("totalInvoice");
+                Integer discount = rs.getInt("discountInvoice");
+                Integer discount1 = rs.getInt("discount1Invoice");
+                Integer total = rs.getInt("totalInvoice");
                 Date exportDate = rs.getDate("exportDateInvoice");
                 Integer idEmployee = rs.getInt("idEmployeeInvoice");
                 Integer idCustomer = rs.getInt("idCustomerInvoice");
