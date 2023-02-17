@@ -23,7 +23,7 @@
                   </ImageView>
                </children></VBox>
                 <Pane prefHeight="157.0" prefWidth="49.0" />
-                <Button fx:id="homePageButton" mnemonicParsing="false" onAction="#homePageButtonOnAction" prefHeight="156.0" prefWidth="126.0" stylesheets="@../style/styles.css">
+                <Button fx:id="homePageButton" mnemonicParsing="false" onAction="#homePageButtonOnAction" prefHeight="158.0" prefWidth="126.0" stylesheets="@../style/styles.css">
                <graphic>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
@@ -46,7 +46,7 @@
                   <String fx:value="button-hover" />
                </styleClass>
                 </Button>
-                <Button fx:id="storageButton" mnemonicParsing="false" onAction="#storageButtonOnAction" prefHeight="156.0" prefWidth="119.0" stylesheets="@../style/styles.css">
+                <Button fx:id="storageButton" mnemonicParsing="false" onAction="#storageButtonOnAction" prefHeight="158.0" prefWidth="119.0" stylesheets="@../style/styles.css">
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
@@ -69,7 +69,7 @@
                   <String fx:value="button-click" />
                     </styleClass>
                 </Button>
-                <Button fx:id="exportInvoiceButton" layoutX="377.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportInvoiceButtonButtonOnAction" prefHeight="156.0" prefWidth="120.0" stylesheets="@../style/styles.css">
+                <Button fx:id="exportInvoiceButton" layoutX="377.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportInvoiceButtonButtonOnAction" prefHeight="158.0" prefWidth="120.0" stylesheets="@../style/styles.css">
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
@@ -90,7 +90,7 @@
                         <String fx:value="button-hover" />
                   <String fx:value="button-click" />
                     </styleClass></Button>
-                <Button fx:id="repairButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="155.0" prefWidth="127.0" stylesheets="@../style/styles.css">
+                <Button fx:id="repairButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#repairButtonButtonOnAction" prefHeight="158.0" prefWidth="127.0" stylesheets="@../style/styles.css">
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
@@ -112,7 +112,7 @@
                   <String fx:value="button-click" />
                     </styleClass>
                 </Button>
-                <Button fx:id="customerButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="156.0" prefWidth="133.0" stylesheets="@../style/styles.css">
+                <Button fx:id="customerButton" layoutX="487.0" layoutY="10.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="158.0" prefWidth="133.0" stylesheets="@../style/styles.css">
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="148.0" prefWidth="103.0">
                             <children>
@@ -134,7 +134,7 @@
                   <String fx:value="button-click" />
                     </styleClass>
                 </Button>
-                <Button fx:id="managementButton" layoutX="267.0" layoutY="10.0" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="156.0" prefWidth="114.0" stylesheets="@../style/styles.css">
+                <Button fx:id="managementButton" layoutX="267.0" layoutY="10.0" mnemonicParsing="false" onAction="#managementButtonOnAction" prefHeight="158.0" prefWidth="114.0" stylesheets="@../style/styles.css">
                     <styleClass>
                         <String fx:value="button-background" />
                         <String fx:value="button-hover" />
@@ -156,7 +156,7 @@
                </graphic>
                 </Button>
                 <Pane prefHeight="157.0" prefWidth="158.0" />
-                <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#dangXuatButtonOnAction" prefHeight="156.0" prefWidth="63.0" stylesheets="@../style/styles.css">
+                <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#dangXuatButtonOnAction" prefHeight="158.0" prefWidth="63.0" styleClass="button-background" stylesheets="@../style/styles.css">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -164,10 +164,6 @@
                             </image>
                         </ImageView>
                     </graphic>
-               <styleClass>
-                  <String fx:value="button-background" />
-                  <String fx:value="button-click" />
-               </styleClass>
                 </Button>
             </children>
             <BorderPane.margin>

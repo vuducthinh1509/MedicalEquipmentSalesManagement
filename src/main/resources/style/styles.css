@@ -1,6 +1,6 @@
 .border-bottom{
     -fx-border-width: 0 0 2 0;
-    -fx-border-color: #1C98E4;
+    -fx-border-color: #ffccff;
 }
 .bottom{
     -fx-background-color: #1C98E4;
@@ -19,9 +19,9 @@
     -fx-background-color: #fed6e3;
 }
 
-/*.button-click:focused {*/
-/*    -fx-background-color: #66FFFF;*/
-/*}*/
+.button-click:focused {
+    -fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%);
+}
 
 .button-click:focused .label {
     -fx-text-fill: #000000;
@@ -29,7 +29,7 @@
     -fx-border-color: #669999
 }
 .button-hover:hover {
-    -fx-background-color: #fed2f6
+    -fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%);
 }
 .main-background {
     -fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%)
