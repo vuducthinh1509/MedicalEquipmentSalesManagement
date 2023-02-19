@@ -55,5 +55,10 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Button fx:id="reload" layoutX="927.0" layoutY="15.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

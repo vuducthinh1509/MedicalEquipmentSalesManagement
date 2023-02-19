@@ -51,6 +51,8 @@ public class BaoHanhController implements Initializable {
     private TableColumn<PhieuBaoHanh, String> ngayBanGiaoColumn;
 
     @FXML
+    private Button reload;
+    @FXML
     private Pane mainPane;
 
     @FXML
@@ -131,6 +133,9 @@ public class BaoHanhController implements Initializable {
         stage.show();
     }
 
+    public void reloadButtonOnAction(ActionEvent event){
+        loadDataTable();
+    }
     public void xemChiTietThietBi(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/Kho/XemChiTietThietBi.fxml"));
