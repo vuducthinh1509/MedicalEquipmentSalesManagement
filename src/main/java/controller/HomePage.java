@@ -124,7 +124,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         storageLabel.setStyle("-fx-text-fill: linear-gradient(to right, #d6232b 0%, #015edf 100%);");
         removeStyleButton();
-        storageButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //storageButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageStorage.setImage(imageStorageFull);
     }
@@ -136,7 +136,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         trangChuLabel.setStyle("-fx-text-fill: linear-gradient(to right, #00c7ce 0%, #00cc99 100%);");
         removeStyleButton();
-        homePageButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //homePageButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageHome.setImage(imageHomeFull);
     }
@@ -148,7 +148,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         exportLabel.setStyle("-fx-text-fill: linear-gradient(to right, #00c7ce 0%, #54e360 100%);");
         removeStyleButton();
-        exportInvoiceButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //exportInvoiceButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageExport.setImage(imageExportFull);
     }
@@ -160,7 +160,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         repairLabel.setStyle("-fx-text-fill: linear-gradient(to right, #97b1db 0%, #666999 100%)");
         removeStyleButton();
-        repairButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //repairButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageRepair.setImage(imageRepairFull);
     }
@@ -172,7 +172,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         managementLabel.setStyle("-fx-text-fill: linear-gradient(to right, #ff604f 0%, #2fd163 100%)");
         removeStyleButton();
-        managementButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //managementButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageManagement.setImage(imageManagementFull);
     }
@@ -184,7 +184,7 @@ public class HomePage implements Initializable {
         removeTextFill();
         customerLabel.setStyle("-fx-text-fill: linear-gradient(to right, #2682ff 0%, #ffbb85 100%)");
         removeStyleButton();
-        customerButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
+        //customerButton.setStyle("-fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%)");
         removeImage();
         imageCustomer.setImage(imageCustomerFull);
     }
