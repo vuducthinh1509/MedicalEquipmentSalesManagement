@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuanLy.ThemNV">
+<AnchorPane prefHeight="586.0" prefWidth="1049.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" styleClass="button1" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuanLy.ThemNV">
     <children>
         <Label layoutX="640.0" layoutY="72.0" text="Số điện thoại:">
             <font>
@@ -53,27 +53,38 @@
             </font>
         </Label>
         <TextField fx:id="hoTenLabel" layoutX="252.0" layoutY="67.0" prefHeight="39.0" prefWidth="338.0" />
-        <DatePicker fx:id="ngaySinhLabel" layoutX="782.0" layoutY="121.0" prefHeight="39.0" prefWidth="204.0" />
-        <TextField fx:id="CCCDLabel" layoutX="251.0" layoutY="121.0" prefHeight="39.0" prefWidth="262.0" />
-        <ComboBox fx:id="gioiTinhComboBox" layoutX="782.0" layoutY="173.0" prefHeight="39.0" prefWidth="204.0" />
-        <TextField fx:id="emailLabel" layoutX="251.0" layoutY="173.0" prefHeight="39.0" prefWidth="262.0" />
         <TextField fx:id="SDTLabel" layoutX="778.0" layoutY="67.0" prefHeight="39.0" prefWidth="204.0" />
+        <TextField fx:id="CCCDLabel" layoutX="251.0" layoutY="121.0" prefHeight="39.0" prefWidth="262.0" />
+        <DatePicker fx:id="ngaySinhLabel" layoutX="782.0" layoutY="121.0" prefHeight="39.0" prefWidth="204.0" />
+        <TextField fx:id="emailLabel" layoutX="251.0" layoutY="173.0" prefHeight="39.0" prefWidth="262.0" />
+        <ComboBox fx:id="gioiTinhComboBox" layoutX="782.0" layoutY="173.0" prefHeight="39.0" prefWidth="204.0" />
         <TextField fx:id="diaChiThuongTruLabel" layoutX="252.0" layoutY="232.0" prefHeight="39.0" prefWidth="733.0" />
-        <TextField fx:id="usernameLabel" layoutX="249.0" layoutY="371.0" prefHeight="39.0" prefWidth="256.0" />
-        <TextField fx:id="passwordLabel" layoutX="790.0" layoutY="371.0" prefHeight="39.0" prefWidth="198.0" />
         <ComboBox fx:id="chucVuComboBox" layoutX="255.0" layoutY="293.0" prefHeight="39.0" prefWidth="250.0" />
 
         <DatePicker fx:id="ngayVaoLamLabel" layoutX="786.0" layoutY="289.0" prefHeight="39.0" prefWidth="197.0" />
-        <Button fx:id="saveButton" layoutX="673.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#saveAction" prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
+        <TextField fx:id="usernameLabel" layoutX="249.0" layoutY="371.0" prefHeight="39.0" prefWidth="256.0" />
+        <TextField fx:id="passwordLabel" layoutX="790.0" layoutY="371.0" prefHeight="39.0" prefWidth="198.0" />
+      <ComboBox fx:id="cauHoiComboBox" layoutX="252.0" layoutY="429.0" prefHeight="39.0" prefWidth="256.0" />
+      <TextField fx:id="cauTraLoiLabel" layoutX="790.0" layoutY="427.0" prefHeight="39.0" prefWidth="198.0" />
+        <Button fx:id="saveButton" layoutX="681.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#saveAction" prefHeight="51.0" prefWidth="118.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Lưu" textFill="WHITE">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="cancelButton" layoutX="835.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#cancelAction" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+        <Button fx:id="cancelButton" layoutX="836.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#cancelAction" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Hủy" textFill="WHITE">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
+      <Label layoutX="643.0" layoutY="435.0" text="Câu trả lời">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="56.0" layoutY="433.0" text="Câu hỏi bảo mật">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
 
 
         <Label layoutX="638.0" layoutY="294.0" text="Ngày vào làm:">
@@ -89,16 +100,6 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <ComboBox fx:id="cauHoiComboBox" layoutX="252.0" layoutY="429.0" prefHeight="39.0" prefWidth="256.0" />
-      <Label layoutX="56.0" layoutY="433.0" text="Câu hỏi bảo mật">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <Label layoutX="643.0" layoutY="435.0" text="Câu trả lời">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <TextField fx:id="cauTraLoiLabel" layoutX="790.0" layoutY="427.0" prefHeight="39.0" prefWidth="198.0" />
       <Label layoutX="590.0" layoutY="73.0" text="(*)" textFill="#ff6000" />
       <Label layoutX="515.0" layoutY="127.0" text="(*)" textFill="#ff6000" />
       <Label layoutX="988.0" layoutY="238.0" text="(*)" textFill="#ff6000" />

@@ -200,6 +200,7 @@ public class CustomerController implements Initializable {
                 cancelButton.setVisible(false);
                 editButton.setDisable(true);
                 loadDataCustomer();
+                clearDataPane();
             }
         }
     }
@@ -254,9 +255,6 @@ public class CustomerController implements Initializable {
         String fieldSearch = truongSearch.getValue();
         try {
             if (fieldSearch.equals("ID Khách Hàng")) {
-                if(textSearch.isEmpty()){
-                    table.setItems(khachHangList);
-                } else {
                     Pattern pattern = Pattern.compile("\\d*");
                     Matcher matcher = pattern.matcher(textSearch);
                     if (!matcher.matches()&&!textSearch.isEmpty()) {
@@ -275,7 +273,6 @@ public class CustomerController implements Initializable {
                             }
                             table.setItems(searchList);
                         }
-                    }
                 }
             } else if (fieldSearch.equals("Tên Khách Hàng")) {
                 for (KhachHang currentKhachHang : khachHangList) {
@@ -301,8 +298,7 @@ public class CustomerController implements Initializable {
                 Box.alertBox_No_Result();
             }
         } catch (NullPointerException ex) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            Box.alertBox("Thất bại!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
+            Box.alertBox_None_Field_Search();
         }
     }
 

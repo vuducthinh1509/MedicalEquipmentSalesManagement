@@ -19,6 +19,13 @@
     -fx-background-color: #fed6e3;
 }
 
+.button1:hover {
+    /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-scale-z: 1.02;
+}
+
 /*.button-click:focused {*/
 /*    -fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%);*/
 /*}*/
@@ -28,7 +35,11 @@
     /*-fx-border-width: 0 0 2 0;*/
     /*-fx-border-color: #669999*/
 }
-/*.button-hover:hover {*/
+.button-hover:hover {
+    -fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%);
+}
+
+/*.button1-hover:hover {*/
 /*    -fx-background-color: linear-gradient(to top, #ffccff 0%, #fed6e3 100%);*/
 /*}*/
 .main-background {

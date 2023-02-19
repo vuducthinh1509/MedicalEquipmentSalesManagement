@@ -79,10 +79,7 @@ public class QuanLy implements Initializable {
             table.setItems(NhanVienList);
         }
         catch (NullPointerException ex){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText(null);
-            alert.setContentText("Bạn cần chọn trường tra cứu");
-            alert.show();
+            Box.alertBox_None_Field_Search();
             table.setItems(NhanVienList);
         }
     }

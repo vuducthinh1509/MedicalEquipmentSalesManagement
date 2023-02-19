@@ -141,11 +141,11 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button fx:id="saveButton" layoutX="743.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" text="Lưu" textFill="WHITE">
+      <Button fx:id="saveButton" layoutX="743.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#save_ChinhSua" prefHeight="45.0" prefWidth="86.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" styleClass="button1" text="Lưu" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button cancelButton="true" layoutX="846.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="45.0" prefWidth="80.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" text="Hủy" textFill="WHITE">
+      <Button cancelButton="true" layoutX="846.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#huyMouseAction" prefHeight="45.0" prefWidth="80.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 17;" styleClass="button1" text="Hủy" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>

@@ -42,4 +42,11 @@ public class Box {
         alert.setContentText("Vui lòng thử lại sau");
         alert.showAndWait();
     }
+
+    public static void alertBox_None_Field_Search(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setHeaderText(null);
+        alert.setContentText("Bạn cần chọn trường tra cứu");
+        alert.show();
+    }
 }

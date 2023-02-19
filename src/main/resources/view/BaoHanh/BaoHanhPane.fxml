@@ -50,12 +50,12 @@
             </ContextMenu>
          </contextMenu>
       </TableView>
-      <Button fx:id="createButton" layoutX="1096.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#createButtonOnClicked" prefHeight="44.0" prefWidth="229.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tạo phiếu bảo hành" textFill="WHITE">
+      <Button fx:id="createButton" layoutX="1096.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#createButtonOnClicked" prefHeight="44.0" prefWidth="229.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Tạo phiếu bảo hành" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="reload" layoutX="927.0" layoutY="15.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại trang" textFill="WHITE">
+      <Button fx:id="reload" layoutX="927.0" layoutY="15.0" mnemonicParsing="false" onAction="#reloadButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Tải lại trang" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

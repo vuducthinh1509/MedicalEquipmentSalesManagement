@@ -211,11 +211,7 @@ public class ExportInvoiceController implements Initializable {
                 alert.showAndWait();
             }
         } catch (NullPointerException ex) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Chưa chọn trường tìm kiếm!");
-            alert.setContentText("Vui lòng chọn lại");
-            alert.show();
+            Box.alertBox_None_Field_Search();
         }
     }
 }

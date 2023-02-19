@@ -89,8 +89,7 @@ public class StorageController implements Initializable {
             }
         }
         catch (NullPointerException ex){
-            thietBiList_temp.addAll(thietBiRepo.timThietBiTheoTruong(SQLCommand.Thiet_Bi_QUERY_LAY_THONG_TIN_BY_tenThietBi, duLieuTraCuu));
-            table.setItems(thietBiList_temp);
+            Box.alertBox_None_Field_Search();
         }
     }
     @SneakyThrows

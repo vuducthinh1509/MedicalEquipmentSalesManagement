@@ -214,17 +214,13 @@ public class BaoHanhController implements Initializable {
         String fieldSearch = truongSearch.getValue();
         try {
             if (fieldSearch.equals("Serial")) {
-                if(textSearch.isEmpty()){
-                    table.setItems(phieuBaoHanhList);
-                } else {
-                    for (PhieuBaoHanh current : phieuBaoHanhList) {
-                            if ((current.getSerialThietBi().trim().toLowerCase().equals(textSearch))) {
+                for (PhieuBaoHanh current : phieuBaoHanhList) {
+                    if ((current.getSerialThietBi().trim().toLowerCase().equals(textSearch))) {
                                 PhieuBaoHanh clone = new PhieuBaoHanh();
                                 clone.copyPhieuBaoHanh(current);
                                 searchList.add(clone);
-                            }
-                            table.setItems(searchList);
                     }
+                            table.setItems(searchList);
                 }
             } else if (fieldSearch.equals("Tên Khách Hàng")) {
                 for (PhieuBaoHanh current : phieuBaoHanhList) {
@@ -241,7 +237,7 @@ public class BaoHanhController implements Initializable {
                 Box.alertBox_No_Result();
             }
         } catch (NullPointerException ex) {
-            Box.alertBox("Thông báo!","Chưa chọn trường tìm kiếm","Vui lòng chọn lại");
+            Box.alertBox_None_Field_Search();
         }
     }
 

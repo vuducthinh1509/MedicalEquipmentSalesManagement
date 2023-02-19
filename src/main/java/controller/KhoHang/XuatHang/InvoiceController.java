@@ -137,6 +137,7 @@ public class InvoiceController {
         itemList.clear();
     }
     public void loadDataItem(){
+        subtotal = 0;
         for(Item item : itemList){
             Integer var = item.getSoLuongItem()*item.getGiaItem();
             item.setTotalPriceItem(var);

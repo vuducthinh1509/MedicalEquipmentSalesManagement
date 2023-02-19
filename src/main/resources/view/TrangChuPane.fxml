@@ -118,7 +118,7 @@
                 <Font size="20.0" />
             </font>
         </Label>
-      <Button fx:id="changePasswordButton" layoutX="973.0" layoutY="519.0" mnemonicParsing="false" onAction="#changePasswordButtonOnAction" prefHeight="39.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đổi mật khẩu" textFill="WHITE">
+      <Button fx:id="changePasswordButton" layoutX="973.0" layoutY="519.0" mnemonicParsing="false" onAction="#changePasswordButtonOnAction" prefHeight="39.0" prefWidth="157.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Đổi mật khẩu" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>

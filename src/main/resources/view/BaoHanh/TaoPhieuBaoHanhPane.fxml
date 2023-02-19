@@ -161,11 +161,11 @@
             <TextField fx:id="noteCtmLabel" layoutX="254.0" layoutY="89.0" prefHeight="39.0" prefWidth="595.0" styleClass="border-text" />
          </children>
       </Pane>
-      <Button fx:id="addPBHButton" layoutX="966.0" layoutY="611.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
+      <Button fx:id="addPBHButton" layoutX="966.0" layoutY="611.0" mnemonicParsing="false" onMouseClicked="#addPBHButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Lưu" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="966.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+      <Button layoutX="966.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Hủy" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

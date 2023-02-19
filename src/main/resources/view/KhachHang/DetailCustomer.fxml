@@ -49,7 +49,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="304.0" layoutY="207.0" mnemonicParsing="false" onMouseClicked="#closeButtonOnClicked" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đóng" textFill="WHITE">
+      <Button layoutX="304.0" layoutY="207.0" mnemonicParsing="false" onMouseClicked="#closeButtonOnClicked" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Đóng" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

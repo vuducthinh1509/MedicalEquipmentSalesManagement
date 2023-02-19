@@ -15,11 +15,11 @@
             <Font size="20.0" />
          </font></Label>
       <ComboBox fx:id="trangThaiLabel" layoutX="231.0" layoutY="71.0" prefHeight="39.0" prefWidth="248.0" promptText="Chọn trạng thái" />
-      <Button layoutX="285.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE">
+      <Button layoutX="285.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Lưu" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="435.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnAction" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+      <Button layoutX="435.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnAction" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Hủy" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>

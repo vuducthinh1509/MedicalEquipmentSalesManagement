@@ -130,7 +130,7 @@
          </font>
       </TextField>
       <DatePicker fx:id="exportDateLabel" disable="true" editable="false" layoutX="191.0" layoutY="147.0" prefHeight="39.0" prefWidth="180.0" />
-      <Button layoutX="995.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="53.0" prefWidth="95.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Đóng" textFill="WHITE">
+      <Button layoutX="995.0" layoutY="659.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="53.0" prefWidth="95.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Đóng" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

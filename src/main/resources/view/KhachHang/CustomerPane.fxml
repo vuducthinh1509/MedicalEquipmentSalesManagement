@@ -62,19 +62,19 @@
             <font>
                 <Font size="20.0" />
             </font></TextField>
-        <Button fx:id="editButton" layoutX="757.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#editButtonOnClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Chỉnh sửa" textFill="WHITE">
+        <Button fx:id="editButton" layoutX="757.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#editButtonOnClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Chỉnh sửa" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font></Button>
-        <Button fx:id="addButton" layoutX="901.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#addButtonOnClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm" textFill="WHITE">
+        <Button fx:id="addButton" layoutX="901.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#addButtonOnClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Thêm" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font></Button>
-        <Button fx:id="saveButton" layoutX="1096.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Lưu" textFill="WHITE" visible="false">
+        <Button fx:id="saveButton" layoutX="1096.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#saveButtonOnClicked" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Lưu" textFill="WHITE" visible="false">
             <font>
                 <Font size="18.0" />
             </font></Button>
-      <Button fx:id="cancelButton" layoutX="1211.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE" visible="false">
+      <Button fx:id="cancelButton" layoutX="1211.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#cancelButtonOnClicked" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Hủy" textFill="WHITE" visible="false">
          <font>
             <Font size="18.0" />
          </font>

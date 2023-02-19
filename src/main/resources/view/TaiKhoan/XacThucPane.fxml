@@ -19,12 +19,12 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#xacThucButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xác thực" textFill="WHITE" fx:id="xacThucButton">
+      <Button layoutX="260.0" layoutY="314.0" mnemonicParsing="false" onAction="#xacThucButtonOnAction" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Xác thực" textFill="WHITE" fx:id="xacThucButton">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="huyButton" layoutX="367.0" layoutY="313.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Hủy" textFill="WHITE">
+      <Button fx:id="huyButton" layoutX="367.0" layoutY="313.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" text="Hủy" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>

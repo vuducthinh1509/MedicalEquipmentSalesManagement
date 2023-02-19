@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.StorageController">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KhoHang.StorageController">
     <children>
         <Pane layoutX="33.0" layoutY="23.0" prefHeight="50.0" prefWidth="772.0" style="-fx-background-color: #ffffff;">
             <children>
-                <TextField fx:id="duLieuF" layoutX="7.0" prefHeight="50.0" prefWidth="565.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+                <TextField fx:id="duLieuF" layoutX="14.0" prefHeight="50.0" prefWidth="759.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -19,13 +20,13 @@
         <TableView fx:id="table" layoutX="33.0" layoutY="92.0" prefHeight="514.0" prefWidth="1084.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
-                <TableColumn fx:id="tenColumn" prefWidth="261.0" text="Tên" />
-                <TableColumn fx:id="modelColumn" prefWidth="96.0" text="Model" />
-                <TableColumn fx:id="serialColumn" prefWidth="94.0" text="Serial" />
-                <TableColumn fx:id="mauColumn" prefWidth="95.0" text="Màu" />
-                <TableColumn fx:id="kichThuocColumn" prefWidth="124.0" text="Kích Thước" />
-                <TableColumn fx:id="giaColumn" minWidth="0.0" prefWidth="167.0" text="Giá" />
-                <TableColumn fx:id="trangThaiColumn" prefWidth="129.0" text="Trạng Thái" />
+                <TableColumn fx:id="tenColumn" prefWidth="317.0" text="Tên" />
+                <TableColumn fx:id="modelColumn" prefWidth="87.0" text="Model" />
+                <TableColumn fx:id="serialColumn" prefWidth="95.0" text="Serial" />
+                <TableColumn fx:id="mauColumn" prefWidth="116.0" text="Màu" />
+                <TableColumn fx:id="kichThuocColumn" prefWidth="150.0" text="Kích Thước" />
+                <TableColumn fx:id="giaColumn" minWidth="0.0" prefWidth="136.0" text="Giá" />
+                <TableColumn fx:id="trangThaiColumn" prefWidth="140.0" text="Trạng Thái" />
             </columns>
             <contextMenu>
                 <ContextMenu>
@@ -37,15 +38,15 @@
                 </ContextMenu>
             </contextMenu>
         </TableView>
-        <Button layoutX="1133.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Tải lại bảng" textFill="WHITE">
+        <Button layoutX="1126.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#loadDataThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Tải lại bảng" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-        <Button fx:id="addProductButton" layoutX="1133.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Thêm thiết bị" textFill="WHITE">
+        <Button fx:id="addProductButton" layoutX="1126.0" layoutY="393.0" mnemonicParsing="false" onMouseClicked="#themThietBi" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Thêm thiết bị" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-        <Button fx:id="exportButton" layoutX="1133.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" text="Xuất Hàng" textFill="WHITE">
+        <Button fx:id="exportButton" layoutX="1126.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#exportButtonOnClicked" prefHeight="45.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%);" styleClass="button1" stylesheets="@../../style/styles.css" text="Xuất Hàng" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>

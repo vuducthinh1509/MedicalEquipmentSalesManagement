@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuanLy.QuanLy">
     <children>
-        <Pane layoutX="73.0" layoutY="20.0" prefHeight="50.0" prefWidth="716.0" style="-fx-background-color: #ffffff;" />
+        <Pane layoutX="73.0" layoutY="20.0" prefHeight="50.0" prefWidth="741.0" style="-fx-background-color: #ffffff;" />
         <TableView fx:id="table" layoutX="73.0" layoutY="93.0" prefHeight="513.0" prefWidth="1016.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="47.0" text="ID" />
@@ -28,15 +28,15 @@
                 </ContextMenu>
             </contextMenu>
         </TableView>
-        <Button layoutX="1121.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#loadDataNV" prefHeight="58.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 20;" text="Tải lại bảng" textFill="WHITE" />
-        <Button fx:id="addProductButton" layoutX="1121.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#themNV" prefHeight="58.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 20;" text="Thêm nhân viên" textFill="WHITE" />
-        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="45.0" layoutX="807.0" layoutY="23.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
+        <Button layoutX="1121.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#loadDataNV" prefHeight="56.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 20;" styleClass="button1" text="Tải lại bảng" textFill="WHITE" />
+        <Button fx:id="addProductButton" layoutX="1121.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#themNV" prefHeight="56.0" prefWidth="179.0" style="-fx-background-color: linear-gradient(to top, #0099cc 0%, #33cccc 100%); -fx-font-size: 20;" styleClass="button1" text="Thêm nhân viên" textFill="WHITE" />
+        <ImageView fx:id="confirmF" fitHeight="50.0" fitWidth="45.0" layoutX="829.0" layoutY="23.0" onMouseClicked="#findF" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../image/2811806.png" />
             </image>
         </ImageView>
           <ComboBox fx:id="truongTraCuuF" layoutX="891.0" layoutY="21.0" opacity="0.68" prefHeight="49.0" prefWidth="198.0" promptText="Bộ lọc tìm kiếm" style="-fx-font-size: 17; -fx-background-color: linear-gradient(to right, #ffccff 80%, #ff99ff 20%);" />
-          <TextField fx:id="duLieuF" layoutX="88.0" layoutY="20.0" prefHeight="50.0" prefWidth="430.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
+          <TextField fx:id="duLieuF" layoutX="88.0" layoutY="20.0" prefHeight="50.0" prefWidth="726.0" promptText="Nhập dữ liệu cần tra cứu" style="-fx-background-color: 0;">
               <font>
                   <Font size="15.0" />
               </font>

@@ -82,7 +82,6 @@ public class ThemNV implements Initializable {
         String username = usernameLabel.getText();
         String password = passwordLabel.getText();
         Integer role = 1;
-
         if (username.isEmpty()|| password.isEmpty()||hoTen.isEmpty()|| ngaySinh==null||diaChiThuongTru.isEmpty()||CCCD.isEmpty()||soDienThoai.isEmpty()||email.isEmpty()||ngayVaoLam==null||chucVu == null||gioiTinh==null||cauHoi==null||cauTraLoi.isEmpty()){
             Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
             alert_TC.setHeaderText(null);
@@ -94,18 +93,12 @@ public class ThemNV implements Initializable {
             alert_TC.setHeaderText(null);
             alert_TC.setContentText("Mật khẩu không hợp lệ");
             alert_TC.showAndWait();
-            //final Node source = (Node) event.getSource();
-            //final Stage stage = (Stage) source.getScene().getWindow();
-            //stage.close();
         }
         else if (!Validate.validatePhoneVN(soDienThoai)){
             Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
             alert_TC.setHeaderText(null);
             alert_TC.setContentText("Số điện thoại không hợp lệ ");
             alert_TC.showAndWait();
-            //final Node source = (Node) event.getSource();
-           // final Stage stage = (Stage) source.getScene().getWindow();
-            //stage.close();
         }
         else if (nhanVienRepo2.kiemTraTaiKhoanTonTai(username) != -1  ){
             Alert alert_TC = new Alert(Alert.AlertType.INFORMATION);
@@ -113,10 +106,9 @@ public class ThemNV implements Initializable {
             alert_TC.setContentText(" Tài khoản đã tồn tại ");
             alert_TC.showAndWait();
         }
-
         else {
         if(!chucVu.isBlank()){
-                if(chucVu.equals("Quản lý")){
+                if(chucVu.equals("Quản Lý")){
                     role = 0;
                 }
         }
