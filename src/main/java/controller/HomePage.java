@@ -90,6 +90,8 @@ public class HomePage implements Initializable {
             managementButton.setVisible(false);
         }
         homePageButton.focusedProperty();
+        trangChuLabel.setStyle("-fx-text-fill: linear-gradient(to right, #00c7ce 0%, #00cc99 100%);");
+        imageHome.setImage(imageHomeFull);
     }
     public void removeStyleButton() throws IOException{
         homePageButton.setStyle("-fx-background-color: #fed6e3");
