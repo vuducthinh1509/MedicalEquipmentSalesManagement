@@ -42,7 +42,7 @@ public class ChinhSuaThongTinController {
     @FXML
     private TextField trangThaiLabel;
     @FXML
-    private Label ngayXuatLabel;
+    private TextField ngayXuatLabel;
     @FXML
     private TextField maNVXuatLabel;
     @FXML
