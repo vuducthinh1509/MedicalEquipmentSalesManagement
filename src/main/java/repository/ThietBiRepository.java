@@ -36,4 +36,5 @@ public interface ThietBiRepository {
     ObservableList<ThietBi> timTatCaThietBiDaXuatTheoSerial(String serial);
 
     void updatePhieuBaoHanh_Delete(int id);
+    public String kiemTraTonTai(String serial);
 }

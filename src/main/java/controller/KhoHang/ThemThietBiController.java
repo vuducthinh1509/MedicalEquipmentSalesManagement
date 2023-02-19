@@ -77,16 +77,21 @@ public class ThemThietBiController {
             Box.alertBox_None_Full_Fill();
         } else {
             insert();
-            Box.alertBox("Thành công!","Thêm thành công thiết bị","");
             final Node source = (Node) event.getSource();
             final Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
         }
     }
     private void insert() {
+        String check;
         String ten = tenLabel.getText();
         String model = modelLabel.getText();
         String serial = serialLabel.getText();
+        check = thietBiRepo.kiemTraTonTai(serial);
+        if(check.equals(serial)){
+            Box.alertBox("Thất bại!","Số serial đã tồn tại","Vui lòng thử lại sau");
+            return;
+        }
         String xuatXu = xuatXuLabel.getText();
         String thoiGianBaoHanh = thoiGianBaoHanhLabel.getText();
         String mau = mauLabel.getText();
@@ -96,5 +101,6 @@ public class ThemThietBiController {
         String maNVNhap = maNVNhapLabel.getText();
         String ngayNhap = String.valueOf(ngayNhapLabel.getValue());
         thietBiRepo.themThietBi(new ThietBi(ten,model,serial,xuatXu, thoiGianBaoHanh,mau,kichThuoc,gia,trangThai,maNVNhap, ngayNhap));
+        Box.alertBox("Thành công!","Thêm thành công thiết bị","");
     }
 }

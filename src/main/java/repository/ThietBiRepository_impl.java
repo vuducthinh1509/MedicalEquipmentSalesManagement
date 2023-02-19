@@ -393,4 +393,27 @@ public class ThietBiRepository_impl implements ThietBiRepository {
             }
         }
     }
+
+    @Override
+    public String kiemTraTonTai(String serial){
+        String id = "";
+        try {
+            conn = DbUtil.getInstance().getConnection();
+            pstmt = conn.prepareStatement(SQLCommand.Thiet_Bi_QUERY_KIEM_TRA_TON_TAI);
+            pstmt.setString(1,serial);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                id = rs.getString("serialThietBi");
+            }
+            return id;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                DbUtil.releaseResource(rs, stmt, pstmt, cstmt, conn);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } return id;
+    }
 }

@@ -49,6 +49,8 @@ public class SQLCommand {
     public static String Thiet_Bi_DELETE_ThietBi = "DELETE FROM `thietbi` WHERE idThietBi = ?";
     public static String Thiet_Bi_QUERY_INSERT_ThietBi = "INSERT INTO `thietbi`( `tenThietBi`, `modelThietBi`, `serialThietBi`, `xuatXuThietBi`, `thoiGianBaoHanh`, `mauThietBi`, `kichThuocThietBi`, `giaThietBi`, `trangThaiThietBi`, `maNVNguoiNhap`, `ngayNhapThietBi`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
+
+    public static String Thiet_Bi_QUERY_KIEM_TRA_TON_TAI = "Select * from thietbi where serialThietBi = ?";
     public static String Thiet_Bi_QUERY_UPDATE = "UPDATE `thietbi` SET " +
             "`tenThietBi`=?," +
             "`modelThietBi`=?," +
