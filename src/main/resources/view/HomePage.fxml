@@ -18,7 +18,7 @@
                   <Pane prefHeight="57.0" prefWidth="200.0" />
                   <ImageView fitHeight="59.0" fitWidth="279.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/logo10.png" />
+                        <Image url="@../image/logo9.png" />
                      </image>
                   </ImageView>
                </children></VBox>
@@ -27,12 +27,12 @@
                <graphic>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imageHome" fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../image/553416.png" />
+                              <Image url="@../image/1946488.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="trangChuLabel" prefHeight="30.0" prefWidth="87.0" stylesheets="@../style/styles.css" text="Trang chủ" textAlignment="CENTER" textFill="#97999a">
+                        <Label fx:id="trangChuLabel" prefHeight="30.0" prefWidth="87.0" stylesheets="@../style/styles.css" text="Trang chủ" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -50,12 +50,12 @@
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
-                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="imageStorage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../image/2875878.png" />
+                                        <Image url="@../image/2875986.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Kho hàng" textFill="#97999a">
+                                <Label fx:id="storageLabel" text="Kho hàng">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
@@ -73,12 +73,12 @@
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
-                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="imageExport" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../image/1372789.png" />
+                                        <Image url="@../image/1373452.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Phiếu xuất" textFill="#97999a">
+                                <Label fx:id="exportLabel" text="Phiếu xuất">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font></Label>
@@ -94,12 +94,12 @@
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                             <children>
-                                <ImageView fx:id="repairdImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="imageRepair" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../image/2696528.png" />
+                                        <Image url="@../image/4624415.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Bảo Hành" textFill="#97999a">
+                                <Label fx:id="repairLabel" text="Bảo Hành">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font></Label>
@@ -116,12 +116,12 @@
                     <graphic>
                         <VBox alignment="CENTER" prefHeight="148.0" prefWidth="103.0">
                             <children>
-                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="button-click">
+                                <ImageView fx:id="imageCustomer" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="button-click">
                                     <image>
-                                        <Image url="@../image/1077012.png" />
+                                        <Image url="@../image/1077063.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Khách hàng" textFill="#97999a">
+                                <Label fx:id="customerLabel" text="Khách hàng">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font></Label>
@@ -143,11 +143,11 @@
                <graphic>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ImageView fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imageManagement" fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../image/3281869.png" />
+                              <Image url="@../image/681443.png" />
                            </image></ImageView>
-                        <Label text="Nhân Viên" textFill="#97999a">
+                        <Label fx:id="managementLabel" text="Nhân Viên">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font></Label>
