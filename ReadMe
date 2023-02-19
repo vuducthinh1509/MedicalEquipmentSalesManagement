@@ -1,8 +1,18 @@
-Project sử dụng ngôn ngữ Java, JavaFX và MySQL công cụ sử dụng Intellij
-
-Lưu ý: sử dụng phiên bản jdk 17
+Giới thiệu về Project:
+- Project sử dụng ngôn ngữ Java, JavaFX và MySQL để lập trình 
+- IDE sử dụng Intellij
 
 Các bước để chạy project:
-- Cài đặt XAMPP hỗ trợ tạo LocalHost
+- Clone repository bằng GitURL trong Intellij hoặc download source code
+- Cài đặt XAMPP để hỗ trợ tạo LocalHost
 - Tạo database với tên "demo" và chạy code trong file demo.sql
-- Clone repository bằng GitURL trong Intellij ( trước khi chạy nhớ bật XAMPP start ở Apache và MySQL)
+- Chạy file main và sử dụng
+
+Yêu cầu phần cứng 
+-  CPU: 1.1 GHz trở lên; 
+-  Bộ nhớ trong (RAM):  tối thiểu 2 GB; 
+Yêu cầu phần mềm 
+-  Hệ điều hành: Windows 7 trở lên.
+
+Các lưu ý khi cài đặt và sử dụng phần mềm:
+- Sử dụng JDK phiên bản 17
