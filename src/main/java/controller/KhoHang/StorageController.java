@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
 import repository.*;
+import utility.Box;
 import utility.SQLCommand;
 
 import java.io.IOException;
@@ -132,7 +133,7 @@ public class StorageController implements Initializable {
         }
         chiTietTBController.setThietBi(selectedThietBi.getIdThietBi());
         Stage stage = new Stage();
-        stage.setTitle("Thông tin thiết bị");
+        stage.setTitle("THÔNG TIN CHI TIẾT THIẾT BỊ");
         Scene scene = new Scene(chiTietTB);
         stage.setScene(scene);
         stage.show();
@@ -143,7 +144,7 @@ public class StorageController implements Initializable {
         loader.setLocation(getClass().getResource("/view/Kho/ThemThietBi.fxml"));
         Parent themThietBi = loader.load();
         Stage stage = new Stage();
-        stage.setTitle("Thêm thiết bị");
+        stage.setTitle("THÊM THIẾT BỊ");
         Scene scene = new Scene(themThietBi);
         stage.setScene(scene);
         stage.show();
@@ -156,16 +157,12 @@ public class StorageController implements Initializable {
         ChinhSuaThongTinController controller = loader.getController();
         ThietBi selected = table.getSelectionModel().getSelectedItem();
         if(selected == null){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         controller.setChinhSuaThietBi(selected);
         Stage stage = new Stage();
-        stage.setTitle("CHỈNH SỬA NHÂN KHẨU");
+        stage.setTitle("CHỈNH SỬA CHI TIẾT THIẾT BỊ");
         Scene scene = new Scene(chinhSuaThietBiView);
         stage.setScene(scene);
         stage.show();
@@ -173,11 +170,7 @@ public class StorageController implements Initializable {
     public void xoaThietBi(ActionEvent e) throws IOException {
         ThietBi thietBi = table.getSelectionModel().getSelectedItem();
         if (thietBi == null) {
-            Alert m = new Alert(Alert.AlertType.INFORMATION);
-            m.setTitle("Thông báo!");
-            m.setHeaderText("Không nhân khẩu nào được chọn.");
-            m.setContentText("Vui lòng chọn lại.");
-            m.show();
+            Box.alertBox_None_Selection("thiết bị");
             return;
         }
         int _idThietBi= thietBi.getIdThietBi();

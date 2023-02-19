@@ -12,12 +12,12 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="531.0" layoutY="412.0" text="Tên NV xuất:">
+        <Label layoutX="531.0" layoutY="405.0" text="Tên NV xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="371.0" text="Mã NV xuất:">
+        <Label layoutX="533.0" layoutY="356.0" text="Mã NV xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -82,7 +82,7 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="533.0" layoutY="324.0" prefHeight="30.0" prefWidth="108.0" text="Ngày xuất:">
+        <Label layoutX="531.0" layoutY="310.0" prefHeight="30.0" prefWidth="108.0" text="Ngày xuất:">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
@@ -112,7 +112,7 @@
             <Font size="14.0" />
          </font></TextField>
       <DatePicker fx:id="ngayNhapLabel" layoutX="220.0" layoutY="407.0" />
-      <Label fx:id="ngayXuatLabel" layoutX="966.0" layoutY="121.0" text="(*)" textFill="#ff9500" />
+      <Label layoutX="966.0" layoutY="126.0" text="(*)" textFill="#ff9500" />
       <TextField fx:id="maNVNhapLabel" layoutX="220.0" layoutY="458.0">
          <font>
             <Font size="14.0" />
@@ -125,7 +125,7 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <TextField fx:id="tenNVXuatLabel" disable="true" layoutX="743.0" layoutY="407.0">
+      <TextField fx:id="tenNVXuatLabel" disable="true" layoutX="743.0" layoutY="405.0">
          <font>
             <Font size="14.0" />
          </font></TextField>
@@ -152,6 +152,11 @@
       <Label layoutX="395.0" layoutY="165.0" text="(*)" textFill="#ff9000" />
       <Label layoutX="395.0" layoutY="218.0" text="(*)" textFill="#ff9000" />
       <Label layoutX="395.0" layoutY="460.0" text="(*)" textFill="#ff9000" />
-      <Label layoutX="482.0" layoutY="409.0" text="(*)" textFill="#ff9000" />
+      <Label layoutX="395.0" layoutY="411.0" text="(*)" textFill="#ff9000" />
+      <TextField fx:id="ngayXuatLabel" disable="true" layoutX="743.0" layoutY="309.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>

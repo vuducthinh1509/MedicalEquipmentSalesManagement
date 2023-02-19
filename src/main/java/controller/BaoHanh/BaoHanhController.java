@@ -127,7 +127,7 @@ public class BaoHanhController implements Initializable {
         chiTietPBHController.setPhieuBaoHanh(selected.getId());
         chiTietPBHController.loadDuLieuPhieuBaoHanh();
         Stage stage = new Stage();
-        stage.setTitle("Thông tin thiết bị");
+        stage.setTitle("Thông tin phiếu bảo hành");
         Scene scene = new Scene(chiThietPBH);
         stage.setScene(scene);
         stage.show();

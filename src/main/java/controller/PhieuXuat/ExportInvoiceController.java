@@ -96,13 +96,13 @@ public class ExportInvoiceController implements Initializable {
         DetailInvoice detailInvoiceController = loader.getController();
         PhieuXuat selectedInvoice = table.getSelectionModel().getSelectedItem();
         if (selectedInvoice == null) {
-            Box.alertBox_None_Selection("thiết bị");
+            Box.alertBox_None_Selection("phiếu xuất");
             return;
         }
         detailInvoiceController.setInvoice(selectedInvoice);
         detailInvoiceController.loadDataInvoice();
         Stage stage = new Stage();
-        stage.setTitle("Thông tin thiết bị");
+        stage.setTitle("CHI TIẾT PHIẾU XUẤT");
         Scene scene = new Scene(detailInvoice);
         stage.setResizable(false);
         stage.setScene(scene);
@@ -116,11 +116,7 @@ public class ExportInvoiceController implements Initializable {
         DetailCustomerController detailCustomerController = loader.getController();
         PhieuXuat selectedInvoice = table.getSelectionModel().getSelectedItem();
         if (selectedInvoice == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo!");
-            alert.setHeaderText("Không thiết bị nào được chọn.");
-            alert.setContentText("Vui lòng chọn lại.");
-            alert.show();
+            Box.alertBox_None_Selection("phiếu xuất");
             return;
         }
         khachHang = khachHangRepo.getInformationCustomerByID(selectedInvoice.getIdCustomerInvoice());

@@ -43,6 +43,9 @@ public class QuanLy implements Initializable {
     private TableColumn<NhanVien, Integer>  maNVColumn;
     @FXML
     private TableColumn<NhanVien,String>  hoTenColumn;
+
+    @FXML
+    private TableColumn<NhanVien,String> chucVuColumn;
     @FXML
     private Button addProductButton;
 
@@ -99,6 +102,7 @@ public class QuanLy implements Initializable {
         hoTenColumn .setCellValueFactory(new PropertyValueFactory<>("hoTen"));
         gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
         diaChiThuongTruColumn.setCellValueFactory(new PropertyValueFactory<>("diaChiThuongTru"));
+        chucVuColumn.setCellValueFactory(new PropertyValueFactory<>("chucVu"));
         truongTraCuuF.valueProperty().set(null);
         duLieuF.setText("");
         truongTraCuuF.setItems(listTruongTraCuu);
